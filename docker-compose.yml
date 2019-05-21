@@ -1,0 +1,16 @@
+version: '3'
+services:
+  marketplace-www:
+    container_name: marketplace-www
+    build:
+      context: ./
+    ports:
+      - 3000:3000
+    command: ["npm", "start"]
+    volumes:
+      - ./public:/usr/src/pachama/marketplace-www/public
+      - ./src:/usr/src/pachama/marketplace-www/src
+  marketplace-api:
+    image: gcr.io/pachama-demo/marketplace-api
+    ports:
+      - 3001:3000
