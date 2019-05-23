@@ -58,7 +58,7 @@ stop_review:
   except:
     - master
 
-deploy_stage:
+deploy_staging:
   stage: deploy
   image: google/cloud-sdk
   script:
@@ -71,10 +71,9 @@ deploy_stage:
     name: staging
     url: https://$CI_ENVIRONMENT_SLUG.$CI_PROJECT_NAME.$MY_DOMAIN
   only:
-    - merge_requests
     - master
 
-deploy_stage:
+deploy_prod:
   stage: deploy
   image: google/cloud-sdk
   script:
