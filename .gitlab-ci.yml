@@ -21,7 +21,7 @@ build:
     - gcloud config set project $GCP_PROJECT_ID
     - gcloud builds submit . --config=cloudbuild.yaml --substitutions _IMAGE_NAME=$CI_PROJECT_NAME,_VERSION=$(echo $CI_COMMIT_SHA | cut -c8-25)
 
-deploy_review:
+review_app:
   stage: review
   image: google/cloud-sdk
   script:
@@ -71,6 +71,7 @@ deploy_stage:
     name: staging
     url: https://$CI_ENVIRONMENT_SLUG.$CI_PROJECT_NAME.$MY_DOMAIN
   only:
+    - merge_requests
     - master
 
 deploy_stage:
