@@ -3,6 +3,7 @@ image: docker:latest
 stages:
   - test
   - build
+  - review
   - deploy
 
 test:
@@ -21,7 +22,7 @@ build:
     - gcloud builds submit . --config=cloudbuild.yaml --substitutions _IMAGE_NAME=$CI_PROJECT_NAME,_VERSION=$(echo $CI_COMMIT_SHA | cut -c8-25)
 
 deploy_review:
-  stage: deploy
+  stage: review
   image: google/cloud-sdk
   script:
     - echo "Deploy a review app in k8s $CI_ENVIRONMENT_SLUG - $CI_COMMIT_REF_NAME"
@@ -39,13 +40,12 @@ deploy_review:
     - master
 
 stop_review:
-  stage: deploy
+  stage: review
   image: google/cloud-sdk
   variables:
     GIT_STRATEGY: none
   script:
     - echo "Remove review app"
-    - config_kubernetes
     - kubectl version
     - kubectl delete ing -l app=$CI_ENVIRONMENT_SLUG
     - kubectl delete all -l app=$CI_ENVIRONMENT_SLUG
@@ -53,6 +53,10 @@ stop_review:
   environment:
     name: review/$CI_COMMIT_REF_NAME
     action: stop
+  only:
+    - branches
+  except:
+    - master
 
 deploy_stage:
   stage: deploy
