@@ -40,10 +40,12 @@ deploy_review:
 
 stop_review:
   stage: deploy
+  image: google/cloud-sdk
   variables:
     GIT_STRATEGY: none
   script:
     - echo "Remove review app"
+    - config_kubernetes
     - kubectl version
     - kubectl delete ing -l app=$CI_ENVIRONMENT_SLUG
     - kubectl delete all -l app=$CI_ENVIRONMENT_SLUG
