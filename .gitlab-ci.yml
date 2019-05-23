@@ -24,7 +24,7 @@ deploy_review:
   stage: deploy
   image: google/cloud-sdk
   script:
-    - echo "Deploy a review app $CI_ENVIRONMENT_SLUG - $CI_COMMIT_REF_NAME"
+    - echo "Deploy a review app in k8s $CI_ENVIRONMENT_SLUG - $CI_COMMIT_REF_NAME"
     - config_kubernetes
     - create_ssl_secret
     - create_deployment_files

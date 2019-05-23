@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: _APP_NAME_-_CI_ENVIRONMENT_SLUG_-deployment
+spec:
+  replicas: _REPLICAS_
+  selector:
+    matchLabels:
+      app: _APP_NAME_-_CI_ENVIRONMENT_SLUG_
+  # Pod template
+  template:
+    metadata:
+      labels:
+        app: _APP_NAME_-_CI_ENVIRONMENT_SLUG_
+        track: _TRACK_
+    spec:
+      containers:
+        - name: app
+          image: gcr.io/_PROJECT_NAME_/_APP_NAME_:_VERSION_
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
