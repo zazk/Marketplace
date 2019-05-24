@@ -4,4 +4,4 @@ WORKDIR /usr/src/pachama/marketplace-www
 COPY package.json yarn.lock ./
 RUN yarn
 COPY . ./
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
