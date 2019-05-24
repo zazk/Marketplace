@@ -6,7 +6,7 @@ services:
       context: ./
     ports:
       - 3000:3000
-    command: ["npm", "start"]
+    command: ["npm", "run", "dev"]
     volumes:
       - ./public:/usr/src/pachama/marketplace-www/public
       - ./src:/usr/src/pachama/marketplace-www/src

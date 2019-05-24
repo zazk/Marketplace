@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+export const apiUrl: string =
+  process.env.MARKETPLACE_API_URL || 'http://staging.marketplace-api.marketplace.pachama.com/';
 
 function App() {
   return (
@@ -8,7 +10,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edited <code>src/App.js</code> and re-save to reload.
+
+          Edited <code>src/App.js</code> and {apiUrl} re-save to reload.
         </p>
         <a
           className="App-link"
