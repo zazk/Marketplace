@@ -48,7 +48,7 @@ stop_review:
     - echo "Remove review app"
     - kubectl version
     - kubectl delete ing -l app=$CI_ENVIRONMENT_SLUG
-    - kubectl delete all -l app=$CI_ENVIRONMENT_SLUG
+    - kubectl delete all -l app=$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG
   when: manual
   environment:
     name: review/$CI_COMMIT_REF_NAME
