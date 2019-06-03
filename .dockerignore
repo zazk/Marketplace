@@ -1,0 +1,11 @@
+README.md
+.nvmrc
+.gitignore
+.editorconfig
+node_modules
+*.log
+build
+tmp
+.tmp
+.DS_Store
+.next

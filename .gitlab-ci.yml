@@ -46,9 +46,10 @@ stop_review:
     GIT_STRATEGY: none
   script:
     - echo "Remove review app"
+    - config_kubernetes
     - kubectl version
-    - kubectl delete ing -l app=$CI_ENVIRONMENT_SLUG
-    - kubectl delete all -l app=$CI_ENVIRONMENT_SLUG
+    - kubectl delete ing -l app=$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG
+    - kubectl delete all -l app=$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG
   when: manual
   environment:
     name: review/$CI_COMMIT_REF_NAME
@@ -92,8 +93,9 @@ deploy_prod:
 .custom_functions: &custom_functions |
   export VERSION=$(echo $CI_COMMIT_SHA | cut -c8-25)
   export SECRET_NAME=tls-$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG
-  export REPLICAS=3
+  export REPLICAS=1
   export TRACK=stable
+  export APP_PORT=3000
 
   function config_kubernetes() {
     kubectl config set-cluster $KUBE_NAME --server="$KUBE_URL" --insecure-skip-tls-verify=true
@@ -118,7 +120,7 @@ deploy_prod:
 
   function create_deployment_files() {
     ## Deployment file substitutions
-    sed 's/_APP_NAME_/'"$CI_PROJECT_NAME"'/g; s/_VERSION_/'"$VERSION"'/g; s/_CI_ENVIRONMENT_SLUG_/'"$CI_ENVIRONMENT_SLUG"'/g; s/_PROJECT_NAME_/'"$GCP_PROJECT_ID"'/g; s/_REPLICAS_/'"$REPLICAS"'/g; s/_TRACK_/'"$TRACK"'/g;' kubernetes.tpl.deployment.yaml > deployment.yaml;
+    sed 's/_APP_NAME_/'"$CI_PROJECT_NAME"'/g; s/_VERSION_/'"$VERSION"'/g; s/_CI_ENVIRONMENT_SLUG_/'"$CI_ENVIRONMENT_SLUG"'/g; s/_PROJECT_NAME_/'"$GCP_PROJECT_ID"'/g; s/_REPLICAS_/'"$REPLICAS"'/g; s/_APP_PORT_/'"$APP_PORT"'/g; s/_TRACK_/'"$TRACK"'/g;' kubernetes.tpl.deployment.yaml > deployment.yaml;
 
     ## Ingress file substitutions
     if [[ "$USE_SSL" != "True" ]]; then
@@ -128,7 +130,7 @@ deploy_prod:
     fi
 
     ## Service file substitutions
-    sed 's/_APP_NAME_/'"$CI_PROJECT_NAME"'/g; s/_CI_ENVIRONMENT_SLUG_/'"$CI_ENVIRONMENT_SLUG"'/g;' kubernetes.tpl.service.yaml > service.yaml;
+    sed 's/_APP_NAME_/'"$CI_PROJECT_NAME"'/g; s/_APP_PORT_/'"$APP_PORT"'/g; s/_CI_ENVIRONMENT_SLUG_/'"$CI_ENVIRONMENT_SLUG"'/g;' kubernetes.tpl.service.yaml > service.yaml;
   }
 
   function apply_and_rollout() {
