@@ -19,4 +19,4 @@ spec:
           image: gcr.io/_PROJECT_NAME_/_APP_NAME_:_VERSION_
           imagePullPolicy: Always
           ports:
-            - containerPort: 80
+            - containerPort: _APP_PORT_
