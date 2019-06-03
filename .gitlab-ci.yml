@@ -94,7 +94,7 @@ deploy_prod:
   export SECRET_NAME=tls-$CI_PROJECT_NAME-$CI_ENVIRONMENT_SLUG
   export REPLICAS=1
   export TRACK=stable
-  export APP_PORT = 3000
+  export APP_PORT=3000
 
   function config_kubernetes() {
     kubectl config set-cluster $KUBE_NAME --server="$KUBE_URL" --insecure-skip-tls-verify=true
