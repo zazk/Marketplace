@@ -133,7 +133,7 @@ export class MapContainer extends PureComponent {
         <div className="map-feature-descrip">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim perferendis, debitis aperiam animi ratione
           sapiente, aut incidunt est quo quam dolorum temporibus rem ut obcaecati voluptate, adipisci eos commodi?
-          Temporibus!
+          Lorem!
         </div>
         <DeckGL viewState={INITIAL_VIEW_STATE} layers={this._renderLayers()} controller={controller}>
           {this._renderTooltip}

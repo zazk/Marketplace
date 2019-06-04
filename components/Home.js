@@ -20,7 +20,7 @@ function Home({ id }) {
       <Intro data={project} />
       <Features data={project} />
       <FeatureProduct data={project} />
-      <ImagenFeature data={project} />
+      <MapContainer data={project} />
       <Biomass data={project} />
       <Leakage data={project} />
       <Pay data={project} />
