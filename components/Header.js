@@ -5,7 +5,7 @@ function Header() {
     <header className="header">
       <div className="content flex">
         <figure className="logo">
-          <img src="https://via.placeholder.com/94x28" width="94" height="28" alt="" />
+          <img src="/static/assets/images/logo-pachama.svg" width="92" height="23" alt="" />
         </figure>
         <nav>
           <ul className="flex nav-list">
@@ -16,7 +16,7 @@ function Header() {
             </li>
             <li className="menu-item">
               <Link href="/about">
-                <a className="menu-link">About</a>
+                <a className="menu-link">About Us</a>
               </Link>
             </li>
             <li className="menu-item">
@@ -33,7 +33,7 @@ function Header() {
           .header .content {
             height: 56px;
             align-items: center;
-            border-bottom: 1px solid rgba(151, 151, 151, 0.3);
+            /** border-bottom: 1px solid rgba(151, 151, 151, 0.3); **/
             @media screen and (max-width: 480px) {
               justify-content: space-between;
             }
@@ -56,6 +56,7 @@ function Header() {
             font-size: 14px;
             color: #363636;
             transition: all 0.3s;
+            font-family: 'Lato', sans-serif;
           }
           .menu-link:hover {
             opacity: 0.5;

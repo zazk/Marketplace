@@ -1,18 +1,18 @@
 import React from 'react';
-
 function UnCompliant() {
   return (
     <div>
       <h3 className="sidebar-title">UN compliant</h3>
       <div className="sidebar-cuadros flex">
-        <a href="" className="cuadros-item c-1" />
-        <a href="" className="cuadros-item c-2" />
-        <a href="" className="cuadros-item c-3" />
-        <a href="" className="cuadros-item c-2" />
-        <a href="" className="cuadros-item c-2" />
-        <a href="" className="cuadros-item c-3" />
-        <a href="" className="cuadros-item c-2" />
-        <a href="" className="cuadros-item c-1" />
+        <a href="" className="cuadros-item">
+          <img src="/static/assets/images/compliant-1.png" width="84" height="85" alt="" />
+        </a>
+        <a href="" className="cuadros-item">
+          <img src="/static/assets/images/compliant-2.png" width="84" height="85" alt="" />
+        </a>
+        <a href="" className="cuadros-item">
+          <img src="/static/assets/images/compliant-3.png" width="84" height="85" alt="" />
+        </a>
       </div>
 
       <style jsx>
@@ -22,8 +22,13 @@ function UnCompliant() {
             height: 84px;
             margin-left: 1.9%;
             margin-bottom: 1.9%;
-            box-sizing: border-box;
-            border: 1px solid #717171;
+            @media screen and (max-width: 480px) {
+              width: 28.5%;
+            }
+            img {
+              max-width: 100%;
+              height: auto;
+            }
             &:hover {
               opacity: 0.5;
             }

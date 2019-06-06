@@ -9,6 +9,10 @@ export default ({ children, title = 'This is the default title' }) => {
         <title>{title}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Lato:400,700,700i|Work+Sans:400,600,700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <div className="cnt-wrapper">
         <Header />
@@ -41,8 +45,15 @@ export default ({ children, title = 'This is the default title' }) => {
           font-weight: normal;
           font-style: normal;
         }
+        .cnt-wrapper{
+          overflow:hidden;
+        }
         body{
           margin:0px;
+          font-family: 'Lato', sans-serif;
+          font-weight: 400;
+          -webkit-font-smoothing: antialiased;
+          -webkit-tap-highlight-color: transparent;
         }
         .tab-feature-item {
           width: 50%;
@@ -52,9 +63,11 @@ export default ({ children, title = 'This is the default title' }) => {
           }
         }
         .sidebar-title {
-          color: rgba(0, 0, 0, 0.3);
+          color: #969db6;
           font-size: 13px;
           margin-bottom: 10px;
+          font-weight: 500;
+          font-family: 'Work Sans', sans-serif;
           text-transform: uppercase;
         }
         figure {
@@ -69,19 +82,23 @@ export default ({ children, title = 'This is the default title' }) => {
           padding: 0px;
         }
         .btn {
-          background-color: #000;
+          background-color: #17b363;
           color: #fff;
-          height: 39px;
-          width: 155px;
+          height: 50px;
+          width: 196px;
+          border:none;
           display: flex;
           align-items: center;
           justify-content: center;
-          border-radius: 4px;
-          text-transform: uppercase;
+          font-size: 18px;
+          font-family: 'Lato', sans-serif;
+          font-weight: 700;
           transition: all 0.3s;
           padding: 0;
           text-decoration: none;
           cursor: pointer;
+          border:none;
+          border-radius:2px;
           &.gray {
             width: 210px;
             border: solid 1px #979797;
@@ -101,10 +118,9 @@ export default ({ children, title = 'This is the default title' }) => {
         }
         .content {
           max-width: 1024px;
-          padding: 0 20px;
+          padding:0 20px;
           box-sizing: border-box;
           margin: auto;
-          font-family: 'CircularStd-Book';
           color: #363636;
           text-align: left;
           font-size: 14px;
@@ -113,6 +129,29 @@ export default ({ children, title = 'This is the default title' }) => {
           display: flex;
           flex-flow: row wrap;
         }
+        .link-imagen {
+            display: flex;
+            text-decoration: none;
+            &:hover {
+              p {
+                text-decoration: underline;
+              }
+            }
+            img {
+              margin-right: 5px;
+            }
+            p {
+              margin: 0;
+              font-size: 14px;
+              color: #17b363;
+            }
+            @media screen and (max-width: 640px) {
+              justify-content: center;
+            }
+            @media screen and (max-width: 480px) {
+              justify-content: flex-start;
+            }
+          }
       `}
       </style>
     </div>

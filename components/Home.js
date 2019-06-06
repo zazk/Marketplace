@@ -1,7 +1,6 @@
 import React from 'react';
 import dataProjects from '../projects-data/projects';
 
-import Intro from './Intro';
 import Features from './Features';
 import FeatureProduct from './FeatureProduct';
 import ImagenFeature from './ImagenFeature';
@@ -17,14 +16,13 @@ function Home({ id }) {
   const project = dataProjects[index];
   return (
     <section className="home">
-      <Intro data={project} />
       <Features data={project} />
-      <FeatureProduct data={project} />
       <MapContainer data={project} />
+      <FeatureProduct data={project} />
       <Biomass data={project} />
       <Leakage data={project} />
       <Pay data={project} />
-      <ControlsProject id={index} items={itemsProject} />
+      <ControlsProject id={index} items={itemsProject} data={dataProjects} />
     </section>
   );
 }
