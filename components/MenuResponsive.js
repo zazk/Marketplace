@@ -11,11 +11,11 @@ function MenuResponsive() {
       <div className={`cnt-menu-responsive ${openMenu === 1 && 'active'}`} onClick={() => setOpenMenu(0)}>
         <div className={`menu-overlay ${openMenu === 1 && 'active'}`} />
         <div className={`menu-mobile-close ${openMenu === 1 && 'active'}`} onClick={() => setOpenMenu(0)}>
-          <img src="../static/iconos/close.svg" width="25" height="25" alt="" />
+          <img src="../static/iconos/close-w.svg" width="25" height="25" alt="" />
         </div>
         <div className="menu-responsive">
           <figure className="logo">
-            <img src="https://via.placeholder.com/94x28" width="94" height="28" alt="" />
+            <img src="/static/assets/images/logo-pachama-white.svg" width="94" alt="" />
           </figure>
           <nav>
             <ul className="nav-list">
@@ -61,7 +61,7 @@ function MenuResponsive() {
           .menu-responsive {
             position: relative;
             z-index: 1010;
-            background-color: #fff;
+            background-color: #0a5d6c;
             height: 100vh;
           }
           .cnt-menu-responsive {
@@ -84,8 +84,11 @@ function MenuResponsive() {
               box-sizing: border-box;
               img {
                 width: 100%;
-                border: 1px solid gray;
+                height: auto;
               }
+            }
+            .menu-item {
+              border-bottom: 1px solid #0f2a2f;
             }
             .menu-link {
               width: 100%;
@@ -96,10 +99,10 @@ function MenuResponsive() {
               align-items: center;
               font-size: 16px;
               text-decoration: none;
-              color: #363636;
+              color: #fff;
             }
             .menu-mobile-close {
-              background-color: #fff;
+              background-color: #0a5d6c;
               border-radius: 3px;
               color: gray;
               cursor: pointer;

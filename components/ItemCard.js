@@ -1,10 +1,10 @@
 import React from 'react';
-function ItemCard() {
+function ItemCard({ title, status }) {
   return (
-    <div className="item-card">
-      <img src="/static/iconos/checked.svg" width="28" alt="" />
+    <div className={`item-card ${!status && 'disabled'}`}>
+      <img className="item-card-image" src="/static/iconos/checked.svg" width="28" alt="" />
       <div className="item-card-descripcion">
-        <h5>Additionality</h5>
+        <h5>{title}</h5>
         <p>Checked</p>
       </div>
       <a className="link-imagen" href="">
@@ -21,7 +21,9 @@ function ItemCard() {
             padding-left: 50px;
             position: relative;
             border-left: 1px solid #e2e5ee;
-
+            &.disabled {
+              display: none;
+            }
             span {
               position: absolute;
               top: 28px;
@@ -81,8 +83,14 @@ function ItemCard() {
                 width: 90%;
                 background-color: #e2e5ee;
               }
+              .item-card-image {
+                position: absolute;
+                top: 25px;
+                left: 18px;
+              }
             }
           }
+
           .item-card-descripcion {
             margin-bottom: 15px;
             h5 {
@@ -100,6 +108,9 @@ function ItemCard() {
               h5 {
                 font-size: 20px;
               }
+            }
+            @media screen and (max-width: 480px) {
+              padding-left: 40px;
             }
           }
         `}

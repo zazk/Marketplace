@@ -8,7 +8,7 @@ const ItemListBanner = ({ title, description }) => {
       <style jsx>
         {`
           .feature-list-item {
-            margin-bottom: 17px;
+            margin-bottom: 25px;
             padding-right: 10px;
             box-sizing: border-box;
             position: relative;
@@ -73,5 +73,5 @@ const ItemListBanner = ({ title, description }) => {
     </div>
   );
 };
-ItemListBanner.propTypes = { title: PropTypes.string.isRequired, description: PropTypes.string.isRequired };
+ItemListBanner.propTypes = { title: PropTypes.string.isRequired };
 export default ItemListBanner;

@@ -107,7 +107,7 @@ function ImagenFeature() {
           }
           .imagen-feature.content {
             padding: 65px 56px;
-            margin-top: 60px;
+            margin-top: 90px;
             @media screen and (max-width: 480px) {
               padding: 55px 25px;
             }

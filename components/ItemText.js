@@ -2,30 +2,44 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ItemCardLarge from './ItemCardLarge';
 
-function ItemText({ title, description, card, source, page, icono }) {
+function ItemText({ iconcard, type, title, description, card, source, page, icontitle }) {
   return (
-    <div className="item-one">
+    <div className={`item-one ${type && 'two'}`}>
       <h5 className="item-title">
-        {icono ? <img src={icono} alt="" /> : ''}
+        {icontitle ? <img src={icontitle} alt="" /> : ''}
         {title}
       </h5>
       <div className="item-description">
         <p>{description}</p>
       </div>
       <div className="item-source">
-        <span>
-          Source: <a href="">{source}</a>,
-        </span>
-        <span>
-          <a href="">page {page}</a>
-        </span>
+        {source && (
+          <span>
+            Source: <a href="">{source}</a>,
+          </span>
+        )}
+        {page && (
+          <span>
+            <a href="">page {page}</a>
+          </span>
+        )}
+        {source || (page && <img src="/static/iconos/arrow-thin-right.svg" width="12" />)}
       </div>
-      {card && <ItemCardLarge />}
+      {card && <ItemCardLarge icon={iconcard} />}
 
       <style jsx>
         {`
           .item-one {
             margin-bottom: 45px;
+            &.two {
+              background-color: #fff;
+              border-radius: 6px;
+              padding: 25px 23px;
+              .item-title {
+                color: #030922;
+                text-transform: inherit;
+              }
+            }
           }
           .item-title {
             font-size: 22px;
@@ -59,7 +73,6 @@ function ItemText({ title, description, card, source, page, icono }) {
             a {
               text-decoration: none;
               color: #4a4a4a;
-              border-bottom: 2px solid #17b363;
               color: #17b363;
               &:hover {
                 opacity: 0.5;

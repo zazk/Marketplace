@@ -22,7 +22,7 @@ function Home({ id }) {
       <Biomass data={project} />
       <Leakage data={project} />
       <Pay data={project} />
-      <ControlsProject id={index} items={itemsProject} />
+      <ControlsProject id={index} items={itemsProject} data={dataProjects} />
     </section>
   );
 }

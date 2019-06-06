@@ -10,22 +10,27 @@ function SideBar({ data }) {
         <ProjectTimeline data={data} />
       </div>
 
+      <div className="sidebar-item-row cuadros">
+        <UnCompliant />
+      </div>
       <div className="sidebar-item-row">
         <ProjectFiles />
       </div>
 
-      <div className="sidebar-item-row cuadros">
-        <UnCompliant />
-      </div>
       <style jsx>
         {`
           .leakage-sidebar {
-            width: 36%;
-            padding-top: 70px;
+            width: 28%;
+            padding-top: 10px;
 
+            @media screen and (max-width: 768px) {
+              width: 32%;
+            }
             @media screen and (max-width: 640px) {
               width: 100%;
-              padding-top: 0;
+              padding-top: 35px;
+              padding-left: 40px;
+              box-sizing: border-box;
               display: flex;
               flex-flow: row wrap;
               .sidebar-item-row {

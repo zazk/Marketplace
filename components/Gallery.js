@@ -8,21 +8,24 @@ function Gallery({ data }) {
 
   const numbersImages = ImagesData.length;
   let imageInit = 0;
+
   const addIndice = myindice => {
-    console.log(myindice);
+    console.log('indice generado', myindice);
     imageInit = myindice;
   };
+  const addPrev = index => {
+    console.log('test prev');
+    let prevdata = showInLightbox - 1;
+    let prev = prevdata < 0 ? numbersImages - 1 : prevdata;
 
-  let prevdata = imageInit - 1;
-  let prev = prevdata < 0 ? numbersImages - 1 : prevdata;
-  let nextdata = imageInit + 1;
-  let next = nextdata >= numbersImages ? 0 : nextdata;
-  console.log('numbersImages', numbersImages);
-  console.log('imageInit', imageInit);
-  console.log('prev', prev);
-  console.log('next', next);
-  const controlsLightbox = () => {
-    console.log('test click controls');
+    setInLightbox(prev);
+  };
+
+  const addNext = () => {
+    console.log('test next');
+    let nextdata = showInLightbox + 1;
+    let next = nextdata >= numbersImages ? 0 : nextdata;
+    setInLightbox(next);
   };
 
   return (
@@ -37,10 +40,10 @@ function Gallery({ data }) {
         <div className="close-lightbox" onClick={() => setOpenLightbox(0)}>
           <img src="/static/iconos/close-w.svg" width="20" alt="" />
         </div>
-        <span className="lightbox-next" onClick={() => setInLightbox(next)}>
+        <span className="lightbox-next" onClick={() => addNext()}>
           <img src="/static/iconos/arrow-next.svg" width="40" alt="" />
         </span>
-        <span className="lightbox-prev" onClick={() => setInLightbox(prev)}>
+        <span className="lightbox-prev" onClick={() => addPrev()}>
           <img src="/static/iconos/arrow-prev.svg" width="40" alt="" />
         </span>
 
@@ -48,7 +51,7 @@ function Gallery({ data }) {
           {ImagesData.map((img, i) => (
             <div key={i} className={`item-lightbox ${showInLightbox === i && 'active'}`}>
               <img src={img.image} width="392" height="190" alt="" />
-              <figcaption>{img.caption}</figcaption>
+              <figcaption className="box">{img.caption}</figcaption>
             </div>
           ))}
         </div>
@@ -88,12 +91,17 @@ function Gallery({ data }) {
               margin-top: 10px;
               color: #fff;
               position: absolute;
+              width: 100%;
               bottom: 0px;
               left: 0;
+              right: 0;
+              margin: auto;
+              text-align: center;
               z-index: 5;
               padding: 10px;
-              @media screen and (max-width: 480px) {
-                display: none;
+              box-sizing: border-box;
+              &.box {
+                width: 80vw;
               }
             }
           }
@@ -145,14 +153,20 @@ function Gallery({ data }) {
               opacity: 0;
               visibility: hidden;
               transition: all 0.5s;
+              box-sizing: border-box;
+              padding: 0 30px;
+              padding-bottom: 60px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
               &.active {
                 opacity: 1;
                 visibility: visible;
               }
 
               img {
-                height: 100%;
-                width: auto;
+                height: auto;
+                width: 80vw;
               }
               figcaption {
                 font-size: 16px;

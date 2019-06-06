@@ -6,12 +6,12 @@ import { StaticMap } from 'react-map-gl';
 //pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA
 
 export const INITIAL_VIEW_STATE = {
-  latitude: 44.31309548743646,
-  longitude: -72.43456928875162,
-  zoom: 7,
+  latitude: 43.81309548743646,
+  longitude: -73.43456928875162,
+  zoom: 7.5,
   maxZoom: 14,
   bearing: -10,
-  pitch: 45,
+  pitch: 50,
 };
 
 export const lightSettings = {

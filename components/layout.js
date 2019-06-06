@@ -45,6 +45,9 @@ export default ({ children, title = 'This is the default title' }) => {
           font-weight: normal;
           font-style: normal;
         }
+        .cnt-wrapper{
+          overflow:hidden;
+        }
         body{
           margin:0px;
           font-family: 'Lato', sans-serif;
@@ -60,9 +63,11 @@ export default ({ children, title = 'This is the default title' }) => {
           }
         }
         .sidebar-title {
-          color: rgba(0, 0, 0, 0.3);
+          color: #969db6;
           font-size: 13px;
           margin-bottom: 10px;
+          font-weight: 500;
+          font-family: 'Work Sans', sans-serif;
           text-transform: uppercase;
         }
         figure {
@@ -93,6 +98,7 @@ export default ({ children, title = 'This is the default title' }) => {
           text-decoration: none;
           cursor: pointer;
           border:none;
+          border-radius:2px;
           &.gray {
             width: 210px;
             border: solid 1px #979797;
@@ -112,7 +118,7 @@ export default ({ children, title = 'This is the default title' }) => {
         }
         .content {
           max-width: 1024px;
-          width: 94%;
+          padding:0 20px;
           box-sizing: border-box;
           margin: auto;
           color: #363636;

@@ -51,7 +51,7 @@ function FeatureProduct({ data }) {
               <img src="/static/iconos/icon-eye.svg" width="20" alt="" />
               Overview
             </h3>
-            <div className="tab-descripcion">{project.project_summary}</div>
+            <div className="tab-descripcion">{project.project_overview}</div>
             <div className="tab-features flex">
               <div className="tab-feature-item">
                 <ItemList

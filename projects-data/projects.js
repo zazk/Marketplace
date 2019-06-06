@@ -6,12 +6,12 @@ const dataProjects = [
     main_picture: 'https://storage.googleapis.com/marketplace-assets/1-main_picture.jpg',
     credits_avail: {
       quatinty: 10000,
-      unit: 'credits',
+      unit: 'credtis',
     },
     project_type: 'Improved Forest Management',
     location: 'Middlebury, Vermont, USA',
     standard: 'https://storage.googleapis.com/marketplace-assets/logo-acr.png',
-    project_summary:
+    project_overview:
       'The Project improves forest management on Middlebury College’s forests, with Middlebury’s forest management practices representing an improvement in the carbon storage and conservation value compared to higher return management regimes of industrial private lands in the region, which are characterized by shorter, even-aged rotations. This project ensures the long-term conservation and sustainable management of the forest, promotes healthy wildlife habitat, and prevents future compromise of the forest carbon stocks. By committing to maintain forest CO2 stocks above the regional common practice, the project will provide significant climate benefits through carbon sequestration.',
     credits_issued: {
       quatinty: 53884,
@@ -69,7 +69,7 @@ const dataProjects = [
         text: '1st Verification finished',
       },
       {
-        date: 2022,
+        date: '2022',
         text: 'Next issuance of credits',
       },
     ],
@@ -90,7 +90,7 @@ const dataProjects = [
     main_picture: 'https://storage.googleapis.com/marketplace-assets/2-main_picture.jpg',
     credits_avail: {
       quatinty: 0,
-      unit: 'credits',
+      unit: 'credtis',
     },
     project_type: 'Improved Forest Management',
     location: 'Norfolk, Connecticut, USA',
@@ -152,11 +152,11 @@ const dataProjects = [
         text: '1st Verification finished',
       },
       {
-        date: 2022,
+        date: '2022',
         text: 'Next verification and issuance of credits',
       },
       {
-        date: 2042,
+        date: '2042',
         text: 'End crediting period',
       },
     ],
@@ -176,7 +176,7 @@ const dataProjects = [
     main_picture: 'https://storage.googleapis.com/marketplace-assets/3-main_picture.jpg',
     credits_avail: {
       quatinty: 0,
-      unit: 'credits',
+      unit: 'credtis',
     },
     project_type: 'Programmatic Afforestation/Reforestation',
     location: 'Mississippi Alluvial Valley,  Arkansas, USA',
@@ -264,7 +264,7 @@ const dataProjects = [
       },
       {
         date: 'TBD',
-        text: 'Next  verification and credits issuance',
+        text: 'Next  verification and Credtis issuance',
       },
       {
         date: 'December 2047',

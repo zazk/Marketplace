@@ -2,17 +2,19 @@ import React from 'react';
 import ItemCard from './ItemCard';
 import ItemText from './ItemText';
 
-function Biomass() {
+function Biomass({ data }) {
+  const project = data;
   return (
-    <div className="biomass content">
-      <ItemText
-        icono="/static/iconos/globe-europe-solid.svg"
-        title="Biomass: looking good"
-        description="We could definitely mention something about how everything is going on this project, but we should definitely."
-        source="OPD"
-        page="40"
-      />
-      <div className="biomass-grafico">
+    <div className="biomass">
+      <div className="content">
+        <ItemText
+          icontitle="/static/iconos/globe-europe-solid.svg"
+          title="Biomass: looking good"
+          description="We could definitely mention something about how everything is going on this project, but we should definitely."
+          source="OPD"
+          page="40"
+        />
+        <div className="biomass-grafico" />
         <div className="biomas-grafico-detail flex">
           <figure>
             <img src="/static/assets/images/graphic.svg" width="763" height="250" alt="" />
@@ -34,18 +36,20 @@ function Biomass() {
         </div>
 
         <div className="biomass-items flex">
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
+          <ItemCard title="Additionality" status={true} />
+          <ItemCard title="Leakage" status={true} />
+          <ItemCard title="Permanence" status={true} />
+          <ItemCard title="Verifiability" status={true} />
         </div>
       </div>
 
       <style jsx>
         {`
-          .biomass.content {
-            padding-top: 34px;
-            padding-bottom: 34px;
+          .biomass {
+            .content {
+              padding-top: 34px;
+              padding-bottom: 34px;
+            }
           }
           .biomass-grafico {
             margin-top: 22px;
@@ -91,6 +95,7 @@ function Biomass() {
             background-color: #ffffff;
             padding-top: 18px;
             padding-bottom: 12px;
+            justify-content: center;
             @media screen and (max-width: 640px) {
               margin-top: 30px;
             }

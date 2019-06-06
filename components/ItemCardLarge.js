@@ -1,9 +1,9 @@
 import React from 'react';
 
-function ItemCardLarge() {
+function ItemCardLarge({ icon }) {
   return (
     <div className="item-text-feature">
-      <span />
+      <img src={icon} alt="" />
       <p>
         <strong>Positive leakage:</strong> dead wood will also capture CO2; plus avoiding the use of concrete will spare
         us from emissions.
@@ -14,29 +14,28 @@ function ItemCardLarge() {
             min-height: 87px;
             margin-top: 32px;
             display: flex;
-            background-color: #e4e4e4;
+            border-radius: 8px;
+            border: solid 1px #e2e5ee;
             padding: 5px 23px;
             box-sizing: border-box;
             align-items: center;
             p {
               flex: 1;
               font-size: 16px;
-              color: #4a4a4a;
+              color: #030922;
+              margin: 0;
             }
-            span {
-              width: 38px;
+            img {
+              width: 32px;
               display: block;
-              height: 38px;
-              border: solid 1px #979797;
-              background-color: #d8d8d8;
-              border-radius: 100%;
+              height: auto;
               margin-right: 24px;
               align-self: center;
             }
             @media screen and (max-width: 480px) {
               padding-left: 15px;
               padding-right: 15px;
-              span {
+              img {
                 margin-right: 14px;
               }
             }
