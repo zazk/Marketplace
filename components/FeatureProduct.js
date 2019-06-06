@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
+import Gallery from './Gallery';
 
 function FeatureProduct({ data }) {
   const project = data;
@@ -46,43 +47,58 @@ function FeatureProduct({ data }) {
       <div className="tab-content content">
         <div className="tab-item flex active">
           <div className="tab-content-descripcion">
+            <h3 className="tab-title">
+              <img src="/static/iconos/icon-eye.svg" width="20" alt="" />
+              Overview
+            </h3>
             <div className="tab-descripcion">{project.project_summary}</div>
             <div className="tab-features flex">
               <div className="tab-feature-item">
-                <ItemList title={location[0]} description={location[1] + location[2]} />
-              </div>
-              <div className="tab-feature-item">
-                <ItemList title="Green Planet" description="Project developer" />
+                <ItemList
+                  icono="/static/iconos/icon-sumary-1.svg"
+                  title={location[0]}
+                  description={location[1] + location[2]}
+                />
               </div>
               <div className="tab-feature-item">
                 <ItemList
+                  icono="/static/iconos/icon-sumary-2.svg"
+                  title="Green Planet"
+                  description="Project developer"
+                />
+              </div>
+              <div className="tab-feature-item">
+                <ItemList
+                  icono="/static/iconos/icon-sumary-3.svg"
                   title={project.total_land.area + ' ' + project.total_land.unit}
                   description="Spanning 14,326 square miles"
                 />
               </div>
               <div className="tab-feature-item">
-                <ItemList title="ca. 2013" description="Verified by Verra" />
+                <ItemList icono="/static/iconos/icon-sumary-4.svg" title="ca. 2013" description="Verified by Verra" />
               </div>
               <div className="tab-feature-item">
-                <ItemList title="750 tonnes" description="CO2 equivalent units per year" />
+                <ItemList
+                  icono="/static/iconos/icon-sumary-5.svg"
+                  title="750 tonnes"
+                  description="CO2 equivalent units per year"
+                />
               </div>
               <div className="tab-feature-item">
-                <ItemList title="VCS Standard" description="Version 3.4.1" />
+                <ItemList icono="/static/iconos/icon-sumary-6.svg" title="VCS Standard" description="Version 3.4.1" />
               </div>
             </div>
           </div>
           <div className="tab-content-images">
-            {project.project_images.map((img, i) => (
-              <figure key={i}>
-                <img src={img.image} width="392" height="190" alt="" />
-                <figcaption>{img.caption}</figcaption>
-              </figure>
-            ))}
+            <Gallery data={project.project_images} />
           </div>
         </div>
       </div>
       <style jsx>
         {`
+          .wrap-head-list {
+            display: none;
+          }
           .wrap-head-list.active {
             position: fixed;
             top: 0;
@@ -95,7 +111,11 @@ function FeatureProduct({ data }) {
               border: none;
             }
           }
-
+          .tab-features {
+            border-radius: 4px;
+            border: solid 1px #e2e5ee;
+            padding: 25px 17px;
+          }
           .feature-product {
             margin-top: 44px;
             @media screen and (max-width: 640px) {
@@ -153,28 +173,17 @@ function FeatureProduct({ data }) {
             }
           }
           .tab-content-images {
+            padding-top: 35px;
             width: 38%;
             @media screen and (max-width: 640px) {
               width: 100%;
               display: flex;
               flex-flow: row wrap;
               justify-content: space-between;
-              figure {
-                width: 49%;
-              }
-            }
-            @media screen and (max-width: 640px) {
-              figure {
-                width: 100%;
-                img {
-                  width: 100%;
-                }
-              }
             }
           }
           .tab-item {
             padding: 0 20px;
-            padding-top: 20px;
             justify-content: space-between;
             opacity: 0;
             visibility: hidden;
@@ -188,28 +197,32 @@ function FeatureProduct({ data }) {
             visibility: visible;
             position: relative;
           }
+          .tab-feature-item {
+            &:last-child,
+            :nth-last-child(2) {
+              margin-bottom: 0;
+            }
+          }
           .tab-descripcion {
             font-size: 16px;
             line-height: 24px;
             margin-bottom: 25px;
-          }
-
-          .tab-content-images figcaption {
-            font-size: 12px;
-            margin-top: 10px;
-            color: rgba(54, 54, 54, 0.6);
-            @media screen and (max-width: 480px) {
-              display: none;
-            }
+            color: #030922;
           }
           .tab-content.content {
             padding: 0;
           }
-          .tab-content-images figure {
+          .tab-title {
+            font-size: 24px;
+            color: #17b363;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 700;
+            margin: 0;
             margin-bottom: 20px;
-          }
-          .tab-content-images figure:last-child {
-            margin-bottom: 0;
+            text-transform: uppercase;
+            img {
+              margin-right: 12px;
+            }
           }
         `}
       </style>

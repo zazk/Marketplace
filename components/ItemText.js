@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ItemCardLarge from './ItemCardLarge';
 
-function ItemText({ title, description, card, source, page }) {
+function ItemText({ title, description, card, source, page, icono }) {
   return (
     <div className="item-one">
-      <h5 className="item-title">{title}</h5>
+      <h5 className="item-title">
+        {icono ? <img src={icono} alt="" /> : ''}
+        {title}
+      </h5>
       <div className="item-description">
         <p>{description}</p>
       </div>
@@ -28,7 +31,14 @@ function ItemText({ title, description, card, source, page }) {
             font-size: 22px;
             font-weight: normal;
             margin: 0;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 700;
+            color: #17b363;
+            img {
+              margin-right: 10px;
+            }
             @media screen and (max-width: 480px) {
               font-size: 20px;
             }
@@ -37,6 +47,7 @@ function ItemText({ title, description, card, source, page }) {
             font-size: 16px;
             line-height: 24px;
             color: #4a4a4a;
+            max-width: 560px;
           }
           .item-description p {
             margin: 0;
@@ -44,10 +55,12 @@ function ItemText({ title, description, card, source, page }) {
           .item-source {
             font-size: 14px;
             margin-top: 10px;
+            color: #17b363;
             a {
               text-decoration: none;
               color: #4a4a4a;
-              border-bottom: 2px solid #363636;
+              border-bottom: 2px solid #17b363;
+              color: #17b363;
               &:hover {
                 opacity: 0.5;
               }
