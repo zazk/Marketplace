@@ -1,6 +1,7 @@
 import React from 'react';
 import ItemCard from './ItemCard';
 import ItemText from './ItemText';
+import BiomassChart from './BiomassChart';
 
 function Biomass({ data }) {
   const project = data;
@@ -17,7 +18,7 @@ function Biomass({ data }) {
         <div className="biomass-grafico" />
         <div className="biomas-grafico-detail flex">
           <figure>
-            <img src="/static/assets/images/graphic.svg" width="763" height="250" alt="" />
+            <BiomassChart />
           </figure>
           <div className="biomass-detail">
             <div className="graphic-item first">
@@ -56,6 +57,7 @@ function Biomass({ data }) {
           }
           .biomas-grafico-detail {
             justify-content: space-between;
+            align-items: center;
             figure {
               width: 54%;
             }
