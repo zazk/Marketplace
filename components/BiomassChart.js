@@ -16,23 +16,17 @@ export class BiomassChart extends React.Component {
   }
 
   getData() {
-    return _.range(7).map(() => {
-      return [
-        { x: 1, y: _.random(1, 5) },
-        { x: 2, y: _.random(1, 10) },
-        { x: 3, y: _.random(2, 10) },
-        { x: 4, y: _.random(2, 10) },
-        { x: 5, y: _.random(2, 15) },
-      ];
-    });
+    const projectid = this.props.projectid;
+    console.log(biomassProjects[projectid]);
+    return biomassProjects[projectid];
   }
 
   render() {
     return (
       <VictoryChart width="631" height="350" theme={VictoryTheme.material} animate={{ duration: 1000 }}>
-        <VictoryArea style={{ data: { fill: '#e9ecf2' } }} interpolation="natural" data={biomassProjects[0]['5']} />
-        <VictoryArea style={{ data: { fill: '#c1dfdb' } }} interpolation="natural" data={biomassProjects[0]['25']} />
-        <VictoryArea style={{ data: { fill: '#e922f2' } }} interpolation="natural" data={biomassProjects[0]['50']} />
+        <VictoryArea style={{ data: { fill: '#e9ecf2' } }} interpolation="natural" data={this.state.data['5']} />
+        <VictoryArea style={{ data: { fill: '#c1dfdb' } }} interpolation="natural" data={this.state.data['25']} />
+        <VictoryArea style={{ data: { fill: '#e922f2' } }} interpolation="natural" data={this.state.data['50']} />
       </VictoryChart>
     );
   }

@@ -3,7 +3,7 @@ import ItemCard from './ItemCard';
 import ItemText from './ItemText';
 import BiomassChart from './BiomassChart';
 
-function Biomass({ data }) {
+function Biomass({ data, projectid }) {
   const project = data;
   return (
     <div className="biomass">
@@ -16,7 +16,7 @@ function Biomass({ data }) {
         <div className="biomass-grafico" />
         <div className="biomas-grafico-detail flex">
           <figure>
-            <BiomassChart />
+            <BiomassChart projectid={projectid} />
           </figure>
           <div className="biomass-detail">
             <div className="graphic-item first">
