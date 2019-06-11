@@ -1,6 +1,5 @@
 import React from 'react';
 import dataProjects from '../projects-data/projects';
-
 import Features from './Features';
 import FeatureProduct from './FeatureProduct';
 import ImagenFeature from './ImagenFeature';

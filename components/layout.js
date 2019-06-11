@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Header from './Header';
-
-export default ({ children, title = 'This is the default title' }) => {
+export default ({ dashboard, children, title = 'This is the default title' }) => {
   const UrlFont = '../static/assets/fonts/';
   return (
     <div>
@@ -15,8 +14,7 @@ export default ({ children, title = 'This is the default title' }) => {
         />
       </Head>
       <div className="cnt-wrapper">
-        <Header />
-
+        {!dashboard && <Header />}
         {children}
 
         <footer />
@@ -99,6 +97,7 @@ export default ({ children, title = 'This is the default title' }) => {
           cursor: pointer;
           border:none;
           border-radius:2px;
+
           &.gray {
             width: 210px;
             border: solid 1px #979797;
