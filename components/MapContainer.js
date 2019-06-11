@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import { render } from 'react-dom';
 
-import DeckGL, { MapView, GeoJsonLayer, TileLayer, BitmapLayer } from 'deck.gl';
+import DeckGL, { MapView, GeoJsonLayer, TileLayer, BitmapLayer, FlyToInterpolator } from 'deck.gl';
 import { StaticMap } from 'react-map-gl';
+import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
+
 //pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA
 
 export const INITIAL_VIEW_STATE = {
@@ -22,6 +24,25 @@ export const lightSettings = {
   lightsStrength: [2.0, 0.0, 1.0, 0.0],
   numberOfLights: 3,
 };
+
+const ambientLight = new AmbientLight({
+  color: [255, 255, 255],
+  intensity: 1.0,
+});
+
+const pointLight1 = new PointLight({
+  color: [255, 255, 255],
+  intensity: 0.8,
+  position: [-0.144528, 49.739968, 80000],
+});
+
+const pointLight2 = new PointLight({
+  color: [255, 255, 255],
+  intensity: 0.8,
+  position: [-3.807751, 54.104682, 8000],
+});
+
+const lightingEffect = new LightingEffect({ ambientLight, pointLight1, pointLight2 });
 
 // https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Tile_servers
 //const tileServer = 'https://c.tile.openstreetmap.org/';
@@ -56,10 +77,41 @@ const geojson = {
 export class MapContainer extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      viewState: {
+        latitude: 43.81309548743646,
+        longitude: -73.43456928875162,
+        zoom: 7.5,
+        maxZoom: 14,
+        bearing: -10,
+        pitch: 50,
+      },
+      geojson: this.props.data.location.geojson,
+    };
+    this._onViewStateChange = this._onViewStateChange.bind(this);
     (this.mapWidgetElement = null), (this._onHover = this._onHover.bind(this));
     this._renderTooltip = this._renderTooltip.bind(this);
-    console.log(geojson);
+  }
+
+  componentDidMount() {
+    this._goToProject();
+  }
+
+  _goToProject() {
+    this.setState({
+      viewState: {
+        ...this.state.viewState,
+        longitude: this.props.data.location.coordinates[0],
+        latitude: this.props.data.location.coordinates[1],
+        zoom: 15.5,
+        transitionDuration: 18000,
+        transitionInterpolator: new FlyToInterpolator(),
+      },
+    });
+  }
+
+  _onViewStateChange({ viewState }) {
+    this.setState({ viewState });
   }
 
   _onHover({ x, y, sourceLayer, tile }) {
@@ -81,7 +133,6 @@ export class MapContainer extends PureComponent {
 
   _renderLayers() {
     const { autoHighlight = true, highlightColor = [60, 60, 60, 40] } = this.props;
-
     return [
       new TileLayer({
         pickable: false,
@@ -104,30 +155,27 @@ export class MapContainer extends PureComponent {
       }),
       new GeoJsonLayer({
         id: 'objectSelected',
-        data: geojson,
-        opacity: 3,
+        data: this.state.geojson,
+        opacity: 2,
         stroked: false,
         filled: true,
         extruded: true,
-        wireframe: true,
+        wireframe: false,
         fp64: true,
-        getElevation: 100,
-        // getFillColor: 4,
+        getElevation: 3,
         lightSettings,
         pickable: true,
         autoHighlight: true,
-        getLineColor: [10, 10, 10],
-        getColor: [20, 20, 220],
-        getFillColor: [120, 100, 10, 100],
+        getLineColor: [255, 255, 255],
+        getColor: [20, 80, 220],
+        getFillColor: [254, 237, 177, 100],
       }),
     ];
   }
 
   render() {
-    const { controller = false } = this.props;
-    const viewState = {
-      ...this.state.viewState,
-    };
+    const { controller = true } = this.props;
+    const { viewState } = this.state;
     return (
       <div className="map-feature flex content">
         <div className="imagen-info">
@@ -153,7 +201,7 @@ export class MapContainer extends PureComponent {
             <p>What is biomass?</p>
           </a>
         </div>
-        <DeckGL viewState={INITIAL_VIEW_STATE} layers={this._renderLayers()} controller={controller}>
+        <DeckGL viewState={viewState} layers={this._renderLayers()} effects={[lightingEffect]} controller={controller}>
           {this._renderTooltip}
           <StaticMap
             mapboxApiAccessToken="pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA"

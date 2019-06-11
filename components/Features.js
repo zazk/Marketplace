@@ -3,7 +3,7 @@ import ItemListBanner from './ItemListBanner';
 import Intro from './Intro';
 function Features({ data }) {
   const project = data;
-  const location_data = project.location;
+  const location_data = project.location.name;
   const location = location_data.split(',');
 
   const list = [

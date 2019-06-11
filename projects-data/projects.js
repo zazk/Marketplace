@@ -1,3 +1,5 @@
+import geoProjects from '../projects-data/geodata';
+
 const dataProjects = [
   {
     title: 'Middlebury College improved forest management project',
@@ -6,10 +8,14 @@ const dataProjects = [
     main_picture: 'https://storage.googleapis.com/marketplace-assets/1-main_picture.jpg',
     credits_avail: {
       quatinty: 10000,
-      unit: 'credtis',
+      unit: 'credits',
     },
     project_type: 'Improved Forest Management',
-    location: 'Middlebury, Vermont, USA',
+    location: {
+      name: 'Middlebury, Vermont, USA',
+      coordinates: [-72.99, 43.96],
+      geojson: geoProjects[0],
+    },
     standard: 'https://storage.googleapis.com/marketplace-assets/logo-acr.png',
     project_overview:
       'The Project improves forest management on Middlebury College’s forests, with Middlebury’s forest management practices representing an improvement in the carbon storage and conservation value compared to higher return management regimes of industrial private lands in the region, which are characterized by shorter, even-aged rotations. This project ensures the long-term conservation and sustainable management of the forest, promotes healthy wildlife habitat, and prevents future compromise of the forest carbon stocks. By committing to maintain forest CO2 stocks above the regional common practice, the project will provide significant climate benefits through carbon sequestration.',
@@ -90,10 +96,14 @@ const dataProjects = [
     main_picture: 'https://storage.googleapis.com/marketplace-assets/2-main_picture.jpg',
     credits_avail: {
       quatinty: 0,
-      unit: 'credtis',
+      unit: 'credits',
     },
     project_type: 'Improved Forest Management',
-    location: 'Norfolk, Connecticut, USA',
+    location: {
+      name: 'Norfolk, Connecticut, USA',
+      coordinates: [-73.24, 41.95],
+      geojson: geoProjects[1],
+    },
     standard: 'https://storage.googleapis.com/marketplace-assets/logo-acr.png',
     project_overview:
       'The Great Mountain Forest corporation encompasses more than 6,000 acres of contiguous forestland in the towns of Norfolk and Canaan, Connecticut. The mission of the corporation is to promote the working forest as a renewable resource, as a habitat for wildlife and as a classroom for training and education. To do so they developed this project that will bring improvement for the flora and fauna of the forest. The main forest types across the property are mixed hardwoods, northern conifers, and northern hardwoods.',
@@ -176,10 +186,14 @@ const dataProjects = [
     main_picture: 'https://storage.googleapis.com/marketplace-assets/3-main_picture.jpg',
     credits_avail: {
       quatinty: 0,
-      unit: 'credtis',
+      unit: 'credits',
     },
     project_type: 'Programmatic Afforestation/Reforestation',
-    location: 'Mississippi Alluvial Valley,  Arkansas, USA',
+    location: {
+      name: 'Mississippi Alluvial Valley,  Arkansas, USA',
+      coordinates: [-91.13530200000001, 35.6479574],
+      geojson: geoProjects[2],
+    },
     standard: 'https://storage.googleapis.com/marketplace-assets/logo-acr.png',
     project_overview:
       "The GreenTrees project uses tree planting to establish trees on lands that have been in continuous agricultural use and have not been in a forested state for 10 years, to date over 42 million trees were planted on 120,000 acres, in partnership with ACRE and more than 450 private landowners. By reforesting land, we're helping to bend the climate curve, restore species habitat, clean the water, and support the local and global economy.  ",
@@ -264,7 +278,7 @@ const dataProjects = [
       },
       {
         date: 'TBD',
-        text: 'Next  verification and Credtis issuance',
+        text: 'Next  verification and credits issuance',
       },
       {
         date: 'December 2047',
