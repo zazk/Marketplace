@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ItemCardLarge from './ItemCardLarge';
 
-function ItemText({ iconcard, type, title, description, card, source, page, icontitle }) {
+function ItemText({ iconcard, type, title, description, card, source, source_link, page, icontitle }) {
   return (
     <div className={`item-one ${type && 'two'}`}>
       <h5 className="item-title">
@@ -15,15 +15,9 @@ function ItemText({ iconcard, type, title, description, card, source, page, icon
       <div className="item-source">
         {source && (
           <span>
-            Source: <a href="">{source}</a>,
+            Source: <a href={source_link}>{source}</a>
           </span>
         )}
-        {page && (
-          <span>
-            <a href="">page {page}</a>
-          </span>
-        )}
-        {source || (page && <img src="/static/iconos/arrow-thin-right.svg" width="12" />)}
       </div>
       {card && <ItemCardLarge icon={iconcard} />}
 
