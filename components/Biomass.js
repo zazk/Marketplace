@@ -12,8 +12,6 @@ function Biomass({ data }) {
           icontitle="/static/iconos/globe-europe-solid.svg"
           title="Biomass: looking good"
           description="We could definitely mention something about how everything is going on this project, but we should definitely."
-          source="OPD"
-          page="40"
         />
         <div className="biomass-grafico" />
         <div className="biomas-grafico-detail flex">

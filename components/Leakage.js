@@ -12,7 +12,13 @@ function Leakage({ data }) {
           <span className="leakage-bg" />
           <ItemText type="two" title="Leakage" description={project.leakage} />
           <ItemText type="two" title="Additionality" description={project.additionality} />
-          <ItemText type="two" title="Permanence" description={project.permanence} />
+          <ItemText
+            type="two"
+            title="Permanence"
+            description={project.permanence.text}
+            source={project.permanence.source}
+            source_link={project.permanence.source_link}
+          />
           <ItemText type="two" title="Verifiability" description={project.verifiability} />
         </div>
         <SideBar data={data} />
