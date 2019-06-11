@@ -3,18 +3,6 @@
   "features": [
     {
       "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-91.13530200000001, 35.6479574, 0]
-      },
-      "properties": {
-        "name": "Jackson County",
-        "styleUrl": "#file://earth/2633879469687425928#__managed_style_02D88E6A5A0C5EA442D0"
-      },
-      "id": "0E520EAAE10C5F04A92D"
-    },
-    {
-      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Polygon",

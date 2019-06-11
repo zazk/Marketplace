@@ -1,3 +1,5 @@
+import geoProjects from '../projects-data/geodata';
+
 const dataProjects = [
   {
     title: 'Middlebury College improved forest management project',
@@ -12,6 +14,7 @@ const dataProjects = [
     location: {
       name: 'Middlebury, Vermont, USA',
       coordinates: [-72.99, 43.96],
+      geojson: geoProjects[0],
     },
     standard: 'https://storage.googleapis.com/marketplace-assets/logo-acr.png',
     project_overview:
@@ -99,6 +102,7 @@ const dataProjects = [
     location: {
       name: 'Norfolk, Connecticut, USA',
       coordinates: [-73.24, 41.95],
+      geojson: geoProjects[1],
     },
     standard: 'https://storage.googleapis.com/marketplace-assets/logo-acr.png',
     project_overview:
@@ -188,6 +192,7 @@ const dataProjects = [
     location: {
       name: 'Mississippi Alluvial Valley,  Arkansas, USA',
       coordinates: [-91.13530200000001, 35.6479574],
+      geojson: geoProjects[2],
     },
     standard: 'https://storage.googleapis.com/marketplace-assets/logo-acr.png',
     project_overview:

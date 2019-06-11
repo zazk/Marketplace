@@ -3,18 +3,6 @@
   "features": [
     {
       "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-72.99, 43.96, 0]
-      },
-      "properties": {
-        "name": "43°57'36.0\"N 72°59'24.0\"W",
-        "styleUrl": "#file://earth/2633879469687425928#__managed_style_0CDD7D5EBE0C5E9B1A9F"
-      },
-      "id": "0E45606B280C5E9C1049"
-    },
-    {
-      "type": "Feature",
       "properties": {},
       "geometry": {
         "type": "Polygon",
