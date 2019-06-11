@@ -7,7 +7,7 @@ function Pay({ data }) {
       <div className="content">
         <h3 className="pay-title">{project.tagline_footer}</h3>
         <a href="" className="btn">
-          Pledge now
+          Request Quote
         </a>
       </div>
       <style jsx>

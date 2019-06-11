@@ -19,7 +19,7 @@ function Home({ id }) {
       <Features data={project} />
       <MapContainer data={project} />
       <FeatureProduct data={project} />
-      <Biomass data={project} />
+      <Biomass data={project} projectid={index} />
       <Leakage data={project} />
       <Pay data={project} />
       <ControlsProject id={index} items={itemsProject} data={dataProjects} />
