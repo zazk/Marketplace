@@ -1,5 +1,7 @@
 import React from 'react';
-function ItemCard({ title, status }) {
+import ReactTooltip from 'react-tooltip';
+
+function ItemCard({ title, status, tooltip, tooltipid }) {
   return (
     <div className={`item-card ${!status && 'disabled'}`}>
       <img className="item-card-image" src="/static/iconos/checked.svg" width="28" alt="" />
@@ -7,10 +9,22 @@ function ItemCard({ title, status }) {
         <h5>{title}</h5>
         <p>Checked</p>
       </div>
-      <a className="link-imagen" href="">
+      <a className="link-imagen" data-tip data-for={tooltipid} href="">
         <img src="/static/iconos/info-circle-solid.svg" width="14" alt="" />
         <p>What is biomass?</p>
       </a>
+      <ReactTooltip
+        id={tooltipid}
+        aria-haspopup="true"
+        multiline="true"
+        place="top"
+        type="info"
+        effect="solid"
+        className="item-card-tooltip"
+        style={{ width: '23%' }}
+      >
+        <p>{tooltip}</p>
+      </ReactTooltip>
       <style jsx>
         {`
           .item-card {
@@ -112,6 +126,9 @@ function ItemCard({ title, status }) {
             @media screen and (max-width: 480px) {
               padding-left: 40px;
             }
+          }
+          .item-card-tooltip {
+            width: 24%;
           }
         `}
       </style>
