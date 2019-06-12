@@ -234,23 +234,28 @@ function Details() {
               padding: 0;
             }
             .detail-project {
-              max-width: 1280px;
-              margin: auto;
-
               color: #363636;
             }
             .detail-main {
               justify-content: space-between;
             }
             .detail-aside {
-              width: 34%;
+              width: 420px;
+              padding-left: 20px;
               padding-right: 20px;
               box-sizing: border-box;
               height: calc(100vh - 58px);
               overflow: auto;
+              box-sizing: border-box;
             }
             .detail-wrap-map {
-              width: 64%;
+              width: calc(100vw - 420px);
+            }
+            .detail-map {
+              figure img {
+                width: 100%;
+                height: calc(100vh - 58px);
+              }
             }
             .detail-header {
               justify-content: space-between;
