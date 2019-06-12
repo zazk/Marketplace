@@ -46,7 +46,7 @@ function FeatureProduct({ data }) {
 
       <div className="tab-content content">
         <div className="tab-item flex active">
-          <div className="tab-content-descripcion">
+          <div className="tab-content-descripcion flex">
             <h3 className="tab-title">
               <img src="/static/iconos/icon-eye.svg" width="20" alt="" />
               Overview
@@ -57,13 +57,13 @@ function FeatureProduct({ data }) {
                 <ItemList
                   icono="/static/iconos/icon-sumary-1.svg"
                   title={location[0]}
-                  description={location[1] + location[2]}
+                  description={location[1] + ', ' + location[2]}
                 />
               </div>
               <div className="tab-feature-item">
                 <ItemList
                   icono="/static/iconos/icon-sumary-2.svg"
-                  title="Green Planet"
+                  title={project.project_developer}
                   description="Project developer"
                 />
               </div>
@@ -71,25 +71,33 @@ function FeatureProduct({ data }) {
                 <ItemList
                   icono="/static/iconos/icon-sumary-3.svg"
                   title={project.total_land.area + ' ' + project.total_land.unit}
-                  description="Spanning 14,326 square miles"
+                  description=""
                 />
               </div>
               <div className="tab-feature-item">
-                <ItemList icono="/static/iconos/icon-sumary-4.svg" title="ca. 2013" description="Verified by Verra" />
+                <ItemList
+                  icono="/static/iconos/icon-sumary-4.svg"
+                  title={project.auditor}
+                  description="Project auditor"
+                />
               </div>
               <div className="tab-feature-item">
                 <ItemList
                   icono="/static/iconos/icon-sumary-5.svg"
-                  title="750 tonnes"
-                  description="CO2 equivalent units per year"
+                  title={project.verification.methodology}
+                  description={project.verification.last_verification}
                 />
               </div>
               <div className="tab-feature-item">
-                <ItemList icono="/static/iconos/icon-sumary-6.svg" title="VCS Standard" description="Version 3.4.1" />
+                <ItemList
+                  icono="/static/iconos/icon-sumary-6.svg"
+                  title={project.land_owner}
+                  description="Land owner"
+                />
               </div>
             </div>
           </div>
-          <div className="tab-content-images">
+          <div className="tab-content-images flex">
             <Gallery data={project.project_images} />
           </div>
         </div>
@@ -175,6 +183,8 @@ function FeatureProduct({ data }) {
           .tab-content-images {
             padding-top: 35px;
             width: 38%;
+            flex-direction: column;
+            justify-content: center;
             @media screen and (max-width: 640px) {
               width: 100%;
               display: flex;
