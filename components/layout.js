@@ -56,6 +56,11 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
           -webkit-font-smoothing: antialiased;
           -webkit-tap-highlight-color: transparent;
         }
+        button {
+              border: none;
+              background: none;
+              padding: 0;
+            }
         .tab-feature-item {
           width: 50%;
           margin-bottom: 20px;
