@@ -63,7 +63,7 @@ function Details() {
                   </div>
                 </div>
 
-                <div class="wrap-graphics">
+                <div className="wrap-graphics">
                   <div className="detail-graphic">
                     <h3 className="graphic-title">
                       Carbon capture
