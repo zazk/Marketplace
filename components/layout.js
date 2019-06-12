@@ -46,6 +46,9 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
         .cnt-wrapper{
           overflow:hidden;
         }
+        button:focus, select:focus, input:focus{
+          outline:none
+        }
         body{
           margin:0px;
           font-family: 'Lato', sans-serif;

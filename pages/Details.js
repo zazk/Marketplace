@@ -111,73 +111,83 @@ function Details() {
                 </div>
 
                 <h3 className="aside-title">Co-benefits generation</h3>
+                <div className="wrap-benefits">
+                  <div className="benefits-item">
+                    <div className="benefits-text">
+                      <h4 className="benefits-title">Biodiversity</h4>
+                      <p>
+                        10 new species were planted since the last verification. The developer plans on having planted
+                        35 different species by the end of this project.
+                      </p>
+                    </div>
+                    <div className="benefits-numbers">
+                      <span>24</span>
+                      <em>(10&#x2191;)</em>
+                    </div>
+                  </div>
 
-                <div className="benefits-item">
-                  <div className="benefits-text">
-                    <h4 className="benefits-title">Biodiversity</h4>
-                    <p>
-                      10 new species were planted since the last verification. The developer plans on having planted 35
-                      different species by the end of this project.
-                    </p>
+                  <div className="benefits-item">
+                    <div className="benefits-text">
+                      <h4 className="benefits-title">Hiring</h4>
+                      <p>
+                        25 new jobs were generated since the last verification, including logistics, maintenance and
+                        management roles.
+                      </p>
+                    </div>
+                    <div className="benefits-numbers">
+                      <span>123</span>
+                      <em>(25&#x2191;)</em>
+                    </div>
                   </div>
-                  <div className="benefits-numbers">
-                    <span>24</span>
-                    <em>(10&#x2191;)</em>
-                  </div>
-                </div>
 
-                <div className="benefits-item">
-                  <div className="benefits-text">
-                    <h4 className="benefits-title">Hiring</h4>
-                    <p>
-                      25 new jobs were generated since the last verification, including logistics, maintenance and
-                      management roles.
-                    </p>
+                  <div className="benefits-item">
+                    <div className="benefits-text">
+                      <h4 className="benefits-title">Water wells</h4>
+                      <p>No new water wells have been built lately.</p>
+                    </div>
+                    <div className="benefits-numbers">
+                      <span>6</span>
+                    </div>
                   </div>
-                  <div className="benefits-numbers">
-                    <span>123</span>
-                    <em>(25&#x2191;)</em>
-                  </div>
-                </div>
 
-                <div className="benefits-item">
-                  <div className="benefits-text">
-                    <h4 className="benefits-title">Water wells</h4>
-                    <p>No new water wells have been built lately.</p>
-                  </div>
-                  <div className="benefits-numbers">
-                    <span>6</span>
-                  </div>
-                </div>
-
-                <div className="benefits-item">
-                  <div className="benefits-text">
-                    <h4 className="benefits-title">Monthly income</h4>
-                    <p>Material sales resulting from controlled trimming have fluctuated positively.</p>
-                  </div>
-                  <div className="benefits-numbers">
-                    <span>$100k</span>
-                    <em>(&#x2191;3%)</em>
+                  <div className="benefits-item">
+                    <div className="benefits-text">
+                      <h4 className="benefits-title">Monthly income</h4>
+                      <p>Material sales resulting from controlled trimming have fluctuated positively.</p>
+                    </div>
+                    <div className="benefits-numbers">
+                      <span>$100k</span>
+                      <em>(&#x2191;3%)</em>
+                    </div>
                   </div>
                 </div>
 
                 <h3 className="aside-title">upcoming events</h3>
                 <div className="events-item">
-                  <div className="event-title">
-                    <span />
-                    <h3>
-                      Tree planting
-                      <span className="event-date" />
-                    </h3>
+                  <h3 className="event-title">
+                    <span className="event-circle" />
+                    Tree planting
+                    <span className="event-date">In 15 days</span>
+                  </h3>
+                  <div className="event-wrap-tags">
+                    <span className="event-tag">biomass ++</span>
+                    <span className="event-tag">biodiversity ++</span>
                   </div>
+                </div>
+                <div className="events-item">
+                  <h3 className="event-title">
+                    <span className="event-circle" />
+                    Tree planting
+                    <span className="event-date">In 15 days</span>
+                  </h3>
                   <div className="event-wrap-tags">
                     <span className="event-tag">biomass ++</span>
                     <span className="event-tag">biodiversity ++</span>
                   </div>
                 </div>
 
-                <h3 className="aside-title">Modulo de fotitos georeferenciadas</h3>
-                <div className="detail-wrap-modulos">
+                <h3 className="aside-title modulos">Modulo de fotitos georeferenciadas</h3>
+                <div className="detail-wrap-modulos flex">
                   <div className="modulo-item" />
                   <div className="modulo-item" />
                   <div className="modulo-item" />
@@ -191,17 +201,21 @@ function Details() {
           <div className="detail-wrap-map">
             <div className="detail-legend">
               <div className="legend-select">
+                <img className="legend-select-icon" src="/static/iconos/arrow-select.png" width="15" alt="" />
                 <select name="" id="">
                   <option value="">Biomass</option>
+                  <option value="">Biomass 1</option>
+                  <option value="">Biomass 2</option>
+                  <option value="">Biomass 3</option>
                 </select>
               </div>
               <figure>
-                <img src="" alt="" />
+                <img src="/static/assets/images/bar-biomas.png" width="496" alt="" />
               </figure>
-              <div className="legend-numbers">
-                <div className="legend-number-item">0</div>
-                <div className="legend-number-item">...</div>
-                <div className="legend-number-item">10.000</div>
+              <div className="imagen-legend">
+                <div className="numbers-legend">0</div>
+                <div className="numbers-legend">...</div>
+                <div className="numbers-legend">10000</div>
               </div>
             </div>
 
@@ -229,7 +243,11 @@ function Details() {
               justify-content: space-between;
             }
             .detail-aside {
-              width: 32%;
+              width: 34%;
+              padding-right: 20px;
+              box-sizing: border-box;
+              height: calc(100vh - 58px);
+              overflow: auto;
             }
             .detail-wrap-map {
               width: 64%;
@@ -240,6 +258,7 @@ function Details() {
               padding: 0 15px;
               height: 58px;
               border-bottom: 1px solid rgba(151, 151, 151, 0.3);
+              box-sizing: border-box;
               .detail-logo-project {
                 margin-left: 18px;
               }
@@ -262,8 +281,6 @@ function Details() {
                 font-size: 14px;
                 margin-left: 25px;
               }
-              .volver-detail {
-              }
               .head-name-project {
                 margin: 0;
                 font-size: 16px;
@@ -281,6 +298,10 @@ function Details() {
                 color: #000;
                 text-transform: uppercase;
                 margin-bottom: 15px;
+                font-weight: 500;
+                &.modulos {
+                  margin-top: 40px;
+                }
               }
               .aside-head-tab {
                 border: 1px solid #979797;
@@ -382,11 +403,22 @@ function Details() {
               .detail-graphic {
                 padding-bottom: 20px;
                 margin-bottom: 15px;
+                border-bottom: 1px solid #302424;
+              }
+              .wrap-benefits {
                 border-bottom: 1px solid #979797;
+                margin-bottom: 15px;
               }
               .benefits-item {
                 position: relative;
                 padding-right: 140px;
+                padding-bottom: 22px;
+                margin-bottom: 15px;
+                border-bottom: 1px solid rgba(151, 151, 151, 0.34);
+                &:last-child {
+                  border-bottom: none;
+                  margin-bottom: 0;
+                }
               }
               .benefits-numbers {
                 position: absolute;
@@ -405,12 +437,132 @@ function Details() {
               .benefits-text {
                 font-size: 14px;
                 color: #000;
+                p {
+                  margin: 0;
+                }
               }
               .benefits-title {
                 font-size: 16px;
                 font-weight: 500;
                 color: #000;
                 margin: 0;
+              }
+              .event-title {
+                display: flex;
+                font-size: 16px;
+                columns: #000000;
+                font-weight: 500;
+                position: relative;
+                padding-right: 80px;
+                margin: 0;
+                line-height: 100%;
+                .event-date {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  font-size: 12px;
+                  color: rgba(0, 0, 0, 0.5);
+                }
+
+                .event-circle {
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 100%;
+                  display: inline-block;
+                  background-color: #d8d8d8;
+                  margin-right: 10px;
+                }
+              }
+              .event-wrap-tags {
+                padding-left: 30px;
+                padding-bottom: 15px;
+              }
+              .events-item {
+                padding: 20px 0;
+                border-bottom: 1px solid rgba(151, 151, 151, 0.34);
+              }
+              .event-tag {
+                display: inline-block;
+                font-size: 12px;
+                color: rgba(0, 0, 0, 0.5);
+                background-color: #fff;
+                border-radius: 10px;
+                padding: 2px 7px;
+                background-color: #d8d8d8;
+                text-transform: uppercase;
+                margin-right: 10px;
+              }
+
+              .modulo-item {
+                width: 25%;
+                margin-left: 5%;
+                margin-bottom: 5%;
+                height: 104px;
+                box-sizing: border-box;
+                background-color: #d8d8d8;
+                border: 1px solid #979797;
+                &:nth-child(3n + 1) {
+                  margin-left: 0;
+                }
+                &:first-child {
+                  margin-left: 0;
+                }
+              }
+            }
+            .detail-wrap-map {
+              position: relative;
+            }
+            .detail-legend {
+              width: 270px;
+              padding: 15px;
+              box-sizing: border-box;
+              position: absolute;
+              top: 13px;
+              left: 18px;
+              z-index: 1;
+              background-color: #fff;
+            }
+            .imagen-legend {
+              display: flex;
+              flex-flow: row wrap;
+            }
+            .numbers-legend {
+              width: 33.33%;
+              font-size: 12px;
+              color: #969db6;
+              &:nth-child(2) {
+                text-align: center;
+              }
+              &:last-child {
+                text-align: right;
+              }
+            }
+            .legend-select-icon {
+              position: absolute;
+              top: 9px;
+              right: 5px;
+            }
+
+            .legend-select {
+              border: 1px solid #302424;
+              display: inline-block;
+              position: relative;
+              margin-bottom: 10px;
+              select {
+                text-transform: uppercase;
+                color: #000;
+                font-size: 12px;
+                background: none;
+                border: none;
+                width: 100%;
+                font-weight: 500;
+                height: 25px;
+                padding: 0 10px;
+                padding-right: 30px;
+                appearance: none;
+                &::-ms-expand {
+                  display: none;
+                }
               }
             }
           `}
