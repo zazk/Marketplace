@@ -345,14 +345,18 @@ const dataProjects = [
     title: 'Hudson Farm Improved Forest Management Project',
     tagline:
       'Hudson Farm is a conglomerate of several adjacent parcels, joining together as a conservation and recreation-based property.',
-    main_picture: 'https://drive.google.com/a/pachama.com/file/d/11li6KRWmS8u7R3RQd51yw2zI42c7TDLv/view?usp=sharing',
+    main_picture: 'https://storage.googleapis.com/marketplace-assets/4-main_picture.jpg',
     credits_avail: {
       quatinty: 10000,
       unit: 'credtis',
     },
     project_type: 'Improved Forest Management',
-    location: 'Andover, New Jersey, USA',
-    standard: 'https://drive.google.com/a/pachama.com/file/d/1gfnuWhb6-GRFH-pZi1Y70SThwSFQ_kh5/view?usp=sharing',
+    location: {
+      name: 'Andover, New Jersey, USA',
+      coordinates: [-91.13530200000001, 35.6479574],
+      geojson: geoProjects[2],
+    },
+    standard: 'https://storage.googleapis.com/marketplace-assets/logo-acr.png',
     project_summary:
       'Project is located on over 3,600 acres of mixed hardwood and conifer forest in northern New Jersey. By committing to maintain forest CO2 stocks above the regional common practice, the project is providing significant climate benefits through carbon sequestration. Few recreation and wildlife onservation opportunities to this scale remain in private ownership within proximity to major cities such as New York and Philadelphia. The Project improves forest management on Middlebury College’s forests, with Middlebury’s forest management practices representing an improvement in the carbon storage and conservation value compared to higher return management regimes of industrial private lands in the region, which are characterized by shorter, even-aged rotations. This project ensures the long-term conservation and sustainable management of the forest, promotes healthy wildlife habitat, and prevents future compromise of the forest carbon stocks. By committing to maintain forest CO2 stocks above the regional common practice, the project will provide significant climate benefits through carbon sequestration.',
     credits_issued: {
@@ -372,12 +376,8 @@ const dataProjects = [
     land_owner: 'Hudson Farm Club',
     project_images: [
       {
-        image: 'https://drive.google.com/a/pachama.com/file/d/1hEh-L97JeQm28_DE2yzOqA4wNxDx_O2v/view?usp=sharing',
+        image: 'https://storage.googleapis.com/marketplace-assets/4-image_1.jpg',
         caption: 'Hudson Farm is one of the largest working forests in the state.',
-      },
-      {
-        image: 'https://drive.google.com/a/pachama.com/file/d/1IB5ypxtsHlH42Gr35fSGOMtL7YnMqYAZ/view?usp=sharing',
-        caption: 'The Hudson Farm hike is free, rain or shine and open to everyone.',
       },
     ],
     badges: {
@@ -410,7 +410,7 @@ const dataProjects = [
       },
       verifiability: {
         text:
-          'An objective third party—someone other than Middlebury College and the project developer and —must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services  acted as the third-party verifier in this project, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.',
+          'An objective third party—someone other than Hudson Farm Club and the project developer and —must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services  acted as the third-party verifier in this project, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.',
         source: '',
         source_link: '',
       },
@@ -436,9 +436,9 @@ const dataProjects = [
     project_files:
       'https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=368',
     un_goals: [
-      'https://drive.google.com/a/pachama.com/file/d/1lIviB8r9rb-Nx47wJC5wRJhxAkvcqh4d/view?usp=sharing',
-      'https://drive.google.com/a/pachama.com/file/d/1OoTnC36Zlw87kHvCuwZD5PGjdg6iyvn6/view?usp=sharing',
-      'https://drive.google.com/a/pachama.com/file/d/1GL3fpujkCEUTpyYDFfaxoA90dhyOR1p5/view?usp=sharing',
+      'https://storage.googleapis.com/marketplace-assets/un_goals-6.png',
+      'https://storage.googleapis.com/marketplace-assets/un_goals-13.png',
+      'https://storage.googleapis.com/marketplace-assets/un_goals-15.png',
     ],
     tagline_footer:
       'With every ton of carbon that is sold, trees are protected, partnerships are formed, and our living Earth is restored to help solve climate change.',
