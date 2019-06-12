@@ -43,6 +43,14 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
           font-weight: normal;
           font-style: normal;
         }
+        li{
+          margin:0;
+          list-style:none;
+        }
+        a{
+          text-decoration:none;
+          color:inherit;
+        }
         .cnt-wrapper{
           overflow:hidden;
         }

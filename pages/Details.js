@@ -123,6 +123,92 @@ function Details() {
             .detail-wrap-map {
               position: relative;
             }
+            .wrap-drodown {
+              position: relative;
+              &:hover {
+                .dropdown {
+                  opacity: 1;
+                  visibility: visible;
+                  transform: translateY(0px);
+                }
+              }
+              &[data-position='right'] {
+                .dropdown {
+                  left: inherit;
+                  right: 0;
+                  .dropdown-main {
+                    &:after {
+                      left: inherit;
+                      right: 20px;
+                    }
+                    &:before {
+                      left: inherit;
+                      right: 20px;
+                    }
+                  }
+                }
+              }
+              .dropdown {
+                opacity: 0;
+                transform: translateY(-5px);
+                visibility: hidden;
+                transition: all 0.5s;
+                position: absolute;
+                width: 200px;
+                left: 0;
+                top: 100%;
+                padding-top: 10px;
+                z-index: 10;
+                .dropdown-main {
+                  box-sizing: border-box;
+                  background-color: #fff;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  border: 1px solid #b3afaf;
+                  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
+                  &:after,
+                  &:before {
+                    content: '';
+                    position: absolute;
+                  }
+                  &:after {
+                    left: 20px;
+                    width: 0;
+                    z-index: 1;
+                    top: 3px;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 8px 8px 7.5px;
+                    border-color: transparent transparent #b3afaf transparent;
+                  }
+                  &:before {
+                    z-index: 2;
+                    left: 21px;
+                    top: 5px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 7px 6px 7px;
+                    border-color: transparent transparent #fff transparent;
+                  }
+                }
+              }
+              .dropdown-item {
+                border-bottom: 1px solid #ccc;
+                &:last-child {
+                  border-bottom: none;
+                }
+              }
+              .dropdown-link {
+                height: 40px;
+                display: flex;
+                padding: 0 10px;
+                align-items: center;
+                &:hover {
+                  background-color: #eee;
+                }
+              }
+            }
           `}
         </style>
       </div>

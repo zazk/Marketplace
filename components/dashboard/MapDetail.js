@@ -1,17 +1,35 @@
 import React from 'react';
-
 function MapDetail() {
   return (
     <div>
       <div className="detail-legend">
-        <div className="legend-select">
-          <img className="legend-select-icon" src="/static/iconos/arrow-select.png" width="15" alt="" />
-          <select name="" id="">
-            <option value="">Biomass</option>
-            <option value="">Biomass 1</option>
-            <option value="">Biomass 2</option>
-            <option value="">Biomass 3</option>
-          </select>
+        <div className="legend-select wrap-drodown">
+          <img className="legend-select-icon" src="/static/iconos/arrow-head.svg" width="6" alt="" />
+          <span className="label-select">BIOMASS</span>
+          <div className="dropdown">
+            <ul className="dropdown-main">
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Enlace 1
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Enlace 2
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Enlace 3
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Enlace 4
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         <figure>
           <img src="/static/assets/images/bar-biomas.png" width="496" alt="" />
@@ -57,8 +75,9 @@ function MapDetail() {
           }
           .legend-select-icon {
             position: absolute;
-            top: 9px;
-            right: 5px;
+            top: 7px;
+            right: 8px;
+            transform: rotate(-90deg);
           }
 
           .legend-select {
@@ -66,20 +85,20 @@ function MapDetail() {
             display: inline-block;
             position: relative;
             margin-bottom: 10px;
-            select {
+            .label-select {
+              cursor: pointer;
               text-transform: uppercase;
               color: #000;
               font-size: 12px;
-              background: none;
-              border: none;
-              width: 100%;
               font-weight: 500;
               height: 25px;
+              display: block;
               padding: 0 10px;
               padding-right: 30px;
-              appearance: none;
-              &::-ms-expand {
-                display: none;
+              display: flex;
+              align-items: center;
+              &:hover {
+                background-color: #ccc;
               }
             }
           }

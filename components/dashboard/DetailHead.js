@@ -13,10 +13,62 @@ function DetailHead() {
         <h2 className="head-name-project">Boulder Creek National Reserve</h2>
       </div>
       <div className="head-right flex">
-        <button className="detail-menu">
-          <span>...</span>
-        </button>
-        <button className="detail-btn btn">REQUEST</button>
+        <div className="wrap-menu-head wrap-drodown" data-position="right">
+          <button className="detail-menu">
+            <span>...</span>
+          </button>
+          <div className="dropdown">
+            <ul className="dropdown-main">
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Menu 1
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Menu 2
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Menu 3
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Menu 4
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="wrap-btn wrap-drodown" data-position="right">
+          <button className="detail-btn btn">REQUEST</button>
+          <div className="dropdown">
+            <ul className="dropdown-main">
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Enlace 1
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Enlace 2
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Enlace 3
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Enlace 4
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <style jsx>
         {`
@@ -43,11 +95,19 @@ function DetailHead() {
                 left: 0;
               }
             }
+            .wrap-menu-head {
+              button {
+                height: 100%;
+              }
+            }
+
+            .wrap-btn {
+              margin-left: 25px;
+            }
             .btn {
               width: 133px;
               height: 39px;
               font-size: 14px;
-              margin-left: 25px;
             }
             .head-name-project {
               margin: 0;
