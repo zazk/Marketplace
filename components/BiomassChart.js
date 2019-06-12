@@ -26,7 +26,7 @@ export class BiomassChart extends React.Component {
       <VictoryChart width="631" height="350" theme={VictoryTheme.material} animate={{ duration: 1000 }}>
         <VictoryArea style={{ data: { fill: '#e9ecf2' } }} interpolation="natural" data={this.state.data['5']} />
         <VictoryArea style={{ data: { fill: '#c1dfdb' } }} interpolation="natural" data={this.state.data['25']} />
-        <VictoryArea style={{ data: { fill: '#e922f2' } }} interpolation="natural" data={this.state.data['50']} />
+        <VictoryArea style={{ data: { fill: '#17b363' } }} interpolation="natural" data={this.state.data['50']} />
       </VictoryChart>
     );
   }

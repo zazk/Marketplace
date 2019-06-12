@@ -24,25 +24,24 @@ const dataProjects = [
       unit: 'total credits issued',
     },
     verification: {
-      methodology:
-        'IFM Methodology for Quantifying GHG Removals and Emission Reductions through Increased Forest Carbon Sequestration on Non‐Federal U.S. Forestlands v.1.2',
+      methodology: 'IFM Methodology from ACR',
       last_verification: 'September 2018',
     },
-    project_developer: 'https://storage.googleapis.com/marketplace-assets/logo-bluesource.png',
-    auditor: 'https://storage.googleapis.com/marketplace-assets/logo-scs_global_services.png',
+    project_developer: 'Bluesource',
+    auditor: 'SCS Global services',
     total_land: {
       area: 2673,
       unit: 'acres',
     },
-    land_owner: 'https://storage.googleapis.com/marketplace-assets/logo-middlebury.png',
+    land_owner: 'Middlebury College',
     project_images: [
+      {
+        image: 'https://storage.googleapis.com/marketplace-assets/1-image_3.png',
+        caption: 'Middlebury successfully reached its 2016 carbon neutrality goal.',
+      },
       {
         image: 'https://storage.googleapis.com/marketplace-assets/1-image_1.jpg',
         caption: 'Coniferous trees is the more abundant specie on this project.',
-      },
-      {
-        image: 'https://storage.googleapis.com/marketplace-assets/1-image_2.jpg',
-        caption: 'Middlebury successfully reached its 2016 carbon neutrality goal.',
       },
     ],
     badges: {
@@ -117,25 +116,25 @@ const dataProjects = [
       unit: 'total credits issued',
     },
     verification: {
-      methodology: 'ARB 2015 Compliance Offset Protocol for U.S. Forest Projects',
-      last_verification: 'September 2017',
+      methodology: 'IFM Methodology from ACR',
+      last_verification: 'June 2018',
     },
-    project_developer: 'https://storage.googleapis.com/marketplace-assets/logo-bluesource.png',
-    auditor: 'https://storage.googleapis.com/marketplace-assets/logo-scs_global_services.png',
+    project_developer: 'BlueSource',
+    auditor: 'SCS Global Services',
     total_land: {
       area: 5898,
       unit: 'acres',
     },
-    land_owner: 'https://storage.googleapis.com/marketplace-assets/logo-great_mountain_forest.png',
+    land_owner: 'Hudson Farm Club',
     project_images: [
       {
-        image: 'https://storage.googleapis.com/marketplace-assets/2-image_1.jpg',
-        caption:
-          'Harvest cuts require the removal of mature trees to promote the establishment of a new generation of trees and increase the diversity.',
+        image: 'https://storage.googleapis.com/marketplace-assets/2-image_3.jpg',
+        caption: 'The Hudson Farm hike is free, rain or shine and open to everyone.',
       },
       {
-        image: 'https://storage.googleapis.com/marketplace-assets/2-image_2.jpg',
-        caption: 'The Great Mountain Forest Corporation allows public access to the Great Mountain Forest.',
+        image: 'https://storage.googleapis.com/marketplace-assets/2-image_4.jpg',
+        caption:
+          'Harvest cuts require the removal of mature trees to promote the establishment of a new generation of trees and increase the diversity.',
       },
     ],
     badges: {
@@ -200,7 +199,7 @@ const dataProjects = [
     },
     project_type: 'Programmatic Afforestation/Reforestation',
     location: {
-      name: 'Mississippi Alluvial Valley,  Arkansas, USA',
+      name: 'Mississippi Alluvial Valley, Arkansas, USA',
       coordinates: [-91.13530200000001, 35.6479574],
       geojson: geoProjects[2],
     },
@@ -212,11 +211,11 @@ const dataProjects = [
       unit: 'total credits issued',
     },
     verification: {
-      methodology: 'ACR Methodology for Afforestation and Reforestation of Degraded Land, Version 1.0, March 2011',
+      methodology: 'A/R Methodology from ACR',
       last_verification: 'December 2017',
     },
-    project_developer: 'https://storage.googleapis.com/marketplace-assets/logo-acre.png',
-    auditor: 'https://storage.googleapis.com/marketplace-assets/logo-ruby_canyon_engineering.png',
+    project_developer: 'ACRE',
+    auditor: 'Ruby Canyon Engineering',
     total_land: {
       area: 120000,
       unit: 'acres',
@@ -227,10 +226,6 @@ const dataProjects = [
         image: 'https://storage.googleapis.com/marketplace-assets/3-image_1.jpg',
         caption:
           'The focus of GreenTrees is to create a win-win for the private landowner, the environment and the economy. ',
-      },
-      {
-        image: 'https://storage.googleapis.com/marketplace-assets/3-image_2.jpg',
-        caption: 'Tree planting is interplanting of fast growing cottonwoods and native hardwoods.',
       },
     ],
     badges: {

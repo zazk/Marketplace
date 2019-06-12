@@ -10,10 +10,9 @@ function Biomass({ data, projectid }) {
       <div className="content">
         <ItemText
           icontitle="/static/iconos/globe-europe-solid.svg"
-          title="Biomass: looking good"
-          description="We could definitely mention something about how everything is going on this project, but we should definitely."
+          title="Biomass"
+          description="Chart shows biomass over the years"
         />
-        <div className="biomass-grafico" />
         <div className="biomas-grafico-detail flex">
           <figure>
             <BiomassChart projectid={projectid} />
@@ -73,10 +72,10 @@ function Biomass({ data, projectid }) {
             margin-top: 22px;
           }
           .biomas-grafico-detail {
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             figure {
-              width: 54%;
+              width: 74%;
             }
             @media screen and (max-width: 640px) {
               figure {

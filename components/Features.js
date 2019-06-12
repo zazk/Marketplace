@@ -16,8 +16,8 @@ function Features({ data }) {
       description: '',
     },
     {
-      title: `${location[0]}`,
-      description: `${location[1] + location[2]}`,
+      title: `${location[0] + ', ' + location[1] + ', ' + location[2]}`,
+      description: '',
     },
   ];
   const DataFeatureList = () => list.map((item, i) => <ItemListBanner key={i} title={item.title} />);

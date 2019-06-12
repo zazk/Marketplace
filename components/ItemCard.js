@@ -11,7 +11,7 @@ function ItemCard({ title, status, tooltip, tooltipid }) {
       </div>
       <a className="link-imagen" data-tip data-for={tooltipid} href="">
         <img src="/static/iconos/info-circle-solid.svg" width="14" alt="" />
-        <p>What is biomass?</p>
+        <p>What is {title}?</p>
       </a>
       <ReactTooltip
         id={tooltipid}
