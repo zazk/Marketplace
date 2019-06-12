@@ -51,10 +51,18 @@ const dataProjects = [
       verifiability: true,
     },
     summary: {
-      leakage:
-        'Middlebury College does not commercially harvest timber and nearly all forestlands owned by Middlebury College are included in the carbon project, therefore there is no activity-shifting leakage.',
-      additionality:
-        'Additionality for the project has been shown through a regulatory surplus test, a common practice test, and an implementation barrier test. Middlebury College committed to become a carbon neutral college by the end of 2017. Because Middlebury needs to meet its climate goals, if they do not develop the project, by developing a forest carbon offset project, they avoid the expenditures associated with purchasing credits from the market while generating additional revenue for the university without having to harvest timber.',
+      leakage: {
+        text:
+          'Middlebury College does not commercially harvest timber and nearly all forestlands owned by Middlebury College are included in the carbon project, therefore there is no activity-shifting leakage.',
+        source: '',
+        source_link: '',
+      },
+      additionality: {
+        text:
+          'Additionality for the project has been shown through a regulatory surplus test, a common practice test, and an implementation barrier test. Middlebury College committed to become a carbon neutral college by the end of 2017. Because Middlebury needs to meet its climate goals, if they do not develop the project, by developing a forest carbon offset project, they avoid the expenditures associated with purchasing credits from the market while generating additional revenue for the university without having to harvest timber.',
+        source: '',
+        source_link: '',
+      },
       permanence: {
         text:
           "To ensure the permanence of the GHG emission reductions from this project, buffer credits from each of the projects are put on hold in a pool. When a loss event occurs (fire, diseases, pests, etc) buffer credits are taken from this pool. Based on the result of the risk assessment using the 'ACR Tool for Risk Analysis and Buffer Determination' this project will contribute to the buffer pool 18% of their issued credits.",
@@ -62,8 +70,12 @@ const dataProjects = [
         source_link:
           'https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=22355&IDKEY=lkjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909830827545',
       },
-      verifiability:
-        'An objective third party—someone other than Middlebury College and the project developer and —must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services  acted as the third-party verifier in this project, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.',
+      verifiability: {
+        text:
+          'An objective third party—someone other than Middlebury College and the project developer and —must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services  acted as the third-party verifier in this project, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.',
+        source: '',
+        source_link: '',
+      },
     },
     timeline: [
       {
@@ -144,9 +156,17 @@ const dataProjects = [
       verifiability: true,
     },
     summary: {
-      leakage: "TBD - Couldn't find any info on the Docs - We will ask Bluse Source about it :(",
-      additionality:
-        'The project harvest activities will employ uneven-aged silvicultural practices and maintain canopy retention averaging at least 40% across the forest, as measured on any 20 acres within the entire forestland owned by the Forest Owner, including land within and outside of the Project Area. Harvesting activity will maintain and increase carbon stocks well above the baseline. Baseline harvesting activities would include following Best Management Practices (BMPs) for Connecticut. No more than 10% of the total Forest Legacy easement area will be clear-cut within a 10-year period; and at least 50% of the crown canopy shall be maintained when 34 harvesting timber within 100 feet of a stream or water body.',
+      leakage: {
+        text: "TBD - Couldn't find any info on the Docs - We will ask Bluse Source about it :(",
+        source: '',
+        source_link: '',
+      },
+      additionality: {
+        text:
+          'The project harvest activities will employ uneven-aged silvicultural practices and maintain canopy retention averaging at least 40% across the forest, as measured on any 20 acres within the entire forestland owned by the Forest Owner, including land within and outside of the Project Area. Harvesting activity will maintain and increase carbon stocks well above the baseline. Baseline harvesting activities would include following Best Management Practices (BMPs) for Connecticut. No more than 10% of the total Forest Legacy easement area will be clear-cut within a 10-year period; and at least 50% of the crown canopy shall be maintained when 34 harvesting timber within 100 feet of a stream or water body.',
+        source: '',
+        source_link: '',
+      },
       permanence: {
         text:
           "To ensure the permanence of the GHG emission reductions from this project, buffer credits from each of the projects are put on hold in a pool. When a loss event occurs (fire, diseases, pests, etc) buffer credits are taken from this pool. Based on the result of the risk assessment using the 'ACR Tool for Risk Analysis and Buffer Determination' this project will contribute to the buffer pool 17.6% of their issued credits.",
@@ -154,8 +174,12 @@ const dataProjects = [
         source_link:
           'https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=14063&IDKEY=3iofj09234rm9oq4jndsma80vcalksdjf98cxkjaf90823nmq319392877',
       },
-      verifiability:
-        'An objective third party—someone other than Middlebury College and the project developer and —must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services  acted as the third-party verifier in this project, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.',
+      verifiability: {
+        text:
+          'An objective third party—someone other than Middlebury College and the project developer and —must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services  acted as the third-party verifier in this project, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.',
+        source: '',
+        source_link: '',
+      },
     },
     timeline: [
       {
@@ -235,10 +259,18 @@ const dataProjects = [
       verifiability: true,
     },
     summary: {
-      leakage:
-        'The ACR Forest Carbon Project Standard states that Afforestation and Reforestation projects do not generally need to account for market leakage. Also, there is no activity-shifting leakage to be counted because the project makes no claim that agricultural emissions are reduces.',
-      additionality:
-        'The project is implemented on degraded lands that are expected to remain degraded. Agricultural use was continuing prior to the project start, and would have continued in the absence of the project. Discussion with federal land management agencies, consulting foresters, landowners, and investigation by GreenTrees legal counsel has revealed no law or regulation requiring afforestation of agricultural lands in the region, concluding that the project activity is not legally required. GreenTrees demonstrated that without carbon finance, the project would not have gone forward or would have had a below-market rate of return on investment.',
+      leakage: {
+        text:
+          'The ACR Forest Carbon Project Standard states that Afforestation and Reforestation projects do not generally need to account for market leakage. Also, there is no activity-shifting leakage to be counted because the project makes no claim that agricultural emissions are reduces.',
+        source: '',
+        source_link: '',
+      },
+      additionality: {
+        text:
+          'The project is implemented on degraded lands that are expected to remain degraded. Agricultural use was continuing prior to the project start, and would have continued in the absence of the project. Discussion with federal land management agencies, consulting foresters, landowners, and investigation by GreenTrees legal counsel has revealed no law or regulation requiring afforestation of agricultural lands in the region, concluding that the project activity is not legally required. GreenTrees demonstrated that without carbon finance, the project would not have gone forward or would have had a below-market rate of return on investment.',
+        source: '',
+        source_link: '',
+      },
       permanence: {
         text:
           "To ensure the permanence of the GHG emission reductions from this project, buffer credits from each of the projects are put on hold in a pool. When a loss event occurs (fire, diseases, pests, etc) buffer credits are taken from this pool. Each issue is addressed and the risk buffer withholding proportion is calculated using the 'VCS AFOLU NonPermanence Risk Tool, v3.0, issued March 2011'. Based on the result of the risk assessment this project will contribute to the buffer pool 20.5% of their issued credits.",
@@ -246,8 +278,12 @@ const dataProjects = [
         source_link:
           'https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=8018&IDKEY=d097809fdslkjf09rndasfufd098asodfjlkduf09nm23mrn87d11056822',
       },
-      verifiability:
-        'An objective third party—someone other than the landowners and the project developer and —must be able to look at project data and confirm that the carbon reductions are real and credible. Ruby Canyon Engineering and Environmental Services, Inc. acted as the third-party verifiers in this project since 2011, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.',
+      verifiability: {
+        text:
+          'An objective third party—someone other than the landowners and the project developer and —must be able to look at project data and confirm that the carbon reductions are real and credible. Ruby Canyon Engineering and Environmental Services, Inc. acted as the third-party verifiers in this project since 2011, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.',
+        source: '',
+        source_link: '',
+      },
     },
     extras: {
       'Social and Economic Co-Benefits':
@@ -301,6 +337,108 @@ const dataProjects = [
       'https://storage.googleapis.com/marketplace-assets/un_goals-8.png',
       'https://storage.googleapis.com/marketplace-assets/un_goals-13.png',
       'https://storage.googleapis.com/marketplace-assets/un_goals-15.png',
+    ],
+    tagline_footer:
+      'With every ton of carbon that is sold, trees are protected, partnerships are formed, and our living Earth is restored to help solve climate change.',
+  },
+  {
+    title: 'Hudson Farm Improved Forest Management Project',
+    tagline:
+      'Hudson Farm is a conglomerate of several adjacent parcels, joining together as a conservation and recreation-based property.',
+    main_picture: 'https://drive.google.com/a/pachama.com/file/d/11li6KRWmS8u7R3RQd51yw2zI42c7TDLv/view?usp=sharing',
+    credits_avail: {
+      quatinty: 10000,
+      unit: 'credtis',
+    },
+    project_type: 'Improved Forest Management',
+    location: 'Andover, New Jersey, USA',
+    standard: 'https://drive.google.com/a/pachama.com/file/d/1gfnuWhb6-GRFH-pZi1Y70SThwSFQ_kh5/view?usp=sharing',
+    project_summary:
+      'Project is located on over 3,600 acres of mixed hardwood and conifer forest in northern New Jersey. By committing to maintain forest CO2 stocks above the regional common practice, the project is providing significant climate benefits through carbon sequestration. Few recreation and wildlife onservation opportunities to this scale remain in private ownership within proximity to major cities such as New York and Philadelphia. The Project improves forest management on Middlebury College’s forests, with Middlebury’s forest management practices representing an improvement in the carbon storage and conservation value compared to higher return management regimes of industrial private lands in the region, which are characterized by shorter, even-aged rotations. This project ensures the long-term conservation and sustainable management of the forest, promotes healthy wildlife habitat, and prevents future compromise of the forest carbon stocks. By committing to maintain forest CO2 stocks above the regional common practice, the project will provide significant climate benefits through carbon sequestration.',
+    credits_issued: {
+      quatinty: 48096,
+      unit: 'total credits issued',
+    },
+    verification: {
+      methodology: 'IFM Methodology from ACR',
+      last_verification: 'June 2018',
+    },
+    project_developer: 'Bluesource',
+    auditor: 'SCS Global Services',
+    total_land: {
+      area: 3174,
+      unit: 'acres',
+    },
+    land_owner: 'Hudson Farm Club',
+    project_images: [
+      {
+        image: 'https://drive.google.com/a/pachama.com/file/d/1hEh-L97JeQm28_DE2yzOqA4wNxDx_O2v/view?usp=sharing',
+        caption: 'Hudson Farm is one of the largest working forests in the state.',
+      },
+      {
+        image: 'https://drive.google.com/a/pachama.com/file/d/1IB5ypxtsHlH42Gr35fSGOMtL7YnMqYAZ/view?usp=sharing',
+        caption: 'The Hudson Farm hike is free, rain or shine and open to everyone.',
+      },
+    ],
+    badges: {
+      leakage: true,
+      additionality: true,
+      permanence: true,
+      verifiability: true,
+    },
+    summary: {
+      leakage: {
+        text:
+          'All actively harvesting forestlands in the project area have been certified by Tree Farm. To prevent activity-shifting leakage, IAT Reinsurance will not conduct harvests on other lands under its ownership that would offset the harvest reductions attributable to the project. Therefore, leakage is limited to market leakage. We conservatively assume market leakage of 40%.',
+        source: 'Section B2 from Project Description Document',
+        source_link:
+          'https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=24632&IDKEY=kkjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909k33967528',
+      },
+      additionality: {
+        text:
+          'Additionality for the project has been shown through a regulatory surplus test. There is no relevant laws, regulations, statues, legal rulings, and other regulatory frameworks that effectively requires the forest carbon project activity and its associated GHG emissions reductions/removal enhancements. Consequently, the project passes the Regulatory Surplus test.',
+        source: 'Section C1 from Project Description Document',
+        source_link:
+          'https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=24632&IDKEY=kkjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909k33967528',
+      },
+      permanence: {
+        text:
+          "To ensure the permanence of the GHG emission reductions from this project, buffer credits from each of the projects are put on hold in a pool. When a loss event occurs (fire, diseases, pets, etc) buffer credits are taken from this pool. Based on the result of the risk assessment using the 'ACR Tool for Risk Analysis and Buffer Determination' this project will contribute to the buffer pool 18% of their issued credits.",
+        source: 'Section B8 from Project Description Document',
+        source_link:
+          'https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=24632&IDKEY=kkjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909k33967528',
+      },
+      verifiability: {
+        text:
+          'An objective third party—someone other than Middlebury College and the project developer and —must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services  acted as the third-party verifier in this project, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.',
+        source: '',
+        source_link: '',
+      },
+    },
+    timeline: [
+      {
+        date: 'June 2017',
+        text: 'Project start date',
+      },
+      {
+        date: 'June 2017',
+        text: '1st Verification started',
+      },
+      {
+        date: 'June 2018',
+        text: '1st Verification finished',
+      },
+      {
+        date: '2023',
+        text: 'Next issuance of credits',
+      },
+    ],
+    project_files:
+      'https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=368',
+    un_goals: [
+      'https://drive.google.com/a/pachama.com/file/d/1lIviB8r9rb-Nx47wJC5wRJhxAkvcqh4d/view?usp=sharing',
+      'https://drive.google.com/a/pachama.com/file/d/1OoTnC36Zlw87kHvCuwZD5PGjdg6iyvn6/view?usp=sharing',
+      'https://drive.google.com/a/pachama.com/file/d/1GL3fpujkCEUTpyYDFfaxoA90dhyOR1p5/view?usp=sharing',
     ],
     tagline_footer:
       'With every ton of carbon that is sold, trees are protected, partnerships are formed, and our living Earth is restored to help solve climate change.',
