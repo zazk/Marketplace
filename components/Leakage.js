@@ -10,8 +10,20 @@ function Leakage({ data }) {
       <div className="content flex">
         <div className="leakage-description">
           <span className="leakage-bg" />
-          <ItemText type="two" title="Leakage" description={project.leakage} />
-          <ItemText type="two" title="Additionality" description={project.additionality} />
+          <ItemText
+            type="two"
+            title="Leakage"
+            description={project.leakage.text}
+            source={project.leakage.source}
+            source_link={project.leakage.source_link}
+          />
+          <ItemText
+            type="two"
+            title="Additionality"
+            description={project.additionality.text}
+            source={project.additionality.source}
+            source_link={project.additionality.source_link}
+          />
           <ItemText
             type="two"
             title="Permanence"
@@ -19,7 +31,13 @@ function Leakage({ data }) {
             source={project.permanence.source}
             source_link={project.permanence.source_link}
           />
-          <ItemText type="two" title="Verifiability" description={project.verifiability} />
+          <ItemText
+            type="two"
+            title="Permanence"
+            description={project.verifiability.text}
+            source={project.verifiability.source}
+            source_link={project.verifiability.source_link}
+          />
         </div>
         <SideBar data={data} />
       </div>

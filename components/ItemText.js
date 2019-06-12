@@ -13,7 +13,7 @@ function ItemText({ iconcard, type, title, description, card, source, source_lin
         <p>{description}</p>
       </div>
       <div className="item-source">
-        {source && (
+        {source && source != '' && (
           <span>
             Source: <a href={source_link}>{source}</a>
           </span>
