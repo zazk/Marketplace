@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Header from './Header';
-
-export default ({ children, title = 'This is the default title' }) => {
+export default ({ dashboard, children, title = 'This is the default title' }) => {
   const UrlFont = '../static/assets/fonts/';
   return (
     <div>
@@ -15,8 +14,7 @@ export default ({ children, title = 'This is the default title' }) => {
         />
       </Head>
       <div className="cnt-wrapper">
-        <Header />
-
+        {!dashboard && <Header />}
         {children}
 
         <footer />
@@ -45,8 +43,19 @@ export default ({ children, title = 'This is the default title' }) => {
           font-weight: normal;
           font-style: normal;
         }
+        li{
+          margin:0;
+          list-style:none;
+        }
+        a{
+          text-decoration:none;
+          color:inherit;
+        }
         .cnt-wrapper{
           overflow:hidden;
+        }
+        button:focus, select:focus, input:focus{
+          outline:none
         }
         body{
           margin:0px;
@@ -55,6 +64,11 @@ export default ({ children, title = 'This is the default title' }) => {
           -webkit-font-smoothing: antialiased;
           -webkit-tap-highlight-color: transparent;
         }
+        button {
+              border: none;
+              background: none;
+              padding: 0;
+            }
         .tab-feature-item {
           width: 50%;
           margin-bottom: 20px;
@@ -99,6 +113,7 @@ export default ({ children, title = 'This is the default title' }) => {
           cursor: pointer;
           border:none;
           border-radius:2px;
+
           &.gray {
             width: 210px;
             border: solid 1px #979797;
