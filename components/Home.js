@@ -12,13 +12,16 @@ import ControlsProject from './ControlsProject';
 function Home({ id }) {
   let index = id ? id : 0;
   const itemsProject = dataProjects.length;
-  const project = dataProjects[index];
+  const project = dataProjects[index]['pdp'];
+  console.log(project);
+  const biomass = dataProjects[index]['biomass'];
+  const geojson = dataProjects[index]['geojson'];
   return (
     <section className="home">
       <Features data={project} />
-      <MapContainer data={project} />
+      <MapContainer data={project} geojson={geojson} />
       <FeatureProduct data={project} />
-      <Biomass data={project} projectid={index} />
+      <Biomass data={project} biomass={biomass} />
       <Leakage data={project} />
       <Pay data={project} />
       <ControlsProject id={index} items={itemsProject} data={dataProjects} />

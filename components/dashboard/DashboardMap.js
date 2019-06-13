@@ -14,7 +14,7 @@ const INITIAL_VIEW_STATE = {
   pitch: 50,
 };
 
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/picasso';
+const tileServer = 'https://storage.googleapis.com/new-england-biomass/dali';
 //pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA
 export const lightSettings = {
   lightsPosition: [-125, 50.5, 5000, -122.8, 48.5, 8000],

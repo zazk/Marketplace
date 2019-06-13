@@ -37,7 +37,7 @@ const lightingEffect = new LightingEffect({ ambientLight, pointLight1, pointLigh
 // https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Tile_servers
 //const tileServer = 'https://c.tile.openstreetmap.org/';
 //const tileServer = 'https://c.tile.openstreetmap.org/';
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/picasso';
+const tileServer = 'https://storage.googleapis.com/new-england-biomass/dali';
 const geojson = {
   type: 'FeatureCollection',
   features: [
@@ -76,7 +76,7 @@ export class MapContainer extends PureComponent {
         bearing: -10,
         pitch: 50,
       },
-      geojson: this.props.data.location.geojson,
+      geojson: this.props.geojson,
     };
     this._onViewStateChange = this._onViewStateChange.bind(this);
     (this.mapWidgetElement = null), (this._onHover = this._onHover.bind(this));
@@ -93,7 +93,7 @@ export class MapContainer extends PureComponent {
         ...this.state.viewState,
         longitude: this.props.data.location.coordinates[0],
         latitude: this.props.data.location.coordinates[1],
-        zoom: 16,
+        zoom: 14,
         transitionDuration: 18000,
         transitionInterpolator: new FlyToInterpolator(),
       },
