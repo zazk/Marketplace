@@ -1,9 +1,18 @@
 import React, { PureComponent } from 'react';
 import { render } from 'react-dom';
 
-import DeckGL, { MapView, GeoJsonLayer, TileLayer, BitmapLayer, FlyToInterpolator } from 'deck.gl';
+import DeckGL, { View, MapController, MapView, GeoJsonLayer, TileLayer, BitmapLayer, FlyToInterpolator } from 'deck.gl';
 import { StaticMap } from 'react-map-gl';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
+
+const INITIAL_VIEW_STATE = {
+  latitude: 43.81309548743646,
+  longitude: -73.43456928875162,
+  zoom: 10,
+  maxZoom: 17,
+  bearing: -10,
+  pitch: 50,
+};
 
 const tileServer = 'https://storage.googleapis.com/new-england-biomass/picasso';
 //pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA
@@ -61,7 +70,7 @@ const geojson = {
   ],
 };
 
-export class MapDetails extends PureComponent {
+export class DashboardMap extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -75,21 +84,21 @@ export class MapDetails extends PureComponent {
       },
       geojson: geojson,
     };
-    this._onViewStateChange = this._onViewStateChange.bind(this);
+    //this._onViewStateChange = this._onViewStateChange.bind(this);
     (this.mapWidgetElement = null), (this._onHover = this._onHover.bind(this));
     this._renderTooltip = this._renderTooltip.bind(this);
   }
 
   componentDidMount() {
-    this._goToProject();
+    //this._goToProject();
   }
 
   _goToProject() {
     this.setState({
       viewState: {
         ...this.state.viewState,
-        longitude: this.props.data.location.coordinates[0],
-        latitude: this.props.data.location.coordinates[1],
+        latitude: 43.81309548743646,
+        longitude: -73.43456928875162,
         zoom: 16,
         transitionDuration: 18000,
         transitionInterpolator: new FlyToInterpolator(),
@@ -98,7 +107,7 @@ export class MapDetails extends PureComponent {
   }
 
   _onViewStateChange({ viewState }) {
-    this.setState({ viewState });
+    //this.setState({ viewState });
   }
 
   _onHover({ x, y, sourceLayer, tile }) {
@@ -161,45 +170,53 @@ export class MapDetails extends PureComponent {
   }
 
   render() {
-    const { controller = false } = this.props;
+    const { controller = true } = this.props;
     const { viewState } = this.state;
     return (
-      <div className="map-feature flex content">
-        <DeckGL viewState={viewState} layers={this._renderLayers()} controller={controller}>
+      <div className="detail-map">
+        <DeckGL
+          initialViewState={INITIAL_VIEW_STATE}
+          viewState={viewState}
+          controller={controller}
+          views={[
+            new MapView({ id: 'main' }),
+            new MapView({
+              id: 'minimap',
+              viewStateId: 'main',
+              controller: false,
+              x: '70%',
+              y: '75%',
+              width: '25%',
+              height: '20%',
+              clear: true,
+              viewStateFilter: viewState => Object.assign(viewState, { zoom: 11, pitch: 0, bearing: 0 }),
+            }),
+          ]}
+          layers={this._renderLayers()}
+        >
           {this._renderTooltip}
           <StaticMap
+            reuseMaps
+            preventStyleDiffing={true}
             mapboxApiAccessToken="pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA"
-            mapStyle="mapbox://styles/mapbox/light-v10"
+            mapStyle="mapbox://styles/mapbox/satellite-v9"
           />
+          <View id="minimap">
+            <StaticMap
+              reuseMaps
+              mapStyle="mapbox://styles/mapbox/light-v10"
+              preventStyleDiffing={true}
+              mapboxApiAccessToken="pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA"
+            />
+          </View>
         </DeckGL>
         <style jsx>
           {`
-            .map-feature {
-              position: relative;
-              width: 100%;
-              minwidth: 100%;
-              height: 400px;
-              maxwidth: 400px;
-              maxheight: 400px;
-              figure {
-                width: 28%;
-                height: 400px;
+            .detail-map {
+              figure img {
+                width: 100%;
+                height: calc(100vh - 70px);
               }
-              @media screen and (max-width: 480px) {
-                figure {
-                  width: 100%;
-                  margin-bottom: 20px;
-                  text-align: center;
-                }
-              }
-            }
-            .map-feature {
-              background-color: #d8d8d8;
-              justify-content: space-between;
-            }
-            .map-feature.content {
-              padding: 26px;
-              margin-top: 40px;
             }
           `}
         </style>
@@ -208,4 +225,4 @@ export class MapDetails extends PureComponent {
   }
 }
 
-export default MapContainer;
+export default DashboardMap;
