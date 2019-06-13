@@ -7,7 +7,7 @@ const dataProjects = [
       'Located on 2,673.2 acres of mixed hardwood and conifer forest in the Adirondacks of central Vermont, the Middlebury College developed this project to become a carbon-neutral entity by offseting the carbon produced through the college’s operations.',
     main_picture: 'https://storage.googleapis.com/marketplace-assets/1-main_picture.jpg',
     credits_avail: {
-      quatinty: 10000,
+      quatinty: '232,000',
       unit: 'credits',
     },
     project_type: 'Improved Forest Management',
@@ -30,8 +30,8 @@ const dataProjects = [
     project_developer: 'Bluesource',
     auditor: 'SCS Global services',
     total_land: {
-      area: 2673,
-      unit: 'acres',
+      area: 10.81,
+      unit: 'km²',
     },
     land_owner: 'Middlebury College',
     project_images: [
@@ -134,8 +134,8 @@ const dataProjects = [
     project_developer: 'BlueSource',
     auditor: 'SCS Global Services',
     total_land: {
-      area: 5898,
-      unit: 'acres',
+      area: 23.86,
+      unit: 'km²',
     },
     land_owner: 'Hudson Farm Club',
     project_images: [
@@ -241,8 +241,8 @@ const dataProjects = [
     project_developer: 'ACRE',
     auditor: 'Ruby Canyon Engineering',
     total_land: {
-      area: 120000,
-      unit: 'acres',
+      area: 485.62,
+      unit: 'km²',
     },
     land_owner: '450 different landowners',
     project_images: [
@@ -347,7 +347,7 @@ const dataProjects = [
       'Hudson Farm is a conglomerate of several adjacent parcels, joining together as a conservation and recreation-based property.',
     main_picture: 'https://storage.googleapis.com/marketplace-assets/4-main_picture.jpg',
     credits_avail: {
-      quatinty: 10000,
+      quatinty: '10,000',
       unit: 'credtis',
     },
     project_type: 'Improved Forest Management',
@@ -370,8 +370,8 @@ const dataProjects = [
     project_developer: 'Bluesource',
     auditor: 'SCS Global Services',
     total_land: {
-      area: 3174,
-      unit: 'acres',
+      area: 12.84,
+      unit: 'km²',
     },
     land_owner: 'Hudson Farm Club',
     project_images: [

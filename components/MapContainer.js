@@ -6,16 +6,6 @@ import { StaticMap } from 'react-map-gl';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 
 //pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA
-
-export const INITIAL_VIEW_STATE = {
-  latitude: 43.81309548743646,
-  longitude: -73.43456928875162,
-  zoom: 7.5,
-  maxZoom: 14,
-  bearing: -10,
-  pitch: 50,
-};
-
 export const lightSettings = {
   lightsPosition: [-125, 50.5, 5000, -122.8, 48.5, 8000],
   ambientRatio: 0.2,
@@ -47,7 +37,7 @@ const lightingEffect = new LightingEffect({ ambientLight, pointLight1, pointLigh
 // https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Tile_servers
 //const tileServer = 'https://c.tile.openstreetmap.org/';
 //const tileServer = 'https://c.tile.openstreetmap.org/';
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/neBiomass';
+const tileServer = 'https://storage.googleapis.com/new-england-biomass/picasso';
 const geojson = {
   type: 'FeatureCollection',
   features: [
@@ -81,8 +71,8 @@ export class MapContainer extends PureComponent {
       viewState: {
         latitude: 43.81309548743646,
         longitude: -73.43456928875162,
-        zoom: 7.5,
-        maxZoom: 14,
+        zoom: 10,
+        maxZoom: 17,
         bearing: -10,
         pitch: 50,
       },
@@ -103,7 +93,7 @@ export class MapContainer extends PureComponent {
         ...this.state.viewState,
         longitude: this.props.data.location.coordinates[0],
         latitude: this.props.data.location.coordinates[1],
-        zoom: 15.5,
+        zoom: 16,
         transitionDuration: 18000,
         transitionInterpolator: new FlyToInterpolator(),
       },
@@ -141,8 +131,8 @@ export class MapContainer extends PureComponent {
         highlightColor,
         opacity: 1,
         // https://wiki.openstreetmap.org/wiki/Zoom_levels
-        minZoom: 0,
-        maxZoom: 13,
+        minZoom: 10,
+        maxZoom: 17,
         renderSubLayers: props => {
           const { x, y, z, bbox } = props.tile;
           const { west, south, east, north } = bbox;
@@ -157,7 +147,7 @@ export class MapContainer extends PureComponent {
         id: 'objectSelected',
         data: this.state.geojson,
         opacity: 2,
-        stroked: false,
+        stroked: true,
         filled: true,
         extruded: true,
         wireframe: false,
@@ -167,14 +157,14 @@ export class MapContainer extends PureComponent {
         pickable: true,
         autoHighlight: true,
         getLineColor: [255, 255, 255],
-        getColor: [20, 80, 220],
-        getFillColor: [254, 237, 177, 100],
+        getColor: [247, 4, 91],
+        getFillColor: [178, 25, 255, 130],
       }),
     ];
   }
 
   render() {
-    const { controller = true } = this.props;
+    const { controller = false } = this.props;
     const { viewState } = this.state;
     return (
       <div className="map-feature flex content">
@@ -185,7 +175,7 @@ export class MapContainer extends PureComponent {
             <div className="imagen-numbers">
               <div className="numbers-item">0</div>
               <div className="numbers-item">...</div>
-              <div className="numbers-item">10000</div>
+              <div className="numbers-item">10,000</div>
             </div>
           </div>
           <div className="imagen-text-item">
@@ -201,7 +191,7 @@ export class MapContainer extends PureComponent {
             <p>What is biomass?</p>
           </a>
         </div>
-        <DeckGL viewState={viewState} layers={this._renderLayers()} effects={[lightingEffect]} controller={controller}>
+        <DeckGL viewState={viewState} layers={this._renderLayers()} controller={controller}>
           {this._renderTooltip}
           <StaticMap
             mapboxApiAccessToken="pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA"
