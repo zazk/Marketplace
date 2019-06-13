@@ -19,7 +19,7 @@ function Details() {
         <DetailHead />
         <div className="detail-main flex">
           <div className="detail-aside">
-            <div className="spaces">
+            <div className="spaces wrap-head-tab">
               <div className="aside-head-tab flex">
                 <button className={activeTab === 0 && 'active'} onClick={() => setActiveTab(0)}>
                   Insights
@@ -38,10 +38,12 @@ function Details() {
                 <Georeferenciadas />
               </div>
               <div className={`aside-item-tab ${activeTab === 1 && 'active'}`}>
-                <InfoResumen />
-                <InfoDescription />
-                <InfoList />
-                <InfoLogo />
+                <div className="spaces">
+                  <InfoResumen />
+                  <InfoDescription />
+                  <InfoList />
+                  <InfoLogo />
+                </div>
               </div>
             </div>
           </div>
@@ -75,7 +77,7 @@ function Details() {
             }
 
             .detail-aside {
-              padding-top: 25px;
+              padding-top: 90px;
               .aside-title {
                 margin: 0;
                 font-weight: 700;
@@ -90,19 +92,35 @@ function Details() {
                   margin-top: 40px;
                 }
               }
+              .wrap-head-tab {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                position: fixed;
+                left: 0;
+                width: 420px;
+                box-sizing: border-box;
+                top: 67px;
+                background-color: #fafafa;
+                z-index: 10;
+              }
               .aside-head-tab {
-                border: 1px solid #979797;
-                margin-bottom: 15px;
+                background-color: rgba(65, 130, 142, 0.1);
+                border-radius: 20px;
+                justify-content: space-between;
                 button {
                   cursor: pointer;
-                  width: 50%;
-                  height: 36px;
-                  &:last-child {
-                    border-left: 1px solid #979797;
-                  }
+                  width: 49%;
+                  height: 45px;
+                  border-radius: 20px 20px 0px 20px;
+                  font-weight: 700;
+                  color: #c1c5d0;
+                  font-size: 16px;
+                  line-height: 24px;
                   &:hover,
                   &.active {
-                    background-color: #d8d8d8;
+                    color: #41828e;
+                    background-color: #fff;
+                    box-shadow: 0 5px 20px 0 rgba(7, 93, 108, 0.16);
                   }
                 }
               }
