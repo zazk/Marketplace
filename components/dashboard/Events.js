@@ -4,26 +4,28 @@ function Events() {
   return (
     <div className="wraps-events">
       <h3 className="aside-title">upcoming events</h3>
-      <div className="events-item">
-        <h3 className="event-title">
-          <span className="event-circle" />
-          Tree planting
-          <span className="event-date">In 15 days</span>
-        </h3>
-        <div className="event-wrap-tags">
-          <span className="event-tag">biomass ++</span>
-          <span className="event-tag">biodiversity ++</span>
+      <div className="spaces">
+        <div className="events-item">
+          <h3 className="event-title">
+            <span className="event-circle" />
+            Tree planting
+            <span className="event-date">In 15 days</span>
+          </h3>
+          <div className="event-wrap-tags">
+            <span className="event-tag">biomass ++</span>
+            <span className="event-tag">biodiversity ++</span>
+          </div>
         </div>
-      </div>
-      <div className="events-item">
-        <h3 className="event-title">
-          <span className="event-circle" />
-          Tree planting
-          <span className="event-date">In 15 days</span>
-        </h3>
-        <div className="event-wrap-tags">
-          <span className="event-tag">biomass ++</span>
-          <span className="event-tag">biodiversity ++</span>
+        <div className="events-item">
+          <h3 className="event-title">
+            <span className="event-circle" />
+            Tree planting
+            <span className="event-date">In 15 days</span>
+          </h3>
+          <div className="event-wrap-tags">
+            <span className="event-tag">biomass ++</span>
+            <span className="event-tag">biodiversity ++</span>
+          </div>
         </div>
       </div>
       <style jsx>

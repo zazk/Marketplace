@@ -4,13 +4,15 @@ function Georeferenciadas() {
   return (
     <div className="detail-wrap-modulos">
       <h3 className="aside-title modulos">Modulo de fotitos georeferenciadas</h3>
-      <div className="detail-modulos flex">
-        <div className="modulo-item" />
-        <div className="modulo-item" />
-        <div className="modulo-item" />
-        <div className="modulo-item" />
-        <div className="modulo-item" />
-        <div className="modulo-item" />
+      <div className="spaces">
+        <div className="detail-modulos flex">
+          <div className="modulo-item" />
+          <div className="modulo-item" />
+          <div className="modulo-item" />
+          <div className="modulo-item" />
+          <div className="modulo-item" />
+          <div className="modulo-item" />
+        </div>
       </div>
       <style jsx>
         {`

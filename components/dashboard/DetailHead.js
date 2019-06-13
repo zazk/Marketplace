@@ -1,21 +1,22 @@
 import React from 'react';
-
 function DetailHead() {
   return (
     <div className="detail-header flex">
       <div className="head-left flex">
         <button className="volver-detail">
-          <img src="/static/iconos/arrow-head.svg" width="14" height="28" alt="" />
+          <img src="/static/iconos/arrow-head.svg" width="11" alt="" />
         </button>
         <figure className="detail-logo-project">
-          <img src="https://via.placeholder.com/90x28" width="90" alt="" />
+          <img src="/static/assets/images/isotipo.png" width="30" alt="" />
         </figure>
         <h2 className="head-name-project">Boulder Creek National Reserve</h2>
       </div>
       <div className="head-right flex">
         <div className="wrap-menu-head wrap-drodown" data-position="right">
-          <button className="detail-menu">
-            <span>...</span>
+          <button className="detail-menu-btn">
+            <span />
+            <span />
+            <span />
           </button>
           <div className="dropdown">
             <ul className="dropdown-main">
@@ -43,7 +44,9 @@ function DetailHead() {
           </div>
         </div>
         <div className="wrap-btn wrap-drodown" data-position="right">
-          <button className="detail-btn btn">REQUEST</button>
+          <button className="detail-btn btn">
+            Request <img src="/static/iconos/arrow-down-white.svg" alt="" />
+          </button>
           <div className="dropdown">
             <ul className="dropdown-main">
               <li className="dropdown-item">
@@ -76,23 +79,26 @@ function DetailHead() {
             justify-content: space-between;
             align-items: center;
             padding: 0 15px;
-            height: 58px;
+            height: 70px;
             border-bottom: 1px solid rgba(151, 151, 151, 0.3);
             box-sizing: border-box;
             .detail-logo-project {
               margin-left: 18px;
             }
-            .detail-menu {
+            .detail-menu-btn {
               text-align: center;
               position: relative;
               width: 30px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               span {
-                margin-top: 5px;
-                font-size: 30px;
-                font-weight: 700;
-                position: absolute;
-                top: -10px;
-                left: 0;
+                width: 4px;
+                height: 4px;
+                margin: 0 2px;
+                border-radius: 100%;
+                display: block;
+                background-color: #4a4a4a;
               }
             }
             .wrap-menu-head {
@@ -105,16 +111,25 @@ function DetailHead() {
               margin-left: 25px;
             }
             .btn {
-              width: 133px;
-              height: 39px;
-              font-size: 14px;
+              width: 173px;
+              height: 50px;
+              font-size: 16px;
+
+              background-size: 100%;
+              background-color: transparent;
+              background-image: url('/static/assets/images/btn-head.svg');
+              img {
+                margin-left: 5px;
+              }
             }
             .head-name-project {
               margin: 0;
               font-size: 16px;
               line-height: 33px;
-              font-weight: 50;
               margin-left: 13px;
+              font-family: serif;
+              font-family: 'Work Sans', sans-serif;
+              font-weight: 700;
             }
           }
         `}

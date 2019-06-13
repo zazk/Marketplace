@@ -19,13 +19,15 @@ function Details() {
         <DetailHead />
         <div className="detail-main flex">
           <div className="detail-aside">
-            <div className="aside-head-tab flex">
-              <button className={activeTab === 0 && 'active'} onClick={() => setActiveTab(0)}>
-                Insights
-              </button>
-              <button className={activeTab === 1 && 'active'} onClick={() => setActiveTab(1)}>
-                Project information
-              </button>
+            <div className="spaces">
+              <div className="aside-head-tab flex">
+                <button className={activeTab === 0 && 'active'} onClick={() => setActiveTab(0)}>
+                  Insights
+                </button>
+                <button className={activeTab === 1 && 'active'} onClick={() => setActiveTab(1)}>
+                  Project information
+                </button>
+              </div>
             </div>
             <div className="aside-content-tab">
               <div className={`aside-item-tab ${activeTab === 0 && 'active'}`}>
@@ -49,6 +51,10 @@ function Details() {
         </div>
         <style jsx global>
           {`
+            .spaces {
+              padding-left: 20px;
+              padding-right: 20px;
+            }
             .detail-project {
               color: #363636;
             }
@@ -56,28 +62,30 @@ function Details() {
               justify-content: space-between;
             }
             .detail-aside {
-              width: 420px;
-              padding-left: 20px;
-              padding-right: 20px;
+              width: 430px;
               box-sizing: border-box;
-              height: calc(100vh - 58px);
+              height: calc(100vh - 70px);
               overflow: auto;
               box-sizing: border-box;
+              box-shadow: 2px 0 5px 0 rgba(65, 130, 142, 0.19);
+              background-color: #fafafa;
             }
             .detail-wrap-map {
-              width: calc(100vw - 420px);
+              width: calc(100vw - 430px);
             }
 
             .detail-aside {
               padding-top: 25px;
               .aside-title {
                 margin: 0;
-                font-weight: 50;
+                font-weight: 700;
                 font-size: 12px;
-                color: #000;
+                font-family: 'Work Sans', sans-serif;
+                color: rgba(54, 54, 54, 0.8);
                 text-transform: uppercase;
-                margin-bottom: 15px;
-                font-weight: 500;
+                margin-bottom: 13px;
+                padding-left: 20px;
+                padding-right: 20px;
                 &.modulos {
                   margin-top: 40px;
                 }

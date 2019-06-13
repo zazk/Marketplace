@@ -4,8 +4,10 @@ function MapDetail() {
     <div>
       <div className="detail-legend">
         <div className="legend-select wrap-drodown">
-          <img className="legend-select-icon" src="/static/iconos/arrow-head.svg" width="6" alt="" />
-          <span className="label-select">BIOMASS</span>
+          <div className="btn-legend-select">
+            <span className="label-select">BIOMASS</span>
+            <img className="legend-select-icon" src="/static/iconos/arrow-head.svg" width="6" alt="" />
+          </div>
           <div className="dropdown">
             <ul className="dropdown-main">
               <li className="dropdown-item">
@@ -32,13 +34,8 @@ function MapDetail() {
           </div>
         </div>
         <figure>
-          <img src="/static/assets/images/bar-biomas.png" width="496" alt="" />
+          <img src="/static/assets/images/graphic-biomass.png" width="234" alt="" />
         </figure>
-        <div className="imagen-legend">
-          <div className="numbers-legend">0</div>
-          <div className="numbers-legend">...</div>
-          <div className="numbers-legend">10000</div>
-        </div>
       </div>
 
       <div className="detail-map">
@@ -49,14 +46,27 @@ function MapDetail() {
       <style jsx>
         {`
           .detail-legend {
-            width: 270px;
-            padding: 15px;
+            width: 234px;
+            padding-top: 16px;
+            height: 108px;
+            border-radius: 10px;
+            box-shadow: 0 0 1px 2px rgba(9, 43, 49, 0.14);
+            background-color: #ffffff;
             box-sizing: border-box;
             position: absolute;
             top: 13px;
             left: 18px;
             z-index: 1;
-            background-color: #fff;
+            figure {
+              border-radius: 0px 0px 10px 10px;
+              overflow: hidden;
+
+              img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+              }
+            }
           }
           .imagen-legend {
             display: flex;
@@ -74,14 +84,10 @@ function MapDetail() {
             }
           }
           .legend-select-icon {
-            position: absolute;
-            top: 7px;
-            right: 8px;
             transform: rotate(-90deg);
           }
 
           .legend-select {
-            border: 1px solid #302424;
             display: inline-block;
             position: relative;
             margin-bottom: 10px;
@@ -91,21 +97,19 @@ function MapDetail() {
               color: #000;
               font-size: 12px;
               font-weight: 500;
-              height: 25px;
-              display: block;
-              padding: 0 10px;
-              padding-right: 30px;
-              display: flex;
-              align-items: center;
-              &:hover {
-                background-color: #ccc;
+              padding-left: 16px;
+              padding-right: 10px;
+            }
+            &:hover {
+              span {
+                text-decoration: underline;
               }
             }
           }
           .detail-map {
             figure img {
               width: 100%;
-              height: calc(100vh - 58px);
+              height: calc(100vh - 70px);
             }
           }
         `}
