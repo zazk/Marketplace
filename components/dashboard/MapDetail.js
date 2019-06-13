@@ -1,4 +1,6 @@
 import React from 'react';
+import DashboardMap from './DashboardMap';
+
 function MapDetail() {
   return (
     <div>
@@ -37,12 +39,7 @@ function MapDetail() {
           <img src="/static/assets/images/graphic-biomass.png" width="234" alt="" />
         </figure>
       </div>
-
-      <div className="detail-map">
-        <figure>
-          <img src="https://via.placeholder.com/821x742" width="821" alt="" />
-        </figure>
-      </div>
+      <DashboardMap />
       <style jsx>
         {`
           .detail-legend {
@@ -104,12 +101,6 @@ function MapDetail() {
               span {
                 text-decoration: underline;
               }
-            }
-          }
-          .detail-map {
-            figure img {
-              width: 100%;
-              height: calc(100vh - 70px);
             }
           }
         `}
