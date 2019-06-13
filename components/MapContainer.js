@@ -37,7 +37,7 @@ const lightingEffect = new LightingEffect({ ambientLight, pointLight1, pointLigh
 // https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Tile_servers
 //const tileServer = 'https://c.tile.openstreetmap.org/';
 //const tileServer = 'https://c.tile.openstreetmap.org/';
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/picasso';
+const tileServer = 'https://storage.googleapis.com/new-england-biomass/dali';
 const geojson = {
   type: 'FeatureCollection',
   features: [
