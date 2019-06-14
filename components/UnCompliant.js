@@ -1,18 +1,16 @@
 import React from 'react';
-function UnCompliant() {
+function UnCompliant({ data }) {
+  const project = data;
+  const list = project.un_goals;
   return (
     <div>
       <h3 className="sidebar-title">UN compliant</h3>
       <div className="sidebar-cuadros flex">
-        <a href="" className="cuadros-item">
-          <img src="/static/assets/images/compliant-1.png" width="84" height="85" alt="" />
-        </a>
-        <a href="" className="cuadros-item">
-          <img src="/static/assets/images/compliant-2.png" width="84" height="85" alt="" />
-        </a>
-        <a href="" className="cuadros-item">
-          <img src="/static/assets/images/compliant-3.png" width="84" height="85" alt="" />
-        </a>
+        {list.map((item, i) => (
+          <a key={i} href="" className="cuadros-item">
+            <img src={item} width="84" height="85" alt="" />
+          </a>
+        ))}
       </div>
 
       <style jsx>

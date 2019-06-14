@@ -37,32 +37,7 @@ const lightingEffect = new LightingEffect({ ambientLight, pointLight1, pointLigh
 // https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Tile_servers
 //const tileServer = 'https://c.tile.openstreetmap.org/';
 //const tileServer = 'https://c.tile.openstreetmap.org/';
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/picasso';
-const geojson = {
-  type: 'FeatureCollection',
-  features: [
-    {
-      type: 'Feature',
-      properties: {},
-      geometry: {
-        type: 'Polygon',
-        coordinates: [
-          [
-            [-72.8228759765625, 44.41808794374846],
-            [-73.2952880859375, 44.16841480642917],
-            [-73.09478759765624, 43.85631630786513],
-            [-72.75970458984375, 43.64800079902171],
-            [-72.03460693359375, 43.94141717295212],
-            [-71.9549560546875, 44.23536047945612],
-            [-72.44384765625, 44.46123053905879],
-            [-72.60314941406249, 44.549377532663684],
-            [-72.8228759765625, 44.41808794374846],
-          ],
-        ],
-      },
-    },
-  ],
-};
+const tileServer = 'https://storage.googleapis.com/new-england-biomass/polok';
 
 export class MapContainer extends PureComponent {
   constructor(props) {
@@ -71,12 +46,13 @@ export class MapContainer extends PureComponent {
       viewState: {
         latitude: 43.81309548743646,
         longitude: -73.43456928875162,
-        zoom: 10,
+        zoom: 8,
         maxZoom: 17,
         bearing: -10,
         pitch: 50,
       },
-      geojson: this.props.data.location.geojson,
+      geojson: this.props.geojson,
+      projectData: this.props.data,
     };
     this._onViewStateChange = this._onViewStateChange.bind(this);
     (this.mapWidgetElement = null), (this._onHover = this._onHover.bind(this));
@@ -87,13 +63,33 @@ export class MapContainer extends PureComponent {
     this._goToProject();
   }
 
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    if (this.props.data !== prevProps.data) {
+      this.state.projectData = this.props.data;
+      this.setState({
+        viewState: {
+          ...this.state.viewState,
+          longitude: this.state.projectData.location.coordinates[0],
+          latitude: this.state.projectData.location.coordinates[1],
+          zoom: 11.5,
+          transitionDuration: 18000,
+          transitionInterpolator: new FlyToInterpolator(),
+        },
+      });
+    }
+    if (this.props.geojson !== prevProps.geojson) {
+      this.state.geojson = this.props.geojson;
+    }
+  }
+
   _goToProject() {
     this.setState({
       viewState: {
         ...this.state.viewState,
-        longitude: this.props.data.location.coordinates[0],
-        latitude: this.props.data.location.coordinates[1],
-        zoom: 16,
+        longitude: this.state.projectData.location.coordinates[0],
+        latitude: this.state.projectData.location.coordinates[1],
+        zoom: 11.5,
         transitionDuration: 18000,
         transitionInterpolator: new FlyToInterpolator(),
       },
@@ -175,16 +171,16 @@ export class MapContainer extends PureComponent {
             <div className="imagen-numbers">
               <div className="numbers-item">0</div>
               <div className="numbers-item">...</div>
-              <div className="numbers-item">10,000</div>
+              <div className="numbers-item">300</div>
             </div>
           </div>
           <div className="imagen-text-item">
-            <h3>750,654.21 tn</h3>
+            <h3>{this.state.projectData.totalBiomass}</h3>
             <p>Total biomass</p>
           </div>
           <div className="imagen-text-item">
-            <h3>7,578.36 tn</h3>
-            <p>Avg. biomass per quadrant</p>
+            <h3>{this.state.projectData.medianBiomass}</h3>
+            <p>Median biomass per hectare</p>
           </div>
           <a className="link-imagen" href="">
             <img src="/static/iconos/info-circle-solid.svg" width="14" alt="" />

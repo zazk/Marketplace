@@ -51,22 +51,17 @@ function DetailHead() {
             <ul className="dropdown-main">
               <li className="dropdown-item">
                 <a className="dropdown-link" href="">
-                  Enlace 1
+                  Request drone LiDAR
                 </a>
               </li>
               <li className="dropdown-item">
                 <a className="dropdown-link" href="">
-                  Enlace 2
+                  Request on-site visit
                 </a>
               </li>
               <li className="dropdown-item">
                 <a className="dropdown-link" href="">
-                  Enlace 3
-                </a>
-              </li>
-              <li className="dropdown-item">
-                <a className="dropdown-link" href="">
-                  Enlace 4
+                  Request verification
                 </a>
               </li>
             </ul>

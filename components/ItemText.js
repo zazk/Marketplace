@@ -55,7 +55,6 @@ function ItemText({ iconcard, type, title, description, card, source, source_lin
             font-size: 16px;
             line-height: 24px;
             color: #4a4a4a;
-            max-width: 560px;
           }
           .item-description p {
             margin: 0;
