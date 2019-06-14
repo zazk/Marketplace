@@ -13,7 +13,6 @@ function Home({ id }) {
   let index = id ? id : 0;
   const itemsProject = dataProjects.length;
   const project = dataProjects[index]['pdp'];
-  console.log(project);
   const biomass = dataProjects[index]['biomass'];
   const geojson = dataProjects[index]['geojson'];
   return (

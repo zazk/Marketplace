@@ -66,7 +66,6 @@ export class MapContainer extends PureComponent {
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
     if (this.props.data !== prevProps.data) {
-      console.log('Diff data');
       this.state.projectData = this.props.data;
       this.setState({
         viewState: {
@@ -80,7 +79,6 @@ export class MapContainer extends PureComponent {
       });
     }
     if (this.props.geojson !== prevProps.geojson) {
-      console.log('Diff geo');
       this.state.geojson = this.props.geojson;
     }
   }

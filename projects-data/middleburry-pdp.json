@@ -48,14 +48,14 @@
   },
   "summary": {
     "leakage": {
-      "text": "Middlebury College does not commercially harvest timber and nearly all forestlands owned by Middlebury College are included in the carbon project, therefore there is no activity-shifting leakage.",
-      "source": "",
-      "source_link": ""
+      "text": "Middlebury College does not commercially harvest timber and nearly all forestlands owned by Middlebury College are included in the carbon project, therefore there is no activity-shifting leakage. Therefore, leakage is limited to market leakage (40%).",
+      "source": "Section E3 from Project Description Document",
+      "source_link": "https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=22355&IDKEY=lkjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909830827545"
     },
     "additionality": {
       "text": "Additionality for the project has been shown through a regulatory surplus test, a common practice test, and an implementation barrier test. Middlebury College committed to become a carbon neutral college by the end of 2017. Because Middlebury needs to meet its climate goals, if they do not develop the project, by developing a forest carbon offset project, they avoid the expenditures associated with purchasing credits from the market while generating additional revenue for the university without having to harvest timber.",
-      "source": "",
-      "source_link": ""
+      "source": "Section C from Project Description Document",
+      "source_link": "https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=22355&IDKEY=lkjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909830827545"
     },
     "permanence": {
       "text": "To ensure the permanence of the GHG emission reductions from this project, buffer credits from each of the projects are put on hold in a pool. When a loss event occurs (fire, diseases, pests, etc) buffer credits are taken from this pool. Based on the result of the risk assessment using the 'ACR Tool for Risk Analysis and Buffer Determination' this project will contribute to the buffer pool 18% of their issued credits.",
@@ -88,6 +88,8 @@
   ],
   "project_files": "https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=368",
   "un_goals": [
+    "https://storage.googleapis.com/marketplace-assets/un_goals-4.png",
+    "https://storage.googleapis.com/marketplace-assets/un_goals-6.png",
     "https://storage.googleapis.com/marketplace-assets/un_goals-11.png",
     "https://storage.googleapis.com/marketplace-assets/un_goals-13.png",
     "https://storage.googleapis.com/marketplace-assets/un_goals-15.png"
