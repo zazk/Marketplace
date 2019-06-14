@@ -1,7 +1,10 @@
 import React from 'react';
 import DashboardMap from './DashboardMap';
+import MapVisualization from './MapVisualization';
+import heatmapdata2 from './data';
 
 function MapDetail() {
+  // console.log(heatmapdata2);
   return (
     <div>
       <div className="detail-legend">
@@ -39,6 +42,8 @@ function MapDetail() {
           <img src="/static/assets/images/graphic-biomass.png" width="234" alt="" />
         </figure>
       </div>
+      //
+      <MapVisualization data={heatmapdata2} />
       <DashboardMap />
       <style jsx>
         {`

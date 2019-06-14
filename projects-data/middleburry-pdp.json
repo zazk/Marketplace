@@ -24,9 +24,11 @@
   "project_developer": "Bluesource",
   "auditor": "SCS Global services",
   "total_land": {
-    "area": 10.81,
-    "unit": "km²"
+    "area": "1,080.1182",
+    "unit": "ha"
   },
+  "totalBiomass": "16,246,332.870 tns",
+  "medianBiomass": "100.745919 tns",
   "land_owner": "Middlebury College",
   "project_images": [
     {

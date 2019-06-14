@@ -52,6 +52,7 @@ export class MapContainer extends PureComponent {
         pitch: 50,
       },
       geojson: this.props.geojson,
+      projectData: this.props.data,
     };
     this._onViewStateChange = this._onViewStateChange.bind(this);
     (this.mapWidgetElement = null), (this._onHover = this._onHover.bind(this));
@@ -62,12 +63,34 @@ export class MapContainer extends PureComponent {
     this._goToProject();
   }
 
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    if (this.props.data !== prevProps.data) {
+      console.log('Diff data');
+      this.state.projectData = this.props.data;
+      this.setState({
+        viewState: {
+          ...this.state.viewState,
+          longitude: this.state.projectData.location.coordinates[0],
+          latitude: this.state.projectData.location.coordinates[1],
+          zoom: 11.5,
+          transitionDuration: 18000,
+          transitionInterpolator: new FlyToInterpolator(),
+        },
+      });
+    }
+    if (this.props.geojson !== prevProps.geojson) {
+      console.log('Diff geo');
+      this.state.geojson = this.props.geojson;
+    }
+  }
+
   _goToProject() {
     this.setState({
       viewState: {
         ...this.state.viewState,
-        longitude: this.props.data.location.coordinates[0],
-        latitude: this.props.data.location.coordinates[1],
+        longitude: this.state.projectData.location.coordinates[0],
+        latitude: this.state.projectData.location.coordinates[1],
         zoom: 11.5,
         transitionDuration: 18000,
         transitionInterpolator: new FlyToInterpolator(),
@@ -154,12 +177,12 @@ export class MapContainer extends PureComponent {
             </div>
           </div>
           <div className="imagen-text-item">
-            <h3>750,654.21 tn</h3>
+            <h3>{this.state.projectData.totalBiomass}</h3>
             <p>Total biomass</p>
           </div>
           <div className="imagen-text-item">
-            <h3>7,578.36 tn</h3>
-            <p>Avg. biomass per quadrant</p>
+            <h3>{this.state.projectData.medianBiomass}</h3>
+            <p>Avg. biomass per hectare</p>
           </div>
           <a className="link-imagen" href="">
             <img src="/static/iconos/info-circle-solid.svg" width="14" alt="" />
