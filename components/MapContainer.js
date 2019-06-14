@@ -37,32 +37,7 @@ const lightingEffect = new LightingEffect({ ambientLight, pointLight1, pointLigh
 // https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Tile_servers
 //const tileServer = 'https://c.tile.openstreetmap.org/';
 //const tileServer = 'https://c.tile.openstreetmap.org/';
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/dali';
-const geojson = {
-  type: 'FeatureCollection',
-  features: [
-    {
-      type: 'Feature',
-      properties: {},
-      geometry: {
-        type: 'Polygon',
-        coordinates: [
-          [
-            [-72.8228759765625, 44.41808794374846],
-            [-73.2952880859375, 44.16841480642917],
-            [-73.09478759765624, 43.85631630786513],
-            [-72.75970458984375, 43.64800079902171],
-            [-72.03460693359375, 43.94141717295212],
-            [-71.9549560546875, 44.23536047945612],
-            [-72.44384765625, 44.46123053905879],
-            [-72.60314941406249, 44.549377532663684],
-            [-72.8228759765625, 44.41808794374846],
-          ],
-        ],
-      },
-    },
-  ],
-};
+const tileServer = 'https://storage.googleapis.com/new-england-biomass/polok';
 
 export class MapContainer extends PureComponent {
   constructor(props) {
@@ -71,7 +46,7 @@ export class MapContainer extends PureComponent {
       viewState: {
         latitude: 43.81309548743646,
         longitude: -73.43456928875162,
-        zoom: 10,
+        zoom: 8,
         maxZoom: 17,
         bearing: -10,
         pitch: 50,
@@ -93,7 +68,7 @@ export class MapContainer extends PureComponent {
         ...this.state.viewState,
         longitude: this.props.data.location.coordinates[0],
         latitude: this.props.data.location.coordinates[1],
-        zoom: 14,
+        zoom: 11.5,
         transitionDuration: 18000,
         transitionInterpolator: new FlyToInterpolator(),
       },

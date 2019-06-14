@@ -1,5 +1,6 @@
 import React from 'react';
 import DashboardMap from './DashboardMap';
+import H3Test from './h3test';
 
 function MapDetail() {
   return (

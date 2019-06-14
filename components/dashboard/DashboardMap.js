@@ -1,20 +1,29 @@
 import React, { PureComponent } from 'react';
 import { render } from 'react-dom';
 
-import DeckGL, { View, MapController, MapView, GeoJsonLayer, TileLayer, BitmapLayer, FlyToInterpolator } from 'deck.gl';
+import DeckGL, {
+  View,
+  MapController,
+  H3HexagonLayer,
+  MapView,
+  GeoJsonLayer,
+  TileLayer,
+  BitmapLayer,
+  FlyToInterpolator,
+} from 'deck.gl';
 import { StaticMap } from 'react-map-gl';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 
 const INITIAL_VIEW_STATE = {
-  latitude: 43.81309548743646,
-  longitude: -73.43456928875162,
+  latitude: 37.7749,
+  longitude: 122.4194,
   zoom: 10,
   maxZoom: 17,
   bearing: -10,
   pitch: 50,
 };
 
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/dali';
+const tileServer = 'https://storage.googleapis.com/new-england-biomass/polok';
 //pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA
 export const lightSettings = {
   lightsPosition: [-125, 50.5, 5000, -122.8, 48.5, 8000],
@@ -75,8 +84,8 @@ export class DashboardMap extends PureComponent {
     super(props);
     this.state = {
       viewState: {
-        latitude: 43.81309548743646,
-        longitude: -73.43456928875162,
+        latitude: 37.7749,
+        longitude: -122.4194,
         zoom: 10,
         maxZoom: 17,
         bearing: -10,
@@ -126,7 +135,30 @@ export class DashboardMap extends PureComponent {
       )
     );
   }
-
+  // new H3HexagonLayer({
+  //   id: 'h3-hexagon-layer',
+  //   hexLayerData,
+  //   getHexagon: d => d.hexagon,
+  //   getFillColor: d => [255, (1 - d.biomass / 500) * 255, 0],
+  //   getElevation: d => d.biomass*2000
+  // }),
+  _renderLayers2() {
+    const { autoHighlight = true, highlightColor = [60, 60, 60, 40] } = this.props;
+    return [
+      new H3HexagonLayer({
+        id: 'h3hexagonlayer',
+        hData,
+        pickable: true,
+        wireframe: false,
+        filled: true,
+        extruded: true,
+        elevationScale: 20,
+        getHexagon: d => d.hex,
+        getFillColor: d => [255, (1 - d.count / 500) * 255, 0],
+        getElevation: d => d.count,
+      }),
+    ];
+  }
   _renderLayers() {
     const { autoHighlight = true, highlightColor = [60, 60, 60, 40] } = this.props;
     return [
@@ -151,7 +183,7 @@ export class DashboardMap extends PureComponent {
       }),
       new GeoJsonLayer({
         id: 'objectSelected',
-        data: this.state.geojson,
+        data: geojson,
         opacity: 2,
         stroked: true,
         filled: true,
@@ -175,6 +207,8 @@ export class DashboardMap extends PureComponent {
     return (
       <div className="detail-map">
         <DeckGL
+          log={true}
+          logPriority={4}
           initialViewState={INITIAL_VIEW_STATE}
           viewState={viewState}
           controller={controller}
@@ -194,12 +228,11 @@ export class DashboardMap extends PureComponent {
           ]}
           layers={this._renderLayers()}
         >
-          {this._renderTooltip}
           <StaticMap
             reuseMaps
             preventStyleDiffing={true}
             mapboxApiAccessToken="pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA"
-            mapStyle="mapbox://styles/mapbox/satellite-v9"
+            mapStyle="mapbox://styles/mapbox/light-v10"
           />
           <View id="minimap">
             <StaticMap
@@ -210,6 +243,7 @@ export class DashboardMap extends PureComponent {
             />
           </View>
         </DeckGL>
+        {this._renderTooltip}
         <style jsx>
           {`
             .detail-map {
