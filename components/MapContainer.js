@@ -171,7 +171,7 @@ export class MapContainer extends PureComponent {
             <div className="imagen-numbers">
               <div className="numbers-item">0</div>
               <div className="numbers-item">...</div>
-              <div className="numbers-item">10,000</div>
+              <div className="numbers-item">300</div>
             </div>
           </div>
           <div className="imagen-text-item">
