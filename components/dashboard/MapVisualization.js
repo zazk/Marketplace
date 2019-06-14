@@ -7,11 +7,17 @@ import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
 import { TileLayer, BitmapLayer, GeoJsonLayer } from 'deck.gl';
 import DeckGL from '@deck.gl/react';
-import testGeoJson from './geo.js';
+//import testGeoJson from './geo.js';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA'; // eslint-disable-line
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/dali';
-const geojson = testGeoJson;
+const tileServer = 'https://storage.googleapis.com/new-england-biomass/polok';
+//const geojson = testGeoJson;
+import dataProjects from '../../projects-data/projects';
+
+const index = 2;
+const project = dataProjects[index]['pdp'];
+const biomass = dataProjects[index]['biomass'];
+const geojson = dataProjects[index]['geojson'];
 
 // Source data CSV
 //const DATA_URL =
@@ -51,18 +57,18 @@ const material = new PhongMaterial({
 });
 
 const INITIAL_VIEW_STATE = {
-  longitude: -1.4157267858730052,
-  latitude: 52.232395363869415,
-  zoom: 6.6,
-  minZoom: 5,
-  maxZoom: 15,
+  longitude: project.location.coordinates[0] + 0.025,
+  latitude: project.location.coordinates[1],
+  zoom: 11.6,
+  minZoom: 10,
+  maxZoom: 16,
   pitch: 40.5,
   bearing: -27.396674584323023,
 };
 
 const colorRange = [[1, 152, 189], [73, 227, 206], [216, 254, 181], [254, 237, 177], [254, 173, 84], [209, 55, 78]];
 
-const elevationScale = { min: 1, max: 50 };
+const elevationScale = { min: 1, max: 5 };
 
 /* eslint-disable react/no-deprecated */
 export class MapVisualization extends Component {
@@ -122,7 +128,7 @@ export class MapVisualization extends Component {
   }
 
   _renderLayers() {
-    const { data, radius = 1000, upperPercentile = 100, coverage = 1 } = this.props;
+    const { data, radius = 210, upperPercentile = 90, coverage = 0.9 } = this.props;
     const { autoHighlight = true, highlightColor = [60, 60, 60, 40] } = this.props;
 
     return [
@@ -150,7 +156,7 @@ export class MapVisualization extends Component {
         colorRange,
         coverage,
         data,
-        elevationRange: [0, 3000],
+        elevationRange: [0, 600],
         elevationScale: this.state.elevationScale,
         extruded: true,
         getPosition: d => d,
@@ -167,7 +173,7 @@ export class MapVisualization extends Component {
         lineWidthScale: 20,
         lineWidthMinPixels: 80,
         getLineColor: [0, 0, 0],
-        getRadius: 100,
+        getRadius: 80,
         getLineWidth: 100,
         opacity: 2,
         stroked: true,

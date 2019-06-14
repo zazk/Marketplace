@@ -1,5 +1,5 @@
 {
-  "title": "Great Mountain Forest improved forest management project",
+  "title": "Great Mountain Forest Improved Forest Management Project",
   "tagline": "The Great Mountain Forest is one of the nation’s oldest conservation legacy organizations, and the largest conservation easement held in southern New England.",
   "main_picture": "https://storage.googleapis.com/marketplace-assets/2-main_picture.jpg",
   "credits_avail": {
@@ -24,11 +24,11 @@
   "project_developer": "BlueSource",
   "auditor": "SCS Global Services",
   "total_land": {
-    "area": "2,632.3477361",
+    "area": "2,632",
     "unit": "ha"
   },
-  "totalBiomass": "63,091,499.157 tns",
-  "medianBiomass": "183.965226 tns",
+  "totalBiomass": "63,091,499 tns",
+  "medianBiomass": "183.9 tns",
   "land_owner": "Great Mountain Forest",
   "project_images": [
     {
@@ -48,7 +48,7 @@
   },
   "summary": {
     "leakage": {
-      "text": "TBD",
+      "text": "No reference to leakage was found in the project descritpion document.",
       "source": "",
       "source_link": ""
     },

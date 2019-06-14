@@ -66,7 +66,6 @@ export class MapContainer extends PureComponent {
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
     if (this.props.data !== prevProps.data) {
-      console.log('Diff data');
       this.state.projectData = this.props.data;
       this.setState({
         viewState: {
@@ -80,7 +79,6 @@ export class MapContainer extends PureComponent {
       });
     }
     if (this.props.geojson !== prevProps.geojson) {
-      console.log('Diff geo');
       this.state.geojson = this.props.geojson;
     }
   }
@@ -173,7 +171,7 @@ export class MapContainer extends PureComponent {
             <div className="imagen-numbers">
               <div className="numbers-item">0</div>
               <div className="numbers-item">...</div>
-              <div className="numbers-item">10,000</div>
+              <div className="numbers-item">300</div>
             </div>
           </div>
           <div className="imagen-text-item">
@@ -182,7 +180,7 @@ export class MapContainer extends PureComponent {
           </div>
           <div className="imagen-text-item">
             <h3>{this.state.projectData.medianBiomass}</h3>
-            <p>Avg. biomass per hectare</p>
+            <p>Median biomass per hectare</p>
           </div>
           <a className="link-imagen" href="">
             <img src="/static/iconos/info-circle-solid.svg" width="14" alt="" />
