@@ -5,7 +5,7 @@ import StatusMonitoring from '../components/dashboard/StatusMonitoring';
 import Graphics from '../components/dashboard/Graphics';
 import Benefits from '../components/dashboard/Benefits';
 import Events from '../components/dashboard/Events';
-import Georeferenciadas from '../components/dashboard/Georeferenciadas';
+import ProjectPictures from '../components/dashboard/ProjectPictures';
 import MapDetail from '../components/dashboard/MapDetail';
 import InfoResumen from '../components/dashboard/InfoResumen';
 import InfoDescription from '../components/dashboard/InfoDescription';
@@ -35,7 +35,7 @@ function Details() {
                 <Graphics />
                 <Benefits />
                 <Events />
-                <Georeferenciadas />
+                <ProjectPictures />
               </div>
               <div className={`aside-item-tab ${activeTab === 1 && 'active'}`}>
                 <div className="spaces">

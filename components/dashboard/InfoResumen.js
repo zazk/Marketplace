@@ -1,5 +1,4 @@
 import React from 'react';
-
 function InfoResumen() {
   return (
     <div className="wrap-info-resumen">
@@ -8,7 +7,7 @@ function InfoResumen() {
         <h3 className="title-ubication">Boulder Creek National Reserve</h3>
       </div>
 
-      <div className="wrap-info-item">
+      <div className="wrap-info-item flex">
         <div className="project-info-item">
           <span>11,578 tn</span>
           <p>Emissions compesated</p>
@@ -25,33 +24,44 @@ function InfoResumen() {
       <style jsx>
         {`
           .project-ubication {
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #d8d8d8;
             p {
-              font-size: 14px;
-              color: rgba(0, 0, 0, 0.5);
+              font-size: 12px;
+              font-family: 'Work Sans', sans-serif;
+              font-weight: 700;
+              color: rgba(54, 54, 54, 0.8);
               margin: 0;
               margin-bottom: 10px;
             }
           }
           .title-ubication {
-            font-size: 28px;
+            font-size: 22px;
             color: #363636;
             margin: 0;
-            margin-bottom: 25px;
+            font-family: 'Work Sans', sans-serif;
+            line-height: 33px;
             font-weight: 700;
           }
           .wrap-info-item {
-            border-bottom: 1px solid #979797;
-            margin-bottom: 25px;
+            border-bottom: 1px solid #d8d8d8;
           }
           .project-info-item {
+            width: 50%;
             margin-bottom: 25px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            font-family: 'Work Sans', sans-serif;
             span {
-              font-size: 22px;
+              font-size: 32px;
+              font-weight: 400;
             }
             p {
-              font-size: 14px;
+              font-size: 12px;
               color: rgba(0, 0, 0, 0.5);
               margin: 0;
+              text-transform: uppercase;
             }
           }
         `}
