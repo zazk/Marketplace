@@ -24,10 +24,10 @@
   "project_developer": "Bluesource",
   "auditor": "SCS Global Services",
   "total_land": {
-    "area": "1,283.073139434",
+    "area": "1,283",
     "unit": "ha"
   },
-  "totalBiomass": "28,457,565.10980401 tns",
+  "totalBiomass": "28,457,565 tns",
   "medianBiomass": "168.9 tns",
   "land_owner": "Hudson Farm Club",
   "project_images": [

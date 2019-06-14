@@ -24,11 +24,11 @@
   "project_developer": "BlueSource",
   "auditor": "SCS Global Services",
   "total_land": {
-    "area": "2,632.3477361",
+    "area": "2,632",
     "unit": "ha"
   },
-  "totalBiomass": "63,091,499.157 tns",
-  "medianBiomass": "183.965226 tns",
+  "totalBiomass": "63,091,499 tns",
+  "medianBiomass": "183.9 tns",
   "land_owner": "Great Mountain Forest",
   "project_images": [
     {
