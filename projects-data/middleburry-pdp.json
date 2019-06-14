@@ -9,7 +9,7 @@
   "project_type": "Improved Forest Management",
   "location": {
     "name": "Middlebury, Vermont, USA",
-    "coordinates": [-72.99, 43.96]
+    "coordinates": [-73.00861358642577, 43.952540557050675]
   },
   "standard": "https://storage.googleapis.com/marketplace-assets/logo-acr.png",
   "project_overview": "The Project improves forest management on Middlebury College’s forests, with Middlebury’s forest management practices representing an improvement in the carbon storage and conservation value compared to higher return management regimes of industrial private lands in the region, which are characterized by shorter, even-aged rotations. This project ensures the long-term conservation and sustainable management of the forest, promotes healthy wildlife habitat, and prevents future compromise of the forest carbon stocks. By committing to maintain forest CO2 stocks above the regional common practice, the project will provide significant climate benefits through carbon sequestration.",
@@ -30,7 +30,7 @@
   "land_owner": "Middlebury College",
   "project_images": [
     {
-      "image": "https://storage.googleapis.com/marketplace-assets/middlebury-image_3.png",
+      "image": "https://storage.googleapis.com/marketplace-assets/middlebury--image_3.png",
       "caption": "Middlebury successfully reached its 2016 carbon neutrality goal."
     },
     {

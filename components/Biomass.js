@@ -11,7 +11,7 @@ function Biomass({ data, biomass }) {
         <ItemText
           icontitle="/static/iconos/globe-europe-solid.svg"
           title="Biomass"
-          description="Chart shows biomass over the years"
+          description="We use remote sensing technologies to measure aboveground biomass (ABG), which includes the stem, stump, branches, bark, seeds and foliage. The data is a product of annually composited satellite imagery, field observations, and LiDAR data."
         />
         <div className="biomas-grafico-detail flex">
           <figure>
@@ -20,15 +20,15 @@ function Biomass({ data, biomass }) {
           <div className="biomass-detail">
             <div className="graphic-item first">
               <span />
-              <p>possible data here</p>
+              <p>5-95%</p>
             </div>
             <div className="graphic-item second">
               <span />
-              <p>possible data here</p>
+              <p>25-75%</p>
             </div>
             <div className="graphic-item three">
               <span />
-              <p>possible data here</p>
+              <p>50%</p>
             </div>
           </div>
         </div>
