@@ -21,14 +21,14 @@ function StatusMonitoring() {
           <span className="status-color">
             <img src="/static/iconos/weather.svg" height="27" alt="" />
           </span>
-          <p>Weather alert: forecast suggests very low humidity levels</p>
+          <p>Weather alert: forecast suggests the possibility of a drier than average season</p>
         </div>
 
         <div className="status-text-item">
           <span className="status-color">
             <img src="/static/iconos/plant.svg" height="27" alt="" />
           </span>
-          <p>Plant health: there’s a very bad pest coming to eat every living spicies on this land</p>
+          <p>Plant health: no pests have been detected and plant health tests have been passed satisfactorily </p>
         </div>
       </div>
       <style jsx>

@@ -4,7 +4,7 @@ function InfoResumen() {
     <div className="wrap-info-resumen">
       <div className="project-ubication">
         <p>Forest / North America</p>
-        <h3 className="title-ubication">Boulder Creek National Reserve</h3>
+        <h3 className="title-ubication">Middlebury College Improved Forest Management Project</h3>
       </div>
 
       <div className="wrap-info-item flex">

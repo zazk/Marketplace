@@ -2,7 +2,7 @@ import React from 'react';
 function ProjectPictures() {
   return (
     <div className="detail-wrap-modulos">
-      <h3 className="aside-title modulos">Project Pictures</h3>
+      <h3 className="aside-title modulos">Geolocated Project Photos</h3>
       <div className="spaces">
         <div className="detail-modulos flex">
           <div className="modulo-item">

@@ -9,7 +9,7 @@ function DetailHead() {
         <figure className="detail-logo-project">
           <img src="/static/assets/images/isotipo.png" width="30" alt="" />
         </figure>
-        <h2 className="head-name-project">Boulder Creek National Reserve</h2>
+        <h2 className="head-name-project">Middlebury College Improved Forest Management Project</h2>
       </div>
       <div className="head-right flex">
         <div className="wrap-menu-head wrap-drodown" data-position="right">

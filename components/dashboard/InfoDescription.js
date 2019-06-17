@@ -9,8 +9,8 @@ function InfoDescription() {
         </div>
 
         <div className="info-description-item">
-          <span>Improve forest mgmt</span>
-          <p>Afforestation, deforestation, pest control</p>
+          <span>Improved Forest Management</span>
+          <p>Reduced harvesting and tree enrichment</p>
         </div>
       </div>
 

@@ -17,22 +17,17 @@ function MapDetail() {
             <ul className="dropdown-main">
               <li className="dropdown-item">
                 <a className="dropdown-link" href="">
-                  Enlace 1
+                  Carbon Inventory
                 </a>
               </li>
               <li className="dropdown-item">
                 <a className="dropdown-link" href="">
-                  Enlace 2
+                  Tree Cover
                 </a>
               </li>
               <li className="dropdown-item">
                 <a className="dropdown-link" href="">
-                  Enlace 3
-                </a>
-              </li>
-              <li className="dropdown-item">
-                <a className="dropdown-link" href="">
-                  Enlace 4
+                  Fire Risk
                 </a>
               </li>
             </ul>
@@ -48,7 +43,7 @@ function MapDetail() {
           .detail-legend {
             width: 234px;
             padding-top: 16px;
-            height: 108px;
+
             border-radius: 10px;
             box-shadow: 0 0 1px 2px rgba(9, 43, 49, 0.14);
             background-color: #ffffff;

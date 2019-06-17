@@ -20,7 +20,7 @@ function Benefits() {
 
         <div className="benefits-item">
           <div className="benefits-text">
-            <h4 className="benefits-title">Hiring</h4>
+            <h4 className="benefits-title">Jobs Creation</h4>
             <p>
               25 new jobs were generated since the last verification, including logistics, maintenance and management
               roles.
@@ -35,7 +35,7 @@ function Benefits() {
         <div className="benefits-item">
           <div className="benefits-text">
             <h4 className="benefits-title">Water wells</h4>
-            <p>No new water wells have been built lately.</p>
+            <p>6 new water wells have been built in the last 6 months</p>
           </div>
           <div className="benefits-numbers">
             <span>6</span>
@@ -44,8 +44,8 @@ function Benefits() {
 
         <div className="benefits-item">
           <div className="benefits-text">
-            <h4 className="benefits-title">Monthly income</h4>
-            <p>Material sales resulting from controlled trimming have fluctuated positively.</p>
+            <h4 className="benefits-title">Community Income</h4>
+            <p>The communities surrounding the project have increased their income thanks to the project.</p>
           </div>
           <div className="benefits-numbers">
             <span>$100k</span>
