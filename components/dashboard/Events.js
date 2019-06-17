@@ -4,27 +4,41 @@ function Events() {
   return (
     <div className="wraps-events">
       <h3 className="aside-title">upcoming events</h3>
-      <div className="spaces">
+      <div className="spaces events-list">
         <div className="events-item">
-          <h3 className="event-title">
-            <span className="event-circle" />
-            Tree planting
-            <span className="event-date">In 15 days</span>
-          </h3>
-          <div className="event-wrap-tags">
-            <span className="event-tag">biomass ++</span>
-            <span className="event-tag">biodiversity ++</span>
+          <span className="event-date">03/11</span>
+          <div className="event-inner">
+            <h3 className="event-title">Tree planting</h3>
+            <span className="event-tag" style={{ backgroundColor: `#bef8f1` }}>
+              biomass ++
+            </span>
+            <span className="event-tag" style={{ backgroundColor: `#b6f1d0` }}>
+              biodiversity ++
+            </span>
           </div>
         </div>
         <div className="events-item">
-          <h3 className="event-title">
-            <span className="event-circle" />
-            Tree planting
-            <span className="event-date">In 15 days</span>
-          </h3>
-          <div className="event-wrap-tags">
-            <span className="event-tag">biomass ++</span>
-            <span className="event-tag">biodiversity ++</span>
+          <span className="event-date">03/11</span>
+          <div className="event-inner">
+            <h3 className="event-title">Tree planting</h3>
+            <span className="event-tag" style={{ backgroundColor: `#bef8f1` }}>
+              biomass ++
+            </span>
+            <span className="event-tag" style={{ backgroundColor: `#b6f1d0` }}>
+              biodiversity ++
+            </span>
+          </div>
+        </div>
+        <div className="events-item">
+          <span className="event-date">03/11</span>
+          <div className="event-inner">
+            <h3 className="event-title">Tree planting</h3>
+            <span className="event-tag" style={{ backgroundColor: `#bef8f1` }}>
+              biomass ++
+            </span>
+            <span className="event-tag" style={{ backgroundColor: `#b6f1d0` }}>
+              biodiversity ++
+            </span>
           </div>
         </div>
       </div>
@@ -35,39 +49,74 @@ function Events() {
             font-size: 16px;
             columns: #000000;
             font-weight: 500;
-            position: relative;
-            padding-right: 80px;
             margin: 0;
             line-height: 100%;
-            .event-date {
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-family: 'Work Sans', sans-serif;
+            &:before {
+              content: '';
+              width: 15px;
+              height: 15px;
+              display: block;
               position: absolute;
-              top: 0;
-              right: 0;
-              font-size: 12px;
-              color: rgba(0, 0, 0, 0.5);
+              top: 30px;
+              left: 0;
+              background-image: url('/static/iconos/hoja-r.svg');
+              background-size: 100%;
+              background-repeat: no-repeat;
             }
-
-            .event-circle {
-              width: 20px;
-              height: 20px;
-              border-radius: 100%;
-              display: inline-block;
-              background-color: #d8d8d8;
-              margin-right: 10px;
+          }
+          .event-date {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: rgba(0, 0, 0, 0.5);
+          }
+          .events-list {
+            position: relative;
+          }
+          .event-inner {
+            position: relative;
+            padding: 20px 0;
+            padding-left: 30px;
+            &:before {
+              content: '';
+              display: block;
+              position: absolute;
+              left: 0;
+              top: 0;
+              display: block;
+              width: 1px;
+              height: 100%;
+              opacity: 0.5;
+              background-color: #08c075;
             }
           }
           .event-wrap-tags {
-            padding-left: 30px;
+            padding-left: 115px;
             padding-bottom: 15px;
+            margin-top: 5px;
           }
           .events-item {
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(151, 151, 151, 0.34);
+            position: relative;
+            padding-left: 70px;
+            &:nth-child(even) {
+              .event-title {
+                &:before {
+                  left: inherit;
+                  right: 100%;
+                  background-image: url('/static/iconos/hoja-l.svg');
+                }
+              }
+            }
           }
           .event-tag {
             display: inline-block;
             font-size: 12px;
-            color: rgba(0, 0, 0, 0.5);
+            color: #0e745c;
             background-color: #fff;
             border-radius: 10px;
             padding: 2px 7px;
