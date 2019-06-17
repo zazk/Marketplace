@@ -19,12 +19,6 @@ function StatusMonitoring() {
       <div className="wrap-status-text">
         <div className="status-text-item">
           <span className="status-color">
-            <img src="/static/iconos/icon-gota-color.svg" height="27" alt="" />
-          </span>
-          <p>Leakage alert: Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div className="status-text-item">
-          <span className="status-color">
             <img src="/static/iconos/weather.svg" height="27" alt="" />
           </span>
           <p>Weather alert: forecast suggests very low humidity levels</p>
