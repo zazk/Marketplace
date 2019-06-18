@@ -5,7 +5,7 @@ import { StaticMap } from 'react-map-gl';
 import { PhongMaterial } from '@luma.gl/core';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
-import { TileLayer, BitmapLayer, GeoJsonLayer } from 'deck.gl';
+import { TileLayer, BitmapLayer, GeoJsonLayer, MapView, View } from 'deck.gl';
 import DeckGL from '@deck.gl/react';
 //import testGeoJson from './geo.js';
 
@@ -80,11 +80,13 @@ export class MapVisualization extends Component {
     super(props);
     this.state = {
       elevationScale: elevationScale.min,
+      viewState: INITIAL_VIEW_STATE,
     };
 
     this.startAnimationTimer = null;
     this.intervalTimer = null;
 
+    this._onViewStateChange = this._onViewStateChange.bind(this);
     this._startAnimate = this._startAnimate.bind(this);
     this._animateHeight = this._animateHeight.bind(this);
   }
@@ -97,6 +99,16 @@ export class MapVisualization extends Component {
     if (nextProps.data && this.props.data && nextProps.data.length !== this.props.data.length) {
       this._animate();
     }
+  }
+
+  layerFilter({ layer, viewport }) {
+    // console.log(layer);
+    //console.log(viewport);
+    if (viewport.id === 'minimap') {
+      // Do not draw the car layer in the first person view
+      return false;
+    }
+    return true;
   }
 
   componentWillUnmount() {
@@ -125,6 +137,10 @@ export class MapVisualization extends Component {
     } else {
       this.setState({ elevationScale: this.state.elevationScale + 1 });
     }
+  }
+
+  _onViewStateChange({ viewState }) {
+    this.setState({ viewState });
   }
 
   _renderLayers() {
@@ -192,16 +208,47 @@ export class MapVisualization extends Component {
 
   render() {
     const { mapStyle = 'mapbox://styles/mapbox/satellite-v9' } = this.props;
+    const { viewState } = this.state;
 
     return (
       <div className="detail-map">
         <DeckGL
           layers={this._renderLayers()}
           effects={[lightingEffect]}
-          initialViewState={INITIAL_VIEW_STATE}
+          viewState={viewState}
+          onViewStateChange={this._onViewStateChange}
           controller={true}
+          views={[
+            new MapView({ id: 'main' }),
+            new MapView({
+              id: 'minimap',
+              // viewStateId: 'main',
+              viewState: {
+                id: 'main',
+                zoom: 6,
+                pitch: 0,
+                bearing: 0,
+              },
+              controller: false,
+              x: '75%',
+              y: '70%',
+              width: '20%',
+              height: '25%',
+              clear: true,
+              // viewStateFilter: viewState => Object.assign(viewState, { zoom: 7, pitch: 0, bearing: 0 }),
+            }),
+          ]}
+          layerFilter={this.layerFilter}
         >
           <StaticMap reuseMaps mapStyle={mapStyle} preventStyleDiffing={true} mapboxApiAccessToken={MAPBOX_TOKEN} />
+          <View id="minimap">
+            <StaticMap
+              reuseMaps
+              mapStyle="mapbox://styles/mapbox/light-v10"
+              preventStyleDiffing={true}
+              mapboxApiAccessToken={MAPBOX_TOKEN}
+            />
+          </View>
         </DeckGL>
         <style jsx>
           {`
