@@ -174,6 +174,21 @@ function Details() {
                   }
                 }
               }
+              &.small {
+                /* background-color: rgba(255,255,255,0.9); */
+                background-color: red;
+                .dropdown {
+                  width: 100%;
+                  .dropdown-main {
+                    background-color: red;
+                    border-radius: 0px;
+                    &:before,
+                    &:after {
+                      display: none;
+                    }
+                  }
+                }
+              }
               .dropdown {
                 opacity: 0;
                 transform: translateY(-5px);
@@ -229,7 +244,9 @@ function Details() {
                 height: 40px;
                 display: flex;
                 padding: 0 10px;
+                font-size: 14px;
                 align-items: center;
+                color: rgba(54, 54, 54, 0.5);
                 &:hover {
                   background-color: #eee;
                 }
