@@ -37,8 +37,8 @@ export default function MapDetail() {
   return (
     <div>
       <div className="detail-legend">
-        <div className="legend-select">
-          <Button
+        <div className="legend-select wrap-drodown">
+          {/* <Button
             classes={{
               root: classes.root,
               label: classes.label,
@@ -61,7 +61,31 @@ export default function MapDetail() {
             <MenuItem onClick={handleClose}>Carbon Inventory</MenuItem>
             <MenuItem onClick={handleClose}>Tree Cover</MenuItem>
             <MenuItem onClick={handleClose}>Fire Risk</MenuItem>
-          </Menu>
+          </Menu> */}
+
+          <div className="btn-legend-select ">
+            <span className="label-select">BIOMASS</span>
+            <img className="legend-select-icon" src="/static/iconos/arrow-head.svg" width="6" alt="" />
+          </div>
+          <div className="dropdown">
+            <ul className="dropdown-main">
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Carbon Inventory
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Tree Cover
+                </a>
+              </li>
+              <li className="dropdown-item">
+                <a className="dropdown-link" href="">
+                  Fire Risk
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         <figure>
           <img src="/static/assets/images/graphic-biomass.png" width="234" alt="" />

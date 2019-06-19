@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 function Graphics() {
+  const [showInLightbox, setInLightbox] = useState(0);
+  const [openLightbox, setOpenLightbox] = useState(0);
+
   return (
     <div className="wrap-graphics ">
       <h3 className="aside-title">Carbon Capture</h3>
@@ -13,7 +16,9 @@ function Graphics() {
             <div className="graphic-date graphic-info-item">
               <span>12/07/19</span>
 
-              <img src="/static/iconos/icon-info.svg" alt="" />
+              <span className="graphic-open-lightbox" onClick={() => (setInLightbox(0), setOpenLightbox(1))}>
+                <img src="/static/iconos/icon-info.svg" alt="" />
+              </span>
 
               <p>Last verification</p>
             </div>
@@ -34,7 +39,9 @@ function Graphics() {
             <div className="graphic-date graphic-info-item">
               <span>12/07/19</span>
 
-              <img src="/static/iconos/icon-info.svg" alt="" />
+              <span className="graphic-open-lightbox" onClick={() => (setInLightbox(1), setOpenLightbox(1))}>
+                <img src="/static/iconos/icon-info.svg" alt="" />
+              </span>
 
               <p>Last verification</p>
             </div>
@@ -56,13 +63,71 @@ function Graphics() {
             <div className="graphic-date graphic-info-item">
               <span>12/07/19</span>
 
-              <img src="/static/iconos/icon-info.svg" alt="" />
+              <span className="graphic-open-lightbox" onClick={() => (setInLightbox(2), setOpenLightbox(1))}>
+                <img src="/static/iconos/icon-info.svg" alt="" />
+              </span>
 
               <p>Last verification</p>
             </div>
           </div>
           <figure>
             <img src="/static/assets/images/graphic-n-3.png" alt="" />
+          </figure>
+        </div>
+      </div>
+      <div className={`wrap-lightbox-graphic ${openLightbox === 1 && 'active'}`}>
+        <div className="lightbox-overlay" onClick={() => setOpenLightbox(0)} />
+        <div className="lightbox-main-graphic">
+          <span className="ligthbox-close" onClick={() => setOpenLightbox(0)}>
+            <img src="/static/iconos/close-2.png" width="20" alt="" />
+          </span>
+          <figure className="sheets sheet-1">
+            <img src="/static/assets/images/big-sheet.svg" alt="" />
+          </figure>
+          <div className="lightbox-items">
+            <div className={`lightbox-item-graphic ${showInLightbox === 0 && 'active'}`}>
+              <h3 className="lightbox-title">CARBON CAPTURE</h3>
+              <div className="lightbox-description">
+                <p>
+                  10 new species were planted since the last verification. The developer plans on having planted 35
+                  different species by the end of this project.
+                </p>
+                <p>
+                  25 new jobs were generated since the last verification, including logistics, maintenance and
+                  management roles.
+                </p>
+              </div>
+            </div>
+            <div className={`lightbox-item-graphic ${showInLightbox === 1 && 'active'}`}>
+              <h3 className="lightbox-title">TREE COVER</h3>
+              <div className="lightbox-description">
+                <p>
+                  10 new species were planted since the last verification. The developer plans on having planted 35
+                  different species by the end of this project.
+                </p>
+                <p>
+                  25 new jobs were generated since the last verification, including logistics, maintenance and
+                  management roles.
+                </p>
+              </div>
+            </div>
+            <div className={`lightbox-item-graphic ${showInLightbox === 2 && 'active'}`}>
+              <h3 className="lightbox-title">BIOMASS</h3>
+              <div className="lightbox-description">
+                <p>
+                  10 new species were planted since the last verification. The developer plans on having planted 35
+                  different species by the end of this project.
+                </p>
+                <p>
+                  25 new jobs were generated since the last verification, including logistics, maintenance and
+                  management roles.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <figure className="sheets sheet-2">
+            <img src="/static/assets/images/small-sheet.svg" alt="" />
           </figure>
         </div>
       </div>
@@ -129,6 +194,114 @@ function Graphics() {
                 max-width: 100%;
                 height: auto;
                 display: block;
+              }
+            }
+          }
+          .graphic-open-lightbox {
+            margin: 0;
+            padding: 05px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+          .wrap-lightbox-graphic {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            z-index: 1200;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+            &.active {
+              height: 100vh;
+              opacity: 1;
+              visibility: visible;
+            }
+            .lightbox-overlay {
+              background-color: rgba(0, 0, 0, 0.5);
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 1;
+            }
+            .lightbox-main-graphic {
+              position: relative;
+              z-index: 2;
+              background-color: #fff;
+              max-width: 490px;
+              min-height: 325px;
+              margin: 0 auto;
+              border-radius: 10px;
+              border: solid 1px #979797;
+              padding: 100px 40px;
+              padding-bottom: 90px;
+              box-sizing: border-box;
+            }
+            .sheets {
+              position: absolute;
+              z-index: 3;
+            }
+            .sheet-1 {
+              top: -70px;
+              left: 0;
+            }
+            .sheet-2 {
+              bottom: -30px;
+              right: 5px;
+            }
+            .ligthbox-close {
+              position: absolute;
+              top: 25px;
+              right: 25px;
+              cursor: pointer;
+            }
+            .lightbox-items {
+              position: relative;
+            }
+            .lightbox-item-graphic {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              visibility: hidden;
+              opacity: 0;
+              transition: all 0.3s;
+              &.active {
+                opacity: 1;
+                visibility: visible;
+                position: relative;
+              }
+            }
+            .lightbox-title {
+              font-size: 16px;
+              color: #000;
+              font-family: 'Work Sans', sans-serif;
+              font-weight: 500;
+              margin: 0;
+              margin-bottom: 14px;
+            }
+            .lightbox-description {
+              font-weight: 300;
+              font-size: 14px;
+              color: #000;
+              p {
+                margin-top: 0;
+                &:last-child {
+                  margin-bottom: 0;
+                }
               }
             }
           }

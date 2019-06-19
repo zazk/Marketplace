@@ -139,6 +139,7 @@ function Details() {
                 height: 0;
                 overflow: hidden;
                 &.active {
+                  overflow: visible;
                   opacity: 1;
                   height: 100%;
                   visibility: visible;
