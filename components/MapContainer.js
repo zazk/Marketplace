@@ -163,49 +163,67 @@ export class MapContainer extends PureComponent {
     const { controller = false } = this.props;
     const { viewState } = this.state;
     return (
-      <div className="map-feature flex content">
-        <div className="imagen-info">
-          <h3 className="info-title">BIOMASS</h3>
-          <div className="info-figure">
-            <img src="/static/assets/images/bar-colors.svg" width="285" alt="" />
-            <div className="imagen-numbers">
-              <div className="numbers-item">0</div>
-              <div className="numbers-item">...</div>
-              <div className="numbers-item">300</div>
+      <div className="map-feature content">
+        <div className="content-main flex">
+          <div className="imagen-info">
+            <h3 className="info-title">BIOMASS</h3>
+            <div className="info-figure">
+              <img src="/static/assets/images/bar-colors.svg" width="285" alt="" />
+              <div className="imagen-numbers">
+                <div className="numbers-item">0</div>
+                <div className="numbers-item">...</div>
+                <div className="numbers-item">300</div>
+              </div>
             </div>
+            <div className="imagen-text-item">
+              <h3>{this.state.projectData.totalBiomass}</h3>
+              <p>Total biomass</p>
+            </div>
+            <div className="imagen-text-item">
+              <h3>{this.state.projectData.medianBiomass}</h3>
+              <p>Median biomass per hectare</p>
+            </div>
+            <a className="link-imagen" href="">
+              <img src="/static/iconos/info-circle-solid.svg" width="14" alt="" />
+              <p>What is biomass?</p>
+            </a>
           </div>
-          <div className="imagen-text-item">
-            <h3>{this.state.projectData.totalBiomass}</h3>
-            <p>Total biomass</p>
-          </div>
-          <div className="imagen-text-item">
-            <h3>{this.state.projectData.medianBiomass}</h3>
-            <p>Median biomass per hectare</p>
-          </div>
-          <a className="link-imagen" href="">
-            <img src="/static/iconos/info-circle-solid.svg" width="14" alt="" />
-            <p>What is biomass?</p>
-          </a>
         </div>
-        <DeckGL viewState={viewState} layers={this._renderLayers()} controller={controller}>
-          {this._renderTooltip}
-          <StaticMap
-            mapboxApiAccessToken="pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA"
-            mapStyle="mapbox://styles/mapbox/light-v10"
-          />
-        </DeckGL>
+        <div className="feature-map">
+          <DeckGL viewState={viewState} layers={this._renderLayers()} controller={controller}>
+            {this._renderTooltip}
+            <StaticMap
+              mapboxApiAccessToken="pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA"
+              mapStyle="mapbox://styles/mapbox/light-v10"
+            />
+          </DeckGL>
+        </div>
         <style jsx>
           {`
+            .feature-map {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 1;
+            }
+            .content-main {
+              z-index: 2;
+              position: relative;
+              align-items: center;
+              height: 100%;
+            }
             .map-feature {
               position: relative;
               width: 100%;
-              minwidth: 100%;
-              height: 400px;
-              maxwidth: 400px;
-              maxheight: 400px;
+              height: 415px;
               figure {
                 width: 28%;
                 height: 400px;
+              }
+              @media screen and (max-width: 745px) {
+                margin-top: 30px;
               }
               @media screen and (max-width: 480px) {
                 figure {
@@ -229,7 +247,6 @@ export class MapContainer extends PureComponent {
             }
             .map-feature.content {
               padding: 26px;
-              margin-top: 40px;
             }
             .imagen-info {
               z-index: 1000;
@@ -250,6 +267,10 @@ export class MapContainer extends PureComponent {
               }
             }
             .info-figure {
+              img {
+                max-width: 100%;
+                height: auto;
+              }
               @media screen and (max-width: 640px) {
                 max-width: 285px;
                 margin: auto;
@@ -283,8 +304,9 @@ export class MapContainer extends PureComponent {
                 font-weight: normal;
               }
               p {
-                font-size: 14px;
-                color: #969db6;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: rgba(0, 0, 0, 0.5);
               }
               @media screen and (max-width: 480px) {
                 text-align: left;

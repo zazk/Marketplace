@@ -44,6 +44,7 @@ function Leakage({ data }) {
       <style jsx>
         {`
           .leakage {
+            padding-top: 122px;
             .content {
               justify-content: space-between;
             }
@@ -85,29 +86,10 @@ function Leakage({ data }) {
           }
           .leakage-description {
             width: 64%;
-            background-color: #e2e5ee;
             padding-right: 30px;
             box-sizing: border-box;
             position: relative;
-            &:before {
-              content: '';
-              position: absolute;
-              width: 100vw;
-              height: 110px;
-              right: 0;
-              bottom: 100%;
-              z-index: -1;
-              background-color: #e2e5ee;
-            }
-            &:after {
-              content: '';
-              position: absolute;
-              top: 0;
-              right: 100%;
-              width: 100vw;
-              height: 100%;
-              background-color: #e2e5ee;
-            }
+
             @media screen and (max-width: 768px) {
               width: 58%;
             }

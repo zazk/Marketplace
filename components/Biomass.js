@@ -6,13 +6,15 @@ import BiomassChart from './BiomassChart';
 function Biomass({ data, biomass }) {
   const project = data;
   return (
-    <div className="biomass">
-      <div className="content">
-        <ItemText
-          icontitle="/static/iconos/globe-europe-solid.svg"
-          title="Biomass"
-          description="We use remote sensing technologies to measure aboveground biomass (ABG), which includes the stem, stump, branches, bark, seeds and foliage. The data is a product of annually composited satellite imagery, field observations, and LiDAR data."
-        />
+    <div className="biomass content">
+      <div className="content-main">
+        <div className="biomass-intro">
+          <ItemText
+            icontitle="/static/iconos/globe-europe-solid.svg"
+            title="Biomass"
+            description="We use remote sensing technologies to measure aboveground biomass (ABG), which includes the stem, stump, branches, bark, seeds and foliage. The data is a product of annually composited satellite imagery, field observations, and LiDAR data."
+          />
+        </div>
         <div className="biomas-grafico-detail flex">
           <figure>
             <BiomassChart data={biomass} />
@@ -63,10 +65,14 @@ function Biomass({ data, biomass }) {
       <style jsx>
         {`
           .biomass {
+            background-color: #fafafa;
             .content {
               padding-top: 34px;
               padding-bottom: 34px;
             }
+          }
+          .biomass-intro {
+            max-width: 580px;
           }
           .biomass-grafico {
             margin-top: 22px;
@@ -76,6 +82,10 @@ function Biomass({ data, biomass }) {
             align-items: center;
             figure {
               width: 74%;
+              border-radius: 10px;
+              box-shadow: 0 10px 34px 0 rgba(7, 93, 108, 0.14);
+              background-color: #ffffff;
+              overflow: hidden;
             }
             @media screen and (max-width: 640px) {
               figure {
@@ -89,13 +99,10 @@ function Biomass({ data, biomass }) {
           .biomass-detail {
             width: 217px;
             height: 124px;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px 0 rgba(3, 9, 34, 0.15);
-            background-color: #ffffff;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding-left: 60px;
+            box-sizing: border-box;
             @media screen and (max-width: 768px) {
               width: 45%;
             }

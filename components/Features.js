@@ -43,7 +43,7 @@ function Features({ data }) {
             </div>
             <div className="feature-controls">
               <button className="btn">Request quote</button>
-              <figure>
+              <figure className="feature-logo">
                 <img src={project.standard} width="96" alt="" />
               </figure>
             </div>
@@ -57,7 +57,6 @@ function Features({ data }) {
             margin: auto;
             position: relative;
             .bg-banner {
-              border-radius: 10px;
               background-size: cover;
               background-repeat: no-repeat;
               position: absolute;
@@ -75,7 +74,6 @@ function Features({ data }) {
                 position: absolute;
                 top: 0;
                 left: 0;
-                border-radius: 10px;
               }
               &:after {
                 background-color: #0a5d6c;
@@ -103,8 +101,8 @@ function Features({ data }) {
                 }
               }
             }
-            .content {
-              max-width: 985px;
+            .banner-main {
+              max-width: 1024px;
               position: relative;
               z-index: 3;
             }
@@ -112,7 +110,7 @@ function Features({ data }) {
               height: 440px;
               display: flex;
               flex-flow: row wrap;
-              align-items: flex-end;
+              align-items: center;
               justify-content: space-between;
               &.content {
                 padding: 0px;
@@ -128,25 +126,23 @@ function Features({ data }) {
               }
             }
           }
-          .content.figcaption {
-            max-width: 985px;
-            font-size: 12px;
-            color: #969db6;
-            @media screen and (max-width: 745px) {
-              display: none;
+
+          .feature-logo {
+            img {
+              height: 43px;
+              width: auto;
             }
           }
-
           .feature-description {
-            max-width: 392px;
+            max-width: 414px;
+            width: 100%;
             padding: 20px;
             padding-bottom: 26px;
-            padding-top: 65px;
+            padding-top: 58px;
             box-sizing: border-box;
             border-radius: 10px;
             box-shadow: 0 3px 10px 2px rgba(3, 9, 34, 0.07), 0 0 4px 0 rgba(3, 9, 34, 0.05);
             background-color: #ffffff;
-            transform: translateY(50px);
             @media screen and (max-width: 960px) {
               width: 48%;
               max-width: none;
@@ -179,6 +175,7 @@ function Features({ data }) {
               display: block;
               font-size: 12px;
               font-family: 'Work Sans', sans-serif;
+              font-weight: 700;
               color: #fff;
               display: flex;
               align-items: center;
@@ -186,12 +183,13 @@ function Features({ data }) {
               border-radius: 8px;
               em {
                 font-size: 10px;
+                font-weight: 700;
               }
             }
           }
           .feature-list {
             margin-top: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
           }
 
           .feature-controls {

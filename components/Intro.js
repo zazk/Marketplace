@@ -13,7 +13,6 @@ function Intro({ data }) {
             max-width: 700px;
             margin: auto;
             text-align: left;
-            padding-bottom: 35px;
             @media screen and (max-width: 768px) {
               padding: 30px 0;
             }
@@ -38,7 +37,7 @@ function Intro({ data }) {
             color: #4a4a4a;
             font-family: 'Lato', sans-serif;
             color: #fff;
-            line-height: 21px;
+            line-height: 26px;
             margin: 0px;
             @media screen and (max-width: 640px) {
               font-size: 16px;

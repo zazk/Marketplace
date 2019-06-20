@@ -27,12 +27,30 @@ function Header() {
           </ul>
         </nav>
         <MenuResponsive />
+        <div className="head-btn">
+          <button className="btn">
+            Request
+            <img className="btn-icon" src="/static/iconos/arrow-down-white.svg" alt="" />
+          </button>
+        </div>
       </div>
       <style jsx>
         {`
-          .header .content {
-            height: 56px;
+          .head-btn {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            height: 100%;
+            display: flex;
             align-items: center;
+            .btn {
+              width: 170px;
+            }
+          }
+          .header .content {
+            height: 70px;
+            align-items: center;
+            position: relative;
             /** border-bottom: 1px solid rgba(151, 151, 151, 0.3); **/
             @media screen and (max-width: 480px) {
               justify-content: space-between;

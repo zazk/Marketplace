@@ -63,6 +63,7 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
           font-weight: 400;
           -webkit-font-smoothing: antialiased;
           -webkit-tap-highlight-color: transparent;
+          background-color:#fafafa;
         }
         button {
               border: none;
@@ -96,7 +97,7 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
           padding: 0px;
         }
         .btn {
-          background-color: #17b363;
+          background-image: linear-gradient(259deg, #0fd856, #01a796, #01a697);
           color: #fff;
           height: 50px;
           width: 196px;
@@ -104,7 +105,7 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 18px;
+          font-size: 16px;
           font-family: 'Lato', sans-serif;
           font-weight: 700;
           transition: all 0.3s;
@@ -112,8 +113,11 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
           text-decoration: none;
           cursor: pointer;
           border:none;
-          border-radius:2px;
-
+          border-radius:5px;
+          .btn-icon{
+            margin-left:5px;
+            margin-top:5px;
+          }
           &.gray {
             width: 210px;
             border: solid 1px #979797;
@@ -128,17 +132,22 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
             width: 115px;
           }
           &:hover {
-            opacity: 0.5;
+            opacity:0.8
+
           }
         }
         .content {
-          max-width: 1024px;
+          max-width: 1280px;
           padding:0 20px;
           box-sizing: border-box;
           margin: auto;
           color: #363636;
           text-align: left;
           font-size: 14px;
+        }
+        .content-main{
+          max-width: 1024px;
+          margin: auto;
         }
         .flex {
           display: flex;

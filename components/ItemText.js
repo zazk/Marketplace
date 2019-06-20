@@ -43,7 +43,7 @@ function ItemText({ iconcard, type, title, description, card, source, source_lin
             text-transform: uppercase;
             font-family: 'Work Sans', sans-serif;
             font-weight: 700;
-            color: #17b363;
+            color: #09c173;
             img {
               margin-right: 10px;
             }
@@ -53,7 +53,7 @@ function ItemText({ iconcard, type, title, description, card, source, source_lin
           }
           .item-description {
             font-size: 16px;
-            line-height: 24px;
+            line-height: 26px;
             color: #4a4a4a;
           }
           .item-description p {
