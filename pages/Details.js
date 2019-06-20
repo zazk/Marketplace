@@ -152,7 +152,7 @@ function Details() {
             }
             .wrap-drodown {
               position: relative;
-              &:hover {
+              &.active {
                 .dropdown {
                   opacity: 1;
                   visibility: visible;
@@ -175,18 +175,14 @@ function Details() {
                   }
                 }
               }
-              &.small {
-                /* background-color: rgba(255,255,255,0.9); */
-                background-color: red;
+              &.type-two {
                 .dropdown {
-                  width: 100%;
+                  border-radius: 25px 0px 25px 0px;
+                  background-color: #fff;
+                  overflow: hidden;
+                  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
                   .dropdown-main {
-                    background-color: red;
-                    border-radius: 0px;
-                    &:before,
-                    &:after {
-                      display: none;
-                    }
+                    box-shadow: inherit;
                   }
                 }
               }
@@ -196,19 +192,17 @@ function Details() {
                 visibility: hidden;
                 transition: all 0.5s;
                 position: absolute;
-                width: 200px;
+                width: 100%;
                 left: 0;
                 top: 100%;
                 padding-top: 10px;
                 z-index: 10;
+                background-color: rgba(255, 255, 255, 0.8);
                 .dropdown-main {
                   box-sizing: border-box;
-                  background-color: #fff;
-                  border-radius: 10px;
-                  overflow: hidden;
-                  border: 1px solid #b3afaf;
                   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
-                  &:after,
+                   {
+                    /* &:after,
                   &:before {
                     content: '';
                     position: absolute;
@@ -232,24 +226,29 @@ function Details() {
                     border-style: solid;
                     border-width: 0 7px 6px 7px;
                     border-color: transparent transparent #fff transparent;
+                  } */
                   }
                 }
               }
-              .dropdown-item {
+               {
+                /* .dropdown-item {
                 border-bottom: 1px solid #ccc;
                 &:last-child {
                   border-bottom: none;
                 }
+              } */
               }
               .dropdown-link {
-                height: 40px;
+                height: 35px;
                 display: flex;
                 padding: 0 10px;
                 font-size: 14px;
                 align-items: center;
                 color: rgba(54, 54, 54, 0.5);
+
                 &:hover {
-                  background-color: #eee;
+                  background-color: rgba(1, 166, 151, 0.9);
+                  color: #fff;
                 }
               }
             }

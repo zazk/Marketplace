@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 function DetailHead() {
+  const [openDropdown, setDropdown] = useState(0);
+
   return (
     <div className="detail-header flex">
       <div className="head-left flex">
@@ -12,7 +14,7 @@ function DetailHead() {
         <h2 className="head-name-project">Middlebury College Improved Forest Management Project</h2>
       </div>
       <div className="head-right flex">
-        <div className="wrap-menu-head wrap-drodown" data-position="right">
+        <div className="wrap-menu-head wrap-drodown" data-position="right" style={{ display: `none` }}>
           <button className="detail-menu-btn">
             <span />
             <span />
@@ -43,9 +45,11 @@ function DetailHead() {
             </ul>
           </div>
         </div>
-        <div className="wrap-btn wrap-drodown" data-position="right">
+        <div className={`wrap-btn wrap-drodown type-two ${openDropdown === 1 && 'active'}`}>
           <button className="detail-btn btn">
             Request <img src="/static/iconos/arrow-down-white.svg" alt="" />
+            <div className="open-select select-control" onClick={() => setDropdown(1)} />
+            <div className="close-select select-control" onClick={() => setDropdown(0)} />
           </button>
           <div className="dropdown">
             <ul className="dropdown-main">
@@ -104,18 +108,41 @@ function DetailHead() {
 
             .wrap-btn {
               margin-left: 25px;
+              &.active {
+                img {
+                  transform: rotate(180deg);
+                }
+                .open-select {
+                  display: none;
+                }
+                .close-select {
+                  display: block;
+                }
+              }
             }
-            .btn {
+            .detail-btn {
               width: 173px;
               height: 50px;
               font-size: 16px;
-
               background-size: 100%;
               background-color: transparent;
               background-image: url('/static/assets/images/btn-head.svg');
+              position: relative;
+
               img {
                 margin-left: 5px;
               }
+            }
+            .select-control {
+              position: absolute;
+              top: 0;
+              left: 0;
+
+              width: 100%;
+              height: 100%;
+            }
+            .close-select {
+              display: none;
             }
             .head-name-project {
               margin: 0;

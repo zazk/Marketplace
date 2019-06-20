@@ -1,70 +1,19 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import React, { useState } from 'react';
 import DashboardMap from './DashboardMap';
 import MapVisualization from './MapVisualization';
 import heatmapdata2 from './data-biomass-greatforest';
 
-const useStyles = makeStyles({
-  root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    borderRadius: 3,
-    border: 0,
-    color: 'red',
-    height: 48,
-    padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-  },
-  label: {
-    textTransform: 'capitalize',
-  },
-});
-export default function MapDetail() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  function handleClick(event) {
-    setAnchorEl(event.currentTarget);
-  }
-
-  function handleClose() {
-    setAnchorEl(null);
-  }
-
-  const classes = useStyles();
+function MapDetail() {
+  const [openDropdown, setDropdown] = useState(0);
 
   return (
     <div>
       <div className="detail-legend">
-        <div className="legend-select wrap-drodown">
-          {/* <Button
-            classes={{
-              root: classes.root,
-              label: classes.label,
-            }}
-            aria-controls="simple-menu"
-            aria-haspopup="true"
-            onClick={handleClick}
-          >
-            Biomass
-            <img className="legend-select-icon" src="/static/iconos/arrow-head.svg" width="6" alt="" />
-          </Button>
-          <Menu
-            classes={{ paper: classes.paper }}
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-            <MenuItem onClick={handleClose}>Carbon Inventory</MenuItem>
-            <MenuItem onClick={handleClose}>Tree Cover</MenuItem>
-            <MenuItem onClick={handleClose}>Fire Risk</MenuItem>
-          </Menu> */}
-
+        <div className={`legend-select wrap-drodown ${openDropdown === 1 && 'active'}`}>
           <div className="btn-legend-select ">
-            <span className="label-select">BIOMASS</span>
+            <div className="open-select select-control" onClick={() => setDropdown(1)} />
+            <div className="close-select select-control" onClick={() => setDropdown(0)} />
+            <span className="label-select">Biomass</span>
             <img className="legend-select-icon" src="/static/iconos/arrow-head.svg" width="6" alt="" />
           </div>
           <div className="dropdown">
@@ -96,7 +45,7 @@ export default function MapDetail() {
         {`
           .detail-legend {
             width: 234px;
-            padding-top: 16px;
+            padding-top: 10px;
             border-radius: 10px;
             box-shadow: 0 0 1px 2px rgba(9, 43, 49, 0.14);
             background-color: #ffffff;
@@ -136,24 +85,42 @@ export default function MapDetail() {
             margin-left: 10px;
           }
 
+          .select-control {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+          .close-select {
+            display: none;
+          }
+
           .legend-select {
             display: inline-block;
             position: relative;
             min-width: 115px;
             margin-left: 10px;
-            padding-bottom: 5px;
+            padding: 8px;
+            cursor: pointer;
             .label-select {
               cursor: pointer;
-              text-transform: uppercase;
               color: #000;
               font-size: 14px;
               font-weight: 500;
-              padding-left: 16px;
-              padding-right: 10px;
             }
             &:hover {
-              span {
-                text-decoration: underline;
+              box-shadow: 0 10px 34px 0 rgba(7, 93, 108, 0.14);
+            }
+            &.active {
+              .legend-select-icon {
+                transform: rotate(90deg);
+              }
+              .open-select {
+                display: none;
+              }
+              .close-select {
+                display: block;
               }
             }
           }
@@ -162,3 +129,4 @@ export default function MapDetail() {
     </div>
   );
 }
+export default MapDetail;
