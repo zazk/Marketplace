@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Router from 'next/router';
 import Layout from '../components/layout';
 import DetailHead from '../components/dashboard/DetailHead';
 import StatusMonitoring from '../components/dashboard/StatusMonitoring';
@@ -13,6 +14,7 @@ import InfoList from '../components/dashboard/InfoList';
 import InfoLogo from '../components/dashboard/InfoLogo';
 function Details() {
   const [activeTab, setActiveTab] = useState(0);
+
   return (
     <Layout title="Dashboard" dashboard={true}>
       <div className="detail-project">

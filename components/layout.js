@@ -14,7 +14,7 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
         />
       </Head>
       <div className="cnt-wrapper">
-        {!dashboard && <Header />}
+        {!dashboard && <Header user={true} />}
         {children}
 
         <footer />
