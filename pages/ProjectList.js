@@ -33,21 +33,21 @@ function ProjectList() {
               <div className="project-description">
                 <div className="description-item">
                   <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-                  <div className="descriotion-text">
+                  <div className="description-text">
                     <span>2,673 hectares </span>
                     <p>Spanning 14,326 square miles</p>
                   </div>
                 </div>
                 <div className="description-item">
                   <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                  <div className="descriotion-text">
+                  <div className="description-text">
                     <span>Bluesource </span>
                     <p>Project developer</p>
                   </div>
                 </div>
                 <div className="description-item">
                   <img src="/static/iconos/icon-sumary-5.svg" width="24" alt="" />
-                  <div className="descriotion-text">
+                  <div className="description-text">
                     <span>750 tonnes </span>
                     <p>CO2 equivalent units per year</p>
                   </div>
@@ -83,21 +83,21 @@ function ProjectList() {
               <div className="project-description">
                 <div className="description-item">
                   <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-                  <div className="descriotion-text">
+                  <div className="description-text">
                     <span>2,673 hectares </span>
                     <p>Spanning 14,326 square miles</p>
                   </div>
                 </div>
                 <div className="description-item">
                   <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                  <div className="descriotion-text">
+                  <div className="description-text">
                     <span>Bluesource </span>
                     <p>Project developer</p>
                   </div>
                 </div>
                 <div className="description-item">
                   <img src="/static/iconos/icon-sumary-5.svg" width="24" alt="" />
-                  <div className="descriotion-text">
+                  <div className="description-text">
                     <span>750 tonnes </span>
                     <p>CO2 equivalent units per year</p>
                   </div>
@@ -106,62 +106,20 @@ function ProjectList() {
             </div>
           </a>
         </div>
-        <div className="content-main project-list-main">
+
+        <div className="content-main project-list-main feature-three">
           <a href="" className="project-item">
             <div
               className="project-picture"
               style={{
-                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/2-main_picture.jpg)`,
-              }}
-            />
-            <div className="project-detail flex">
-              <div className="project-resumen">
-                <h3 className="project-name">Other title very large</h3>
-                <div className="project-ubication">
-                  <p className="project-ubication-address">Columbus, Ohio, USA</p>
-                </div>
-                <div className="project-progress">
-                  <div className="progressbar">
-                    <div className="progressbar-item" style={{ width: `20%` }} />
-                  </div>
-                  <div className="progres-numbers">
-                    <p>
-                      <strong>10.000</strong>
-                      carbon credits available
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="project-description">
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-                  <div className="descriotion-text">
-                    <span>2,673 hectares </span>
-                    <p>Spanning 14,326 square miles</p>
-                  </div>
-                </div>
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                  <div className="descriotion-text">
-                    <span>Bluesource </span>
-                    <p>Project developer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="" className="project-item">
-            <div
-              className="project-picture"
-              style={{
-                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/3-main_picture.jpg)`,
+                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/middlebury-main_picture.jpg)`,
               }}
             />
             <div className="project-detail flex">
               <div className="project-resumen">
                 <h3 className="project-name">Middlebury College</h3>
                 <div className="project-ubication">
-                  <p className="project-ubication-address">Salem, Oregon, USA</p>
+                  <p className="project-ubication-address">Middlebury, Vermont, USA</p>
                 </div>
                 <div className="project-progress">
                   <div className="progressbar">
@@ -178,14 +136,57 @@ function ProjectList() {
               <div className="project-description">
                 <div className="description-item">
                   <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-                  <div className="descriotion-text">
+                  <div className="description-text">
                     <span>2,673 hectares </span>
                     <p>Spanning 14,326 square miles</p>
                   </div>
                 </div>
                 <div className="description-item">
                   <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                  <div className="descriotion-text">
+                  <div className="description-text">
+                    <span>Bluesource </span>
+                    <p>Project developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="" className="project-item">
+            <div
+              className="project-picture"
+              style={{
+                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/hudson-main_picture.jpg)`,
+              }}
+            />
+            <div className="project-detail flex">
+              <div className="project-resumen">
+                <h3 className="project-name">Other title</h3>
+                <div className="project-ubication">
+                  <p className="project-ubication-address">Lansing, Michigan, USA</p>
+                </div>
+                <div className="project-progress">
+                  <div className="progressbar">
+                    <div className="progressbar-item" style={{ width: `40%` }} />
+                  </div>
+                  <div className="progres-numbers">
+                    <p>
+                      <strong>10.000</strong>
+                      carbon credits available
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="project-description">
+                <div className="description-item">
+                  <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
+                  <div className="description-text">
+                    <span>2,673 hectares </span>
+                    <p>Spanning 14,326 square miles</p>
+                  </div>
+                </div>
+                <div className="description-item">
+                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
+                  <div className="description-text">
                     <span>Bluesource </span>
                     <p>Project developer</p>
                   </div>
@@ -221,14 +222,146 @@ function ProjectList() {
               <div className="project-description">
                 <div className="description-item">
                   <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-                  <div className="descriotion-text">
+                  <div className="description-text">
                     <span>2,673 hectares </span>
                     <p>Spanning 14,326 square miles</p>
                   </div>
                 </div>
                 <div className="description-item">
                   <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                  <div className="descriotion-text">
+                  <div className="description-text">
+                    <span>Bluesource </span>
+                    <p>Project developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div className="content-main project-list-main">
+          <a href="" className="project-item">
+            <div
+              className="project-picture"
+              style={{
+                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/2-main_picture.jpg)`,
+              }}
+            />
+            <div className="project-detail flex">
+              <div className="project-resumen">
+                <h3 className="project-name">Other title very large</h3>
+                <div className="project-ubication">
+                  <p className="project-ubication-address">Columbus, Ohio, USA</p>
+                </div>
+                <div className="project-progress">
+                  <div className="progressbar">
+                    <div className="progressbar-item" style={{ width: `20%` }} />
+                  </div>
+                  <div className="progres-numbers">
+                    <p>
+                      <strong>10.000</strong>
+                      carbon credits available
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="project-description">
+                <div className="description-item">
+                  <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
+                  <div className="description-text">
+                    <span>2,673 hectares </span>
+                    <p>Spanning 14,326 square miles</p>
+                  </div>
+                </div>
+                <div className="description-item">
+                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
+                  <div className="description-text">
+                    <span>Bluesource </span>
+                    <p>Project developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="" className="project-item">
+            <div
+              className="project-picture"
+              style={{
+                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/3-main_picture.jpg)`,
+              }}
+            />
+            <div className="project-detail flex">
+              <div className="project-resumen">
+                <h3 className="project-name">Middlebury College</h3>
+                <div className="project-ubication">
+                  <p className="project-ubication-address">Salem, Oregon, USA</p>
+                </div>
+                <div className="project-progress">
+                  <div className="progressbar">
+                    <div className="progressbar-item" style={{ width: `80%` }} />
+                  </div>
+                  <div className="progres-numbers">
+                    <p>
+                      <strong>10.000</strong>
+                      carbon credits available
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="project-description">
+                <div className="description-item">
+                  <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
+                  <div className="description-text">
+                    <span>2,673 hectares </span>
+                    <p>Spanning 14,326 square miles</p>
+                  </div>
+                </div>
+                <div className="description-item">
+                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
+                  <div className="description-text">
+                    <span>Bluesource </span>
+                    <p>Project developer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a href="" className="project-item">
+            <div
+              className="project-picture"
+              style={{
+                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/middlebury-main_picture.jpg)`,
+              }}
+            />
+            <div className="project-detail flex">
+              <div className="project-resumen">
+                <h3 className="project-name">Middlebury College</h3>
+                <div className="project-ubication">
+                  <p className="project-ubication-address">Middlebury, Vermont, USA</p>
+                </div>
+                <div className="project-progress">
+                  <div className="progressbar">
+                    <div className="progressbar-item" style={{ width: `80%` }} />
+                  </div>
+                  <div className="progres-numbers">
+                    <p>
+                      <strong>10.000</strong>
+                      carbon credits available
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="project-description">
+                <div className="description-item">
+                  <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
+                  <div className="description-text">
+                    <span>2,673 hectares </span>
+                    <p>Spanning 14,326 square miles</p>
+                  </div>
+                </div>
+                <div className="description-item">
+                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
+                  <div className="description-text">
                     <span>Bluesource </span>
                     <p>Project developer</p>
                   </div>
@@ -278,86 +411,93 @@ function ProjectList() {
             .project-detail {
               flex-flow: row wrap;
             }
-            .feature-two {
+            .feature-two,
+            .feature-three {
               justify-content: space-between;
               .project-item {
-                &:first-child,
-                &:nth-child(2) {
-                  width: 49%;
-                  padding-top: 0;
-                  box-sizing: border-box;
-                  padding-left: 0;
-                  position: relative;
-                  .project-detail {
-                    padding: 24px;
-                    padding-bottom: 0;
-                    flex-direction: column;
-                  }
-                  .project-picture {
-                    position: relative;
-                    height: 170px;
-                    width: 100%;
-                    &:after {
-                      z-index: 1;
-                    }
-                    &:before {
-                      z-index: 2;
-                      opacity: 0.63;
-                      position: absolute;
-                      background-image: linear-gradient(to right, rgba(25, 36, 79, 0.91), rgba(11, 16, 36, 0));
-                    }
-                  }
-                  .project-resumen {
-                    padding: 0;
-                  }
-                  .progres-numbers {
-                    strong {
-                      font-size: 16px;
-                    }
-                  }
-                  .project-ubication-address {
-                    position: absolute;
-                    z-index: 3;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    padding: 10px;
-                    padding-left: 28px;
-                    box-sizing: border-box;
-                    color: #fff;
-                    &:before {
-                      top: 10px;
-                      left: 10px;
-                      background-image: url('/static/iconos/ico-feature-w-3.svg');
-                    }
-                  }
-                  .project-description {
-                    display: flex;
-                    flex-flow: row wrap;
-                    width: 100%;
-                    margin-top: 25px;
-                  }
-                  .project-ubication {
-                    margin-bottom: 0;
-                  }
-                  .description-item {
-                    width: 33.33%;
-                    padding-right: 10px;
-                    padding-left: 20px;
-                    box-sizing: border-box;
-                    margin-bottom: 0;
-                    &:first-child {
-                      padding-left: 0;
-                    }
-                    p {
-                      text-transform: inherit;
-                    }
-                    img {
-                      position: relative;
-                      margin-bottom: 10px;
-                    }
-                  }
+                width: 49%;
+                padding-top: 0;
+                box-sizing: border-box;
+                padding-left: 0;
+                position: relative;
+              }
+              .project-detail {
+                padding: 24px;
+                padding-bottom: 0;
+                flex-direction: column;
+              }
+              .project-picture {
+                position: relative;
+                height: 170px;
+                width: 100%;
+                &:after {
+                  z-index: 1;
                 }
+                &:before {
+                  z-index: 2;
+                  opacity: 0.63;
+                  position: absolute;
+                  background-image: linear-gradient(to right, rgba(25, 36, 79, 0.91), rgba(11, 16, 36, 0));
+                }
+              }
+              .project-resumen {
+                padding: 0;
+                width: 100%;
+              }
+              .progres-numbers {
+                strong {
+                  font-size: 16px;
+                }
+              }
+              .project-ubication-address {
+                position: absolute;
+                z-index: 3;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 10px;
+                padding-left: 28px;
+                box-sizing: border-box;
+                color: #fff;
+                &:before {
+                  top: 10px;
+                  left: 10px;
+                  background-image: url('/static/iconos/ico-feature-w-3.svg');
+                }
+              }
+              .project-description {
+                display: flex;
+                flex-flow: row wrap;
+                width: 100%;
+                margin-top: 25px;
+              }
+              .project-ubication {
+                margin-bottom: 0;
+              }
+              .description-item {
+                width: 33.33%;
+                padding-right: 10px;
+                padding-left: 20px;
+                box-sizing: border-box;
+                margin-bottom: 0;
+                &:first-child {
+                  padding-left: 0;
+                }
+                p {
+                  text-transform: inherit;
+                }
+                img {
+                  position: relative;
+                  margin-bottom: 10px;
+                }
+              }
+            }
+            .feature-three {
+              .project-item {
+                width: 32%;
+              }
+              .description-item {
+                width: 50%;
               }
             }
 
@@ -461,6 +601,7 @@ function ProjectList() {
               span {
                 font-family: 'Work Sans', sans-serif;
                 font-weight: 500;
+                font-size: 14px;
               }
               p {
                 margin: 0;
