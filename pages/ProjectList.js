@@ -1,11 +1,10 @@
 import React from 'react';
 import Layout from '../components/layout';
-
 function ProjectList() {
   return (
     <Layout title="Dashboard">
       <div className="project-list">
-        <div className="content-main project-list-main">
+        <div className="content-main project-list-main feature-two">
           <a href="" className="project-item">
             <div
               className="project-picture"
@@ -17,9 +16,7 @@ function ProjectList() {
               <div className="project-resumen">
                 <h3 className="project-name">Middlebury College</h3>
                 <div className="project-ubication">
-                  <p>
-                    <img src="/static/iconos/ico-feature-3.svg" alt="" /> Middlebury, Vermont, USA
-                  </p>
+                  <p className="project-ubication-address">Middlebury, Vermont, USA</p>
                 </div>
                 <div className="project-progress">
                   <div className="progressbar">
@@ -48,6 +45,13 @@ function ProjectList() {
                     <p>Project developer</p>
                   </div>
                 </div>
+                <div className="description-item">
+                  <img src="/static/iconos/icon-sumary-5.svg" width="24" alt="" />
+                  <div className="descriotion-text">
+                    <span>750 tonnes </span>
+                    <p>CO2 equivalent units per year</p>
+                  </div>
+                </div>
               </div>
             </div>
           </a>
@@ -62,9 +66,7 @@ function ProjectList() {
               <div className="project-resumen">
                 <h3 className="project-name">Other title</h3>
                 <div className="project-ubication">
-                  <p>
-                    <img src="/static/iconos/ico-feature-3.svg" alt="" /> Lansing, Michigan, USA
-                  </p>
+                  <p className="project-ubication-address">Lansing, Michigan, USA</p>
                 </div>
                 <div className="project-progress">
                   <div className="progressbar">
@@ -93,9 +95,18 @@ function ProjectList() {
                     <p>Project developer</p>
                   </div>
                 </div>
+                <div className="description-item">
+                  <img src="/static/iconos/icon-sumary-5.svg" width="24" alt="" />
+                  <div className="descriotion-text">
+                    <span>750 tonnes </span>
+                    <p>CO2 equivalent units per year</p>
+                  </div>
+                </div>
               </div>
             </div>
           </a>
+        </div>
+        <div className="content-main project-list-main">
           <a href="" className="project-item">
             <div
               className="project-picture"
@@ -107,9 +118,7 @@ function ProjectList() {
               <div className="project-resumen">
                 <h3 className="project-name">Other title very large</h3>
                 <div className="project-ubication">
-                  <p>
-                    <img src="/static/iconos/ico-feature-3.svg" alt="" /> Columbus, Ohio, USA
-                  </p>
+                  <p className="project-ubication-address">Columbus, Ohio, USA</p>
                 </div>
                 <div className="project-progress">
                   <div className="progressbar">
@@ -152,9 +161,7 @@ function ProjectList() {
               <div className="project-resumen">
                 <h3 className="project-name">Middlebury College</h3>
                 <div className="project-ubication">
-                  <p>
-                    <img src="/static/iconos/ico-feature-3.svg" alt="" /> Salem, Oregon, USA
-                  </p>
+                  <p className="project-ubication-address">Salem, Oregon, USA</p>
                 </div>
                 <div className="project-progress">
                   <div className="progressbar">
@@ -197,9 +204,7 @@ function ProjectList() {
               <div className="project-resumen">
                 <h3 className="project-name">Middlebury College</h3>
                 <div className="project-ubication">
-                  <p>
-                    <img src="/static/iconos/ico-feature-3.svg" alt="" /> Middlebury, Vermont, USA
-                  </p>
+                  <p className="project-ubication-address">Middlebury, Vermont, USA</p>
                 </div>
                 <div className="project-progress">
                   <div className="progressbar">
@@ -274,10 +279,84 @@ function ProjectList() {
               flex-flow: row wrap;
             }
             .feature-two {
+              justify-content: space-between;
               .project-item {
                 &:first-child,
                 &:nth-child(2) {
-                  width: 48%;
+                  width: 49%;
+                  padding-top: 0;
+                  box-sizing: border-box;
+                  padding-left: 0;
+                  position: relative;
+                  .project-detail {
+                    padding: 24px;
+                    padding-bottom: 0;
+                    flex-direction: column;
+                  }
+                  .project-picture {
+                    position: relative;
+                    height: 170px;
+                    width: 100%;
+                    &:after {
+                      z-index: 1;
+                    }
+                    &:before {
+                      z-index: 2;
+                      opacity: 0.63;
+                      position: absolute;
+                      background-image: linear-gradient(to right, rgba(25, 36, 79, 0.91), rgba(11, 16, 36, 0));
+                    }
+                  }
+                  .project-resumen {
+                    padding: 0;
+                  }
+                  .progres-numbers {
+                    strong {
+                      font-size: 16px;
+                    }
+                  }
+                  .project-ubication-address {
+                    position: absolute;
+                    z-index: 3;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    padding: 10px;
+                    padding-left: 28px;
+                    box-sizing: border-box;
+                    color: #fff;
+                    &:before {
+                      top: 10px;
+                      left: 10px;
+                      background-image: url('/static/iconos/ico-feature-w-3.svg');
+                    }
+                  }
+                  .project-description {
+                    display: flex;
+                    flex-flow: row wrap;
+                    width: 100%;
+                    margin-top: 25px;
+                  }
+                  .project-ubication {
+                    margin-bottom: 0;
+                  }
+                  .description-item {
+                    width: 33.33%;
+                    padding-right: 10px;
+                    padding-left: 20px;
+                    box-sizing: border-box;
+                    margin-bottom: 0;
+                    &:first-child {
+                      padding-left: 0;
+                    }
+                    p {
+                      text-transform: inherit;
+                    }
+                    img {
+                      position: relative;
+                      margin-bottom: 10px;
+                    }
+                  }
                 }
               }
             }
@@ -305,6 +384,22 @@ function ProjectList() {
               height: 100%;
               background-position: center center;
               background-size: cover;
+              &:after,
+              &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
+              &:before {
+                opacity: ;
+              }
+              &:after {
+                background-color: #0a5d6c;
+                opacity: 0.3;
+              }
             }
             .project-resumen {
               width: 61%;
@@ -316,6 +411,20 @@ function ProjectList() {
               width: 39%;
               padding-right: 10px;
               box-sizing: border-box;
+            }
+            .project-ubication-address {
+              position: relative;
+              padding-left: 18px;
+              &:before {
+                content: '';
+                position: absolute;
+                top: 3px;
+                left: 0;
+                width: 13px;
+                height: 17px;
+                background-image: url('/static/iconos/ico-feature-3.svg');
+                display: inline-block;
+              }
             }
             .project-name {
               font-family: 'Work Sans', sans-serif;
