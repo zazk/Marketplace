@@ -7,45 +7,49 @@ function Leakage({ data }) {
 
   return (
     <div className="leakage">
-      <div className="content flex">
-        <div className="leakage-description">
-          <span className="leakage-bg" />
-          <ItemText
-            type="two"
-            title="Leakage"
-            description={project.leakage.text}
-            source={project.leakage.source}
-            source_link={project.leakage.source_link}
-          />
-          <ItemText
-            type="two"
-            title="Additionality"
-            description={project.additionality.text}
-            source={project.additionality.source}
-            source_link={project.additionality.source_link}
-          />
-          <ItemText
-            type="two"
-            title="Permanence"
-            description={project.permanence.text}
-            source={project.permanence.source}
-            source_link={project.permanence.source_link}
-          />
-          <ItemText
-            type="two"
-            title="Permanence"
-            description={project.verifiability.text}
-            source={project.verifiability.source}
-            source_link={project.verifiability.source_link}
-          />
+      <div className="content">
+        <div className="content-main flex">
+          <div className="leakage-description">
+            <span className="leakage-bg" />
+            <ItemText
+              type="two"
+              title="Leakage"
+              description={project.leakage.text}
+              source={project.leakage.source}
+              source_link={project.leakage.source_link}
+              card={true}
+              iconcard="/static/iconos/icon-card-large.svg"
+            />
+            <ItemText
+              type="two"
+              title="Additionality"
+              description={project.additionality.text}
+              source={project.additionality.source}
+              source_link={project.additionality.source_link}
+            />
+            <ItemText
+              type="two"
+              title="Permanence"
+              description={project.permanence.text}
+              source={project.permanence.source}
+              source_link={project.permanence.source_link}
+            />
+            <ItemText
+              type="two"
+              title="Permanence"
+              description={project.verifiability.text}
+              source={project.verifiability.source}
+              source_link={project.verifiability.source_link}
+            />
+          </div>
+          <SideBar data={data} />
         </div>
-        <SideBar data={data} />
       </div>
       <style jsx>
         {`
           .leakage {
             padding-top: 122px;
-            .content {
+            .content-main {
               justify-content: space-between;
             }
             .leakage-item {
@@ -61,7 +65,7 @@ function Leakage({ data }) {
           .leakage-bg {
             display: none;
             @media screen and (max-width: 640px) {
-              display: block;
+              display: none;
               padding-bottom: 30px;
               &:before {
                 content: '';
@@ -85,8 +89,7 @@ function Leakage({ data }) {
             }
           }
           .leakage-description {
-            width: 64%;
-            padding-right: 30px;
+            width: 63%;
             box-sizing: border-box;
             position: relative;
 

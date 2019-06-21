@@ -47,7 +47,8 @@ function DetailHead() {
         </div>
         <div className={`wrap-btn wrap-drodown type-two ${openDropdown === 1 && 'active'}`}>
           <button className="detail-btn btn">
-            Request <img src="/static/iconos/arrow-down-white.svg" alt="" />
+            <span>Request</span>
+            <img src="/static/iconos/arrow-down-white.svg" alt="" />
             <div className="open-select select-control" onClick={() => setDropdown(1)} />
             <div className="close-select select-control" onClick={() => setDropdown(0)} />
           </button>
@@ -124,20 +125,18 @@ function DetailHead() {
               width: 173px;
               height: 50px;
               font-size: 16px;
-              background-size: 100%;
-              background-color: transparent;
-              background-image: url('/static/assets/images/btn-head.svg');
-              position: relative;
 
               img {
                 margin-left: 5px;
+                position: relative;
+                z-index: 2;
               }
             }
             .select-control {
               position: absolute;
               top: 0;
               left: 0;
-
+              z-index: 3;
               width: 100%;
               height: 100%;
             }
@@ -151,7 +150,7 @@ function DetailHead() {
               margin-left: 13px;
               font-family: serif;
               font-family: 'Work Sans', sans-serif;
-              font-weight: 700;
+              font-weight: 600;
             }
           }
         `}

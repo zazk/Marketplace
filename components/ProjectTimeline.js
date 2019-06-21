@@ -32,11 +32,12 @@ function ProjectTimeline({ data }) {
               h4 {
                 font-size: 16px;
                 color: #030922;
-                font-weight: 700;
+                font-weight: 400;
               }
               p {
                 font-size: 12px;
-                color: #969db6;
+                color: rgba(0, 0, 0, 0.5);
+                text-transform: uppercase;
               }
               &:last-child {
                 padding-bottom: 0;

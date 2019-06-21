@@ -5,10 +5,12 @@ function Pay({ data }) {
   return (
     <div className="pay" style={{ backgroundImage: `url(/static/assets/images/bg-footer.jpg)` }}>
       <div className="content">
-        <h3 className="pay-title">{project.tagline_footer}</h3>
-        <a href="" className="btn">
-          Request Quote
-        </a>
+        <div className="content-main">
+          <h3 className="pay-title">{project.tagline_footer}</h3>
+          <a href="" className="btn">
+            <span>Request Quote</span>
+          </a>
+        </div>
       </div>
       <style jsx>
         {`
@@ -18,6 +20,14 @@ function Pay({ data }) {
             .content {
               padding-top: 48px;
               padding-bottom: 58px;
+            }
+            .content-main {
+              max-width: 980px;
+              text-align: center;
+            }
+            .btn {
+              margin-left: auto;
+              margin-right: auto;
             }
           }
           .pay-title {

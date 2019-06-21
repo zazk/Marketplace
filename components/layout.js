@@ -78,10 +78,9 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
           }
         }
         .sidebar-title {
-          color: #969db6;
           font-size: 13px;
           margin-bottom: 10px;
-          font-weight: 500;
+          font-weight: 700;
           font-family: 'Work Sans', sans-serif;
           text-transform: uppercase;
         }
@@ -97,7 +96,6 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
           padding: 0px;
         }
         .btn {
-          background-image: linear-gradient(259deg, #0fd856, #01a796, #01a697);
           color: #fff;
           height: 50px;
           width: 196px;
@@ -113,10 +111,37 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
           text-decoration: none;
           cursor: pointer;
           border:none;
+          overflow: hidden;
           border-radius:5px;
+          position: relative;
+          span{
+            position: relative;
+            z-index: 2;
+          }
+          &:after, &:before{
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition:all .3s
+          }
+          &:after{
+            background-image: linear-gradient(259deg, #0fd856, #01a796, #01a697);
+          }
+          &:before{
+            background-color: #01a697;
+            z-index: 2;
+            opacity: 0;
+
+          }
           .btn-icon{
             margin-left:5px;
             margin-top:5px;
+            position: relative;
+            z-index: 2;
           }
           &.gray {
             width: 210px;
@@ -132,7 +157,12 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
             width: 115px;
           }
           &:hover {
-            opacity:0.8
+            &:after{
+             opacity: 0;
+            }
+            &:before{
+              opacity: 1;
+            }
 
           }
         }

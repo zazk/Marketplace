@@ -42,7 +42,9 @@ function Features({ data }) {
               <DataFeatureList />
             </div>
             <div className="feature-controls">
-              <button className="btn">Request quote</button>
+              <button className="btn">
+                <span>Request quote</span>
+              </button>
               <figure className="feature-logo">
                 <img src={project.standard} width="96" alt="" />
               </figure>

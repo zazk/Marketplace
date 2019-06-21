@@ -16,21 +16,21 @@ function UnCompliant({ data }) {
       <style jsx>
         {`
           .cuadros-item {
-            width: 23.5%;
-            height: 84px;
+            width: 32%;
             margin-left: 1.9%;
             margin-bottom: 1.9%;
             @media screen and (max-width: 480px) {
               width: 28.5%;
             }
             img {
-              max-width: 100%;
+              width: 100%;
               height: auto;
+              display: block;
             }
             &:hover {
               opacity: 0.5;
             }
-            &:nth-child(4n + 1) {
+            &:nth-child(3n + 1) {
               margin-left: 0;
             }
             &:first-child {

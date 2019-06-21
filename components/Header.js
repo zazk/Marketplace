@@ -29,7 +29,7 @@ function Header() {
         <MenuResponsive />
         <div className="head-btn">
           <button className="btn">
-            Request
+            <span>Request</span>
             <img className="btn-icon" src="/static/iconos/arrow-down-white.svg" alt="" />
           </button>
         </div>
@@ -45,6 +45,9 @@ function Header() {
             align-items: center;
             .btn {
               width: 170px;
+            }
+            @media screen and (max-width: 640px) {
+              display: none;
             }
           }
           .header .content {

@@ -105,22 +105,37 @@ function Details() {
               }
               .aside-head-tab {
                 background-color: rgba(65, 130, 142, 0.1);
-                border-radius: 20px;
+                border-radius: 4px;
                 justify-content: space-between;
                 button {
                   cursor: pointer;
                   width: 49%;
                   height: 45px;
-                  border-radius: 20px 20px 0px 20px;
+                  border-radius: 4px 4px 0px 0px;
                   font-weight: 700;
                   color: #c1c5d0;
                   font-size: 16px;
                   line-height: 24px;
+                  position: relative;
+                  &:after {
+                    content: '';
+                    display: block;
+                    height: 4px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    background-image: linear-gradient(269deg, #0fd856, #01a796, #01a697);
+                    opacity: 0;
+                  }
                   &:hover,
                   &.active {
-                    color: #41828e;
+                    color: #04b189;
                     background-color: #fff;
                     box-shadow: 0 5px 20px 0 rgba(7, 93, 108, 0.16);
+                    &:after {
+                      opacity: 1;
+                    }
                   }
                 }
               }
@@ -159,22 +174,7 @@ function Details() {
                   transform: translateY(0px);
                 }
               }
-              &[data-position='right'] {
-                .dropdown {
-                  left: inherit;
-                  right: 0;
-                  .dropdown-main {
-                    &:after {
-                      left: inherit;
-                      right: 20px;
-                    }
-                    &:before {
-                      left: inherit;
-                      right: 20px;
-                    }
-                  }
-                }
-              }
+
               &.type-two {
                 .dropdown {
                   border-radius: 25px 0px 25px 0px;
@@ -183,6 +183,9 @@ function Details() {
                   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
                   .dropdown-main {
                     box-shadow: inherit;
+                  }
+                  .dropdown-link {
+                    height: 44px;
                   }
                 }
               }

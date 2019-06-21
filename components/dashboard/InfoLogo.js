@@ -18,7 +18,7 @@ function InfoLogo() {
             font-weight: 700;
             width: 100%;
             height: 50px;
-            border-radius: 20px;
+            border-radius: 5px;
             box-shadow: 0 5px 20px 0 rgba(7, 93, 108, 0.16);
             background-color: #ffffff;
             display: flex;
