@@ -206,6 +206,94 @@ export default ({ dashboard, children, title = 'This is the default title' }) =>
               justify-content: flex-start;
             }
           }
+          .wrap-drodown {
+              position: relative;
+              &.active {
+                .dropdown-open{
+                  display:none;
+
+                }
+                .dropdown-close{
+                  display:block;
+                }
+                .dropdown {
+                  opacity: 1;
+                  visibility: visible;
+                  transform: translateY(0px);
+                }
+              }
+
+              &.type-two {
+                .dropdown {
+                  border-radius: 25px 0px 25px 0px;
+                  background-color: #fff;
+                  overflow: hidden;
+                  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
+                  .dropdown-main {
+                    box-shadow: inherit;
+                  }
+                  .dropdown-link {
+                    height: 44px;
+                  }
+                }
+              }
+              .dropdown {
+                opacity: 0;
+                transform: translateY(-5px);
+                visibility: hidden;
+                transition: all 0.5s;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 100%;
+                padding-top: 10px;
+                z-index: 10;
+                background-color: rgba(255, 255, 255, 0.8);
+                .dropdown-main {
+                  box-sizing: border-box;
+                  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
+                }
+                &.w100{
+                  width: 100px;
+                }
+              }
+              .dropdown-link {
+                height: 35px;
+                display: flex;
+                padding: 0 10px;
+                font-size: 14px;
+                align-items: center;
+                color: rgba(54, 54, 54, 0.5);
+
+                &:hover {
+                  background-color: rgba(1, 166, 151, 0.9);
+                  color: #fff;
+                }
+              }
+              .dropdown-btn{
+                position:relative;
+                padding: 0 10px;
+                .drop-down-icon{
+                  margin-left: 5px;
+                }
+              }
+              .dropdown-label{
+                color:#050b24;
+                font-size: 16px;
+              }
+              .dropdown-controls{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 3;
+                width: 100%;
+                height: 100%;
+
+              }
+              .dropdown-close{
+                display:none
+              }
+            }
       `}
       </style>
     </div>

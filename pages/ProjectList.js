@@ -1,9 +1,12 @@
 import React from 'react';
 import Layout from '../components/layout';
+import FilterList from '../components/projectlist/FilterList';
 function ProjectList() {
   return (
     <Layout title="Dashboard">
       <div className="project-list">
+        <FilterList />
+
         <div className="content-main project-list-main feature-two">
           <a href="" className="project-item">
             <div
