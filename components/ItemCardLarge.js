@@ -5,8 +5,8 @@ function ItemCardLarge({ icon }) {
     <div className="item-text-feature">
       <img src={icon} alt="" />
       <p>
-        <strong>Positive leakage:</strong> dead wood will also capture CO2; plus avoiding the use of concrete will spare
-        us from emissions.
+        Positive leakage: dead wood will also capture CO2; plus avoiding the use of concrete will spare us from
+        emissions.
       </p>
       <style jsx>
         {`
@@ -24,6 +24,7 @@ function ItemCardLarge({ icon }) {
               font-size: 16px;
               color: #030922;
               margin: 0;
+              line-height: 22px;
             }
             img {
               width: 32px;

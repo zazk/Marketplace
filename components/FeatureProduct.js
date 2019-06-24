@@ -45,60 +45,62 @@ function FeatureProduct({ data }) {
       </div>
 
       <div className="tab-content content">
-        <div className="tab-item flex active">
-          <div className="tab-content-descripcion flex">
-            <h3 className="tab-title">
-              <img src="/static/iconos/icon-eye.svg" width="20" alt="" />
-              Overview
-            </h3>
-            <div className="tab-descripcion">{project.project_overview}</div>
-            <div className="tab-features flex">
-              <div className="tab-feature-item">
-                <ItemList
-                  icono="/static/iconos/icon-sumary-1.svg"
-                  title={location[0]}
-                  description={location[1] + ', ' + location[2]}
-                />
-              </div>
-              <div className="tab-feature-item">
-                <ItemList
-                  icono="/static/iconos/icon-sumary-2.svg"
-                  title={project.project_developer}
-                  description="Project developer"
-                />
-              </div>
-              <div className="tab-feature-item">
-                <ItemList
-                  icono="/static/iconos/icon-sumary-3.svg"
-                  title={project.total_land.area + ' ' + project.total_land.unit}
-                  description=""
-                />
-              </div>
-              <div className="tab-feature-item">
-                <ItemList
-                  icono="/static/iconos/icon-sumary-4.svg"
-                  title={project.auditor}
-                  description="Project auditor"
-                />
-              </div>
-              <div className="tab-feature-item">
-                <ItemList
-                  icono="/static/iconos/icon-sumary-5.svg"
-                  title={project.verification.methodology}
-                  description={project.verification.last_verification}
-                />
-              </div>
-              <div className="tab-feature-item">
-                <ItemList
-                  icono="/static/iconos/icon-sumary-6.svg"
-                  title={project.land_owner}
-                  description="Land owner"
-                />
+        <div className="content-main">
+          <div className="tab-item flex active">
+            <div className="tab-content-descripcion flex">
+              <h3 className="tab-title">
+                <img src="/static/iconos/icon-eye.svg" width="20" alt="" />
+                Overview
+              </h3>
+              <div className="tab-descripcion">{project.project_overview}</div>
+              <div className="tab-features flex">
+                <div className="tab-feature-item">
+                  <ItemList
+                    icono="/static/iconos/icon-sumary-1.svg"
+                    title={location[0]}
+                    description={location[1] + ', ' + location[2]}
+                  />
+                </div>
+                <div className="tab-feature-item">
+                  <ItemList
+                    icono="/static/iconos/icon-sumary-2.svg"
+                    title={project.project_developer}
+                    description="Project developer"
+                  />
+                </div>
+                <div className="tab-feature-item">
+                  <ItemList
+                    icono="/static/iconos/icon-sumary-3.svg"
+                    title={project.total_land.area + ' ' + project.total_land.unit}
+                    description=""
+                  />
+                </div>
+                <div className="tab-feature-item">
+                  <ItemList
+                    icono="/static/iconos/icon-sumary-4.svg"
+                    title={project.auditor}
+                    description="Project auditor"
+                  />
+                </div>
+                <div className="tab-feature-item">
+                  <ItemList
+                    icono="/static/iconos/icon-sumary-5.svg"
+                    title={project.verification.methodology}
+                    description={project.verification.last_verification}
+                  />
+                </div>
+                <div className="tab-feature-item">
+                  <ItemList
+                    icono="/static/iconos/icon-sumary-6.svg"
+                    title={project.land_owner}
+                    description="Land owner"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="tab-content-images flex">
-            <Gallery data={project.project_images} />
+            <div className="tab-content-images flex">
+              <Gallery data={project.project_images} />
+            </div>
           </div>
         </div>
       </div>
@@ -120,12 +122,12 @@ function FeatureProduct({ data }) {
             }
           }
           .tab-features {
-            border-radius: 4px;
-            border: solid 1px #e2e5ee;
+            border-radius: 10px;
+            box-shadow: 0 10px 34px 0 rgba(7, 93, 108, 0.14);
+            background-color: #ffffff;
             padding: 25px 17px;
           }
           .feature-product {
-            margin-top: 44px;
             @media screen and (max-width: 640px) {
               .btn {
                 width: 100px;
@@ -170,9 +172,12 @@ function FeatureProduct({ data }) {
           }
           .tab-content {
             position: relative;
+            padding: 44px 20px;
+
+            background-color: #fafafa;
           }
           .tab-content-descripcion {
-            width: 54%;
+            width: 57%;
             @media screen and (max-width: 768px) {
               width: 59%;
             }
@@ -182,7 +187,7 @@ function FeatureProduct({ data }) {
           }
           .tab-content-images {
             padding-top: 35px;
-            width: 38%;
+            width: 40.5%;
             flex-direction: column;
             justify-content: center;
             @media screen and (max-width: 640px) {
@@ -193,7 +198,6 @@ function FeatureProduct({ data }) {
             }
           }
           .tab-item {
-            padding: 0 20px;
             justify-content: space-between;
             opacity: 0;
             visibility: hidden;
@@ -215,16 +219,14 @@ function FeatureProduct({ data }) {
           }
           .tab-descripcion {
             font-size: 16px;
-            line-height: 24px;
+            line-height: 26px;
             margin-bottom: 25px;
             color: #030922;
           }
-          .tab-content.content {
-            padding: 0;
-          }
+
           .tab-title {
             font-size: 24px;
-            color: #17b363;
+            color: #09c173;
             font-family: 'Work Sans', sans-serif;
             font-weight: 700;
             margin: 0;

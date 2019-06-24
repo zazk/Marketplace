@@ -28,10 +28,13 @@ function ItemText({ iconcard, type, title, description, card, source, source_lin
             &.two {
               background-color: #fff;
               border-radius: 6px;
+              box-shadow: 0 10px 34px 0 rgba(7, 93, 108, 0.14);
               padding: 25px 23px;
               .item-title {
                 color: #030922;
                 text-transform: inherit;
+                font-weight: 400;
+                font-size: 20px;
               }
             }
           }
@@ -43,7 +46,7 @@ function ItemText({ iconcard, type, title, description, card, source, source_lin
             text-transform: uppercase;
             font-family: 'Work Sans', sans-serif;
             font-weight: 700;
-            color: #17b363;
+            color: #09c173;
             img {
               margin-right: 10px;
             }
@@ -53,7 +56,7 @@ function ItemText({ iconcard, type, title, description, card, source, source_lin
           }
           .item-description {
             font-size: 16px;
-            line-height: 24px;
+            line-height: 26px;
             color: #4a4a4a;
           }
           .item-description p {

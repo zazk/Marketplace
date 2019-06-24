@@ -8,7 +8,7 @@ const ItemListBanner = ({ title, description }) => {
       <style jsx>
         {`
           .feature-list-item {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             padding-right: 10px;
             box-sizing: border-box;
             position: relative;
@@ -38,13 +38,13 @@ const ItemListBanner = ({ title, description }) => {
               margin-bottom: 0;
             }
             h4 {
-              font-size: 22px;
+              font-size: 18px;
               margin: 0;
               margin-bottom: 5px;
-              font-family: 'Lato', sans-serif;
-              font-weight: 600;
-              font-style: italic;
-              letter-spacing: 0.2px;
+              font-family: 'Work Sans', sans-serif;
+              font-weight: 500;
+              letter-spacing: 0.16px;
+              color: #030922;
               &:before {
                 content: '';
                 width: 17px;
@@ -54,7 +54,7 @@ const ItemListBanner = ({ title, description }) => {
                 background-position: center center;
                 background-repeat: no-repeat;
                 position: absolute;
-                top: 5px;
+                top: 2px;
                 left: 0;
               }
             }

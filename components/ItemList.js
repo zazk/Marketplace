@@ -25,14 +25,17 @@ const ItemList = ({ title, description, icono }) => {
             h4 {
               font-size: 20px;
               margin: 0;
-              font-style: italic;
-              margin-bottom: 5px;
+              font-family: 'Work Sans', sans-serif;
+              font-weight: 400;
+              margin-bottom: 2px;
               font-weight: normal;
+              line-height: 1;
               color: #030922;
             }
             p {
               margin: 0;
-              color: #969db6;
+              color: rgba(0, 0, 0, 0.5);
+              font-size: 12px;
             }
             @media screen and (max-width: 640px) {
               h4 {

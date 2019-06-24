@@ -64,6 +64,8 @@ function Gallery({ data }) {
               transition: all 0.3s;
               margin-bottom: 20px;
               position: relative;
+              border-radius: 10px;
+              overflow: hidden;
               &:after {
                 content: '';
                 position: absolute;
@@ -81,9 +83,9 @@ function Gallery({ data }) {
               }
               @media screen and (max-width: 640px) {
                 width: 100%;
-                img {
-                  width: 100%;
-                }
+              }
+              img {
+                width: 100%;
               }
             }
             figcaption {
