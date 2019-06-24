@@ -15,7 +15,9 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({
   dev,
 });
-
+console.log('---- ENVIRONMENT ---');
+console.log(process.env);
+console.log(process.env.AUTH0_DOMAIN);
 const handle = app.getRequestHandler();
 const port = process.env.PORT || 3000;
 
