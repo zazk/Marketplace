@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from './Header';
-export default ({ user, dashboard, children, title = 'This is the default title' }) => {
+export default ({ bodyclass, user, dashboard, children, title = 'This is the default title' }) => {
   const UrlFont = '../static/assets/fonts/';
   console.log('user');
   console.log(user);
@@ -15,7 +15,7 @@ export default ({ user, dashboard, children, title = 'This is the default title'
           rel="stylesheet"
         />
       </Head>
-      <div className="cnt-wrapper">
+      <div className={`cnt-wrapper ${bodyclass}`}>
         {!dashboard && <Header user={user} />}
         {children}
 
@@ -65,6 +65,7 @@ export default ({ user, dashboard, children, title = 'This is the default title'
           font-weight: 400;
           -webkit-font-smoothing: antialiased;
           -webkit-tap-highlight-color: transparent;
+          background-color:#fafafa;
         }
         button {
               border: none;
@@ -79,10 +80,9 @@ export default ({ user, dashboard, children, title = 'This is the default title'
           }
         }
         .sidebar-title {
-          color: #969db6;
           font-size: 13px;
           margin-bottom: 10px;
-          font-weight: 500;
+          font-weight: 700;
           font-family: 'Work Sans', sans-serif;
           text-transform: uppercase;
         }
@@ -98,7 +98,6 @@ export default ({ user, dashboard, children, title = 'This is the default title'
           padding: 0px;
         }
         .btn {
-          background-color: #17b363;
           color: #fff;
           height: 50px;
           width: 196px;
@@ -106,7 +105,7 @@ export default ({ user, dashboard, children, title = 'This is the default title'
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 18px;
+          font-size: 16px;
           font-family: 'Lato', sans-serif;
           font-weight: 700;
           transition: all 0.3s;
@@ -114,8 +113,38 @@ export default ({ user, dashboard, children, title = 'This is the default title'
           text-decoration: none;
           cursor: pointer;
           border:none;
-          border-radius:2px;
+          overflow: hidden;
+          border-radius:5px;
+          position: relative;
+          span{
+            position: relative;
+            z-index: 2;
+          }
+          &:after, &:before{
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition:all .3s
+          }
+          &:after{
+            background-image: linear-gradient(259deg, #0fd856, #01a796, #01a697);
+          }
+          &:before{
+            background-color: #01a697;
+            z-index: 2;
+            opacity: 0;
 
+          }
+          .btn-icon{
+            margin-left:5px;
+            margin-top:5px;
+            position: relative;
+            z-index: 2;
+          }
           &.gray {
             width: 210px;
             border: solid 1px #979797;
@@ -130,17 +159,27 @@ export default ({ user, dashboard, children, title = 'This is the default title'
             width: 115px;
           }
           &:hover {
-            opacity: 0.5;
+            &:after{
+             opacity: 0;
+            }
+            &:before{
+              opacity: 1;
+            }
+
           }
         }
         .content {
-          max-width: 1024px;
+          max-width: 1280px;
           padding:0 20px;
           box-sizing: border-box;
           margin: auto;
           color: #363636;
           text-align: left;
           font-size: 14px;
+        }
+        .content-main{
+          max-width: 1024px;
+          margin: auto;
         }
         .flex {
           display: flex;
@@ -167,6 +206,105 @@ export default ({ user, dashboard, children, title = 'This is the default title'
             }
             @media screen and (max-width: 480px) {
               justify-content: flex-start;
+            }
+          }
+          .wrap-drodown {
+              position: relative;
+              &.active {
+                .dropdown-open{
+                  display:none;
+
+                }
+                .dropdown-close{
+                  display:block;
+                }
+                .dropdown {
+                  opacity: 1;
+                  visibility: visible;
+                  transform: translateY(0px);
+                }
+              }
+
+              &.type-two {
+                .dropdown {
+                  border-radius: 25px 0px 25px 0px;
+                  background-color: #fff;
+                  overflow: hidden;
+                  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
+                  .dropdown-main {
+                    box-shadow: inherit;
+                  }
+                  .dropdown-link {
+                    height: 44px;
+                  }
+                }
+              }
+              .dropdown {
+                opacity: 0;
+                transform: translateY(-5px);
+                visibility: hidden;
+                transition: all 0.5s;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 100%;
+                padding-top: 10px;
+                z-index: 10;
+                background-color: rgba(255, 255, 255, 0.8);
+                .dropdown-main {
+                  box-sizing: border-box;
+                  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
+                }
+                &.w100{
+                  width: 100px;
+                }
+              }
+              .dropdown-link {
+                height: 35px;
+                display: flex;
+                padding: 0 10px;
+                font-size: 14px;
+                align-items: center;
+                color: rgba(54, 54, 54, 0.5);
+
+                &:hover {
+                  background-color: rgba(1, 166, 151, 0.9);
+                  color: #fff;
+                }
+              }
+              .dropdown-btn{
+                position:relative;
+                padding: 0 10px;
+                .drop-down-icon{
+                  margin-left: 5px;
+                }
+              }
+              .dropdown-label{
+                color:#050b24;
+                font-size: 16px;
+              }
+              .dropdown-controls{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 3;
+                width: 100%;
+                height: 100%;
+
+              }
+              .dropdown-close{
+                display:none
+              }
+            }
+          .wrap-company-user{
+            display:none;
+          }
+          .project-list {
+            .btn-request {
+              display: none;
+            }
+            .wrap-company-user{
+              display:block;
             }
           }
       `}

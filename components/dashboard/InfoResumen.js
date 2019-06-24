@@ -34,6 +34,7 @@ function InfoResumen() {
               color: rgba(54, 54, 54, 0.8);
               margin: 0;
               margin-bottom: 10px;
+              text-transform: uppercase;
             }
           }
           .title-ubication {
@@ -42,7 +43,7 @@ function InfoResumen() {
             margin: 0;
             font-family: 'Work Sans', sans-serif;
             line-height: 33px;
-            font-weight: 700;
+            font-weight: 600;
           }
           .wrap-info-item {
             border-bottom: 1px solid #d8d8d8;

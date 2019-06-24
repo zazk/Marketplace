@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DashboardMap from './DashboardMap';
 import MapVisualization from './MapVisualization';
 import heatmapdata2 from './data-biomass-greatforest';
 
 function MapDetail() {
-  // console.log(heatmapdata2);
+  const [openDropdown, setDropdown] = useState(0);
+
   return (
     <div>
       <div className="detail-legend">
-        <div className="legend-select wrap-drodown">
-          <div className="btn-legend-select">
-            <span className="label-select">BIOMASS</span>
+        <div className={`legend-select wrap-drodown ${openDropdown === 1 && 'active'}`}>
+          <div className="btn-legend-select ">
+            <div className="open-select select-control" onClick={() => setDropdown(1)} />
+            <div className="close-select select-control" onClick={() => setDropdown(0)} />
+            <span className="label-select">Biomass</span>
             <img className="legend-select-icon" src="/static/iconos/arrow-head.svg" width="6" alt="" />
           </div>
           <div className="dropdown">
@@ -42,8 +45,7 @@ function MapDetail() {
         {`
           .detail-legend {
             width: 234px;
-            padding-top: 16px;
-
+            padding-top: 10px;
             border-radius: 10px;
             box-shadow: 0 0 1px 2px rgba(9, 43, 49, 0.14);
             background-color: #ffffff;
@@ -80,24 +82,45 @@ function MapDetail() {
           }
           .legend-select-icon {
             transform: rotate(-90deg);
+            margin-left: 10px;
+          }
+
+          .select-control {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+          .close-select {
+            display: none;
           }
 
           .legend-select {
             display: inline-block;
             position: relative;
-            margin-bottom: 10px;
+            min-width: 115px;
+            margin-left: 10px;
+            padding: 8px;
+            cursor: pointer;
             .label-select {
               cursor: pointer;
-              text-transform: uppercase;
               color: #000;
-              font-size: 12px;
+              font-size: 14px;
               font-weight: 500;
-              padding-left: 16px;
-              padding-right: 10px;
             }
             &:hover {
-              span {
-                text-decoration: underline;
+              box-shadow: 0 10px 34px 0 rgba(7, 93, 108, 0.14);
+            }
+            &.active {
+              .legend-select-icon {
+                transform: rotate(90deg);
+              }
+              .open-select {
+                display: none;
+              }
+              .close-select {
+                display: block;
               }
             }
           }
