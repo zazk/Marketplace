@@ -294,6 +294,17 @@ export default ({ bodyclass, dashboard, children, title = 'This is the default t
                 display:none
               }
             }
+          .wrap-company-user{
+            display:none;
+          }
+          .project-list {
+            .btn-request {
+              display: none;
+            }
+            .wrap-company-user{
+              display:block;
+            }
+          }
       `}
       </style>
     </div>
