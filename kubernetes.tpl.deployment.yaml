@@ -20,3 +20,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: _APP_PORT_
+          env:
+            - name: AUTH0_CALLBACK_URL
+              value: _CI_ENVIRONMENT_SLUG_._APP_NAME_._MY_DOMAIN_/callback
