@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import MenuResponsive from './MenuResponsive';
 function Header(user) {
+  console.log(user);
   return (
     <header className="header">
       <div className="content flex">
@@ -10,12 +11,12 @@ function Header(user) {
         <nav>
           <ul className="flex nav-list">
             <li className="menu-item">
-              {user && (
+              {typeof user.user != 'undefined' && (
                 <Link href="/logout">
                   <a className="menu-link">Log Out</a>
                 </Link>
               )}
-              {!user && (
+              {typeof user.user == 'undefined' && (
                 <Link href="/login">
                   <a className="menu-link">Log In</a>
                 </Link>

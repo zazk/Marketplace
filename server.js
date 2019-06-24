@@ -59,7 +59,7 @@ app.prepare().then(() => {
     next();
   };
 
-  //server.use("/details", restrictAccess);
+  server.use('/details', restrictAccess);
 
   server.get('*', handle);
 
