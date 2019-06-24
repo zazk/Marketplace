@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import FilterList from '../components/projectlist/FilterList';
 function ProjectList() {
   return (
-    <Layout title="Dashboard">
+    <Layout title="Project List" bodyclass="project-list">
       <div className="project-list">
         <FilterList />
 

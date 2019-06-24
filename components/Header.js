@@ -54,6 +54,8 @@ function Header() {
             height: 70px;
             align-items: center;
             position: relative;
+            background-color: #fff;
+            box-shadow: 0 2px 5px 0 rgba(65, 130, 142, 0.19);
             /** border-bottom: 1px solid rgba(151, 151, 151, 0.3); **/
             @media screen and (max-width: 480px) {
               justify-content: space-between;

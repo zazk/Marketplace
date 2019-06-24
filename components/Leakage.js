@@ -17,7 +17,7 @@ function Leakage({ data }) {
               description={project.leakage.text}
               source={project.leakage.source}
               source_link={project.leakage.source_link}
-              card={true}
+              card={false}
               iconcard="/static/iconos/icon-card-large.svg"
             />
             <ItemText

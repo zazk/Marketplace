@@ -17,7 +17,7 @@ function Biomass({ data, biomass }) {
         </div>
         <div className="biomas-grafico-detail flex">
           <figure>
-            <div className="biommas-numbers flex">
+            <div className="biommas-numbers flex" style={{ display: `none` }}>
               <div className="biomas-number-item">
                 <span>40.3%</span>
                 <p>current cover</p>
