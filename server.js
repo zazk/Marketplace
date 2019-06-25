@@ -15,10 +15,10 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({
   dev,
 });
-console.log('---- ENVIRONMENT ---');
+console.log('---- PROCESS ENV ---');
 console.log(process.env);
 const handle = app.getRequestHandler();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 app.prepare().then(() => {
   const server = express();
