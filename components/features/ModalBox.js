@@ -9,10 +9,13 @@ function ModalBox({ children, isOpen, toggle }) {
     <div className="wrap-modalbox">
       <div className={`modalbox ${isOpen === true && 'active'}`}>
         <div className="modalbox-overlay" onClick={toggle} />
-        <div className="modalbox-close" onClick={toggle}>
-          X
+        <div className="modalbox-content">
+          <div className="modalbox-close" onClick={toggle}>
+            <span>X</span>
+          </div>
+
+          {children}
         </div>
-        <div className="modalbox-content">{children}</div>
       </div>
       <style jsx>
         {`
@@ -43,13 +46,37 @@ function ModalBox({ children, isOpen, toggle }) {
             background-color: #fff;
             color: #000;
             position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 3;
+            top: 0px;
+            right: 0px;
+            z-index: 101;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 16px;
+            color: #fff;
+            span {
+              position: relative;
+              z-index: 2;
+            }
+            &:after,
+            &:before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 1;
+              transition: all 0.3s;
+            }
+            &:after {
+              background-image: linear-gradient(259deg, #0fd856, #01a796, #01a697);
+            }
+            &:before {
+              background-color: #01a697;
+              z-index: 2;
+              opacity: 0;
+            }
           }
           .modalbox-overlay {
             background-color: rgba(0, 0, 0, 0.5);
@@ -63,7 +90,7 @@ function ModalBox({ children, isOpen, toggle }) {
           .modalbox-content {
             position: relative;
             z-index: 2;
-            width: 100%;
+            display: inline-block;
           }
         `}
       </style>

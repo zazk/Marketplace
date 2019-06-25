@@ -7,11 +7,6 @@ function FormReserve() {
     setOpenLightbox(!openLightbox);
   };
 
-  const OpenModal = () => {
-    setOpenLightbox(true);
-    console.log('test click');
-  };
-
   return (
     <Layout title="Formulary">
       <button type="button" className="btn" onClick={toggle}>
@@ -23,37 +18,37 @@ function FormReserve() {
           <h3 className="formulary-title">Reserve credits</h3>
           <div className="two-input">
             <div className="form-input">
-              <label htmlFor="input-name">
+              <label>
                 <span>Name:</span>
               </label>
-              <input type="text" id="input-name" value="Lorem Name" />
+              <input type="text" id="input-name" defaultValue={`Lorem Name`} />
             </div>
 
             <div className="form-input">
-              <label htmlFor="input-company">
+              <label>
                 <span>Company</span>
               </label>
-              <input type="text" id="input-company" value="Company Test" />
+              <input type="text" id="input-company" defaultValue={`Company Test`} />
             </div>
           </div>
           <div className="two-input">
             <div className="form-input">
-              <label htmlFor="input-email">
+              <label>
                 <span>Email</span>
               </label>
-              <input type="text" id="input-email" value="company@correotest.com" />
+              <input type="text" id="input-email" defaultValue={`company@correotest.com`} />
             </div>
 
             <div className="form-input">
-              <label htmlFor="input-phone">
+              <label>
                 <span>Phone</span>
               </label>
-              <input type="text" id="input-phone" value="123456789" />
+              <input type="text" id="input-phone" defaultValue={`123456789`} />
             </div>
           </div>
 
           <div className="form-input">
-            <label htmlFor="input-message">
+            <label>
               <span>Comment</span>
             </label>
             <textarea type="text" id="input-message" />
@@ -70,9 +65,9 @@ function FormReserve() {
         {`
           .formulary {
             padding: 30px;
-            max-width: 750px;
+            width: 750px;
             box-sizing: border-box;
-            width: 100%;
+
             margin: auto;
             background-color: #fff;
           }
