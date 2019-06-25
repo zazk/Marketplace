@@ -17,7 +17,6 @@ const app = next({
 });
 console.log('---- ENVIRONMENT ---');
 console.log(process.env);
-console.log(process.env.AUTH0_DOMAIN);
 const handle = app.getRequestHandler();
 const port = process.env.PORT || 3000;
 
