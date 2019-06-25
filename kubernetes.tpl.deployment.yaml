@@ -28,4 +28,4 @@ spec:
             - name: AUTH0_CLIENT_SECRET
               value: _AUTH0_CLIENT_SECRET_
             - name: AUTH0_CALLBACK_URL
-              value: _CI_ENVIRONMENT_SLUG_._APP_NAME_._MY_DOMAIN_/callback
+              value: http://_CI_ENVIRONMENT_SLUG_._APP_NAME_._MY_DOMAIN_/callback
