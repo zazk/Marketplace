@@ -21,5 +21,11 @@ spec:
           ports:
             - containerPort: _APP_PORT_
           env:
+            - name: AUTH0_CLIENT_ID
+              value: _AUTH0_CLIENT_ID_
+            - name: AUTH0_DOMAIN
+              value: _AUTH0_DOMAIN_
+            - name: AUTH0_CLIENT_SECRET
+              value: _AUTH0_CLIENT_SECRET_
             - name: AUTH0_CALLBACK_URL
               value: _CI_ENVIRONMENT_SLUG_._APP_NAME_._MY_DOMAIN_/callback
