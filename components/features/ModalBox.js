@@ -1,21 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-function ModalBox({ children, showmodal }) {
-  let isOpen = showmodal;
+function ModalBox({ children, isOpen, toggle }) {
   // const [isOpenLightbox, setCloseLightbox] = useState(showmodal);
 
-  const handleClickClose = () => {
-    isOpen = false;
-    console.log('isopen', isOpen);
-  };
-  console.log('abriendo modal', showmodal);
-  // console.log('isOpenLightbox', isOpenLightbox);
+  console.log('abriendo modal', isOpen);
 
   return (
     <div className="wrap-modalbox">
       <div className={`modalbox ${isOpen === true && 'active'}`}>
-        <div className="modalbox-overlay" onClick={() => handleClickClose()} />
-        <div className="modalbox-close" onClick={() => handleClickClose()}>
+        <div className="modalbox-overlay" onClick={toggle} />
+        <div className="modalbox-close" onClick={toggle}>
           X
         </div>
         <div className="modalbox-content">{children}</div>

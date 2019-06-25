@@ -3,30 +3,34 @@ import Layout from '../components/layout';
 import ModalBox from '../components/features/ModalBox';
 function FormReserve() {
   const [openLightbox, setOpenLightbox] = useState(false);
+  const toggle = () => {
+    setOpenLightbox(!openLightbox);
+  };
 
-  const OpenModal = e => {
+  const OpenModal = () => {
     setOpenLightbox(true);
     console.log('test click');
   };
+
   return (
     <Layout title="Formulary">
-      <button className="btn" onClick={() => OpenModal()}>
+      <button type="button" className="btn" onClick={toggle}>
         <span>Request quote</span>
       </button>
 
-      <ModalBox showmodal={openLightbox}>
+      <ModalBox isOpen={openLightbox} toggle={toggle}>
         <div className="formulary">
           <h3 className="formulary-title">Reserve credits</h3>
           <div className="two-input">
             <div className="form-input">
-              <label htmlfor="input-name">
+              <label htmlFor="input-name">
                 <span>Name:</span>
               </label>
               <input type="text" id="input-name" value="Lorem Name" />
             </div>
 
             <div className="form-input">
-              <label htmlfor="input-company">
+              <label htmlFor="input-company">
                 <span>Company</span>
               </label>
               <input type="text" id="input-company" value="Company Test" />
@@ -34,14 +38,14 @@ function FormReserve() {
           </div>
           <div className="two-input">
             <div className="form-input">
-              <label htmlfor="input-email">
+              <label htmlFor="input-email">
                 <span>Email</span>
               </label>
               <input type="text" id="input-email" value="company@correotest.com" />
             </div>
 
             <div className="form-input">
-              <label htmlfor="input-phone">
+              <label htmlFor="input-phone">
                 <span>Phone</span>
               </label>
               <input type="text" id="input-phone" value="123456789" />
@@ -49,7 +53,7 @@ function FormReserve() {
           </div>
 
           <div className="form-input">
-            <label htmlfor="input-message">
+            <label htmlFor="input-message">
               <span>Comment</span>
             </label>
             <textarea type="text" id="input-message" />
