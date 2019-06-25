@@ -4671,6 +4671,11 @@ mixin-deep@^1.2.0:
     for-in "^1.0.2"
     is-extendable "^1.0.1"
 
+mixpanel-browser@^2.29.0:
+  version "2.29.0"
+  resolved "https://registry.yarnpkg.com/mixpanel-browser/-/mixpanel-browser-2.29.0.tgz#07c8e25d289de308acff67971e6b393451f65e77"
+  integrity sha512-ql58ZM5rRnodlV5+BB+SgBuCZ9/gFWrDwdDnDB3SrpEhYFLUiR8rTjdi0Nyd0wuXqq2hcr2Rx3aJx6ubs2Cc8Q==
+
 mjolnir.js@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/mjolnir.js/-/mjolnir.js-2.1.0.tgz#e8a4727e86d8f9352d6b6fe9cdc6faab0dcff15e"

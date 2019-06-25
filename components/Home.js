@@ -9,7 +9,7 @@ import Leakage from './Leakage';
 import Pay from './Pay';
 import ControlsProject from './ControlsProject';
 
-function Home({ id }) {
+function Home({ id, user }) {
   let index = id ? id : 0;
   const itemsProject = dataProjects.length;
   const project = dataProjects[index]['pdp'];
@@ -17,7 +17,7 @@ function Home({ id }) {
   const geojson = dataProjects[index]['geojson'];
   return (
     <section className="home">
-      <Features data={project} />
+      <Features data={project} user={user} />
       <MapContainer data={project} geojson={geojson} />
       <FeatureProduct data={project} />
       <Biomass data={project} biomass={biomass} />

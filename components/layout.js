@@ -2,8 +2,6 @@ import Head from 'next/head';
 import Header from './Header';
 export default ({ bodyclass, user, dashboard, children, title = 'This is the default title' }) => {
   const UrlFont = '../static/assets/fonts/';
-  console.log('user');
-  console.log(user);
   return (
     <div>
       <Head>

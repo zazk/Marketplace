@@ -1,7 +1,9 @@
 import React from 'react';
 import ItemListBanner from './ItemListBanner';
 import Intro from './Intro';
-function Features({ data }) {
+import { Mixpanel } from '../utils/mixpanel';
+
+function Features({ data, user }) {
   const project = data;
   const location_data = project.location.name;
   const location = location_data.split(',');
@@ -42,7 +44,13 @@ function Features({ data }) {
               <DataFeatureList />
             </div>
             <div className="feature-controls">
-              <button className="btn">
+              <button
+                className="btn"
+                onClick={() => {
+                  Mixpanel.identify(user.id);
+                  Mixpanel.track('Request Quote');
+                }}
+              >
                 <span>Request quote</span>
               </button>
               <figure className="feature-logo">
@@ -209,4 +217,5 @@ function Features({ data }) {
     </div>
   );
 }
+
 export default Features;

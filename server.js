@@ -56,6 +56,7 @@ app.prepare().then(() => {
     next();
   };
 
+  server.use('/', restrictAccess);
   server.use('/details', restrictAccess);
 
   server.get('*', handle);
