@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import MenuResponsive from './MenuResponsive';
-function Header() {
+function Header(user) {
   const [openDropdown, setDropdown] = useState(0);
   return (
     <header className="header">
@@ -11,6 +11,18 @@ function Header() {
         </figure>
         <nav>
           <ul className="flex nav-list">
+            <li className="menu-item">
+              {typeof user.user != 'undefined' && (
+                <Link href="/logout">
+                  <a className="menu-link">Log Out</a>
+                </Link>
+              )}
+              {typeof user.user == 'undefined' && (
+                <Link href="/login">
+                  <a className="menu-link">Log In</a>
+                </Link>
+              )}
+            </li>
             <li className="menu-item">
               <Link href="/">
                 <a className="menu-link">Home</a>

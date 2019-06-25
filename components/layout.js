@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import Header from './Header';
-export default ({ bodyclass, dashboard, children, title = 'This is the default title' }) => {
+export default ({ bodyclass, user, dashboard, children, title = 'This is the default title' }) => {
   const UrlFont = '../static/assets/fonts/';
+  console.log('user');
+  console.log(user);
   return (
     <div>
       <Head>
@@ -14,7 +16,7 @@ export default ({ bodyclass, dashboard, children, title = 'This is the default t
         />
       </Head>
       <div className={`cnt-wrapper ${bodyclass}`}>
-        {!dashboard && <Header />}
+        {!dashboard && <Header user={user} />}
         {children}
 
         <footer />
