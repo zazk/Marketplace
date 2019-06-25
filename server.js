@@ -8,15 +8,13 @@ const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 const uid = require('uid-safe');
 const authRoutes = require('./auth-routes');
-//const routes = require('./routes');
 
 const dev = process.env.NODE_ENV !== 'production';
 
 const app = next({
   dev,
 });
-console.log('---- PROCESS ENV ---');
-console.log(process.env);
+
 const handle = app.getRequestHandler();
 const port = 3000;
 
@@ -52,8 +50,6 @@ app.prepare().then(() => {
   server.use(passport.initialize());
   server.use(passport.session());
   server.use(authRoutes);
-
-  //server.use(routes);
 
   const restrictAccess = (req, res, next) => {
     if (!req.isAuthenticated()) return res.redirect('/login');
