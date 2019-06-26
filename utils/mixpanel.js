@@ -3,7 +3,7 @@ import mixpanel from 'mixpanel-browser';
 mixpanel.init(process.env.MIXPANEL_TOKEN);
 
 let prod = process.env.NODE_ENV === 'production';
-prod = true;
+
 let actions = {
   identify: id => {
     if (prod) mixpanel.identify(id);
