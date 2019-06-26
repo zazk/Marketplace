@@ -1,6 +1,8 @@
 import mixpanel from 'mixpanel-browser';
 
 mixpanel.init(process.env.MIXPANEL_TOKEN);
+console.log('Token');
+console.log(process.env.MIXPANEL_TOKEN);
 
 let prod = process.env.NODE_ENV === 'production';
 
