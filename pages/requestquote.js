@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../components/layout';
 import ModalBox from '../components/features/ModalBox';
-function FormReserve({ user }) {
+function RequestQuote({ user }) {
   const [openLightbox, setOpenLightbox] = useState(false);
   const toggle = () => {
     setOpenLightbox(!openLightbox);
@@ -152,4 +152,4 @@ function FormReserve({ user }) {
     </Layout>
   );
 }
-export default FormReserve;
+export default RequestQuote;

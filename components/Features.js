@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemListBanner from './ItemListBanner';
+import Link from 'next/link';
 import Intro from './Intro';
 function Features({ data }) {
   const project = data;
@@ -42,9 +43,11 @@ function Features({ data }) {
               <DataFeatureList />
             </div>
             <div className="feature-controls">
-              <button className="btn">
-                <span>Request quote</span>
-              </button>
+              <Link href="/requestquote">
+                <button className="btn">
+                  <span>Request quote</span>
+                </button>
+              </Link>
               <figure className="feature-logo">
                 <img src={project.standard} width="96" alt="" />
               </figure>

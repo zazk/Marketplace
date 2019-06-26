@@ -6,11 +6,11 @@ import Home from '../components/Home';
 
 class Index extends React.Component {
   render() {
-    const { router } = this.props;
-    // console.log(router)
+    const { router, user } = this.props;
+
     return (
-      <Layout>
-        <Home id={router.query.id} />
+      <Layout user={user}>
+        <Home id={router.query.id} user={user} />
       </Layout>
     );
   }
