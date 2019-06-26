@@ -14,49 +14,58 @@ function FormReserve({ user }) {
       </button>
 
       <ModalBox isOpen={openLightbox} toggle={toggle}>
-        <div className="formulary">
-          <h3 className="formulary-title">Reserve credits</h3>
-          <div className="two-input">
-            <div className="form-input">
-              <label>
-                <span>Name:</span>
-              </label>
-              <input type="text" id="input-name" defaultValue={`Lorem Name`} />
+        <div className="formulary flex">
+          <div className="form-title-section">
+            <div className="form-title-inner">
+              <h3 className="form-title">Request Carbon Credits</h3>
+              <div className="form-description-title">
+                <p>Here is going to be a text that explains users what happens after asking for the budget.</p>
+              </div>
+            </div>
+          </div>
+          <div class="form-list-inputs">
+            <div className="two-input">
+              <div className="form-input">
+                <label>
+                  <span>Name:</span>
+                </label>
+                <input type="text" id="input-name" defaultValue={`Lorem Name`} />
+              </div>
+
+              <div className="form-input">
+                <label>
+                  <span>Company</span>
+                </label>
+                <input type="text" id="input-company" defaultValue={`Company Test`} />
+              </div>
+            </div>
+            <div className="two-input">
+              <div className="form-input">
+                <label>
+                  <span>Email</span>
+                </label>
+                <input type="text" id="input-email" defaultValue={`company@correotest.com`} />
+              </div>
+
+              <div className="form-input">
+                <label>
+                  <span>Phone</span>
+                </label>
+                <input type="text" id="input-phone" defaultValue={`123456789`} />
+              </div>
             </div>
 
             <div className="form-input">
               <label>
-                <span>Company</span>
+                <span>Comment</span>
               </label>
-              <input type="text" id="input-company" defaultValue={`Company Test`} />
+              <textarea type="text" id="input-message" />
             </div>
-          </div>
-          <div className="two-input">
-            <div className="form-input">
-              <label>
-                <span>Email</span>
-              </label>
-              <input type="text" id="input-email" defaultValue={`company@correotest.com`} />
+            <div className="form-btn">
+              <button className="btn" type="submit">
+                <span>Send</span>
+              </button>
             </div>
-
-            <div className="form-input">
-              <label>
-                <span>Phone</span>
-              </label>
-              <input type="text" id="input-phone" defaultValue={`123456789`} />
-            </div>
-          </div>
-
-          <div className="form-input">
-            <label>
-              <span>Comment</span>
-            </label>
-            <textarea type="text" id="input-message" />
-          </div>
-          <div className="form-btn">
-            <button className="btn" type="submit">
-              <span>Send</span>
-            </button>
           </div>
         </div>
       </ModalBox>
@@ -64,16 +73,12 @@ function FormReserve({ user }) {
       <style jsx>
         {`
           .formulary {
-            padding: 30px;
-            width: 750px;
+            width: 1148px;
             box-sizing: border-box;
-
             margin: auto;
             background-color: #fff;
           }
-          .formulary-title {
-            font-size: 25px;
-          }
+
           .two-input {
             display: flex;
             justify-content: space-between;
@@ -103,6 +108,28 @@ function FormReserve({ user }) {
                 font-size: 14px;
               }
             }
+          }
+          .form-title-section {
+            padding: 80px 20px;
+            box-sizing: border-box;
+            width: 35.5%;
+            background-image: linear-gradient(214deg, #0fd856, #01a796, #01a697);
+          }
+          .form-title-inner {
+            max-width: 315px;
+            margin-left: auto;
+            margin-right: 0;
+          }
+          .form-title {
+            font-size: 44px;
+            font-weight: bold;
+            font-family: 'Work Sans', sans-serif;
+            color: #fff;
+          }
+          .form-description-title {
+            font-size: 16px;
+            line-height: 26px;
+            color: #fff;
           }
         `}
       </style>

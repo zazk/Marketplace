@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 function ModalBox({ children, isOpen, toggle }) {
   return (
     <div className="wrap-modalbox">
-      <div className={`modalbox ${isOpen === true && 'active'}`}>
+      <div className={`modalbox active ${isOpen === true && 'active'}`}>
         <div className="modalbox-overlay" onClick={toggle} />
         <div className="modalbox-content">
           <div className="modalbox-close" onClick={toggle}>
