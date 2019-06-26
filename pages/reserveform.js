@@ -23,48 +23,50 @@ function FormReserve({ user }) {
               </div>
             </div>
           </div>
-          <div class="form-list-inputs">
-            <div className="two-input">
-              <div className="form-input">
-                <label>
-                  <span>Name:</span>
-                </label>
-                <input type="text" id="input-name" defaultValue={`Lorem Name`} />
+          <div className="form-list-inputs">
+            <div className="form-list-inner">
+              <div className="two-input">
+                <div className="form-input">
+                  <label>
+                    <span>Name:</span>
+                  </label>
+                  <input type="text" id="input-name" defaultValue={`Lorem Name`} />
+                </div>
+
+                <div className="form-input">
+                  <label>
+                    <span>Company</span>
+                  </label>
+                  <input type="text" id="input-company" defaultValue={`Company Test`} />
+                </div>
+              </div>
+              <div className="two-input">
+                <div className="form-input">
+                  <label>
+                    <span>Email</span>
+                  </label>
+                  <input type="text" id="input-email" defaultValue={`company@correotest.com`} />
+                </div>
+
+                <div className="form-input">
+                  <label>
+                    <span>Phone</span>
+                  </label>
+                  <input type="text" id="input-phone" defaultValue={`123456789`} />
+                </div>
               </div>
 
               <div className="form-input">
                 <label>
-                  <span>Company</span>
+                  <span>Comment</span>
                 </label>
-                <input type="text" id="input-company" defaultValue={`Company Test`} />
+                <textarea type="text" id="input-message" />
               </div>
-            </div>
-            <div className="two-input">
-              <div className="form-input">
-                <label>
-                  <span>Email</span>
-                </label>
-                <input type="text" id="input-email" defaultValue={`company@correotest.com`} />
+              <div className="form-btn">
+                <button className="btn" type="submit">
+                  <span>Request quote</span>
+                </button>
               </div>
-
-              <div className="form-input">
-                <label>
-                  <span>Phone</span>
-                </label>
-                <input type="text" id="input-phone" defaultValue={`123456789`} />
-              </div>
-            </div>
-
-            <div className="form-input">
-              <label>
-                <span>Comment</span>
-              </label>
-              <textarea type="text" id="input-message" />
-            </div>
-            <div className="form-btn">
-              <button className="btn" type="submit">
-                <span>Send</span>
-              </button>
             </div>
           </div>
         </div>
@@ -130,6 +132,20 @@ function FormReserve({ user }) {
             font-size: 16px;
             line-height: 26px;
             color: #fff;
+          }
+          .form-list-inputs {
+            width: 64.5%;
+            box-sizing: border-box;
+            padding-top: 87px;
+            padding-left: 72px;
+            padding-right: 20px;
+          }
+          .form-list-inner {
+            max-width: 560px;
+          }
+          .form-btn {
+            display: flex;
+            justify-content: flex-end;
           }
         `}
       </style>
