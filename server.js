@@ -1,4 +1,3 @@
-require('dotenv').config();
 const next = require('next');
 const express = require('express');
 const http = require('http');
@@ -56,7 +55,7 @@ app.prepare().then(() => {
     next();
   };
 
-  server.use('/', restrictAccess);
+  //server.use('/', restrictAccess);
   server.use('/details', restrictAccess);
 
   server.get('*', handle);

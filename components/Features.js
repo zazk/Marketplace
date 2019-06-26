@@ -2,7 +2,6 @@ import React from 'react';
 import ItemListBanner from './ItemListBanner';
 import Link from 'next/link';
 import Intro from './Intro';
-import { Mixpanel } from '../utils/mixpanel';
 
 function Features({ data, user }) {
   const project = data;

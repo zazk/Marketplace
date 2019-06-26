@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import { Mixpanel } from '../utils/mixpanel';
+
 function ControlsProject({ id, items, data }) {
   const prevdata = parseInt(id) - 1;
   const prev = prevdata < 0 ? items - 1 : prevdata;
@@ -7,11 +9,19 @@ function ControlsProject({ id, items, data }) {
   const nextdata = parseInt(id) + 1;
   const next = nextdata >= items ? 0 : nextdata;
 
+  function trackProjectNavigation(navigation, projectNumber) {
+    Mixpanel.identify(user.id);
+    Mixpanel.track('Project Navigation', {
+      navigation: navigation,
+      projectId: projectNumber,
+    });
+  }
+
   return (
     <div className="controls">
       <div className="content">
         <div className="flex">
-          <Link href={`/?id=${prev}`}>
+          <Link href={`/?id=${prev}`} onClick={() => trackProjectNavigation('prev', prev)}>
             <a className="control-item prev">
               <h5>{data[prev].title}</h5>
               <p>
@@ -20,7 +30,7 @@ function ControlsProject({ id, items, data }) {
               </p>
             </a>
           </Link>
-          <Link href={`/?id=${next}`}>
+          <Link href={`/?id=${next}`} onClick={() => trackProjectNavigation('prev', next)}>
             <a className="control-item next">
               <h5>{data[next].title}</h5>
               <p>

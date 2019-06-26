@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
+import { Mixpanel } from '../utils/mixpanel';
 import Layout from '../components/layout';
 import ModalBox from '../components/features/ModalBox';
+
 function RequestQuote({ user }) {
   const [openLightbox, setOpenLightbox] = useState(false);
   const toggle = () => {
     setOpenLightbox(!openLightbox);
   };
 
+  function trackRequestQuote(status) {
+    if (!user) return false;
+    Mixpanel.identify(user.id);
+    var event = status + ' Request Quote';
+    Mixpanel.track(event);
+  }
+  trackRequestQuote('Filling');
   return (
     <Layout title="Formulary" user={user}>
       <button type="button" className="btn" onClick={toggle}>
@@ -63,9 +73,11 @@ function RequestQuote({ user }) {
                 <textarea type="text" id="input-message" />
               </div>
               <div className="form-btn">
-                <button className="btn" type="submit">
-                  <span>Request quote</span>
-                </button>
+                <Link href="/" onClick={() => trackRequestQuote('Submit')}>
+                  <button className="btn" type="submit">
+                    <span>Request quote</span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
