@@ -31,3 +31,5 @@ spec:
               value: http://_CI_ENVIRONMENT_SLUG_._APP_NAME_._MY_DOMAIN_/callback
             - name: MIXPANEL_TOKEN
               value: _MIXPANEL_TOKEN_
+            - name: BASE_URL
+              value: http://_CI_ENVIRONMENT_SLUG_._APP_NAME_._MY_DOMAIN_
