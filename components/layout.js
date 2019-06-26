@@ -305,6 +305,53 @@ export default ({ bodyclass, user, dashboard, children, title = 'This is the def
               display:block;
             }
           }
+          .formulary{
+            .MuiFormControl-root {
+              width: 47%;
+            }
+            .MuiInput-underline:after,
+            .MuiInput-underline:before{
+              position: absolute;
+              top: 0;
+              left: 0;
+              border: 1px solid #bdbdbd;
+              border-radius:4px;
+            }
+            .MuiInput-underline:after{
+              border-color:#64b65a;
+            }
+            .MuiFormLabel-root.Mui-focused{
+              color:#64b65a;
+            }
+            .MuiInput-underline:hover:not(.Mui-disabled):before{
+              border: 1px solid #bdbdbd;
+              border-radius:4px;
+            }
+            .MuiInputBase-input{
+              height: 48px;
+              padding: 0 16px;
+              line-height: 48px;
+            }
+            .MuiInputLabel-formControl{
+              top:10px;
+              left: 16px;
+
+            }
+            .MuiInputLabel-shrink{
+              background-color: #fff;
+              z-index: 1;
+              padding: 0 2px;
+            }
+            .field-type-textarea{
+              width: 100%;
+              .MuiInputBase-input{
+                height: 109px;
+                line-height: 100%;
+                padding-top: 10px;
+              }
+            }
+
+          }
       `}
       </style>
     </div>
