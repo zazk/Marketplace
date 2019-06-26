@@ -11,8 +11,9 @@ function RequestQuote({ user }) {
   };
 
   function trackRequestQuote(status) {
-    if (!user) return false;
-    Mixpanel.identify(user.id);
+    if (user) {
+      Mixpanel.identify(user.id);
+    }
     var event = status + ' Request Quote';
     Mixpanel.track(event);
   }
