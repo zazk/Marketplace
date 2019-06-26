@@ -8,7 +8,11 @@ class Index extends React.Component {
   render() {
     const { router } = this.props;
     // console.log(router)
-    return <Home id={router.query.id} />;
+    return (
+      <Layout>
+        <Home id={router.query.id} />
+      </Layout>
+    );
   }
 }
 

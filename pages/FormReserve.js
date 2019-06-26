@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Layout from '../components/layout';
 import ModalBox from '../components/features/ModalBox';
-function FormReserve() {
+function FormReserve({ user }) {
   const [openLightbox, setOpenLightbox] = useState(false);
   const toggle = () => {
     setOpenLightbox(!openLightbox);
   };
 
   return (
-    <Layout title="Formulary">
+    <Layout title="Formulary" user={user}>
       <button type="button" className="btn" onClick={toggle}>
         <span>Request quote</span>
       </button>
