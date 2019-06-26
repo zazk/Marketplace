@@ -120,7 +120,7 @@ deploy_prod:
 
   function create_deployment_files() {
     ## Deployment file substitutions
-    sed 's/_APP_NAME_/'"$CI_PROJECT_NAME"'/g; s/_VERSION_/'"$VERSION"'/g; s/_CI_ENVIRONMENT_SLUG_/'"$CI_ENVIRONMENT_SLUG"'/g; s/_PROJECT_NAME_/'"$GCP_PROJECT_ID"'/g; s/_REPLICAS_/'"$REPLICAS"'/g; s/_APP_PORT_/'"$APP_PORT"'/g; s/_TRACK_/'"$TRACK"'/g; s/_MY_DOMAIN_/'"$MY_DOMAIN"'/g; s/_AUTH0_CLIENT_ID_/'"$AUTH0_CLIENT_ID"'/g; s/_AUTH0_DOMAIN_/'"$AUTH0_DOMAIN"'/g; s/_AUTH0_CLIENT_SECRET_/'"$AUTH0_CLIENT_SECRET"'/g;' kubernetes.tpl.deployment.yaml > deployment.yaml;
+    sed 's/_APP_NAME_/'"$CI_PROJECT_NAME"'/g; s/_VERSION_/'"$VERSION"'/g; s/_CI_ENVIRONMENT_SLUG_/'"$CI_ENVIRONMENT_SLUG"'/g; s/_PROJECT_NAME_/'"$GCP_PROJECT_ID"'/g; s/_REPLICAS_/'"$REPLICAS"'/g; s/_APP_PORT_/'"$APP_PORT"'/g; s/_TRACK_/'"$TRACK"'/g; s/_MY_DOMAIN_/'"$MY_DOMAIN"'/g; s/_AUTH0_CLIENT_ID_/'"$AUTH0_CLIENT_ID"'/g; s/_AUTH0_DOMAIN_/'"$AUTH0_DOMAIN"'/g; s/_AUTH0_CLIENT_SECRET_/'"$AUTH0_CLIENT_SECRET"'/g; s/_MIXPANEL_TOKEN_/'"$MIXPANEL_TOKEN"'/g;' kubernetes.tpl.deployment.yaml > deployment.yaml;
 
     ## Ingress file substitutions
     if [[ "$USE_SSL" != "True" ]]; then

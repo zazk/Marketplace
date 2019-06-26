@@ -17,7 +17,7 @@ function Home({ id, user }) {
   const geojson = dataProjects[index]['geojson'];
   return (
     <section className="home">
-      <Features data={project} />
+      <Features data={project} user={user} />
       <MapContainer data={project} geojson={geojson} />
       <FeatureProduct data={project} />
       <Biomass data={project} biomass={biomass} />
