@@ -9,7 +9,7 @@ import Leakage from './Leakage';
 import Pay from './Pay';
 import ControlsProject from './ControlsProject';
 
-function Home({ id }) {
+function Home({ id, user }) {
   let index = id ? id : 0;
   const itemsProject = dataProjects.length;
   const project = dataProjects[index]['pdp'];
