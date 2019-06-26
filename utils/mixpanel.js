@@ -1,8 +1,9 @@
+import getConfig from 'next/config';
 import mixpanel from 'mixpanel-browser';
 
-mixpanel.init(process.env.MIXPANEL_TOKEN);
-console.log('Token');
-console.log(process.env.MIXPANEL_TOKEN);
+const { publicRuntimeConfig } = getConfig();
+const { MIXPANEL_TOKEN } = publicRuntimeConfig;
+mixpanel.init(MIXPANEL_TOKEN);
 
 let prod = process.env.NODE_ENV === 'production';
 
