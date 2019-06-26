@@ -29,3 +29,5 @@ spec:
               value: _AUTH0_CLIENT_SECRET_
             - name: AUTH0_CALLBACK_URL
               value: http://_CI_ENVIRONMENT_SLUG_._APP_NAME_._MY_DOMAIN_/callback
+            - name: MIXPANEL_TOKEN
+              value: _MIXPANEL_TOKEN_
