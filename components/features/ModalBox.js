@@ -1,10 +1,6 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 function ModalBox({ children, isOpen, toggle }) {
-  // const [isOpenLightbox, setCloseLightbox] = useState(showmodal);
-
-  console.log('abriendo modal', isOpen);
-
   return (
     <div className="wrap-modalbox">
       <div className={`modalbox ${isOpen === true && 'active'}`}>
@@ -97,4 +93,9 @@ function ModalBox({ children, isOpen, toggle }) {
     </div>
   );
 }
+ModalBox.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired,
+};
 export default ModalBox;
