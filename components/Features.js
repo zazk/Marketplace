@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemListBanner from './ItemListBanner';
+import Link from 'next/link';
 import Intro from './Intro';
 import { Mixpanel } from '../utils/mixpanel';
 
@@ -44,15 +45,11 @@ function Features({ data, user }) {
               <DataFeatureList />
             </div>
             <div className="feature-controls">
-              <button
-                className="btn"
-                onClick={() => {
-                  Mixpanel.identify(user.id);
-                  Mixpanel.track('Request Quote');
-                }}
-              >
-                <span>Request quote</span>
-              </button>
+              <Link href="/requestquote">
+                <button className="btn">
+                  <span>Request quote</span>
+                </button>
+              </Link>
               <figure className="feature-logo">
                 <img src={project.standard} width="96" alt="" />
               </figure>

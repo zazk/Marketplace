@@ -1,7 +1,6 @@
 import React from 'react';
 import App, { Container as NextContainer } from 'next/app';
 import Head from 'next/head';
-import Layout from '../components/layout';
 
 class PachamaMarketplace extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -32,9 +31,7 @@ class PachamaMarketplace extends App {
 
     return (
       <NextContainer>
-        <Layout user={this.state.user}>
-          <Component {...props} />
-        </Layout>
+        <Component {...props} />
       </NextContainer>
     );
   }

@@ -54,7 +54,7 @@ export default ({ bodyclass, user, dashboard, children, title = 'This is the def
         .cnt-wrapper{
           overflow:hidden;
         }
-        button:focus, select:focus, input:focus{
+        button:focus, select:focus, input:focus, textarea:focus{
           outline:none
         }
         body{
