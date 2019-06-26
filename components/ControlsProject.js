@@ -10,6 +10,7 @@ function ControlsProject({ id, items, data }) {
   const next = nextdata >= items ? 0 : nextdata;
 
   function trackProjectNavigation(navigation, projectNumber) {
+    if (!user) return false;
     Mixpanel.identify(user.id);
     Mixpanel.track('Project Navigation', {
       navigation: navigation,
