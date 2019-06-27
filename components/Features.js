@@ -2,7 +2,8 @@ import React from 'react';
 import ItemListBanner from './ItemListBanner';
 import Link from 'next/link';
 import Intro from './Intro';
-function Features({ data }) {
+
+function Features({ data, user }) {
   const project = data;
   const location_data = project.location.name;
   const location = location_data.split(',');
@@ -212,4 +213,5 @@ function Features({ data }) {
     </div>
   );
 }
+
 export default Features;
