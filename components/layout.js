@@ -137,6 +137,19 @@ export default ({ bodyclass, user, dashboard, children, title = 'This is the def
             opacity: 0;
 
           }
+          &.white{
+            color:#64b65a;
+            &:after{
+              background-image:none;
+              background-color: #fff;
+            }
+            &:hover{
+              color:#fff;
+              &:before{
+                background-color: #64b65a;
+              }
+            }
+          }
           .btn-icon{
             margin-left:5px;
             margin-top:5px;
