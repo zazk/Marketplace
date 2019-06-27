@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 function ModalBox({ children, isOpen, toggle }) {
   return (
     <div className="wrap-modalbox">
-      <div className={`modalbox active ${isOpen === true && 'active'}`}>
+      <div className={`modalbox  ${isOpen === true && 'active'}`}>
         <div className="modalbox-overlay" onClick={toggle} />
         <div className="modalbox-content">
           <div className="modalbox-close" onClick={toggle}>
-            <span>X</span>
+            <img src="/static/iconos/close-box.svg" width="20" alt="" />
           </div>
 
           {children}
@@ -53,25 +53,6 @@ function ModalBox({ children, isOpen, toggle }) {
             span {
               position: relative;
               z-index: 2;
-            }
-            &:after,
-            &:before {
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              z-index: 1;
-              transition: all 0.3s;
-            }
-            &:after {
-              background-image: linear-gradient(259deg, #0fd856, #01a796, #01a697);
-            }
-            &:before {
-              background-color: #01a697;
-              z-index: 2;
-              opacity: 0;
             }
           }
           .modalbox-overlay {

@@ -7,6 +7,25 @@ import { LinearProgress, MenuItem, FormControl, InputLabel, FormControlLabel } f
 import MuiTextField from '@material-ui/core/TextField';
 import { fieldToTextField, TextField, TextFieldProps, Select, Switch } from 'formik-material-ui';
 
+const volumenoptions = [
+  {
+    value: 'none',
+    label: 'I don`t know',
+  },
+  {
+    value: '0-20',
+    label: '0 to 20',
+  },
+  {
+    value: '21-50',
+    label: '21 to 50',
+  },
+  {
+    value: '51-100',
+    label: '51 to 100',
+  },
+];
+
 const ranges = [
   {
     value: 'none',
@@ -77,46 +96,72 @@ function RequestQuote({ user }) {
                 render={({ submitForm, isSubmitting, values, setFieldValue }) => (
                   <Form>
                     <div className="two-input">
-                      <Field defaultValue="Default Value" name="name" type="text" label="Name" component={TextField} />
-                      <Field name="companyname" type="text" label="Company name" component={TextField} />
+                      <div className="input-item">
+                        <Field
+                          defaultValue="Default Value"
+                          name="name"
+                          type="text"
+                          label="Name"
+                          component={TextField}
+                        />
+                      </div>
+                      <div className="input-item">
+                        <Field name="companyname" type="text" label="Company name" component={TextField} />
+                      </div>
                     </div>
                     <div className="two-input">
-                      <Field name="email" type="email" label="Email" component={UppercasingTextField} />
-                      <Field name="phonenumber" type="text" label="Phone Number" component={TextField} />
+                      <div className="input-item">
+                        <Field name="email" type="email" label="Email" component={UppercasingTextField} />
+                      </div>
+                      <div className="input-item">
+                        <Field name="phonenumber" type="text" label="Phone Number" component={TextField} />
+                      </div>
                     </div>
                     <div className="two-input">
-                      <Field
-                        type="text"
-                        name="select"
-                        label="Aproximate volumne"
-                        select
-                        component={TextField}
-                        InputLabelProps={{
-                          shrink: true,
-                        }}
-                      >
-                        {ranges.map(option => (
-                          <MenuItem key={option.value} value={option.value}>
-                            {option.label}
-                          </MenuItem>
-                        ))}
-                      </Field>
-                      <Field
-                        type="text"
-                        name="select"
-                        label="Aproximate budget"
-                        select
-                        component={TextField}
-                        InputLabelProps={{
-                          shrink: true,
-                        }}
-                      >
-                        {ranges.map(option => (
-                          <MenuItem key={option.value} value={option.value}>
-                            {option.label}
-                          </MenuItem>
-                        ))}
-                      </Field>
+                      <div className="input-item info">
+                        <div className="form-info get-tooltip">
+                          <img src="/static/iconos/icon-info2.svg" width="14" />
+                          <div className="wrap-tooltip">
+                            <div className="tooltip-inner">
+                              <p>These numbers are equivalent to Tons.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <Field
+                          type="text"
+                          name="select"
+                          label="Aproximate volumne"
+                          select
+                          component={TextField}
+                          InputLabelProps={{
+                            shrink: true,
+                          }}
+                        >
+                          {volumenoptions.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                              {option.label}
+                            </MenuItem>
+                          ))}
+                        </Field>
+                      </div>
+                      <div className="input-item">
+                        <Field
+                          type="text"
+                          name="select"
+                          label="Aproximate budget"
+                          select
+                          component={TextField}
+                          InputLabelProps={{
+                            shrink: true,
+                          }}
+                        >
+                          {ranges.map(option => (
+                            <MenuItem key={option.value} value={option.value}>
+                              {option.label}
+                            </MenuItem>
+                          ))}
+                        </Field>
+                      </div>
                     </div>
 
                     <Field
@@ -127,6 +172,7 @@ function RequestQuote({ user }) {
                       className="field-type-textarea"
                       component={TextField}
                     />
+
                     {isSubmitting && <LinearProgress />}
                     <div className="form-btn">
                       <button className="btn" type="submit" disabled={isSubmitting} onClick={submitForm}>
@@ -139,49 +185,6 @@ function RequestQuote({ user }) {
                   </Form>
                 )}
               />
-
-              {/* <div className="two-input">
-                <div className="form-input">
-                  <label>
-                    <span>Name:</span>
-                  </label>
-                  <input type="text" id="input-name" defaultValue={`Lorem Name`} />
-                </div>
-
-                <div className="form-input">
-                  <label>
-                    <span>Company</span>
-                  </label>
-                  <input type="text" id="input-company" defaultValue={`Company Test`} />
-                </div>
-              </div>
-              <div className="two-input">
-                <div className="form-input">
-                  <label>
-                    <span>Email</span>
-                  </label>
-                  <input type="text" id="input-email" defaultValue={`company@correotest.com`} />
-                </div>
-
-                <div className="form-input">
-                  <label>
-                    <span>Phone</span>
-                  </label>
-                  <input type="text" id="input-phone" defaultValue={`123456789`} />
-                </div>
-              </div>
-
-              <div className="form-input">
-                <label>
-                  <span>Comment</span>
-                </label>
-                <textarea type="text" id="input-message" />
-              </div>
-              <div className="form-btn">
-                <button className="btn" type="submit">
-                  <span>Request quote</span>
-                </button>
-              </div> */}
             </div>
           </div>
         </div>
@@ -226,15 +229,13 @@ function RequestQuote({ user }) {
             }
           }
           .form-title-section {
-            padding: 80px 20px;
+            padding: 80px 45px;
             box-sizing: border-box;
             width: 35.5%;
-            background-image: linear-gradient(214deg, #0fd856, #01a796, #01a697);
+            background-image: linear-gradient(210deg, #0fd856, #01a796, #01a697);
           }
           .form-title-inner {
-            max-width: 315px;
-            margin-left: auto;
-            margin-right: 0;
+            max-width: 250px;
           }
           .form-title {
             font-size: 44px;
@@ -262,6 +263,18 @@ function RequestQuote({ user }) {
             display: flex;
             justify-content: flex-end;
             margin-top: 21px;
+          }
+          .input-item.info {
+            position: relative;
+          }
+          .form-info {
+            position: absolute;
+            right: 0;
+            top: -3px;
+            z-index: 3;
+            .wrap-tooltip .tooltip-inner {
+              width: 130px;
+            }
           }
         `}
       </style>
