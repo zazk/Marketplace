@@ -81,11 +81,12 @@ function RequestQuote({ user }) {
             <div className="form-list-inner">
               <Formik
                 initialValues={{
-                  email: '',
-                  password: '',
-                  select: 'none',
-                  tags: [],
-                  rememberMe: true,
+                  name: 'Jhon Perez',
+                  companyname: 'For Company ',
+                  email: 'company@correo.com',
+                  phonenumber: '123-123456',
+                  selectvolumen: 'none',
+                  selectbudget: 'none',
                 }}
                 onSubmit={(values, { setSubmitting }) => {
                   setTimeout(() => {
@@ -97,13 +98,7 @@ function RequestQuote({ user }) {
                   <Form>
                     <div className="two-input">
                       <div className="input-item">
-                        <Field
-                          defaultValue="Default Value"
-                          name="name"
-                          type="text"
-                          label="Name"
-                          component={TextField}
-                        />
+                        <Field name="name" type="text" label="Name" component={TextField} />
                       </div>
                       <div className="input-item">
                         <Field name="companyname" type="text" label="Company name" component={TextField} />
@@ -128,8 +123,9 @@ function RequestQuote({ user }) {
                           </div>
                         </div>
                         <Field
+                          id="volumen-select"
                           type="text"
-                          name="select"
+                          name="selectvolumen"
                           label="Aproximate volumne"
                           select
                           component={TextField}
@@ -146,8 +142,9 @@ function RequestQuote({ user }) {
                       </div>
                       <div className="input-item">
                         <Field
+                          id="budget-select"
                           type="text"
-                          name="select"
+                          name="selectbudget"
                           label="Aproximate budget"
                           select
                           component={TextField}
