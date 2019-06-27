@@ -6,7 +6,7 @@ function StatusMonitoring() {
     <div className="wrap-status">
       <h3 className="aside-title">Status monitoring</h3>
       <div className="status-circles flex">
-        <div className="status-item" style={{ backgroundColor: `#2ed971` }}>
+        <div className="status-item get-tooltip" style={{ backgroundColor: `#2ed971` }}>
           <img src="/static/iconos/icon-gota.svg" width="15" alt="" />
           <div className="wrap-tooltip">
             <div className="tooltip-inner">
@@ -16,7 +16,7 @@ function StatusMonitoring() {
         </div>
 
         <div
-          className="status-item description"
+          className="status-item description get-tooltip"
           style={{ backgroundColor: `#ffcf35` }}
           onMouseEnter={() => setBorder(1)}
           onMouseLeave={() => setBorder(0)}
@@ -30,7 +30,7 @@ function StatusMonitoring() {
         </div>
 
         <div
-          className="status-item description"
+          className="status-item description get-tooltip"
           style={{ backgroundColor: `#ff6e5d` }}
           onMouseEnter={() => setBorder(2)}
           onMouseLeave={() => setBorder(0)}
@@ -83,11 +83,6 @@ function StatusMonitoring() {
               img {
                 transform: scale(1.2);
               }
-              .wrap-tooltip {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0px) translateX(-50%);
-              }
             }
             &:last-child {
               margin-right: 0;
@@ -98,42 +93,7 @@ function StatusMonitoring() {
               margin: auto;
             }
           }
-          .wrap-tooltip {
-            position: absolute;
-            bottom: 100%;
-            padding-bottom: 10px;
-            left: 50%;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(5px) translateX(-50%);
-            transition: all 0.3s;
-            .tooltip-inner {
-              background-color: #000;
-              padding: 4px 8px;
-              color: #fff;
-              position: relative;
-              border-radius: 5px;
-              width: 90px;
-              text-align: center;
-              p {
-                margin: 0;
-                font-size: 13px;
-                font-family: 'Work Sans', sans-serif;
-              }
-              &:after {
-                content: '';
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 6px 6px 0 6px;
-                border-color: #000 transparent transparent transparent;
-              }
-            }
-          }
+
           .wrap-status-text {
             padding-left: 20px;
             padding-right: 20px;

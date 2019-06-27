@@ -137,6 +137,19 @@ export default ({ bodyclass, user, dashboard, children, title = 'This is the def
             opacity: 0;
 
           }
+          &.white{
+            color:#64b65a;
+            &:after{
+              background-image:none;
+              background-color: #fff;
+            }
+            &:hover{
+              color:#fff;
+              &:before{
+                background-color: #64b65a;
+              }
+            }
+          }
           .btn-icon{
             margin-left:5px;
             margin-top:5px;
@@ -304,6 +317,111 @@ export default ({ bodyclass, user, dashboard, children, title = 'This is the def
             .wrap-company-user{
               display:block;
             }
+          }
+
+          .get-tooltip{
+            position:relative;
+            &:hover{
+              .wrap-tooltip {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0px) translateX(-50%);
+                  }
+
+              }
+
+            }
+          .wrap-tooltip {
+            position: absolute;
+            bottom: 100%;
+            padding-bottom: 10px;
+            left: 50%;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(5px) translateX(-50%);
+            transition: all 0.3s;
+            .tooltip-inner {
+              background-color: #000;
+              padding: 4px 8px;
+              color: #fff;
+              position: relative;
+              border-radius: 5px;
+              width: 90px;
+              text-align: center;
+              p {
+                margin: 0;
+                font-size: 13px;
+                font-family: 'Work Sans', sans-serif;
+              }
+              &:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 6px 6px 0 6px;
+                border-color: #000 transparent transparent transparent;
+              }
+            }
+          }
+
+          .formulary{
+            .input-item {
+              width: 47%;
+              .MuiFormControl-root {
+                width: 100%;
+              }
+            }
+
+            .MuiInput-underline:after,
+            .MuiInput-underline:before{
+              position: absolute;
+              top: 0;
+              left: 0;
+              border: 1px solid #bdbdbd;
+              border-radius:4px;
+            }
+            .MuiInput-underline:after{
+              border-color:#64b65a;
+            }
+            .MuiFormLabel-root.Mui-focused{
+              color:#64b65a;
+            }
+            .MuiInput-underline:hover:not(.Mui-disabled):before{
+              border: 1px solid #bdbdbd;
+              border-radius:4px;
+            }
+            .MuiInputBase-input{
+              height: 48px;
+              padding: 0 16px;
+              line-height: 48px;
+            }
+            .MuiInputLabel-formControl{
+              top:10px;
+              left: 16px;
+
+            }
+            .MuiInputLabel-shrink{
+              background-color: #fff;
+              z-index: 1;
+              padding: 0 2px;
+            }
+            .MuiLinearProgress-barColorPrimary{
+              background-image: linear-gradient(259deg, #0fd856, #01a796, #01a697);
+              background-color:transparent;
+            }
+            .field-type-textarea{
+              width: 100%;
+              .MuiInputBase-input{
+                height: 109px;
+                line-height: 100%;
+                padding-top: 10px;
+              }
+            }
+
           }
       `}
       </style>

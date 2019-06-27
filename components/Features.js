@@ -2,6 +2,7 @@ import React from 'react';
 import ItemListBanner from './ItemListBanner';
 import Link from 'next/link';
 import Intro from './Intro';
+import FormRequesQuote from '../components/forms/FormRequestQuote';
 
 function Features({ data, user }) {
   const project = data;
@@ -44,11 +45,12 @@ function Features({ data, user }) {
               <DataFeatureList />
             </div>
             <div className="feature-controls">
-              <Link href="/requestquote">
+              <FormRequesQuote />
+              {/* <Link href="/requestquote">
                 <button className="btn">
                   <span>Request quote</span>
                 </button>
-              </Link>
+              </Link> */}
               <figure className="feature-logo">
                 <img src={project.standard} width="96" alt="" />
               </figure>
