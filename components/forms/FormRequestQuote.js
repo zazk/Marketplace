@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ModalBox from '../features/ModalBox';
 import Button from '@material-ui/core/Button';
+import { Mixpanel } from '../../utils/mixpanel';
 import { Formik, Field, Form } from 'formik';
 import { LinearProgress, MenuItem, FormControl, InputLabel, FormControlLabel } from '@material-ui/core';
 import MuiTextField from '@material-ui/core/TextField';
@@ -59,7 +60,14 @@ function FormRequesQuote({ user }) {
   const toggle = () => {
     setOpenLightbox(!openLightbox);
   };
-  const [isFill, setFill] = useState(false);
+  function trackRequestQuote(status) {
+    if (user) {
+      Mixpanel.identify(user.id);
+    }
+    var event = status + ' Request Quote';
+    Mixpanel.track(event);
+  }
+  trackRequestQuote('Filling');
 
   return (
     <div>
@@ -192,7 +200,12 @@ function FormRequesQuote({ user }) {
 
                       {isSubmitting && <LinearProgress />}
                       <div className="form-btn">
-                        <button className="btn" type="submit" disabled={isSubmitting} onClick={() => submitForm}>
+                        <button
+                          className="btn"
+                          type="submit"
+                          disabled={isSubmitting}
+                          onClick={() => (trackRequestQuote('Submit'), submitForm)}
+                        >
                           <span>Request quote</span>
                         </button>
                       </div>
