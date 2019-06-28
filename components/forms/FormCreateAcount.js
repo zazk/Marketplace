@@ -201,10 +201,19 @@ function FormCreateAcount({ user }) {
           .acount-terms {
             margin: 15px 0;
             font-size: 13px;
+            a {
+              margin-left: 5px;
+              color: #64b65a;
+              text-decoration: underline;
+              &:hover {
+                font-weight: 600;
+              }
+            }
             p {
               margin: 0;
             }
           }
+
           .wrap-success-acount {
             position: relative;
             width: 1024px;
