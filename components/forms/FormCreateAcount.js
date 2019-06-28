@@ -18,6 +18,8 @@ const UppercasingTextField = props => (
 );
 
 function FormCreateAcount({ user }) {
+  const emailUser = user ? user.emails[0].value : 'email@mail.com';
+
   const [openLightbox, setOpenLightbox] = useState(false);
   const toggle = () => {
     setOpenLightbox(!openLightbox);
@@ -47,7 +49,7 @@ function FormCreateAcount({ user }) {
             <h3 className="form-title-form">Create an account</h3>
             <Formik
               initialValues={{
-                email: 'company@correo.com',
+                email: emailUser,
               }}
               onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
@@ -87,9 +89,6 @@ function FormCreateAcount({ user }) {
                       <span>Create an account</span>
                     </button>
                   </div>
-                  {/* <Button variant="raised" color="primary" disabled={isSubmitting} onClick={submitForm}>
-                                  Submit
-                                </Button> */}
                 </Form>
               )}
             />

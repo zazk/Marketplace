@@ -209,9 +209,6 @@ function FormRequesQuote({ user }) {
                           <span>Request quote</span>
                         </button>
                       </div>
-                      {/* <Button variant="raised" color="primary" disabled={isSubmitting} onClick={submitForm}>
-                                  Submit
-                                </Button> */}
                     </Form>
                   )}
                 />
