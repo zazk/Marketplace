@@ -318,6 +318,14 @@ export default ({ bodyclass, user, dashboard, children, title = 'This is the def
               display:block;
             }
           }
+          .landingpage{
+            .header{
+              background-color:#fff;
+              .content{
+                box-shadow:none !important;
+              }
+            }
+          }
 
           .get-tooltip{
             position:relative;
