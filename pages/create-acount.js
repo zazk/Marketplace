@@ -1,5 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
+import PropTypes from 'prop-types';
+
 import FormCreateAcount from '../components/forms/FormCreateAcount';
 
 function CreateAcount({ user }) {
@@ -9,4 +11,7 @@ function CreateAcount({ user }) {
     </Layout>
   );
 }
+CreateAcount.propTypes = {
+  user: PropTypes.object,
+};
 export default CreateAcount;

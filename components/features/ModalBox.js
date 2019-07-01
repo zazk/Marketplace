@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 function ModalBox({ children, isOpen, toggle, url }) {
-  console.log('url', url);
   return (
     <div className="wrap-modalbox">
       <div className={`modalbox ${isOpen === true && 'active'}`}>

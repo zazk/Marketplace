@@ -1,6 +1,8 @@
 import React from 'react';
 import Layout from '../components/layout';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
+
 function LandingProjects({ user }) {
   return (
     <Layout title="Landing Projects" bodyclass="landingpage" user={user}>
@@ -114,4 +116,8 @@ function LandingProjects({ user }) {
     </Layout>
   );
 }
+
+LandingProjects.propTypes = {
+  user: PropTypes.object,
+};
 export default LandingProjects;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ModalBox from '../features/ModalBox';
-import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
 import { Mixpanel } from '../../utils/mixpanel';
 import { Formik, Field, Form } from 'formik';
 import { LinearProgress, MenuItem, FormControl, InputLabel, FormControlLabel } from '@material-ui/core';
@@ -358,4 +358,7 @@ function FormRequesQuote({ user }) {
     </div>
   );
 }
+FormRequesQuote.propTypes = {
+  user: PropTypes.object,
+};
 export default FormRequesQuote;
