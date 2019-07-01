@@ -6,7 +6,7 @@ import FormCreateAcount from '../components/forms/FormCreateAcount';
 
 function CreateAcount({ user }) {
   return (
-    <Layout title="Formulary" user={user}>
+    <Layout title="Formulary" user={user} bodyclass="headerfull">
       <FormCreateAcount user={user} url="/list" />
     </Layout>
   );

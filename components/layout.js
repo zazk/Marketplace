@@ -318,7 +318,7 @@ export default ({ bodyclass, user, dashboard, children, title = 'This is the def
               display:block;
             }
           }
-          .landingpage{
+          .headerfull{
             .header{
               background-color:#fff;
               .content{

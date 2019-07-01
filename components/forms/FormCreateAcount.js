@@ -35,64 +35,62 @@ function FormCreateAcount({ user, url }) {
 
   return (
     <div className="create-acount formulary">
-      <div className="content">
-        <div
-          className="acount-banner"
-          style={{ backgroundImage: `url(/static/assets/images/banner-create-acount.jpg)` }}
-        />
-        <div className="create-acount-main">
-          <h3 className="form-title">Welcome to Pachama</h3>
-          <div className="form-description-title">
-            <p>Create a Pachama account to acceed to our proyects.</p>
-          </div>
-          <div className="form-list-inner">
-            <h3 className="form-title-form">Create an account</h3>
-            <Formik
-              initialValues={{
-                email: emailUser,
-              }}
-              onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                  setSubmitting(false);
-                  alert(JSON.stringify(values, null, 2));
-                  toggle();
-                }, 500);
-              }}
-              render={({ submitForm, isSubmitting, values, setFieldValue }) => (
-                <Form>
-                  <div className="input-acount-item">
-                    <Field fullWidth name="email" type="email" label="Email" component={UppercasingTextField} />
-                  </div>
-                  <div className="input-acount-item">
-                    <Field fullWidth name="name" type="text" label="Name" component={TextField} />
-                  </div>
-                  <div className="input-acount-item">
-                    <Field fullWidth name="companyname" type="text" label="Company name" component={TextField} />
-                  </div>
-                  <div className="input-acount-item">
-                    <Field fullWidth name="phonenumber" type="text" label="Phone Number" component={TextField} />
-                  </div>
-                  <div className="acount-terms">
-                    <p>
-                      By clicking this button, you agree to
-                      <a href="">Pachama terms.</a>
-                    </p>
-                  </div>
-                  {isSubmitting && <LinearProgress />}
-                  <div className="form-btn">
-                    <button
-                      className="btn"
-                      type="submit"
-                      disabled={isSubmitting}
-                      onClick={() => (trackRequestQuote('Submit'), submitForm)}
-                    >
-                      <span>Create an account</span>
-                    </button>
-                  </div>
-                </Form>
-              )}
-            />
-          </div>
+      <div
+        className="acount-banner"
+        style={{ backgroundImage: `url(/static/assets/images/banner-create-acount.jpg)` }}
+      />
+      <div className="create-acount-main">
+        <h3 className="form-title">Welcome to Pachama</h3>
+        <div className="form-description-title">
+          <p>Create a Pachama account to acceed to our proyects.</p>
+        </div>
+        <div className="form-list-inner">
+          <h3 className="form-title-form">Create an account</h3>
+          <Formik
+            initialValues={{
+              email: emailUser,
+            }}
+            onSubmit={(values, { setSubmitting }) => {
+              setTimeout(() => {
+                setSubmitting(false);
+                alert(JSON.stringify(values, null, 2));
+                toggle();
+              }, 500);
+            }}
+            render={({ submitForm, isSubmitting, values, setFieldValue }) => (
+              <Form>
+                <div className="input-acount-item">
+                  <Field fullWidth name="email" type="email" label="Email" component={UppercasingTextField} />
+                </div>
+                <div className="input-acount-item">
+                  <Field fullWidth name="name" type="text" label="Name" component={TextField} />
+                </div>
+                <div className="input-acount-item">
+                  <Field fullWidth name="companyname" type="text" label="Company name" component={TextField} />
+                </div>
+                <div className="input-acount-item">
+                  <Field fullWidth name="phonenumber" type="text" label="Phone Number" component={TextField} />
+                </div>
+                <div className="acount-terms">
+                  <p>
+                    By clicking this button, you agree to
+                    <a href="">Pachama terms.</a>
+                  </p>
+                </div>
+                {isSubmitting && <LinearProgress />}
+                <div className="form-btn">
+                  <button
+                    className="btn"
+                    type="submit"
+                    disabled={isSubmitting}
+                    onClick={() => (trackRequestQuote('Submit'), submitForm)}
+                  >
+                    <span>Create an account</span>
+                  </button>
+                </div>
+              </Form>
+            )}
+          />
         </div>
       </div>
 
@@ -117,6 +115,9 @@ function FormCreateAcount({ user, url }) {
           .content {
             position: relative;
             padding-bottom: 75px;
+          }
+          .create-acount {
+            position: relative;
           }
           .acount-banner {
             position: absolute;
