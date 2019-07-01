@@ -23,7 +23,7 @@ function ControlsProject({ id, items, data }) {
     <div className="controls">
       <div className="content">
         <div className="flex">
-          <Link href={`/?id=${prev}`} onClick={() => trackProjectNavigation('prev', prev)}>
+          <Link href={`/pdp/?id=${prev}`} onClick={() => trackProjectNavigation('prev', prev)}>
             <a className="control-item prev">
               <h5>{data[prev].title}</h5>
               <p>
@@ -32,7 +32,7 @@ function ControlsProject({ id, items, data }) {
               </p>
             </a>
           </Link>
-          <Link href={`/?id=${next}`} onClick={() => trackProjectNavigation('prev', next)}>
+          <Link href={`/pdp/?id=${next}`} onClick={() => trackProjectNavigation('prev', next)}>
             <a className="control-item next">
               <h5>{data[next].title}</h5>
               <p>

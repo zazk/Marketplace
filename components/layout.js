@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from './Header';
-export default ({ bodyclass, user, dashboard, children, title = 'This is the default title' }) => {
+export default ({ bodyclass, user, dashboard, children, id, title = 'This is the default title' }) => {
   const UrlFont = '../static/assets/fonts/';
   return (
     <div>
@@ -316,6 +316,14 @@ export default ({ bodyclass, user, dashboard, children, title = 'This is the def
             }
             .wrap-company-user{
               display:block;
+            }
+          }
+          .headerfull{
+            .header{
+              background-color:#fff;
+              .content{
+                box-shadow:none !important;
+              }
             }
           }
 
