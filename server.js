@@ -7,6 +7,7 @@ const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 const uid = require('uid-safe');
 const authRoutes = require('./auth-routes');
+const marketplaceApi = require('./marketplace-api');
 
 const dev = process.env.NODE_ENV !== 'production';
 
@@ -49,6 +50,7 @@ app.prepare().then(() => {
   server.use(passport.initialize());
   server.use(passport.session());
   server.use(authRoutes);
+  server.use(marketplaceApi);
 
   const restrictAccess = (req, res, next) => {
     if (!req.isAuthenticated()) return res.redirect('/login');

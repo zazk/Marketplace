@@ -61,6 +61,19 @@ function FormRequesQuote({ user }) {
   };
   const [isFill, setFill] = useState(false);
 
+  function submitRequest(data) {
+    fetch('/api/requestQuote', {
+      method: 'post',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then(res => {
+      res.status === 200;
+    });
+  }
+
   return (
     <div>
       <button type="button" className="btn" onClick={toggle}>
@@ -110,7 +123,7 @@ function FormRequesQuote({ user }) {
                   onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
                       setSubmitting(false);
-                      alert(JSON.stringify(values, null, 2));
+                      submitRequest(values);
                       setSuccessMessage(1);
                     }, 500);
                   }}
