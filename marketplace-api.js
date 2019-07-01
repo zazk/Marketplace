@@ -7,7 +7,7 @@ const router = express.Router();
 router.use(bodyParser.json());
 
 router.post('/api/requestQuote', (req, res) => {
-  const { name, email, companyname, phonenumber, selectvolumen, selectbudget } = req.body;
+  const { name, email, companyname, phonenumber, selectvolumen, selectbudget, message } = req.body;
   const from = `${process.env.PACHAMA_MARKETPLACE_FROM} <${process.env.PACHAMA_MARKETPLACE_MAIL}>`;
   const to = process.env.PACHAMA_SALES_MAIL;
   const replyTo = `${name} <${email}>`;
@@ -20,6 +20,7 @@ router.post('/api/requestQuote', (req, res) => {
     Phone: ${phonenumber}
     Volume: ${selectvolumen}
     Budget: ${selectbudget}
+    Message: ${message}
   `;
 
   mailer({ from, to, replyTo, subject, text })
