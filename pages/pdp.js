@@ -8,15 +8,17 @@ import Biomass from '../components/Biomass';
 import Leakage from '../components/Leakage';
 import Pay from '../components/Pay';
 import ControlsProject from '../components/ControlsProject';
-
-function Home({ id, user }) {
+import { withRouter } from 'next/router';
+function Pdp({ user, router }) {
+  const id = router.query.id;
+  console.log('idprojects', id);
   let index = id ? id : 0;
   const itemsProject = dataProjects.length;
   const project = dataProjects[index]['pdp'];
   const biomass = dataProjects[index]['biomass'];
   const geojson = dataProjects[index]['geojson'];
   return (
-    <Layout title="PDP" user={user} id={id}>
+    <Layout title="PDP" user={user}>
       <section className="home">
         <Features data={project} user={user} />
         <MapContainer data={project} geojson={geojson} />
@@ -29,4 +31,4 @@ function Home({ id, user }) {
     </Layout>
   );
 }
-export default Home;
+export default withRouter(Pdp);
