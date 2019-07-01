@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import Link from 'next/link';
 function LandingProjects({ user }) {
   return (
-    <Layout title="Formulary" bodyclass="landingpage" user={user}>
+    <Layout title="Landing Projects" bodyclass="landingpage" user={user}>
       <div
         className="landing-projects"
         style={{
