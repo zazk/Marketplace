@@ -17,7 +17,7 @@ const UppercasingTextField = props => (
   />
 );
 
-function FormCreateAcount({ user }) {
+function FormCreateAcount({ user, url }) {
   const emailUser = user ? user.emails[0].value : 'email@mail.com';
 
   const [openLightbox, setOpenLightbox] = useState(false);
@@ -96,7 +96,7 @@ function FormCreateAcount({ user }) {
         </div>
       </div>
 
-      <ModalBox isOpen={openLightbox} toggle={toggle}>
+      <ModalBox isOpen={openLightbox} toggle={toggle} url={url}>
         <div className="wrap-success-acount">
           <div className="formulary-success flex active">
             <div className="success-content">

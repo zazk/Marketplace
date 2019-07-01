@@ -1,14 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-function ModalBox({ children, isOpen, toggle }) {
+import Link from 'next/link';
+function ModalBox({ children, isOpen, toggle, url }) {
+  console.log('url', url);
   return (
     <div className="wrap-modalbox">
       <div className={`modalbox ${isOpen === true && 'active'}`}>
-        <div className="modalbox-overlay" onClick={toggle} />
+        <div className="modalbox-overlay" />
         <div className="modalbox-content">
-          <div className="modalbox-close" onClick={toggle}>
-            <img src="/static/iconos/close-box.svg" width="20" alt="" />
-          </div>
+          {url ? (
+            <Link href="/list">
+              <div className="modalbox-close" onClick={toggle}>
+                <img src="/static/iconos/close-box.svg" width="20" alt="" />
+              </div>
+            </Link>
+          ) : (
+            <div className="modalbox-close" onClick={toggle}>
+              <img src="/static/iconos/close-box.svg" width="20" alt="" />
+            </div>
+          )}
 
           {children}
         </div>
