@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from './Header';
-export default ({ bodyclass, user, dashboard, children, title = 'This is the default title' }) => {
+export default ({ bodyclass, user, dashboard, children, id, title = 'This is the default title' }) => {
   const UrlFont = '../static/assets/fonts/';
   return (
     <div>
