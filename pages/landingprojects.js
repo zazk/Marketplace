@@ -9,7 +9,7 @@ function LandingProjects({ user }) {
       <div
         className="landing-projects"
         style={{
-          backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/middlebury-main_picture.jpg)`,
+          backgroundImage: `url('/static/assets/images/banner-landingprojects.jpg')`,
         }}
       >
         <div className="content-main flex">
@@ -24,6 +24,7 @@ function LandingProjects({ user }) {
                   </button>
                 </Link>
               </div>
+              <h4 className="lp-subtitle">Projects available upon authentication</h4>
             </div>
           </div>
           <div className="lp-description flex">
@@ -52,26 +53,7 @@ function LandingProjects({ user }) {
             color: #fff;
             background-size: cover;
             position: relative;
-            &:before,
-            &:after {
-              content: '';
-              height: 100%;
-              width: 100%;
-              display: block;
-              position: absolute;
-              top: 0;
-              left: 0;
-            }
-            &:after {
-              background-color: #098e4a;
-              opacity: 0.53;
-              z-index: 1;
-            }
-            &:before {
-              opacity: 0.63;
-              background-image: linear-gradient(to right, rgba(25, 36, 79, 0.91), rgba(11, 16, 36, 0));
-              z-index: 2;
-            }
+
             .content-main {
               justify-content: space-between;
               height: calc(100vh - 70px);
@@ -85,12 +67,16 @@ function LandingProjects({ user }) {
             margin: 0;
             margin-bottom: 20px;
           }
+          .lp-btn {
+            margin-bottom: 40px;
+          }
           .lp-title {
-            font-size: 45px;
+            font-size: 44px;
             margin: 0;
             margin-bottom: 30px;
             font-family: 'Work Sans', sans-serif;
             font-weight: 700;
+            line-height: 49px;
           }
           .lp-intro-main,
           .lp-description {
@@ -102,7 +88,7 @@ function LandingProjects({ user }) {
             padding-right: 10px;
             box-sizing: border-box;
             span {
-              font-size: 35px;
+              font-size: 37px;
               font-family: 'Work Sans', sans-serif;
               font-weight: 600;
             }
