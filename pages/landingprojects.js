@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function LandingProjects({ user }) {
   return (
-    <Layout title="Landing Projects" bodyclass="bannerfull" user={user}>
+    <Layout title="Landing Projects" bodyclass="headerfull" user={user}>
       <div
         className="landing-projects"
         style={{
