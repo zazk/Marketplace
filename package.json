@@ -36,6 +36,8 @@
     "next": "^8.1.0",
     "next-fonts": "^0.17.0",
     "next-routes": "^1.4.2",
+    "nodemailer": "^6.2.1",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "passport": "^0.4.0",
     "passport-auth0": "^1.1.0",
     "postcss-color-function": "^4.0.1",
