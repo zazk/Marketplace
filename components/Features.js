@@ -159,7 +159,6 @@ function Features({ data, user }) {
               width: 100%;
               margin-left: 0;
               margin-top: 70px;
-              transform: translateY(0px);
             }
           }
           .progressbar {

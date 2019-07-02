@@ -261,7 +261,7 @@ function FormRequesQuote({ user }) {
             }
           }
           .formulary-success {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             z-index: 200;
@@ -287,12 +287,22 @@ function FormRequesQuote({ user }) {
             margin-bottom: 10px;
             line-height: 49px;
             font-family: 'Work Sans', sans-serif;
+            @media screen and (max-width: 640px) {
+              font-size: 28px;
+              line-height: 100%;
+              padding-left: 30px;
+              padding-right: 30px;
+            }
           }
           .success-description {
             p {
               margin: 0;
               font-size: 16px;
               line-height: 26px;
+            }
+            @media screen and (max-width: 640px) {
+              padding-left: 30px;
+              padding-right: 30px;
             }
           }
           .success-content {
@@ -303,6 +313,13 @@ function FormRequesQuote({ user }) {
           .success-btn {
             justify-content: center;
             margin-top: 65px;
+            @media screen and (max-width: 480px) {
+              padding-left: 30px;
+              padding-right: 30px;
+              .btn {
+                width: 100%;
+              }
+            }
           }
           .two-input {
             display: flex;
