@@ -272,6 +272,22 @@ function FormCreateAcount({ user, url }) {
             position: relative;
             width: 1024px;
             height: 595px;
+            @media screen and (max-width: 1024px) {
+              width: 90vw;
+              height: 90vh;
+            }
+            @media screen and (max-width: 640px) {
+              width: 100vw;
+              height: 100vh;
+              .success-title {
+                font-size: 28px;
+                line-height: 33px;
+              }
+              .formulary-success {
+                box-sizing: border-box;
+                padding: 30px;
+              }
+            }
           }
           .formulary-success {
             position: absolute;

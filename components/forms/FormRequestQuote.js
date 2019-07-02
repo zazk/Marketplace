@@ -240,10 +240,25 @@ function FormRequesQuote({ user }) {
             background-color: #fff;
             box-sizing: border-box;
             position: relative;
+            @media screen and (max-width: 1024px) {
+              width: 95vw;
+            }
+            @media screen and (max-width: 745px) {
+              width: 100vw;
+              height: 100vh;
+              overflow: auto;
+            }
           }
           .formulary-main {
             position: relative;
             z-index: 1;
+            @media screen and (max-width: 745px) {
+              .form-title-section,
+              .form-list-inputs {
+                width: 100%;
+                box-sizing: border-box;
+              }
+            }
           }
           .formulary-success {
             position: absolute;
@@ -293,6 +308,7 @@ function FormRequesQuote({ user }) {
             display: flex;
             justify-content: space-between;
             margin-bottom: 6px;
+            flex-flow: row wrap;
           }
 
           .form-input {
@@ -323,6 +339,39 @@ function FormRequesQuote({ user }) {
             box-sizing: border-box;
             width: 35.5%;
             background-image: linear-gradient(210deg, #0fd856, #01a796, #01a697);
+            @media screen and (max-width: 1024px) {
+              padding-left: 30px;
+              padding-right: 30px;
+              .form-title {
+                font-size: 32px;
+              }
+            }
+            @media screen and (max-width: 745px) {
+              padding: 30px;
+              min-height: 200px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              .form-title-inner {
+                max-width: none;
+              }
+              .form-title {
+                margin: 0;
+              }
+              .form-description-title p {
+                margin: 0;
+              }
+            }
+            @media screen and (max-width: 480px) {
+              .form-title {
+                font-size: 26px;
+              }
+              .form-description-title {
+                font-size: 14px;
+                line-height: 18px;
+              }
+            }
           }
           .form-title-inner {
             max-width: 250px;
@@ -345,9 +394,27 @@ function FormRequesQuote({ user }) {
             padding-bottom: 70px;
             padding-left: 65px;
             padding-right: 65px;
+            @media screen and (max-width: 1024px) {
+              padding-left: 30px;
+              padding-right: 30px;
+            }
+            @media screen and (max-width: 745px) {
+              padding-left: 30px;
+              padding-right: 30px;
+              padding-top: 30px;
+              padding-bottom: 30px;
+            }
+            @media screen and (max-width: 640px) {
+              background-color: #fafafa;
+              padding-left: 15px;
+              padding-right: 15px;
+            }
           }
           .form-list-inner {
             max-width: 550px;
+            @media screen and (max-width: 745px) {
+              max-width: none;
+            }
           }
           .form-btn {
             display: flex;

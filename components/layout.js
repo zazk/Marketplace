@@ -399,6 +399,11 @@ export default ({ bodyclass, user, dashboard, children, id, title = 'This is the
                   background-color:#fff;
                   z-index:1;
                 }
+                &.field-type-textarea{
+                  &:after{
+                    height:132px;
+                  }
+                }
               }
               .form-btn{
                 .btn{
@@ -410,6 +415,9 @@ export default ({ bodyclass, user, dashboard, children, id, title = 'This is the
               width: 47%;
               .MuiFormControl-root {
                 width: 100%;
+              }
+              @media screen and (max-width:640px){
+                width:100%
               }
             }
 
