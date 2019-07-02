@@ -377,6 +377,35 @@ export default ({ bodyclass, user, dashboard, children, id, title = 'This is the
           }
 
           .formulary{
+            @media screen and (max-width:480px){
+              .MuiFormControl-root   {
+                .MuiInput-root{
+                  z-index:3;
+                }
+                .MuiInputLabel-formControl{
+                  z-index:2;
+                }
+                .MuiInputLabel-shrink{
+                  z-index:4;
+                }
+                &:after{
+                  content:"";
+                  height:48px;
+                  position:absolute;
+                  bottom:0px;
+                  left:0px;
+                  width:100%;
+                  border-radius:4px;
+                  background-color:#fff;
+                  z-index:1;
+                }
+              }
+              .form-btn{
+                .btn{
+                  width:100%;
+                }
+              }
+            }
             .input-item {
               width: 47%;
               .MuiFormControl-root {

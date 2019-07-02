@@ -17,14 +17,17 @@ function LandingProjects({ user }) {
             <div className="lp-intro">
               <h4 className="lp-subtitle">Take part in our challenge</h4>
               <h3 className="lp-title">Protect our forests in the fight against climate change</h3>
-              <div className="lp-btn">
-                <Link href="/login">
-                  <button className="btn">
-                    <span>View projects</span>
-                  </button>
-                </Link>
+
+              <div className="lp-intro-down">
+                <div className="lp-btn">
+                  <Link href="/login">
+                    <button className="btn">
+                      <span>View projects</span>
+                    </button>
+                  </Link>
+                </div>
+                <h4 className="lp-subtitle">Projects available upon authentication</h4>
               </div>
-              <h4 className="lp-subtitle">Projects available upon authentication</h4>
             </div>
           </div>
           <div className="lp-description flex">
@@ -60,6 +63,33 @@ function LandingProjects({ user }) {
               align-items: center;
               position: relative;
               z-index: 10;
+              width: 94%;
+            }
+            @media screen and (max-width: 640px) {
+              .content-main {
+                height: auto;
+                min-height: calc(100vh - 70px);
+                box-sizing: border-box;
+                padding: 30px 0;
+                position: relative;
+                padding-bottom: 120px;
+              }
+              .lp-intro-down {
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                width: 100%;
+              }
+              .lp-btn {
+                margin-bottom: 10px;
+                .btn {
+                  margin: auto;
+                  width: 100%;
+                }
+              }
+              .lp-subtitle {
+                font-size: 14px;
+              }
             }
           }
           .lp-subtitle {
@@ -77,10 +107,22 @@ function LandingProjects({ user }) {
             font-family: 'Work Sans', sans-serif;
             font-weight: 700;
             line-height: 49px;
+            @media screen and (max-width: 1024px) {
+              font-size: 33px;
+              line-height: 35px;
+            }
+            @media screen and (max-width: 640px) {
+              font-size: 26px;
+              line-height: 28px;
+              padding-right: 30px;
+            }
           }
           .lp-intro-main,
           .lp-description {
             width: 43%;
+            @media screen and (max-width: 640px) {
+              width: 100%;
+            }
           }
           .lp-description-item {
             width: 50%;
@@ -95,6 +137,19 @@ function LandingProjects({ user }) {
             p {
               margin: 0;
               font-size: 16px;
+            }
+            @media screen and (max-width: 1024px) {
+              span {
+                font-size: 26px;
+              }
+            }
+            @media screen and (max-width: 640px) {
+              span {
+                font-size: 20px;
+              }
+              p {
+                font-size: 14px;
+              }
             }
           }
         `}
