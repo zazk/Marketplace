@@ -75,8 +75,8 @@ function FilterList() {
         {`
           .projects-filters {
             margin-bottom: 20px;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             @media screen and (max-width: 640px) {
               .project-search {
                 width: 100%;
