@@ -206,7 +206,7 @@ function ProjectList() {
           </a>
         </div>
 
-        <div className="content-main project-list-main">
+        <div className="content-main project-list-main list-default">
           <a href="" className="project-item">
             <div
               className="project-picture"
