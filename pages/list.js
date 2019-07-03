@@ -208,17 +208,19 @@ function ProjectList() {
 
         <div className="content-main project-list-main list-default">
           <a href="" className="project-item">
-            <div
-              className="project-picture"
-              style={{
-                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/2-main_picture.jpg)`,
-              }}
-            />
             <div className="project-detail flex">
               <div className="project-resumen">
-                <h3 className="project-name">Other title very large</h3>
-                <div className="project-ubication">
-                  <p className="project-ubication-address">Columbus, Ohio, USA</p>
+                <div
+                  className="project-picture"
+                  style={{
+                    backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/2-main_picture.jpg)`,
+                  }}
+                />
+                <div className="project-info-project">
+                  <h3 className="project-name">Other title very large</h3>
+                  <div className="project-ubication">
+                    <p className="project-ubication-address">Columbus, Ohio, USA</p>
+                  </div>
                 </div>
                 <div className="project-progress">
                   <div className="progressbar">
@@ -251,17 +253,19 @@ function ProjectList() {
             </div>
           </a>
           <a href="" className="project-item">
-            <div
-              className="project-picture"
-              style={{
-                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/3-main_picture.jpg)`,
-              }}
-            />
             <div className="project-detail flex">
               <div className="project-resumen">
-                <h3 className="project-name">Middlebury College</h3>
-                <div className="project-ubication">
-                  <p className="project-ubication-address">Salem, Oregon, USA</p>
+                <div
+                  className="project-picture"
+                  style={{
+                    backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/3-main_picture.jpg)`,
+                  }}
+                />
+                <div className="project-info-project">
+                  <h3 className="project-name">Middlebury College</h3>
+                  <div className="project-ubication">
+                    <p className="project-ubication-address">Salem, Oregon, USA</p>
+                  </div>
                 </div>
                 <div className="project-progress">
                   <div className="progressbar">
@@ -294,17 +298,19 @@ function ProjectList() {
             </div>
           </a>
           <a href="" className="project-item">
-            <div
-              className="project-picture"
-              style={{
-                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/middlebury-main_picture.jpg)`,
-              }}
-            />
             <div className="project-detail flex">
               <div className="project-resumen">
-                <h3 className="project-name">Middlebury College</h3>
-                <div className="project-ubication">
-                  <p className="project-ubication-address">Middlebury, Vermont, USA</p>
+                <div
+                  className="project-picture"
+                  style={{
+                    backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/middlebury-main_picture.jpg)`,
+                  }}
+                />
+                <div className="project-info-project">
+                  <h3 className="project-name">Middlebury College</h3>
+                  <div className="project-ubication">
+                    <p className="project-ubication-address">Middlebury, Vermont, USA</p>
+                  </div>
                 </div>
                 <div className="project-progress">
                   <div className="progressbar">
@@ -536,6 +542,71 @@ function ProjectList() {
               @media screen and (max-width: 480px) {
                 .project-item {
                   width: 100%;
+                }
+              }
+            }
+            .list-default {
+              @media screen and (max-width: 600px) {
+                .project-item {
+                  padding: 15px;
+                  padding-left: 0px;
+                }
+                .project-resumen,
+                .project-description {
+                  width: 100%;
+                }
+                .project-resumen {
+                  padding-left: 120px;
+                }
+                .project-picture {
+                  width: 100px;
+                  height: 100px;
+                  border-radius: 5px;
+                  top: 10px;
+                  left: 10px;
+                  overflow: hidden;
+                }
+                .project-description {
+                  padding-left: 10px;
+                  padding-right: 10px;
+                  box-sizing: border-box;
+                  display: flex;
+                  flex-flow: row wrap;
+                  margin-top: 15px;
+                }
+                .description-item {
+                  width: 50%;
+                  box-sizing: border-box;
+                  margin: 0px;
+                  padding-right: 10px;
+                }
+              }
+              @media screen and (max-width: 480px) {
+                .project-resumen {
+                  padding-left: 0px;
+                }
+                .project-info-project {
+                  padding-left: 120px;
+                }
+                .project-picture {
+                  height: 60px;
+                }
+                .project-progress {
+                  padding: 2px 10px;
+                }
+                .project-name {
+                  font-size: 14px;
+                }
+                .project-ubication {
+                  font-size: 12px;
+                }
+                .description-item {
+                  padding-left: 30px;
+                }
+                .description-text {
+                  p {
+                    font-size: 10px;
+                  }
                 }
               }
             }
