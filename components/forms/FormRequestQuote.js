@@ -261,7 +261,7 @@ function FormRequesQuote({ user }) {
             }
           }
           .formulary-success {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             z-index: 200;
@@ -278,6 +278,9 @@ function FormRequesQuote({ user }) {
               opacity: 1;
               visibility: visible;
               height: 100%;
+            }
+            @media screen and (max-width: 745px) {
+              position: fixed;
             }
           }
           .success-title {

@@ -8,7 +8,7 @@ function ModalBox({ children, isOpen, toggle, url }) {
         <div className="modalbox-overlay" />
         <div className="modalbox-content">
           {url ? (
-            <Link href="/list">
+            <Link href={url}>
               <div className="modalbox-close" onClick={toggle}>
                 <img src="/static/iconos/close-box.svg" width="20" alt="" />
               </div>

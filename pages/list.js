@@ -21,7 +21,7 @@ function ProjectList() {
         <FilterList />
         <div className="content-main project-list-main feature-two">
           {datatwofeature.map((project, i) => (
-            <a href="" className="project-item">
+            <a href="" key={i} className="project-item">
               <div
                 className="project-picture"
                 style={{
