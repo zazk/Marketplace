@@ -43,6 +43,37 @@ export default ({ bodyclass, user, dashboard, children, id, title = 'This is the
           font-weight: normal;
           font-style: normal;
         }
+        @font-face {
+          font-family: 'icomoon';
+          src:  url('${UrlFont}icomoon.eot?vhryx6');
+          src:  url('${UrlFont}icomoon.eot?vhryx6#iefix') format('embedded-opentype'),
+            url('${UrlFont}icomoon.ttf?vhryx6') format('truetype'),
+            url('${UrlFont}icomoon.woff?vhryx6') format('woff'),
+            url('${UrlFont}icomoon.svg?vhryx6#icomoon') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+        [class^="icon-"], [class*=" icon-"] {
+          font-family: 'icomoon' !important;
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-arrow-down:before {
+          content: "\e901";
+        }
+        .icon-lupa:before {
+          content: "\e902";
+        }
+        .icon-arrow-right:before {
+          content: "\e900";
+        }
         li{
           margin:0;
           list-style:none;
@@ -377,10 +408,47 @@ export default ({ bodyclass, user, dashboard, children, id, title = 'This is the
           }
 
           .formulary{
+            @media screen and (max-width:480px){
+              .MuiFormControl-root   {
+                .MuiInput-root{
+                  z-index:3;
+                }
+                .MuiInputLabel-formControl{
+                  z-index:2;
+                }
+                .MuiInputLabel-shrink{
+                  z-index:4;
+                }
+                &:after{
+                  content:"";
+                  height:48px;
+                  position:absolute;
+                  bottom:0px;
+                  left:0px;
+                  width:100%;
+                  border-radius:4px;
+                  background-color:#fff;
+                  z-index:1;
+                }
+                &.field-type-textarea{
+                  &:after{
+                    height:132px;
+                  }
+                }
+              }
+              .form-btn{
+                .btn{
+                  width:100%;
+                }
+              }
+            }
             .input-item {
               width: 47%;
               .MuiFormControl-root {
                 width: 100%;
+              }
+              @media screen and (max-width:640px){
+                width:100%
               }
             }
 

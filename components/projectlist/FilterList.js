@@ -75,8 +75,25 @@ function FilterList() {
         {`
           .projects-filters {
             margin-bottom: 20px;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            @media screen and (max-width: 640px) {
+              .project-search {
+                width: 100%;
+                margin-bottom: 20px;
+              }
+              .wrap-filter-select {
+                justify-content: center;
+                width: 100%;
+                .wrap-drodown {
+                  margin-left: 10px;
+                  margin-right: 10px;
+                }
+              }
+            }
+          }
+          .content-main {
+            width: 94%;
           }
           .project-search {
             width: 327px;

@@ -40,9 +40,11 @@ function FormCreateAcount({ user, url }) {
         style={{ backgroundImage: `url(/static/assets/images/banner-create-acount.jpg)` }}
       />
       <div className="create-acount-main">
-        <h3 className="form-title">Welcome to Pachama</h3>
-        <div className="form-description-title">
-          <p>Create a Pachama account to acceed to our proyects.</p>
+        <div className="create-acount-title">
+          <h3 className="form-title">Welcome to Pachama</h3>
+          <div className="form-description-title">
+            <p>Create a Pachama account to acceed to our proyects.</p>
+          </div>
         </div>
         <div className="form-list-inner">
           <h3 className="form-title-form">Create an account</h3>
@@ -155,6 +157,30 @@ function FormCreateAcount({ user, url }) {
               background-image: linear-gradient(to bottom, rgba(25, 36, 79, 0.91), rgba(11, 16, 36, 0));
               z-index: 2;
             }
+            @media screen and (max-width: 640px) {
+              position: relative;
+              height: 220px;
+            }
+            @media screen and (max-width: 480px) {
+              height: 180px;
+            }
+          }
+          .create-acount-title {
+            @media screen and (max-width: 640px) {
+              position: absolute;
+              height: 220px;
+              width: 100%;
+              top: 0px;
+              left: 0px;
+              z-index: 10;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+            @media screen and (max-width: 480px) {
+              height: 180px;
+            }
           }
           .form-title {
             font-size: 44px;
@@ -164,6 +190,12 @@ function FormCreateAcount({ user, url }) {
             font-family: 'Work Sans', sans-serif;
             color: #fff;
             text-align: center;
+            @media screen and (max-width: 640px) {
+              font-size: 28px;
+            }
+            @media screen and (max-width: 480px) {
+              line-height: 100%;
+            }
           }
           .form-description-title {
             font-size: 16px;
@@ -173,6 +205,13 @@ function FormCreateAcount({ user, url }) {
             text-align: center;
             p {
               margin: 0;
+            }
+            @media screen and (max-width: 640px) {
+              margin-bottom: 0;
+            }
+            @media screen and (max-width: 480px) {
+              margin-bottom: 0;
+              font-size: 13px;
             }
           }
           .form-title-form {
@@ -188,6 +227,14 @@ function FormCreateAcount({ user, url }) {
             max-width: 500px;
             margin: auto;
             padding-top: 50px;
+            @media screen and (max-width: 640px) {
+              position: static;
+              padding-top: 30px;
+            }
+            @media screen and (max-width: 480px) {
+              width: 100%;
+              padding-top: 0px;
+            }
           }
           .input-acount-item {
             margin-bottom: 10px;
@@ -197,6 +244,12 @@ function FormCreateAcount({ user, url }) {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 10px 34px 0 rgba(7, 93, 108, 0.14);
+            @media screen and (max-width: 480px) {
+              background-color: #fafafa;
+              border-radius: 0px;
+              padding-left: 15px;
+              padding-right: 15px;
+            }
           }
 
           .acount-terms {
@@ -219,6 +272,22 @@ function FormCreateAcount({ user, url }) {
             position: relative;
             width: 1024px;
             height: 595px;
+            @media screen and (max-width: 1024px) {
+              width: 90vw;
+              height: 90vh;
+            }
+            @media screen and (max-width: 640px) {
+              width: 100vw;
+              height: 100vh;
+              .success-title {
+                font-size: 28px;
+                line-height: 33px;
+              }
+              .formulary-success {
+                box-sizing: border-box;
+                padding: 30px;
+              }
+            }
           }
           .formulary-success {
             position: absolute;
