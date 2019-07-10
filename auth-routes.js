@@ -13,10 +13,22 @@ router.get(
 router.get('/callback', (req, res, next) => {
   passport.authenticate('auth0', (err, user) => {
     if (err) return next(err);
+    console.log(user);
     if (!user) return res.redirect('/login');
     req.logIn(user, err => {
       if (err) return next(err);
-      res.redirect('/create-account');
+      // TODO fix this hack with Auth0 Lock
+      if (user['_json']['http://pachama.com/display']) {
+        var display = user['_json']['http://pachama.com/display'];
+        if (display === 'list') {
+          res.redirect('/list');
+        } else {
+          var projectId = parseInt(display, 10);
+          res.redirect(`/pdp?id=${projectId}`);
+        }
+      } else {
+        res.redirect('/create-account');
+      }
     });
   })(req, res, next);
 });

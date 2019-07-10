@@ -22,6 +22,7 @@
   "dependencies": {
     "@material-ui/core": "^4.1.1",
     "@material-ui/styles": "^4.1.1",
+    "auth0": "^2.18.0",
     "compression": "^1.7.4",
     "d3-request": "^1.0.6",
     "deck.gl": "^7.1.0",
@@ -36,6 +37,7 @@
     "next": "^8.1.0",
     "next-fonts": "^0.17.0",
     "next-routes": "^1.4.2",
+    "node-fetch": "^2.6.0",
     "nodemailer": "^6.2.1",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "passport": "^0.4.0",
@@ -48,6 +50,7 @@
     "react-dom": "^16.8.6",
     "react-map-gl": "^4.1.2",
     "react-tooltip": "^3.10.0",
+    "request": "^2.88.0",
     "seer": "^0.2.5",
     "styled-jsx-plugin-postcss": "^2.0.0",
     "uid-safe": "^2.1.5",

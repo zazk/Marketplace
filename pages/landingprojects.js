@@ -8,7 +8,7 @@ function LandingProjects({ user, router }) {
   const iddata = router.query.project;
   const idproject = iddata ? router.query.project : 0;
   const project = dataProjects[idproject].pdp;
-  const urlLogin = iddata ? `/login/?single=${iddata}` : '/login';
+  const urlLogin = iddata ? `/login?project=${idproject}` : '/login';
   const projectDetail = {
     name: idproject ? project.title : 'Protect our forests in the fight against climate change',
     credits_avail: idproject ? project.credits_avail.quatinty : '100,000',
@@ -18,7 +18,7 @@ function LandingProjects({ user, router }) {
     main_picture: idproject ? project.main_picture : '/static/assets/images/banner-landingprojects.jpg',
     text_intro: idproject ? 'Be part of our project' : 'Take part in our challenge',
   };
-
+  console.log(urlLogin);
   return (
     <Layout title="Landing Projects" bodyclass="headerfull" user={user}>
       <div
