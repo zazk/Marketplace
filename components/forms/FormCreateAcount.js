@@ -24,14 +24,28 @@ function FormCreateAcount({ user, url }) {
   const toggle = () => {
     setOpenLightbox(!openLightbox);
   };
-  function trackRequestQuote(status) {
+  function trackCreateAccount(status) {
     if (user) {
       Mixpanel.identify(user.id);
     }
     var event = status + ' Create Acount';
     Mixpanel.track(event);
   }
-  trackRequestQuote('Filling');
+  trackCreateAccount('Filling');
+
+  function submitRequest(data) {
+    data['userid'] = user.id;
+    fetch('/api/createAccount', {
+      method: 'post',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then(res => {
+      res.status === 200;
+    });
+  }
 
   return (
     <div className="create-acount formulary">
@@ -55,7 +69,8 @@ function FormCreateAcount({ user, url }) {
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
                 setSubmitting(false);
-                alert(JSON.stringify(values, null, 2));
+                submitRequest(values);
+                //alert(JSON.stringify(values, null, 2));
                 toggle();
               }, 500);
             }}
@@ -85,7 +100,7 @@ function FormCreateAcount({ user, url }) {
                     className="btn"
                     type="submit"
                     disabled={isSubmitting}
-                    onClick={() => (trackRequestQuote('Submit'), submitForm)}
+                    onClick={() => (trackCreateAccount('Submit'), submitForm)}
                   >
                     <span>Create an account</span>
                   </button>

@@ -16,7 +16,17 @@ router.get('/callback', (req, res, next) => {
     if (!user) return res.redirect('/login');
     req.logIn(user, err => {
       if (err) return next(err);
-      res.redirect('/create-account');
+      // TODO fix this hack with Auth0 Lock
+      if (user['_json']['http://pachama.com/project']) {
+        var project = user['_json']['http://pachama.com/project'];
+        var projectId = parseInt(project, 10);
+        console.log(projectId);
+        if (projectId > -1) {
+          res.redirect(`/pdp?id=${projectId}`);
+        }
+      } else {
+        res.redirect('/list');
+      }
     });
   })(req, res, next);
 });

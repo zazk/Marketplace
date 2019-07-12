@@ -57,8 +57,11 @@ app.prepare().then(() => {
     next();
   };
 
-  //server.use('/', restrictAccess);
-  server.use('/details', restrictAccess);
+  server.use('/dashboard', restrictAccess);
+  server.use('/requestquote', restrictAccess);
+  server.use('/map', restrictAccess);
+  server.use('/list', restrictAccess);
+  server.use('/pdp', restrictAccess);
 
   server.get('*', handle);
 
