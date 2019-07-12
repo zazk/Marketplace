@@ -51,15 +51,11 @@ router.post('/api/createAccount', (req, res) => {
   };
   auth0mgmt.updateUser(params, data, function(err, user) {
     if (err) {
-      console.log('ERROR: updateUser');
-      console.log(err);
       res.send('error');
     }
   });
   auth0mgmt.updateUserMetadata(params, metadata, function(err, user) {
     if (err) {
-      console.log('ERROR: updateUserMetadata');
-      console.log(err);
       res.send('error');
     }
   });
