@@ -19,13 +19,13 @@ const projects = {
     geojson: require('./hudson-geo.json'),
     biomass: require('./hudson-biomass.json'),
   },
+  tricity: {
+    pdp: require('./tricity-pdp.json'),
+    geojson: require('./tricity-geo.json'),
+    biomass: require('./tricity-biomass.json'),
+  },
 };
 
-const dataProjects = [
-  projects['middleburry'],
-  projects['hudson'],
-  projects['great-mountain-forest'],
-  projects['green-trees'],
-];
+const dataProjects = [projects['middleburry'], projects['hudson'], projects['tricity']];
 
 export default dataProjects;
