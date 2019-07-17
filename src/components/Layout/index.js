@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
+import Footer from './Footer';
 
 class Layout extends Component {
   render() {
@@ -12,6 +13,7 @@ class Layout extends Component {
         <h1>Pachama Marketplace</h1>
         <Header />
         <Component route={route} />
+        <Footer />
       </div>
     );
   }
