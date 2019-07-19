@@ -1,6 +1,6 @@
 import LandingPage from './pages/landing';
 
-const routes = [
+const publicRoutes = [
   {
     name: 'Home',
     component: LandingPage,
@@ -9,4 +9,4 @@ const routes = [
   },
 ];
 
-export default routes;
+export { publicRoutes, privateRoutes };

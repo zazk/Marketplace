@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
-import routes from './routes';
+import { publicRoutes } from './routes';
 import Layout from './components/Layout';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          {routes.map((route, index) => (
+          {publicRoutes.map((route, index) => (
             <Route
               key={index}
               exact={route.exact}
