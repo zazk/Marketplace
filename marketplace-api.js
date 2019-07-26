@@ -33,8 +33,31 @@ router.post('/api/requestQuote', (req, res) => {
     });
 });
 
+router.post('/api/requestAccess', (req, res) => {
+  const { companyname, name, phonenumber, email } = req.body;
+  const from = `${process.env.PACHAMA_MARKETPLACE_FROM} <${process.env.PACHAMA_MARKETPLACE_MAIL}>`;
+  const to = process.env.PACHAMA_SALES_MAIL;
+  const replyTo = `${name} <${email}>`;
+  const subject = 'Marketplace request access';
+  const text = `
+  Request access received
+    From: ${name}
+    Email: ${email}
+    Company: ${companyname}
+    Phone: ${phonenumber}
+  `;
+
+  mailer({ from, to, replyTo, subject, text })
+    .then(() => {
+      res.send('success');
+    })
+    .catch(error => {
+      res.send('error');
+    });
+});
+
 router.post('/api/createAccount', (req, res) => {
-  const { companyname, name, phonenumber, userid } = req.body;
+  const { companyname, email, name, phonenumber } = req.body;
   var auth0mgmt = new ManagementClient({
     domain: process.env.AUTH0_DOMAIN,
     clientId: process.env.AUTH0_MGMT_CLIENT_ID,
