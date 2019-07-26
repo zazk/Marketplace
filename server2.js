@@ -9,7 +9,7 @@ require('dotenv').config();
 
 const configurePassport = require('./src/api/passport');
 const authRoutes = require('./src/api/routes/auth');
-//const marketplaceApi = require('./marketplace-api');
+const marketplaceApi = require('./src/api/routes/marketplace');
 
 const app = express();
 configurePassport();
@@ -29,6 +29,7 @@ app.use(session(sessionConfig));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/auth', authRoutes);
+app.use('/api', marketplaceApi);
 
 // app.get('/api/getRequest', (req, res) => {
 // //None

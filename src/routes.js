@@ -9,4 +9,4 @@ const publicRoutes = [
   },
 ];
 
-export { publicRoutes, privateRoutes };
+export { publicRoutes };

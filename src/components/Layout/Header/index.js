@@ -1,8 +1,29 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 class Header extends Component {
+  static propTypes = { user: PropTypes.object };
+  //
+  // constructor(props) {
+  //   super(props);
+  //
+  //   this.state = {
+  //     data: null,
+  //     user: {}
+  //   };
+  // }
+  //
+  // componentDidMount() {
+  //   console.log("fetchuser");
+  //   fetch('/api/user')
+  //     .then(response => response.json())
+  //     .then(data => this.setState({ user: data }));
+  // }
+
   render() {
+    const { user } = this.props;
     return (
       <header>
         <div className="content flex">
@@ -12,9 +33,15 @@ class Header extends Component {
           <nav>
             <ul className="flex nav-list">
               <li className="menu-item">
-                <Link href="/login">
-                  <a className="menu-link">Log In</a>
-                </Link>
+                {user ? (
+                  <Link href="/auth/logout">
+                    <a className="menu-link">Log Out</a>
+                  </Link>
+                ) : (
+                  <Link href="/auth/login">
+                    <a className="menu-link">Log In</a>
+                  </Link>
+                )}
               </li>
               <li className="menu-item">
                 <Link href="/">
@@ -38,4 +65,7 @@ class Header extends Component {
     );
   }
 }
-export default Header;
+
+const mapStateToProps = ({ user }) => ({ user });
+
+export default connect(mapStateToProps)(Header);

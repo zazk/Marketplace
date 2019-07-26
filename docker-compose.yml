@@ -6,11 +6,11 @@ services:
       context: ./
     ports:
       - 3000:3000
-    command: ["npm", "run", "dev"]
+    command: ['npm', 'run', 'dev']
     volumes:
       - ./public:/usr/src/pachama/marketplace-www/public
       - ./src:/usr/src/pachama/marketplace-www/src
-  marketplace-api:
-    image: gcr.io/pachama-demo/marketplace-api
-    ports:
-      - 3001:3000
+  # marketplace-api:
+  #   image: gcr.io/pachama-demo/marketplace-api
+  #   ports:
+  #     - 3001:3000
