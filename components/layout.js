@@ -338,9 +338,6 @@ export default ({ bodyclass, user, dashboard, children, id, title = 'This is the
                 display:none
               }
             }
-          .wrap-company-user{
-            display:none;
-          }
           .project-list {
             .btn-request {
               display: none;

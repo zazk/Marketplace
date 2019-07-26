@@ -3,86 +3,64 @@ import Link from 'next/link';
 import MenuResponsive from './MenuResponsive';
 function Header(user) {
   const [openDropdown, setDropdown] = useState(0);
+  ///static/assets/images/logo-company.png
   return (
     <header className="header">
       <div className="content flex">
         <figure className="logo">
-          <img src="/static/assets/images/logo-pachama.svg" width="92" height="23" alt="" />
+          <a href="https://www.pachama.com/">
+            <img src="/static/assets/images/logo-pachama.svg" width="92" height="23" alt="Pachama" target="_blank" />
+          </a>
         </figure>
-        <nav>
-          <ul className="flex nav-list">
-            <li className="menu-item">
-              {typeof user.user != 'undefined' && (
-                <Link href="/logout">
-                  <a className="menu-link">Log Out</a>
+        {typeof user.user != 'undefined' && (
+          <nav>
+            <ul className="flex nav-list">
+              <li className="menu-item">
+                <Link href="/pdp">
+                  <a className="menu-link">View Projects</a>
                 </Link>
-              )}
-              {typeof user.user == 'undefined' && (
-                <Link href="/login">
-                  <a className="menu-link">Log In</a>
-                </Link>
-              )}
-            </li>
-            <li className="menu-item">
-              <Link href="/">
-                <a className="menu-link">Home</a>
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link href="/about">
-                <a className="menu-link">About Us</a>
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link href="/contact">
-                <a className="menu-link">Contact Us</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
+              </li>
+            </ul>
+          </nav>
+        )}
         <MenuResponsive />
         <div className="head-btn">
-          <button className="btn btn-request">
-            <span>Request</span>
-            <img className="btn-icon" src="/static/iconos/arrow-down-white.svg" alt="" />
-          </button>
+          <nav>
+            <ul className="flex nav-list">
+              <li className="menu-item">
+                {typeof user.user != 'undefined' && (
+                  <div className="wrap-company-user">
+                    <div className={`wrap-drodown ${openDropdown === 1 && 'active'}`}>
+                      <div className="flex wrap-label-dropdown">
+                        <div className="company-image" style={{ backgroundImage: `url(${user.user.picture})` }} />
+                        <div className="dropdown-btn ">
+                          <div className="dropdown-open dropdown-controls" onClick={() => setDropdown(1)} />
+                          <div className="dropdown-close dropdown-controls" onClick={() => setDropdown(0)} />
+                          <span className="dropdown-label company-name">{user.user.displayName}</span>
+                          <img className="drop-down-icon" src="/static/iconos/arrow-down.svg" width="12" alt="" />
+                        </div>
+                      </div>
 
-          <div className="wrap-company-user">
-            <div className={`wrap-drodown ${openDropdown === 1 && 'active'}`}>
-              <div className="flex wrap-label-dropdown">
-                <div
-                  className="company-image"
-                  style={{ backgroundImage: `url(/static/assets/images/logo-company.png)` }}
-                />
-                <div className="dropdown-btn ">
-                  <div className="dropdown-open dropdown-controls" onClick={() => setDropdown(1)} />
-                  <div className="dropdown-close dropdown-controls" onClick={() => setDropdown(0)} />
-                  <span className="dropdown-label company-name">Company Name</span>
-                  <img className="drop-down-icon" src="/static/iconos/arrow-down.svg" width="12" alt="" />
-                </div>
-              </div>
-
-              <div className="dropdown">
-                <ul className="dropdown-main">
-                  <li className="dropdown-item">
-                    <a className="dropdown-link" href="">
-                      Option 1
-                    </a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a className="dropdown-link" href="">
-                      Option 2
-                    </a>
-                  </li>
-                  <li className="dropdown-item">
-                    <a className="dropdown-link" href="">
-                      Option 3
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+                      <div className="dropdown">
+                        <ul className="dropdown-main">
+                          <li className="dropdown-item">
+                            <Link href="/logout">
+                              <a className="dropdown-link">Log Out</a>
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {typeof user.user == 'undefined' && (
+                  <Link href="/login">
+                    <a className="menu-link">Log In</a>
+                  </Link>
+                )}
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
       <style jsx>
