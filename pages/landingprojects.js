@@ -18,7 +18,6 @@ function LandingProjects({ user, router }) {
     main_picture: idproject ? project.main_picture : '/static/assets/images/banner-landingprojects.jpg',
     text_intro: idproject ? 'Be part of our project' : 'Take part in our challenge',
   };
-  console.log(urlLogin);
   return (
     <Layout title="Landing Projects" bodyclass="headerfull" user={user}>
       <div
@@ -32,14 +31,18 @@ function LandingProjects({ user, router }) {
             <div className="lp-intro">
               <h4 className="lp-subtitle">{projectDetail.text_intro}</h4>
               <h3 className="lp-title">{projectDetail.name}</h3>
-
               <div className="lp-intro-down">
-                <div className="lp-btn">
+                <div className="banner-btn">
                   <Link href={urlLogin}>
                     <button className="btn">
-                      <span>View projects</span>
+                      <span>Log In</span>
                     </button>
                   </Link>
+                  <p className="banner-text-link">
+                    <Link href="/requestaccess">
+                      <a className="banner-link">Or Request Beta Access</a>
+                    </Link>
+                  </p>
                 </div>
                 <h4 className="lp-subtitle">Projects available upon authentication</h4>
               </div>
@@ -198,4 +201,5 @@ LandingProjects.propTypes = {
   user: PropTypes.object,
   router: PropTypes.object,
 };
+
 export default withRouter(LandingProjects);

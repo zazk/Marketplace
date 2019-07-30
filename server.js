@@ -63,6 +63,11 @@ app.prepare().then(() => {
   server.use('/list', restrictAccess);
   server.use('/pdp', restrictAccess);
 
+  // Redirect to Pachama.com
+  server.get('/about', function(req, res) {
+    //console.log("redirect");
+    res.redirect(`https://${process.env.PACHAMA_LANDING_URL}/about-us`);
+  });
   server.get('*', handle);
 
   http.createServer(server).listen(port, () => {
