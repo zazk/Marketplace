@@ -43,3 +43,5 @@ spec:
               value: Pachama Marketplace
             - name: PACHAMA_MARKETPLACE_MAIL
               value: marketplace@pachama.com
+            - name: PACHAMA_LANDING_URL
+              value: _PACHAMA_LANDING_URL_
