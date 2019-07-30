@@ -9,20 +9,25 @@ function Header(user) {
       <div className="content flex">
         <figure className="logo">
           <a href="https://www.pachama.com/">
-            <img src="/static/assets/images/logo-pachama.svg" width="92" height="23" alt="Pachama" target="_blank" />
+            <img src="/static/assets/images/logo-pachama.svg" width="132" height="33" alt="Pachama" />
           </a>
         </figure>
-        {typeof user.user != 'undefined' && (
-          <nav>
-            <ul className="flex nav-list">
+        <nav>
+          <ul className="flex nav-list">
+            <li className="menu-item">
+              <Link href="/about">
+                <a className="menu-link">About Us</a>
+              </Link>
+            </li>
+            {typeof user.user != 'undefined' && (
               <li className="menu-item">
                 <Link href="/pdp">
                   <a className="menu-link">View Projects</a>
                 </Link>
               </li>
-            </ul>
-          </nav>
-        )}
+            )}
+          </ul>
+        </nav>
         <MenuResponsive />
         <div className="head-btn">
           <nav>
