@@ -66,7 +66,7 @@ app.prepare().then(() => {
   // Redirect to Pachama.com
   server.get('/about', function(req, res) {
     //console.log("redirect");
-    res.redirect(`${process.env.PACHAMA_LANDING_URL}/about-us`);
+    res.redirect(`https://${process.env.PACHAMA_LANDING_URL}/about-us`);
   });
   server.get('*', handle);
 
