@@ -36,7 +36,7 @@ function Leakage({ data }) {
             />
             <ItemText
               type="two"
-              title="Permanence"
+              title="Verifiability"
               description={project.verifiability.text}
               source={project.verifiability.source}
               source_link={project.verifiability.source_link}
