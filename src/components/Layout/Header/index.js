@@ -3,6 +3,46 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import styled from 'styled-components';
+const Logo = styled.figure`
+  margin: 0;
+`;
+const HeaderMain = styled.header`
+  background-color: #fff;
+`;
+const HeaderInner = styled.div`
+  max-width: 1280px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  height: 70px;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+
+  @media screen and (max-width: 480px) {
+    justify-content: space-between;
+  }
+`;
+const Nav = styled.nav`
+  margin-left: 27px;
+`;
+const MenuItem = styled.li`
+  margin-left: 20px;
+`;
+const MenuLink = styled.span`
+  text-decoration: none;
+  font-size: 14px;
+  color: #363636;
+  transition: all 0.3s;
+  font-family: 'Lato', sans-serif;
+  &:hover {
+    opacity: 0.5;
+  }
+`;
+
 class Header extends Component {
   static propTypes = { user: PropTypes.object };
   //
@@ -13,7 +53,7 @@ class Header extends Component {
   //     data: null,
   //     user: {}
   //   };
-  // }
+  // }å
   //
   // componentDidMount() {
   //   console.log("fetchuser");
@@ -25,43 +65,43 @@ class Header extends Component {
   render() {
     const { user } = this.props;
     return (
-      <header>
-        <div className="content flex">
-          <figure className="logo">
+      <HeaderMain>
+        <HeaderInner>
+          <Logo>
             <img src="/static/assets/images/logo-pachama.svg" width="92" height="23" alt="" />
-          </figure>
-          <nav>
+          </Logo>
+          <Nav>
             <ul className="flex nav-list">
-              <li className="menu-item">
+              <MenuItem>
                 {user ? (
                   <Link href="/auth/logout">
-                    <a className="menu-link">Log Out</a>
+                    <MenuLink>Log Out</MenuLink>
                   </Link>
                 ) : (
                   <Link href="/auth/login">
-                    <a className="menu-link">Log In</a>
+                    <MenuLink>Log In</MenuLink>
                   </Link>
                 )}
-              </li>
-              <li className="menu-item">
+              </MenuItem>
+              <MenuItem>
                 <Link href="/">
-                  <a className="menu-link">Home</a>
+                  <MenuLink>Home</MenuLink>
                 </Link>
-              </li>
-              <li className="menu-item">
+              </MenuItem>
+              <MenuItem>
                 <Link href="/about">
-                  <a className="menu-link">About Us</a>
+                  <MenuLink>About Us</MenuLink>
                 </Link>
-              </li>
-              <li className="menu-item">
+              </MenuItem>
+              <MenuItem>
                 <Link href="/contact">
-                  <a className="menu-link">Contact Us</a>
+                  <MenuLink>Contact Us</MenuLink>
                 </Link>
-              </li>
+              </MenuItem>
             </ul>
-          </nav>
-        </div>
-      </header>
+          </Nav>
+        </HeaderInner>
+      </HeaderMain>
     );
   }
 }
