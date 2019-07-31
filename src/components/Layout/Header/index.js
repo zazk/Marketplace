@@ -2,66 +2,51 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Logo, HeaderMain, HeaderInner, Nav, MenuItem, MenuLink } from './style';
 
 class Header extends Component {
   static propTypes = { user: PropTypes.object };
-  //
-  // constructor(props) {
-  //   super(props);
-  //
-  //   this.state = {
-  //     data: null,
-  //     user: {}
-  //   };
-  // }
-  //
-  // componentDidMount() {
-  //   console.log("fetchuser");
-  //   fetch('/api/user')
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ user: data }));
-  // }
 
   render() {
     const { user } = this.props;
     return (
-      <header>
-        <div className="content flex">
-          <figure className="logo">
+      <HeaderMain>
+        <HeaderInner>
+          <Logo>
             <img src="/static/assets/images/logo-pachama.svg" width="92" height="23" alt="" />
-          </figure>
-          <nav>
+          </Logo>
+          <Nav>
             <ul className="flex nav-list">
-              <li className="menu-item">
+              <MenuItem>
                 {user ? (
                   <Link href="/auth/logout">
-                    <a className="menu-link">Log Out</a>
+                    <MenuLink>Log Out</MenuLink>
                   </Link>
                 ) : (
                   <Link href="/auth/login">
-                    <a className="menu-link">Log In</a>
+                    <MenuLink>Log In</MenuLink>
                   </Link>
                 )}
-              </li>
-              <li className="menu-item">
+              </MenuItem>
+              <MenuItem>
                 <Link href="/">
-                  <a className="menu-link">Home</a>
+                  <MenuLink>Home</MenuLink>
                 </Link>
-              </li>
-              <li className="menu-item">
+              </MenuItem>
+              <MenuItem>
                 <Link href="/about">
-                  <a className="menu-link">About Us</a>
+                  <MenuLink>About Us</MenuLink>
                 </Link>
-              </li>
-              <li className="menu-item">
+              </MenuItem>
+              <MenuItem>
                 <Link href="/contact">
-                  <a className="menu-link">Contact Us</a>
+                  <MenuLink>Contact Us</MenuLink>
                 </Link>
-              </li>
+              </MenuItem>
             </ul>
-          </nav>
-        </div>
-      </header>
+          </Nav>
+        </HeaderInner>
+      </HeaderMain>
     );
   }
 }

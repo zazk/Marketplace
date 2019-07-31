@@ -10,10 +10,8 @@ class Layout extends Component {
     //const user  = this.props.user;
     return (
       <div>
-        <h1>Pachama Marketplace</h1>
         <Header />
         <Component route={route} />
-        <Footer />
       </div>
     );
   }
