@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 function FilterList() {
   const [openDropdown, setDropdown] = useState(0);
-  console.log('openDropdown', openDropdown);
   return (
     <div className="content-main ">
       <div className="projects-filters flex">

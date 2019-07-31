@@ -10,11 +10,9 @@ function Gallery({ data }) {
   let imageInit = 0;
 
   const addIndice = myindice => {
-    console.log('indice generado', myindice);
     imageInit = myindice;
   };
   const addPrev = index => {
-    console.log('test prev');
     let prevdata = showInLightbox - 1;
     let prev = prevdata < 0 ? numbersImages - 1 : prevdata;
 
@@ -22,7 +20,6 @@ function Gallery({ data }) {
   };
 
   const addNext = () => {
-    console.log('test next');
     let nextdata = showInLightbox + 1;
     let next = nextdata >= numbersImages ? 0 : nextdata;
     setInLightbox(next);

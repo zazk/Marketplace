@@ -11,7 +11,6 @@ import ControlsProject from '../components/ControlsProject';
 import { withRouter } from 'next/router';
 function Pdp({ user, router }) {
   const id = router.query.id;
-  console.log('idprojects', id);
   let index = id ? id : 0;
   const itemsProject = dataProjects.length;
   const project = dataProjects[index]['pdp'];
