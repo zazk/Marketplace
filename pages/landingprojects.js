@@ -9,12 +9,27 @@ function LandingProjects({ user, router }) {
   const idproject = iddata ? router.query.project : 0;
   const project = dataProjects[idproject].pdp;
   const urlLogin = iddata ? `/login?project=${idproject}` : '/login';
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  const totalCreditsAvail = dataProjects
+    .map(v => parseInt(v.pdp.credits_avail.quatinty.replace(/,/g, '')))
+    .reduce((sum, current) => sum + current, 0);
+  const totalLandArea = dataProjects
+    .map(v => parseInt(v.pdp.total_land.area.replace(/,/g, '')))
+    .reduce((sum, current) => sum + current, 0);
+  const totalBiomass = dataProjects
+    .map(v => parseInt(v.pdp.totalBiomass.replace(/,/g, '')))
+    .reduce((sum, current) => sum + current, 0);
+  const totalProjects = dataProjects.length;
   const projectDetail = {
     name: idproject ? project.title : 'Protect our forests in the fight against climate change',
-    credits_avail: idproject ? project.credits_avail.quatinty : '100,000',
-    projects_quantity: '14',
-    total_land: idproject ? project.total_land.area : '75,020',
-    total_biomass: idproject ? project.totalBiomass : '750,654.21',
+    credits_avail: idproject ? project.credits_avail.quatinty : numberWithCommas(totalCreditsAvail),
+    projects_quantity: totalProjects,
+    total_land: idproject ? project.total_land.area : numberWithCommas(totalLandArea),
+    total_biomass: idproject ? project.totalBiomass : numberWithCommas(totalBiomass),
     main_picture: idproject ? project.main_picture : '/static/assets/images/banner-landingprojects.jpg',
     text_intro: idproject ? 'Be part of our project' : 'Take part in our challenge',
   };
