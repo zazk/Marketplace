@@ -2,65 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-import styled from 'styled-components';
-const Logo = styled.figure`
-  margin: 0;
-`;
-const HeaderMain = styled.header`
-  background-color: #fff;
-`;
-const HeaderInner = styled.div`
-  max-width: 1280px;
-  padding: 0 20px;
-  box-sizing: border-box;
-  margin: auto;
-  display: flex;
-  flex-flow: row wrap;
-  height: 70px;
-  align-items: center;
-  position: relative;
-  background-color: #fff;
-
-  @media screen and (max-width: 480px) {
-    justify-content: space-between;
-  }
-`;
-const Nav = styled.nav`
-  margin-left: 27px;
-`;
-const MenuItem = styled.li`
-  margin-left: 20px;
-`;
-const MenuLink = styled.span`
-  text-decoration: none;
-  font-size: 14px;
-  color: #363636;
-  transition: all 0.3s;
-  font-family: 'Lato', sans-serif;
-  &:hover {
-    opacity: 0.5;
-  }
-`;
+import { Logo, HeaderMain, HeaderInner, Nav, MenuItem, MenuLink } from './style';
 
 class Header extends Component {
   static propTypes = { user: PropTypes.object };
-  //
-  // constructor(props) {
-  //   super(props);
-  //
-  //   this.state = {
-  //     data: null,
-  //     user: {}
-  //   };
-  // }å
-  //
-  // componentDidMount() {
-  //   console.log("fetchuser");
-  //   fetch('/api/user')
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ user: data }));
-  // }
 
   render() {
     const { user } = this.props;
