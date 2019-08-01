@@ -1,38 +1,27 @@
 import React from 'react';
 import Layout from '../components/layout';
 import FilterList from '../components/projectlist/FilterList';
-function ProjectList() {
-  const datatwofeature = [
-    {
-      name: 'Middlebury College',
-      ubication: 'Middlebury, Vermont, USA',
-      image: 'https://storage.googleapis.com/marketplace-assets/middlebury-main_picture.jpg',
-    },
-    {
-      name: 'Other title',
-      ubication: 'Lansing, Michigan, USA',
-      image: 'https://storage.googleapis.com/marketplace-assets/hudson-main_picture.jpg',
-    },
-  ];
+import dataProjects from '../projects-data/projects';
+import PropTypes from 'prop-types';
 
+function ProjectList({ user }) {
   return (
-    <Layout title="Project List" bodyclass="project-list">
+    <Layout title="Project List" bodyclass="headerfull" user={user}>
       <div className="project-list">
-        <FilterList />
         <div className="content-main project-list-main feature-two">
-          {datatwofeature.map((project, i) => (
-            <a href="" key={i} className="project-item">
+          {dataProjects.map((project, i) => (
+            <a href={'/pdp?id=' + i} key={i} className="project-item">
               <div
                 className="project-picture"
                 style={{
-                  backgroundImage: `url(${project.image})`,
+                  backgroundImage: `url(${project.pdp.main_picture})`,
                 }}
               />
               <div className="project-detail flex">
                 <div className="project-resumen">
-                  <h3 className="project-name">{project.name}</h3>
+                  <h3 className="project-name">{project.pdp.title}</h3>
                   <div className="project-ubication">
-                    <p className="project-ubication-address">{project.ubication}</p>
+                    <p className="project-ubication-address">{project.pdp.location.name}</p>
                   </div>
                   <div className="project-progress">
                     <div className="progressbar">
@@ -40,8 +29,8 @@ function ProjectList() {
                     </div>
                     <div className="progres-numbers">
                       <p>
-                        <strong>10.000</strong>
-                        carbon credits available
+                        <strong>{project.pdp.credits_avail.quatinty}</strong>
+                        Carbon Credits Available
                       </p>
                     </div>
                   </div>
@@ -50,298 +39,21 @@ function ProjectList() {
                   <div className="description-item">
                     <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
                     <div className="description-text">
-                      <span>2,673 hectares </span>
-                      <p>Spanning 14,326 square miles</p>
-                    </div>
-                  </div>
-                  <div className="description-item">
-                    <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                    <div className="description-text">
-                      <span>Bluesource </span>
-                      <p>Project developer</p>
+                      <span>{project.pdp.total_land.area + ' ' + project.pdp.total_land.unit} </span>
+                      <p>Total Area</p>
                     </div>
                   </div>
                   <div className="description-item">
                     <img src="/static/iconos/icon-sumary-5.svg" width="24" alt="" />
                     <div className="description-text">
-                      <span>750 tonnes </span>
-                      <p>CO2 equivalent units per year</p>
+                      <span>{project.pdp.project_type}</span>
+                      <p>Project Type</p>
                     </div>
                   </div>
                 </div>
               </div>
             </a>
           ))}
-        </div>
-
-        <div className="content-main project-list-main feature-three">
-          <a href="" className="project-item">
-            <div
-              className="project-picture"
-              style={{
-                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/middlebury-main_picture.jpg)`,
-              }}
-            />
-            <div className="project-detail flex">
-              <div className="project-resumen">
-                <h3 className="project-name">Middlebury College</h3>
-                <div className="project-ubication">
-                  <p className="project-ubication-address">Middlebury, Vermont, USA</p>
-                </div>
-                <div className="project-progress">
-                  <div className="progressbar">
-                    <div className="progressbar-item" style={{ width: `80%` }} />
-                  </div>
-                  <div className="progres-numbers">
-                    <p>
-                      <strong>10.000</strong>
-                      carbon credits available
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="project-description">
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>2,673 hectares </span>
-                    <p>Spanning 14,326 square miles</p>
-                  </div>
-                </div>
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>Bluesource </span>
-                    <p>Project developer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="" className="project-item">
-            <div
-              className="project-picture"
-              style={{
-                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/hudson-main_picture.jpg)`,
-              }}
-            />
-            <div className="project-detail flex">
-              <div className="project-resumen">
-                <h3 className="project-name">Other title</h3>
-                <div className="project-ubication">
-                  <p className="project-ubication-address">Lansing, Michigan, USA</p>
-                </div>
-                <div className="project-progress">
-                  <div className="progressbar">
-                    <div className="progressbar-item" style={{ width: `40%` }} />
-                  </div>
-                  <div className="progres-numbers">
-                    <p>
-                      <strong>10.000</strong>
-                      carbon credits available
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="project-description">
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>2,673 hectares </span>
-                    <p>Spanning 14,326 square miles</p>
-                  </div>
-                </div>
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>Bluesource </span>
-                    <p>Project developer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="" className="project-item">
-            <div
-              className="project-picture"
-              style={{
-                backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/middlebury-main_picture.jpg)`,
-              }}
-            />
-            <div className="project-detail flex">
-              <div className="project-resumen">
-                <h3 className="project-name">Middlebury College</h3>
-                <div className="project-ubication">
-                  <p className="project-ubication-address">Middlebury, Vermont, USA</p>
-                </div>
-                <div className="project-progress">
-                  <div className="progressbar">
-                    <div className="progressbar-item" style={{ width: `80%` }} />
-                  </div>
-                  <div className="progres-numbers">
-                    <p>
-                      <strong>10.000</strong>
-                      carbon credits available
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="project-description">
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>2,673 hectares </span>
-                    <p>Spanning 14,326 square miles</p>
-                  </div>
-                </div>
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>Bluesource </span>
-                    <p>Project developer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div className="content-main project-list-main list-default">
-          <a href="" className="project-item">
-            <div className="project-detail flex">
-              <div className="project-resumen">
-                <div
-                  className="project-picture"
-                  style={{
-                    backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/2-main_picture.jpg)`,
-                  }}
-                />
-                <div className="project-info-project">
-                  <h3 className="project-name">Other title very large</h3>
-                  <div className="project-ubication">
-                    <p className="project-ubication-address">Columbus, Ohio, USA</p>
-                  </div>
-                </div>
-                <div className="project-progress">
-                  <div className="progressbar">
-                    <div className="progressbar-item" style={{ width: `20%` }} />
-                  </div>
-                  <div className="progres-numbers">
-                    <p>
-                      <strong>10.000</strong>
-                      carbon credits available
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="project-description">
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>2,673 hectares </span>
-                    <p>Spanning 14,326 square miles</p>
-                  </div>
-                </div>
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>Bluesource </span>
-                    <p>Project developer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="" className="project-item">
-            <div className="project-detail flex">
-              <div className="project-resumen">
-                <div
-                  className="project-picture"
-                  style={{
-                    backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/3-main_picture.jpg)`,
-                  }}
-                />
-                <div className="project-info-project">
-                  <h3 className="project-name">Middlebury College</h3>
-                  <div className="project-ubication">
-                    <p className="project-ubication-address">Salem, Oregon, USA</p>
-                  </div>
-                </div>
-                <div className="project-progress">
-                  <div className="progressbar">
-                    <div className="progressbar-item" style={{ width: `80%` }} />
-                  </div>
-                  <div className="progres-numbers">
-                    <p>
-                      <strong>10.000</strong>
-                      carbon credits available
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="project-description">
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>2,673 hectares </span>
-                    <p>Spanning 14,326 square miles</p>
-                  </div>
-                </div>
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>Bluesource </span>
-                    <p>Project developer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="" className="project-item">
-            <div className="project-detail flex">
-              <div className="project-resumen">
-                <div
-                  className="project-picture"
-                  style={{
-                    backgroundImage: `url(https://storage.googleapis.com/marketplace-assets/middlebury-main_picture.jpg)`,
-                  }}
-                />
-                <div className="project-info-project">
-                  <h3 className="project-name">Middlebury College</h3>
-                  <div className="project-ubication">
-                    <p className="project-ubication-address">Middlebury, Vermont, USA</p>
-                  </div>
-                </div>
-                <div className="project-progress">
-                  <div className="progressbar">
-                    <div className="progressbar-item" style={{ width: `80%` }} />
-                  </div>
-                  <div className="progres-numbers">
-                    <p>
-                      <strong>10.000</strong>
-                      carbon credits available
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="project-description">
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>2,673 hectares </span>
-                    <p>Spanning 14,326 square miles</p>
-                  </div>
-                </div>
-                <div className="description-item">
-                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                  <div className="description-text">
-                    <span>Bluesource </span>
-                    <p>Project developer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
         </div>
         <style jsx>
           {`
@@ -729,4 +441,9 @@ function ProjectList() {
     </Layout>
   );
 }
+
+ProjectList.propTypes = {
+  user: PropTypes.object,
+};
+
 export default ProjectList;
