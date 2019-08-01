@@ -55,7 +55,7 @@ function LandingProjects({ user, router }) {
                   </Link>
                   <p className="banner-text-link">
                     <Link href="/requestaccess">
-                      <a className="banner-link">Or Request Beta Access</a>
+                      <a className="banner-link">Or request beta access</a>
                     </Link>
                   </p>
                 </div>
