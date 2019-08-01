@@ -1,5 +1,9 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { fetchProjects } from '../state/operations';
+import { requestProjects } from '../state/actions';
+import store from '../../../rootReducer';
 import {
   ViewProjects,
   LandingProyect,
@@ -22,8 +26,25 @@ const projectDetail = {
   text_intro: 'Take part in our challenge',
 };
 
+const mapStateToProps = state => ({
+  projects: state.projects,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchProjects: () => dispatch(fetchProjects()),
+});
+
 class ProjectPreview extends Component {
+  componentDidMount() {
+    console.log('xxxx', this.props);
+    this.props.fetchProjects();
+
+    console.log('xxxx');
+  }
   render() {
+    // fetchProjects();
+
+    console.log('proyectos', this.props);
     return (
       <LandingProyect picture={projectDetail.main_picture}>
         <LandingMain>
@@ -71,4 +92,7 @@ class ProjectPreview extends Component {
   }
 }
 
-export default ProjectPreview;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProjectPreview);
