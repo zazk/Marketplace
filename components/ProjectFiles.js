@@ -1,32 +1,18 @@
 import React from 'react';
-const listFiles = [
-  { title: 'Verification statement', date: '2 February, 2019' },
-  { title: 'Monitoring report', date: '3 February, 2019' },
-  { title: 'Verification report', date: '4 February, 2019' },
-  { title: 'Verification statement', date: '5 February, 2019' },
-];
-function ProjectFiles() {
+
+function ProjectFiles({ data }) {
+  const project = data;
+  const projectFileLink = project.project_files;
   return (
     <div>
       <h3 className="sidebar-title">Project files</h3>
       <div className="sidebar-row files">
-        {listFiles.map((item, i) => (
-          <a key={i} href="" className="sidebar-item">
-            <figure>
-              <img src="/static/iconos/icon-paper.svg" width="11" alt="" />
-            </figure>
-            <div className="file-name">
-              <h3>{item.title}</h3>
-              <p>{item.date}</p>
-            </div>
-          </a>
-        ))}
-        <a href="" className="sidebar-item more">
+        <a href={projectFileLink} target="_blank" className="sidebar-item">
           <figure>
             <img src="/static/iconos/icon-paper.svg" width="11" alt="" />
           </figure>
           <div className="file-name">
-            <h3>3 more...</h3>
+            <h3>Access project files</h3>
           </div>
         </a>
       </div>

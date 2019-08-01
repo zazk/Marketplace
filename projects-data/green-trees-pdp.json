@@ -106,10 +106,6 @@
     }
   ],
   "project_files": "https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=114",
-  "un_goals": [
-    "https://storage.googleapis.com/marketplace-assets/un_goals-8.png",
-    "https://storage.googleapis.com/marketplace-assets/un_goals-13.png",
-    "https://storage.googleapis.com/marketplace-assets/un_goals-15.png"
-  ],
+  "un_goals": ["8", "13", "15"],
   "tagline_footer": "With every ton of carbon that is sold, trees are protected, partnerships are formed, and our living Earth is restored to help solve climate change."
 }

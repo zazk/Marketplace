@@ -14,7 +14,7 @@ function SideBar({ data }) {
         <UnCompliant data={data} />
       </div>
       <div className="sidebar-item-row">
-        <ProjectFiles />
+        <ProjectFiles data={data} />
       </div>
 
       <style jsx>
