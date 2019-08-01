@@ -4,11 +4,16 @@ function UnCompliant({ data }) {
   const list = project.un_goals;
   return (
     <div>
-      <h3 className="sidebar-title">UN compliant</h3>
+      <h3 className="sidebar-title">UN Sustainable Development Goals</h3>
       <div className="sidebar-cuadros flex">
         {list.map((item, i) => (
-          <a key={i} href="" className="cuadros-item">
-            <img src={item} width="84" height="85" alt="" />
+          <a key={i} href={'https://sustainabledevelopment.un.org/sdg' + item} className="cuadros-item">
+            <img
+              src={'https://storage.googleapis.com/marketplace-assets/un_goals-' + item + '.png'}
+              width="84"
+              height="85"
+              alt=""
+            />
           </a>
         ))}
       </div>

@@ -35,11 +35,7 @@ function Features({ data, user }) {
           </div>
           <div className="feature-description">
             <div className="progressbar">
-              <div className="progressbar-item">
-                <span>
-                  80<em>%</em>
-                </span>
-              </div>
+              <div className="progressbar-item" />
             </div>
             <div className="feature-list">
               <DataFeatureList />
@@ -168,7 +164,7 @@ function Features({ data, user }) {
           }
           .progressbar-item {
             border-radius: 3px;
-            width: 80%;
+            width: 100%;
             background-image: linear-gradient(to left, #17b363, #33da9c);
             height: 100%;
             position: relative;
