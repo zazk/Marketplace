@@ -7,7 +7,7 @@ function UnCompliant({ data }) {
       <h3 className="sidebar-title">UN Sustainable Development Goals</h3>
       <div className="sidebar-cuadros flex">
         {list.map((item, i) => (
-          <a key={i} href={'https://sustainabledevelopment.un.org/sdg' + item} className="cuadros-item">
+          <a key={i} href={'https://sustainabledevelopment.un.org/sdg' + item} className="cuadros-item" target="_blank">
             <img
               src={'https://storage.googleapis.com/marketplace-assets/un_goals-' + item + '.png'}
               width="84"
