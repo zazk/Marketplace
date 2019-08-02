@@ -85,7 +85,7 @@ deploy_prod:
     - apply_and_rollout
   environment:
     name: prod
-    url: https://$CI_ENVIRONMENT_SLUG.$CI_PROJECT_NAME.$MY_DOMAIN
+    url: https://marketplace.pachama.com
   only:
     - tags
 
