@@ -8,7 +8,9 @@ function Pay({ data, user }) {
       <div className="content">
         <div className="content-main">
           <h3 className="pay-title">{project.tagline_footer}</h3>
-          <FormRequesQuote user={user} />
+          <div className="pay-btn">
+            <FormRequesQuote user={user} custombutton="largemobil" />
+          </div>
         </div>
       </div>
       <style jsx>
@@ -27,6 +29,12 @@ function Pay({ data, user }) {
             .btn {
               margin-left: auto;
               margin-right: auto;
+            }
+          }
+          .pay-btn {
+            @media screen and (min-width: 481px) {
+              display: flex;
+              justify-content: center;
             }
           }
           .pay-title {

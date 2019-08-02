@@ -71,7 +71,7 @@ const UppercasingTextField = props => (
   />
 );
 
-function FormRequesQuote({ user }) {
+function FormRequesQuote({ user, custombutton }) {
   const emailUser = user ? user.emails[0].value : 'email@mail.com';
   const [showSuccessMessage, setSuccessMessage] = useState(0);
   const [openLightbox, setOpenLightbox] = useState(false);
@@ -103,7 +103,7 @@ function FormRequesQuote({ user }) {
 
   return (
     <div>
-      <button type="button" className="btn" onClick={toggle}>
+      <button type="button" className={`btn ${custombutton ? custombutton : ''}`} onClick={toggle}>
         <span>Request quote</span>
       </button>
 

@@ -84,12 +84,7 @@ function Biomass({ data, biomass }) {
               padding-bottom: 34px;
             }
           }
-          .biomass-intro {
-            max-width: 580px;
-            @media screen and (max-width: 960px) {
-              max-width: none;
-            }
-          }
+
           .biomass-grafico {
             margin-top: 22px;
           }
