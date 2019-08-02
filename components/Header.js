@@ -21,7 +21,7 @@ function Header(user) {
             </li>
             {typeof user.user != 'undefined' && (
               <li className="menu-item">
-                <Link href="/pdp">
+                <Link href="/list">
                   <a className="menu-link">View Projects</a>
                 </Link>
               </li>
