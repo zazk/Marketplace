@@ -5,13 +5,14 @@ export default ({ bodyclass, user, dashboard, children, id, title = 'This is the
   return (
     <div>
       <Head>
-        <title>{title}</title>
+        <title>Pachama - {title}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
           href="https://fonts.googleapis.com/css?family=Lato:400,700,700i|Work+Sans:400,600,700&display=swap"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" type="image/x-icon" href="/static/iconos/favicon.ico" />
       </Head>
       <div className={`cnt-wrapper ${bodyclass}`}>
         {!dashboard && <Header user={user} />}
