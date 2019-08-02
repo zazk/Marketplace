@@ -30,13 +30,17 @@ app.prepare().then(() => {
     saveUninitialized: true,
   };
   server.use(session(sessionConfig));
+  // This is a simple hack to allow us to mantain the
+  // logic of reviews/staging and also cloack the prod domain behind
+  // Will fix this in a better way
+  const auth0CallbackUrl = dev ? process.env.AUTH0_CALLBACK_URL : 'http://' + process.env.PROD_URL + '/callback';
 
   const auth0Strategy = new Auth0Strategy(
     {
       domain: process.env.AUTH0_DOMAIN,
       clientID: process.env.AUTH0_CLIENT_ID,
       clientSecret: process.env.AUTH0_CLIENT_SECRET,
-      callbackURL: process.env.AUTH0_CALLBACK_URL,
+      callbackURL: auth0CallbackUrl,
     },
     function(accessToken, refreshToken, extraParams, profile, done) {
       return done(null, profile);

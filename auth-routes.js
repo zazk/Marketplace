@@ -35,6 +35,9 @@ router.get('/logout', (req, res) => {
   req.logout();
 
   const { AUTH0_DOMAIN, AUTH0_CLIENT_ID, BASE_URL } = process.env;
+  const dev = process.env.NODE_ENV !== 'production';
+  const returnTo = dev ? BASE_URL : 'http://' + process.env.PROD_URL;
+
   res.redirect(`https://${AUTH0_DOMAIN}/logout?client_id=${AUTH0_CLIENT_ID}&returnTo=${BASE_URL}`);
 });
 
