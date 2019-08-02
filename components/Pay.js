@@ -1,15 +1,14 @@
 import React from 'react';
+import FormRequesQuote from '../components/forms/FormRequestQuote';
 
-function Pay({ data }) {
+function Pay({ data, user }) {
   const project = data;
   return (
     <div className="pay" style={{ backgroundImage: `url(/static/assets/images/bg-footer.jpg)` }}>
       <div className="content">
         <div className="content-main">
           <h3 className="pay-title">{project.tagline_footer}</h3>
-          <a href="" className="btn">
-            <span>Request Quote</span>
-          </a>
+          <FormRequesQuote user={user} />
         </div>
       </div>
       <style jsx>

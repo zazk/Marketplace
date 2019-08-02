@@ -41,7 +41,7 @@ function Features({ data, user }) {
               <DataFeatureList />
             </div>
             <div className="feature-controls">
-              <FormRequesQuote />
+              <FormRequesQuote user={user} />
               {/* <Link href="/requestquote">
                 <button className="btn">
                   <span>Request quote</span>

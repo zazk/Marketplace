@@ -24,7 +24,7 @@ function Pdp({ user, router }) {
         <FeatureProduct data={project} />
         <Biomass data={project} biomass={biomass} />
         <Leakage data={project} />
-        <Pay data={project} />
+        <Pay data={project} user={user} />
         <ControlsProject id={index} items={itemsProject} data={dataProjects} />
       </section>
     </Layout>

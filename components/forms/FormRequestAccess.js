@@ -19,7 +19,7 @@ const UppercasingTextField = props => (
 
 function FormCreateAcount({ user, url }) {
   const emailUser = 'email@mail.com';
-
+  const [isFill, setFill] = useState(false);
   const [openLightbox, setOpenLightbox] = useState(false);
   const toggle = () => {
     setOpenLightbox(!openLightbox);
@@ -60,7 +60,29 @@ function FormCreateAcount({ user, url }) {
           <h3 className="form-title-form">Request Beta Access</h3>
           <Formik
             initialValues={{
-              email: emailUser,
+              name: '',
+              companyname: '',
+              email: '',
+              phonenumber: '',
+            }}
+            validate={values => {
+              if (values.email && values.phonenumber) {
+                setFill(true);
+              }
+              const errors = {};
+              if (!values.name) {
+                errors.name = 'Required';
+              }
+              if (!values.companyname) {
+                errors.companyname = 'Required';
+              }
+              if (!values.email) {
+                errors.email = 'Required';
+              }
+              if (!values.phonenumber) {
+                errors.phonenumber = 'Required';
+              }
+              if (Object.keys(errors).length > 0) return errors;
             }}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
@@ -73,7 +95,7 @@ function FormCreateAcount({ user, url }) {
             render={({ submitForm, isSubmitting, values, setFieldValue }) => (
               <Form>
                 <div className="input-acount-item">
-                  <Field fullWidth name="email" type="email" label="Email" component={UppercasingTextField} />
+                  <Field fullWidth name="email" type="email" label="Email" component={TextField} />
                 </div>
                 <div className="input-acount-item">
                   <Field fullWidth name="name" type="text" label="Name" component={TextField} />
@@ -84,18 +106,13 @@ function FormCreateAcount({ user, url }) {
                 <div className="input-acount-item">
                   <Field fullWidth name="phonenumber" type="text" label="Phone Number" component={TextField} />
                 </div>
-                <div className="acount-terms">
-                  <p>
-                    By clicking this button, you agree to
-                    <a href="">Pachama terms.</a>
-                  </p>
-                </div>
+                <div className="acount-terms" />
                 {isSubmitting && <LinearProgress />}
                 <div className="form-btn">
                   <button
-                    className="btn"
+                    className="btn btn-send"
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={!isFill || isSubmitting}
                     onClick={() => (trackRequestAccess('Submit'), submitForm)}
                   >
                     <span>Request Access</span>
@@ -343,6 +360,17 @@ function FormCreateAcount({ user, url }) {
           .success-btn {
             justify-content: center;
             margin-top: 65px;
+          }
+          .btn-send {
+            &[disabled] {
+              cursor: default;
+              background-color: #d8d8d8;
+              color: rgba(255, 255, 255, 0.74);
+              &:after,
+              &:before {
+                display: none;
+              }
+            }
           }
         `}
       </style>
