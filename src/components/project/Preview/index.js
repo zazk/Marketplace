@@ -27,7 +27,7 @@ const projectDetail = {
 };
 
 const mapStateToProps = state => ({
-  projects: state.projects,
+  projects: state.projectState.projects,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -36,14 +36,9 @@ const mapDispatchToProps = dispatch => ({
 
 class ProjectPreview extends Component {
   componentDidMount() {
-    console.log('xxxx', this.props);
     this.props.fetchProjects();
-
-    console.log('xxxx');
   }
   render() {
-    // fetchProjects();
-
     console.log('proyectos', this.props);
     return (
       <LandingProyect picture={projectDetail.main_picture}>
