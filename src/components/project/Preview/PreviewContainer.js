@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchProjects } from '../state/operations';
+import { fetchProjects } from '../state';
 import Preview from './Preview';
 
 const mapStateToProps = state => ({
