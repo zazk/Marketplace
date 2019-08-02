@@ -149,6 +149,12 @@ export default ({ bodyclass, user, dashboard, children, id, title = 'This is the
             position: relative;
             z-index: 2;
           }
+          &.largemobil{
+            @media screen and (max-width:480px){
+              width:100%;
+            }
+
+          }
           &:after, &:before{
             content:"";
             position: absolute;
