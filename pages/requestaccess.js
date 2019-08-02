@@ -4,7 +4,7 @@ import FormRequestAccess from '../components/forms/FormRequestAccess';
 
 function RequestAccess({ user }) {
   return (
-    <Layout title="Formulary" user={user} bodyclass="headerfull">
+    <Layout title="Pachama - Request Access" user={user} bodyclass="headerfull">
       <FormRequestAccess />
     </Layout>
   );

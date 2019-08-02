@@ -146,6 +146,9 @@ function LandingProjects({ user, router }) {
               }
             }
           }
+          .banner-text-link {
+            text-decoration: underline;
+          }
           .lp-subtitle {
             font-size: 16px;
             margin: 0;

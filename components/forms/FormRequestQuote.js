@@ -10,19 +10,27 @@ import { fieldToTextField, TextField, TextFieldProps, Select, Switch } from 'for
 const volumenoptions = [
   {
     value: 'none',
-    label: 'I don`t know',
+    label: "I don't know",
   },
   {
-    value: '0-20',
-    label: '0 to 20',
+    value: '1-100',
+    label: '1 to 100',
   },
   {
-    value: '21-50',
-    label: '21 to 50',
+    value: '100-1,000',
+    label: '100 to 1,000',
   },
   {
-    value: '51-100',
-    label: '51 to 100',
+    value: '1,000-10,000',
+    label: '1,000-10,000',
+  },
+  {
+    value: '10,000-100,000',
+    label: '10,000-100,000',
+  },
+  {
+    value: 'More than 100,000',
+    label: 'More than 100,000',
   },
 ];
 
@@ -32,18 +40,27 @@ const ranges = [
     label: 'I don`t know',
   },
   {
-    value: '0-20',
-    label: '0 to 20',
+    value: '$1-$1,000',
+    label: '$1-$1,000',
   },
   {
-    value: '21-50',
-    label: '21 to 50',
+    value: '$1000-$10,000',
+    label: '$1000-$10,000',
   },
   {
-    value: '51-100',
-    label: '51 to 100',
+    value: '$10,000-$100,000',
+    label: '$10,000-$100,000',
+  },
+  {
+    value: '$100,000-$1,000,000',
+    label: '$100,000-$1,000,000',
+  },
+  {
+    value: 'More than $1,000,000',
+    label: 'More than $1,000,000',
   },
 ];
+
 const UppercasingTextField = props => (
   <MuiTextField
     {...fieldToTextField(props)}
@@ -55,8 +72,10 @@ const UppercasingTextField = props => (
 );
 
 function FormRequesQuote({ user }) {
+  const emailUser = user ? user.emails[0].value : 'email@mail.com';
   const [showSuccessMessage, setSuccessMessage] = useState(0);
   const [openLightbox, setOpenLightbox] = useState(false);
+  const [isFill, setFill] = useState(false);
   const toggle = () => {
     setOpenLightbox(!openLightbox);
   };
@@ -102,7 +121,9 @@ function FormRequesQuote({ user }) {
               </div>
               <div className="success-btn flex">
                 <button className="btn white" onClick={() => setSuccessMessage(0)}>
-                  <span>Book call</span>
+                  <a target="_blank" rel="noopener noreferrer" href="https://calendly.com/dsaezgil">
+                    <span>Schedule a Call</span>
+                  </a>
                 </button>
               </div>
             </div>
@@ -110,9 +131,12 @@ function FormRequesQuote({ user }) {
           <div className="formulary-main flex">
             <div className="form-title-section">
               <div className="form-title-inner">
-                <h3 className="form-title">Request Carbon Credits</h3>
+                <h3 className="form-title">Go Carbon Neutral</h3>
                 <div className="form-description-title">
-                  <p>Here is going to be a text that explains users what happens after asking for the budget.</p>
+                  <p>
+                    Our team will help you navigate the process from calculating your carbon footprint to choosing the
+                    right projects for your company. Leave your information and we'll reach out to you shortly.
+                  </p>
                 </div>
               </div>
             </div>
@@ -121,12 +145,31 @@ function FormRequesQuote({ user }) {
               <div className="form-list-inner">
                 <Formik
                   initialValues={{
-                    name: 'Jhon Perez',
-                    companyname: 'For Company ',
-                    email: 'company@correo.com',
-                    phonenumber: '123-123456',
+                    name: '',
+                    companyname: '',
+                    email: emailUser,
+                    phonenumber: '',
                     selectvolumen: 'none',
                     selectbudget: 'none',
+                  }}
+                  validate={values => {
+                    if (values.email && values.phonenumber) {
+                      setFill(true);
+                    }
+                    const errors = {};
+                    if (!values.name) {
+                      errors.name = 'Required';
+                    }
+                    if (!values.companyname) {
+                      errors.companyname = 'Required';
+                    }
+                    if (!values.email) {
+                      errors.email = 'Required';
+                    }
+                    if (!values.phonenumber) {
+                      errors.phonenumber = 'Required';
+                    }
+                    if (Object.keys(errors).length > 0) return errors;
                   }}
                   onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
@@ -214,9 +257,9 @@ function FormRequesQuote({ user }) {
                       {isSubmitting && <LinearProgress />}
                       <div className="form-btn">
                         <button
-                          className="btn"
+                          className="btn btn-send"
                           type="submit"
-                          disabled={isSubmitting}
+                          disabled={!isFill || isSubmitting}
                           onClick={() => (trackRequestQuote('Submit'), submitForm)}
                         >
                           <span>Request quote</span>
@@ -434,6 +477,17 @@ function FormRequesQuote({ user }) {
             max-width: 550px;
             @media screen and (max-width: 745px) {
               max-width: none;
+            }
+          }
+          .btn-send {
+            &[disabled] {
+              cursor: default;
+              background-color: #d8d8d8;
+              color: rgba(255, 255, 255, 0.74);
+              &:after,
+              &:before {
+                display: none;
+              }
             }
           }
           .form-btn {
