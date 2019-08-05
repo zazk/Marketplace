@@ -20,6 +20,7 @@ export const FeatureListItem = styled.div`
       }
     }
   }
+
   &:nth-child(3) {
     h4 {
       &:before {

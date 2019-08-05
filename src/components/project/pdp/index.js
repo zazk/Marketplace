@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Features from './Features/';
+import BannerFeatureds from './BannerFeatured/';
 
 class PDP extends Component {
   render() {
     return (
       <div>
-        <Features></Features>
+        <BannerFeatureds></BannerFeatureds>
       </div>
     );
   }

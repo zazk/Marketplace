@@ -12,9 +12,10 @@ import {
 } from './style';
 import IntroBanner from '../IntroBanner';
 import ItemListBanner from '../ItemListBanner';
+import FormRequesQuote from '../../../forms/FormRequestQuote';
 import dataProjects from '../../../../projects-data/projects';
 
-function Features({ data, user }) {
+function BannerFeatureds({ data, user }) {
   const project = dataProjects[0].pdp;
   const location_data = project.location.name;
   const location = location_data.split(',');
@@ -53,7 +54,7 @@ function Features({ data, user }) {
             <DataFeatureList />
           </FeatureList>
           <FeatureControls>
-            {/* <FormRequesQuote /> */}
+            <FormRequesQuote />
             <figure className="feature-logo">
               <img src={project.standard} width="96" alt="" />
             </figure>
@@ -64,4 +65,4 @@ function Features({ data, user }) {
   );
 }
 
-export default Features;
+export default BannerFeatureds;
