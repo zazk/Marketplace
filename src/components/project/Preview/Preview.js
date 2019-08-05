@@ -23,11 +23,9 @@ const projectDetail = {
 };
 
 const Preview = ({ projects, fetchProjects }) => {
-  console.log('projectsxxxxxxyyyy', projects);
-
   useEffect(() => {
     fetchProjects();
-  }, []);
+  }, [fetchProjects]);
   return (
     <LandingProyect picture={projectDetail.main_picture}>
       <LandingMain>
@@ -38,14 +36,14 @@ const Preview = ({ projects, fetchProjects }) => {
 
             <div className="lp-intro-down">
               <div className="lp-btn">
-                <Link href="/">
+                <Link to="/">
                   <ViewProjects>
                     <em>View projects</em>
                   </ViewProjects>
                 </Link>
               </div>
               <RequestAccess>
-                <a href="">Or Request Beta Access</a>
+                <a href="/">Or Request Beta Access</a>
               </RequestAccess>
               <SubTitle>Projects available upon authentication</SubTitle>
             </div>

@@ -19,27 +19,27 @@ class Header extends Component {
             <ul className="flex nav-list">
               <MenuItem>
                 {user ? (
-                  <Link href="/auth/logout">
+                  <Link to="/auth/logout">
                     <MenuLink>Log Out</MenuLink>
                   </Link>
                 ) : (
-                  <Link href="/auth/login">
+                  <Link to="/auth/login">
                     <MenuLink>Log In</MenuLink>
                   </Link>
                 )}
               </MenuItem>
               <MenuItem>
-                <Link href="/">
+                <Link to="/">
                   <MenuLink>Home</MenuLink>
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link href="/about">
+                <Link to="/about">
                   <MenuLink>About Us</MenuLink>
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link href="/contact">
+                <Link to="/contact">
                   <MenuLink>Contact Us</MenuLink>
                 </Link>
               </MenuItem>
