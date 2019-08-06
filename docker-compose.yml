@@ -2,16 +2,12 @@ version: '3'
 services:
   marketplace-www:
     container_name: marketplace-www
-    build:
-      context: ./
+    image: node:alpine
+    volumes:
+      - ./:/usr/src/pachama/marketplace-www
+    working_dir: /usr/src/pachama/marketplace-www
+    environment:
+      NODE_ENV: development
     ports:
       - 3000:3000
-    command: ['npm', 'run', 'start']
-    volumes:
-      - ./public:/usr/src/pachama/marketplace-www/public
-      - ./src:/usr/src/pachama/marketplace-www/src
-      - ./build:/usr/src/pachama/marketplace-www/build
-  # marketplace-api:
-  #   image: gcr.io/pachama-demo/marketplace-api
-  #   ports:
-  #     - 3001:3000
+    command: ['yarn', 'run', 'dev']
