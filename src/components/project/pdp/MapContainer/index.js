@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
-import { render } from 'react-dom';
 
-import DeckGL, { MapView, GeoJsonLayer, TileLayer, BitmapLayer, FlyToInterpolator } from 'deck.gl';
+import DeckGL, { GeoJsonLayer, TileLayer, BitmapLayer, FlyToInterpolator } from 'deck.gl';
 import { StaticMap } from 'react-map-gl';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 
