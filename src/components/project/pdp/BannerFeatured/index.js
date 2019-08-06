@@ -1,4 +1,7 @@
 import React from 'react';
+import IntroBanner from '../IntroBanner';
+import ItemListBanner from '../ItemListBanner';
+import FormRequesQuote from '../../../forms/FormRequestQuote';
 import {
   Bgbanner,
   BannerMain,
@@ -10,13 +13,9 @@ import {
   FeatureList,
   FeatureControls,
 } from './style';
-import IntroBanner from '../IntroBanner';
-import ItemListBanner from '../ItemListBanner';
-import FormRequesQuote from '../../../forms/FormRequestQuote';
-import dataProjects from '../../../../projects-data/projects';
 
 function BannerFeatureds({ data, user }) {
-  const project = dataProjects[0].pdp;
+  const project = data;
   const location_data = project.location.name;
   const location = location_data.split(',');
 
