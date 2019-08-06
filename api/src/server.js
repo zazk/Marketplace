@@ -12,7 +12,7 @@ const authRoutes = require('./routes/auth');
 const marketplaceApi = require('./routes/marketplace');
 
 const WWW_BUILD_PATH = path.join(__dirname, '../../www/build');
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 const host = '0.0.0.0';
 
 const app = express();
