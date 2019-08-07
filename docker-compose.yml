@@ -1,13 +1,30 @@
 version: '3'
 services:
-  marketplace-www:
-    container_name: marketplace-www
-    image: node:alpine
+  api:
+    build:
+      context: ./api/
+    command: /usr/src/pachama/marketplace/node_modules/.bin/nodemon src/server.js
     volumes:
-      - ./:/usr/src/pachama/marketplace-www
-    working_dir: /usr/src/pachama/marketplace-www
+      - ./api/:/usr/src/pachama/marketplace
+      - /usr/src/pachama/marketplace/node_modules
+    ports:
+      - 3001:3001
+    env_file: ./.env
     environment:
+      PORT: 3001
       NODE_ENV: development
+  www:
+    build:
+      context: ./www/
+    command: ['yarn', 'run', 'start']
+    volumes:
+      - ./www/:/usr/src/pachama/marketplace
+      - /usr/src/pachama/marketplace/node_modules
+    depends_on:
+      - api
     ports:
       - 3000:3000
-    command: ['yarn', 'run', 'dev']
+    env_file: ./.env
+    environment:
+      PORT: 3000
+      NODE_ENV: development
