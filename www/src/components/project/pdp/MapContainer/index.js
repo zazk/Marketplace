@@ -193,10 +193,10 @@ export class MapContainer extends PureComponent {
               <h3>{this.state.projectData.medianBiomass}</h3>
               <p>Median biomass per hectare</p>
             </ImagenTextItem>
-            <a className="link-imagen" href="">
+            <div className="link-imagen">
               <img src="/static/iconos/info-circle-solid.svg" width="14" alt="" />
               <p>What is biomass?</p>
-            </a>
+            </div>
           </ImagenInfo>
         </ContentMain>
         <FeatureMap>
