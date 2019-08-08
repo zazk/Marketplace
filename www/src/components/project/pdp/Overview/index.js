@@ -11,7 +11,7 @@ import {
   TabDescripcion,
   TabTitle,
 } from './style';
-function FeatureProduct({ data }) {
+function Overview({ data }) {
   const project = data;
   const location_data = project.location.name;
   const location = location_data.split(',');
@@ -79,4 +79,4 @@ function FeatureProduct({ data }) {
     </TabContent>
   );
 }
-export default FeatureProduct;
+export default Overview;

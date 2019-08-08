@@ -1,5 +1,8 @@
 import styled from 'styled-components/macro';
 
+export const Controls = styled.div`
+  overflow: hidden;
+`;
 export const ControlItem = styled.div`
   height: 212px;
   box-sizing: border-box;

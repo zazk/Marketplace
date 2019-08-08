@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FeatureListItem = styled.div`
+export const ItemList = styled.div`
   margin-bottom: 20px;
   padding-right: 10px;
   box-sizing: border-box;

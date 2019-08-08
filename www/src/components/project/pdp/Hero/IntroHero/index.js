@@ -1,6 +1,6 @@
 import React from 'react';
 import { Intro, IntroTitle, IntroDescripcion } from './style';
-function IntroBanner({ data }) {
+function IntroHero({ data }) {
   const project = data;
   return (
     <Intro>
@@ -9,4 +9,4 @@ function IntroBanner({ data }) {
     </Intro>
   );
 }
-export default IntroBanner;
+export default IntroHero;

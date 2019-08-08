@@ -5,7 +5,8 @@ class Layout extends Component {
   render() {
     const Component = this.props.component;
     const route = this.props.route;
-    //const user  = this.props.user;
+    // const user = this.props.user;
+
     return (
       <div>
         <GlobalStyle></GlobalStyle>

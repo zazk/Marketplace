@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ControlItem, ControlContent } from './style';
+import { ControlItem, ControlContent, Controls } from './style';
 // import { Mixpanel } from '../utils/mixpanel';
 
 function ControlsProject({ id, items, data }) {
@@ -21,7 +21,7 @@ function ControlsProject({ id, items, data }) {
   // }
 
   return (
-    <div className="controls">
+    <Controls>
       <ControlContent>
         <Link to={`/pdp/?id=${prev}`} onClick={() => prev}>
           <ControlItem className="prev">
@@ -41,17 +41,7 @@ function ControlsProject({ id, items, data }) {
           </ControlItem>
         </Link>
       </ControlContent>
-      <style jsx>
-        {`
-          .controls {
-            overflow: hidden;
-            &.content {
-              padding: 0;
-            }
-          }
-        `}
-      </style>
-    </div>
+    </Controls>
   );
 }
 export default ControlsProject;

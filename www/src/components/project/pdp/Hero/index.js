@@ -1,6 +1,6 @@
 import React from 'react';
-import IntroBanner from '../IntroBanner';
-import ItemListBanner from '../ItemListBanner';
+import IntroHero from './IntroHero';
+import ItemListHero from './ItemListHero';
 import FormRequesQuote from '../../../forms/FormRequestQuote';
 import {
   Bgbanner,
@@ -14,7 +14,7 @@ import {
   FeatureControls,
 } from './style';
 
-function BannerFeatureds({ data, user }) {
+function Hero({ data, user }) {
   const project = data;
   const location_data = project.location.name;
   const location = location_data.split(',');
@@ -33,13 +33,13 @@ function BannerFeatureds({ data, user }) {
       description: '',
     },
   ];
-  const DataFeatureList = () => list.map((item, i) => <ItemListBanner key={i} title={item.title} />);
+  const DataFeatureList = () => list.map((item, i) => <ItemListHero key={i} title={item.title} />);
   return (
     <Banner>
       <Bgbanner style={{ backgroundImage: `url(${project.main_picture})` }} />
       <BannerMain>
         <BannerIntro>
-          <IntroBanner data={project} />
+          <IntroHero data={project} />
         </BannerIntro>
         <FeatureDescription>
           <Progressbar>
@@ -64,4 +64,4 @@ function BannerFeatureds({ data, user }) {
   );
 }
 
-export default BannerFeatureds;
+export default Hero;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import dataProjects from '../projects-data/projects';
-import BannerFeatureds from '../components/project/pdp/BannerFeatured/';
-import MapContainer from '../components/project/pdp/MapContainer';
-import FeatureProduct from '../components/project/pdp/FeatureProduct';
+import Hero from '../components/project/pdp/Hero';
+import MapContainer from '../components/MapContainer';
+import Overview from '../components/project/pdp/Overview';
 import Biomass from '../components/project/pdp/biomass';
 import Leakage from '../components/project/pdp/Leakage';
 import Pay from '../components/project/pdp/Pay';
@@ -18,9 +18,9 @@ class PDP extends Component {
 
     return (
       <div>
-        <BannerFeatureds data={project}></BannerFeatureds>
+        <Hero data={project}></Hero>
         <MapContainer data={project} geojson={geojson} />
-        <FeatureProduct data={project}></FeatureProduct>
+        <Overview data={project}></Overview>
         <Biomass data={project} biomass={biomass}></Biomass>
         <Leakage data={project} />
         <Pay data={project} />
