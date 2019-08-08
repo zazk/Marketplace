@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
+
 import dataProjects from '../projects-data/projects';
 import Hero from '../components/project/pdp/Hero';
 import MapContainer from '../components/MapContainer';
@@ -10,12 +12,13 @@ import ControlsProject from '../components/project/pdp/ControlsProject';
 
 class PDP extends Component {
   render() {
-    let index = 0;
-    const itemsProject = dataProjects.length;
-    const project = dataProjects[1]['pdp'];
-    const biomass = dataProjects[1]['biomass'];
-    const geojson = dataProjects[1]['geojson'];
-
+    const parametersUrl = new URLSearchParams(this.props.location.search);
+    const id = parametersUrl.get('id');
+    let index = id ? id : 0;
+    const quantityProjects = dataProjects.length;
+    const project = dataProjects[index]['pdp'];
+    const biomass = dataProjects[index]['biomass'];
+    const geojson = dataProjects[index]['geojson'];
     return (
       <div>
         <Hero data={project}></Hero>
@@ -24,10 +27,10 @@ class PDP extends Component {
         <Biomass data={project} biomass={biomass}></Biomass>
         <Leakage data={project} />
         <Pay data={project} />
-        <ControlsProject id={index} items={itemsProject} data={dataProjects} />
+        <ControlsProject id={index} items={quantityProjects} data={dataProjects} />
       </div>
     );
   }
 }
 
-export default PDP;
+export default withRouter(PDP);

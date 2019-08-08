@@ -24,7 +24,7 @@ function Gallery({ data }) {
   return (
     <div className="gallery">
       {ImagesData.map((img, i) => (
-        <GalleryItem key={i} onClick={() => (setInLightbox(i), setOpenLightbox(1))}>
+        <GalleryItem key={i} onClick={() => setInLightbox(i) || setOpenLightbox(1)}>
           <img src={img.image} width="392" height="190" alt="" />
           <Figcaption>{img.caption}</Figcaption>
         </GalleryItem>

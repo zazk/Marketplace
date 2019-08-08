@@ -25,7 +25,7 @@ function ControlsProject({ id, items, data }) {
       <ControlContent>
         <Link to={`/pdp/?id=${prev}`} onClick={() => prev}>
           <ControlItem className="prev">
-            <h5>{data[prev].title}</h5>
+            <h5>{data[prev].pdp.title}</h5>
             <p>
               <img src="/static/iconos/icon-project-prev.svg" width="12" alt="" />
               Previous project
@@ -34,7 +34,7 @@ function ControlsProject({ id, items, data }) {
         </Link>
         <Link to={`/pdp/?id=${next}`} onClick={() => next}>
           <ControlItem className="next">
-            <h5>{data[next].title}</h5>
+            <h5>{data[next].pdp.title}</h5>
             <p>
               Next project <img src="/static/iconos/icon-project-next.svg" width="12" alt="" />
             </p>
