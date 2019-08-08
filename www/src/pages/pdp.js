@@ -4,12 +4,13 @@ import BannerFeatureds from '../components/project/pdp/BannerFeatured/';
 import MapContainer from '../components/project/pdp/MapContainer';
 import FeatureProduct from '../components/project/pdp/FeatureProduct';
 import Biomass from '../components/project/pdp/biomass';
+import Leakage from '../components/project/pdp/Leakage';
 
 class PDP extends Component {
   render() {
-    const project = dataProjects[0]['pdp'];
-    const biomass = dataProjects[0]['biomass'];
-    const geojson = dataProjects[0]['geojson'];
+    const project = dataProjects[1]['pdp'];
+    const biomass = dataProjects[1]['biomass'];
+    const geojson = dataProjects[1]['geojson'];
 
     return (
       <div>
@@ -17,6 +18,9 @@ class PDP extends Component {
         <MapContainer data={project} geojson={geojson} />
         <FeatureProduct data={project}></FeatureProduct>
         <Biomass data={project} biomass={biomass}></Biomass>
+        <Leakage data={project} />
+        {/* <Pay data={project} />
+        <ControlsProject id={index} items={itemsProject} data={dataProjects} />         */}
       </div>
     );
   }

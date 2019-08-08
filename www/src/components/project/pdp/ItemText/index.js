@@ -6,7 +6,7 @@ import { ItemSource, ItemTitle, ItemDescripcion, ItemOne } from './style';
 function ItemText({ iconcard, type, title, description, card, source, source_link, page, icontitle }) {
   return (
     <ItemOne className={type && 'two'}>
-      <ItemTitle>
+      <ItemTitle className="item-title">
         {icontitle ? <img src={icontitle} alt="" /> : ''}
         {title}
       </ItemTitle>
