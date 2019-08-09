@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import { fetchProjects } from '../../state';
 import Overview from './Overview';
 
-const mapStateToProps = (state, project) => {
-  const [locationName, locationAddres1, locationAddres2] = project.data.location.name.split(',');
+const mapStateToProps = (state, pdp) => {
+  const [locationName, locationAddres1, locationAddres2] = pdp.data.location.name.split(',');
   return {
     projects: state.projectState.projects,
-    project: project.data,
+    project: pdp.data,
     locationName,
     locationAddres1,
     locationAddres2,
