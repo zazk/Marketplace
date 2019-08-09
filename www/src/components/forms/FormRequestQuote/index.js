@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ModalBox from '../../features/ModalBox/index';
 import PropTypes from 'prop-types';
-// import { Mixpanel } from '../../  utils/mixpanel';
+// import { Mixpanel } from '../../../utils/mixpanel';
 import { Formik, Field, Form } from 'formik';
 import { LinearProgress, MenuItem } from '@material-ui/core';
 import MuiTextField from '@material-ui/core/TextField';
