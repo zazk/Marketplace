@@ -12,7 +12,7 @@ import {
   BiomasNumberItem,
 } from './style';
 
-function Biomass({ data, biomass }) {
+function Biomass({ biomass }) {
   return (
     <BiomassContent>
       <div className="content-main">

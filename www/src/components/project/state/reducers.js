@@ -1,4 +1,4 @@
-import { RECEIVE_PROJECTS, REQUEST_PROJECTS } from './types';
+import { RECEIVE_PROJECTS, REQUEST_PROJECTS, REQUEST_FORM, RECEIVE_FORM } from './types';
 
 const INITIAL_STATE = {
   projects: [],
@@ -18,6 +18,19 @@ export const projectReducer = (state = INITIAL_STATE, action) => {
         ...state,
         loading: true,
       };
+
+    case REQUEST_FORM:
+      return {
+        ...state,
+        loadingform: true,
+      };
+    case RECEIVE_FORM:
+      return {
+        ...state,
+        status: action.data,
+        loadingform: false,
+      };
+
     default:
       return state;
   }

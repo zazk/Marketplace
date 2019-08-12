@@ -34,6 +34,7 @@ export const ModalboxClose = styled.div`
   align-items: center;
   font-size: 16px;
   color: #fff;
+  cursor: pointer;
   span {
     position: relative;
     z-index: 2;
