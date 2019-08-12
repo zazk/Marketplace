@@ -1,0 +1,25 @@
+{
+  "name": "marketplace-api",
+  "author": "Pachama",
+  "version": "0.1.0",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "auth0": "^2.18.0",
+    "compression": "^1.7.4",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.0",
+    "express-session": "^1.16.2",
+    "passport": "^0.4.0",
+    "passport-auth0": "^1.1.0",
+    "sequelize": "^5.13.0",
+    "uid-safe": "^2.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "pg": "^7.12.1"
+  }
+}

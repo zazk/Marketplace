@@ -1,17 +1,40 @@
 version: '3'
 services:
-  marketplace-www:
-    container_name: marketplace-www
+  api:
     build:
-      context: ./
+      context: ./api/
+    command: ['/usr/src/pachama/marketplace/scripts/entrypoint.sh']
+    #command: /usr/src/pachama/marketplace/node_modules/.bin/nodemon src/server.js
+    volumes:
+      - ./api/:/usr/src/pachama/marketplace
+      - /usr/src/pachama/marketplace/node_modules
+    ports:
+      - 3001:3001
+    env_file: ./.env
+    depends_on:
+      - postgres
+    environment:
+      PORT: 3001
+      NODE_ENV: development
+  www:
+    build:
+      context: ./www/
+    command: ['yarn', 'run', 'start']
+    volumes:
+      - ./www/:/usr/src/pachama/marketplace
+      - /usr/src/pachama/marketplace/node_modules
+    depends_on:
+      - api
     ports:
       - 3000:3000
-    command: ['npm', 'run', 'start']
-    volumes:
-      - ./public:/usr/src/pachama/marketplace-www/public
-      - ./src:/usr/src/pachama/marketplace-www/src
-      - ./build:/usr/src/pachama/marketplace-www/build
-  # marketplace-api:
-  #   image: gcr.io/pachama-demo/marketplace-api
-  #   ports:
-  #     - 3001:3000
+    env_file: ./.env
+    environment:
+      PORT: 3000
+      NODE_ENV: development
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: dbpassword
+      POSTGRES_DB: mktdb
