@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {
   ProgressBar,
   ProgressbarItem,
@@ -13,15 +15,15 @@ import {
   DescriptionItem,
   ProjectDetail,
 } from './style';
-function ProjectItem({ image, name, ubication, customClass, credits, totalarea, totalunit, proyectType }) {
+function ProjectItem({ project, customClass }) {
   return (
     <Project to="#" className={customClass}>
-      <ProjectPicture picture={image} />
+      <ProjectPicture picture={project.main_picture} />
       <ProjectDetail>
         <ProjectResumen>
-          <ProjecprojectName>{name}</ProjecprojectName>
+          <ProjecprojectName>{project.title}</ProjecprojectName>
           <ProjectUbication>
-            <ProjectUbicationAddress>{ubication}</ProjectUbicationAddress>
+            <ProjectUbicationAddress>{project.location.name}</ProjectUbicationAddress>
           </ProjectUbication>
           <div className="project-progress">
             <ProgressBar>
@@ -29,7 +31,7 @@ function ProjectItem({ image, name, ubication, customClass, credits, totalarea, 
             </ProgressBar>
             <ProgresNumbers>
               <p>
-                <strong>{credits}</strong>
+                <strong>{project.credits_avail.quatinty}</strong>
                 carbon credits available
               </p>
             </ProgresNumbers>
@@ -39,14 +41,14 @@ function ProjectItem({ image, name, ubication, customClass, credits, totalarea, 
           <DescriptionItem>
             <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
             <div className="description-text">
-              <span>{totalarea + ' ' + totalunit}</span>
+              <span>{project.total_land.area + ' ' + project.total_land.unit}</span>
               <p>Total Area</p>
             </div>
           </DescriptionItem>
           <DescriptionItem>
             <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
             <div className="description-text">
-              <span>{proyectType} </span>
+              <span>{project.project_type} </span>
               <p>Project Type</p>
             </div>
           </DescriptionItem>
@@ -55,5 +57,21 @@ function ProjectItem({ image, name, ubication, customClass, credits, totalarea, 
     </Project>
   );
 }
-
+ProjectItem.propTypes = {
+  project: PropTypes.shape({
+    main_picture: PropTypes.string,
+    title: PropTypes.string,
+    location: PropTypes.shape({
+      name: PropTypes.string,
+    }),
+    credits_avail: PropTypes.shape({
+      quatinty: PropTypes.string,
+    }),
+    total_land: PropTypes.shape({
+      area: PropTypes.string,
+      unit: PropTypes.string,
+    }),
+    project_type: PropTypes.string,
+  }),
+};
 export default ProjectItem;
