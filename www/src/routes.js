@@ -1,6 +1,7 @@
 import LandingPage from './pages/landing';
 import PDP from './pages/pdp';
 import Projects from './pages/list';
+import Admin from './pages/admin';
 
 const publicRoutes = [
   {
@@ -19,6 +20,12 @@ const publicRoutes = [
     name: 'List Projects',
     component: Projects,
     path: '/list',
+    exact: true,
+  },
+  {
+    name: 'Admin',
+    component: Admin,
+    path: '/admin',
     exact: true,
   },
 ];

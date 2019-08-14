@@ -58,6 +58,7 @@ function ProjectItem({ project, customClass }) {
   );
 }
 ProjectItem.propTypes = {
+  customClass: PropTypes.string,
   project: PropTypes.shape({
     main_picture: PropTypes.string,
     title: PropTypes.string,

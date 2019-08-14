@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectItem from '../ListProjects/ProjectItem';
 import { ProjectListMain } from './style';
+import PropTypes from 'prop-types';
 function ProjectList({ listprojects }) {
   return (
     <ProjectListMain>
@@ -10,4 +11,7 @@ function ProjectList({ listprojects }) {
     </ProjectListMain>
   );
 }
+ProjectList.propTypes = {
+  listprojects: PropTypes.array,
+};
 export default ProjectList;

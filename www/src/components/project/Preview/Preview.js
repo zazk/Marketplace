@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Auth0Lock } from 'auth0-lock';
+
 import {
   ViewProjects,
   LandingProyect,
@@ -23,6 +25,11 @@ const projectDetail = {
 };
 
 const Preview = ({ projects, fetchProjects }) => {
+  const lock = new Auth0Lock('sfj8nlpFONfJanArPrB8PpcB0E9FU4UI', 'marketplace-pachama.auth0.com');
+  const openLogin = () => {
+    lock.show();
+  };
+
   useEffect(() => {
     fetchProjects();
   }, [fetchProjects]);
@@ -43,7 +50,7 @@ const Preview = ({ projects, fetchProjects }) => {
                 </Link>
               </div>
               <RequestAccess>
-                <a href="/">Or Request Beta Access</a>
+                <span onClick={() => openLogin()}>Or Request Beta Access</span>
               </RequestAccess>
               <SubTitle>Projects available upon authentication</SubTitle>
             </div>
