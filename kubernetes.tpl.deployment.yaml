@@ -60,7 +60,7 @@ spec:
           command:
             [
               '/cloud_sql_proxy',
-              '-instances=pachama-demo:us-central1:marketplace-stage=tcp:3306',
+              '-instances=pachama-demo:us-central1:marketplace-stage=tcp:5432',
               '-credential_file=/secrets/cloudsql/credentials.json',
             ]
           securityContext:
