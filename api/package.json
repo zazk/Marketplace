@@ -5,9 +5,7 @@
   "private": true,
   "main": "server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "sequelize:reset": "sequelize db:migrate:undo:all",
-    "sequelize:migrate": "sequelize db:migrate"
+    "start": "node src/server.js"
   },
   "dependencies": {
     "auth0": "^2.18.0",
