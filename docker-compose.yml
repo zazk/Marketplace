@@ -16,6 +16,9 @@ services:
     environment:
       PORT: 3001
       NODE_ENV: development
+      DB_MIGRATE: 'true'
+      DB_SEED: 'true'
+      DB_RESET: 'true'
   www:
     build:
       context: ./www/

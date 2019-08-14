@@ -9,15 +9,17 @@ done
 printf "DB up and running\n";
 if [ -n "$DB_RESET" ]; then
   printf "\n* Rolling back Database Migrations *\n"
-  # ./node_modules/.bin/knex migrate:rollback
+  yarn global add sequelize-cli
+  #/usr/src/pachama/marketplace/node_modules/.bin/sequelize db:migrate:undo:all
+  sequelize db:migrate:undo:all
 fi
 if [ -n "$DB_MIGRATE" ]; then
   printf "\n* Running Database Migrations *\n"
-  # ./node_modules/.bin/knex migrate:latest
+  sequelize db:migrate
 fi
 if [ -n "$DB_SEED" ]; then
   printf "\n* Seeding Database *\n"
-  # ./node_modules/.bin/knex seed:run
+  sequelize db:seed:all
 fi
 printf "\n* Starting Application *\n\n"
 

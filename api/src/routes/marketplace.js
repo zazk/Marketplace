@@ -2,6 +2,23 @@ var express = require('express');
 var secured = require('../utils/secured');
 var router = express.Router();
 
+/* DB Controllers */
+const roleController = require('../db/controllers').role;
+const accountController = require('../db/controllers').account;
+
+/* Routes */
+router.get('/role', roleController.list);
+router.get('/role/:id', roleController.getById);
+router.post('/role', roleController.add);
+router.put('/role/:id', roleController.update);
+router.delete('/role/:id', roleController.delete);
+
+router.get('/account', accountController.list);
+router.get('/account/:id', accountController.getById);
+router.post('/account', accountController.add);
+router.put('/account/:id', accountController.update);
+router.delete('/account/:id', accountController.delete);
+
 /* GET user profile. */
 router.get('/user', secured(), function(req, res, next) {
   const { _raw, _json, ...userProfile } = req.user;
