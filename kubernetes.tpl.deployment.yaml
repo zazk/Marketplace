@@ -46,7 +46,7 @@ spec:
             - name: DB_HOST
               value: _DB_HOST_
             - name: DB_PORT
-              value: _DB_PORT_
+              value: '_DB_PORT_'
             - name: DB_DATABASE
               value: _DB_DATABASE_
             - name: DB_USER
@@ -63,19 +63,14 @@ spec:
               '-instances=pachama-demo:us-central1:marketplace-stage=tcp:3306',
               '-credential_file=/secrets/cloudsql/credentials.json',
             ]
-          # [START cloudsql_security_context]
           securityContext:
             runAsUser: 2 # non-root user
             allowPrivilegeEscalation: false
-          # [END cloudsql_security_context]
           volumeMounts:
             - name: cloudsql-instance-credentials
               mountPath: /secrets/cloudsql
               readOnly: true
-        # [END proxy_container]
-      # [START volumes]
       volumes:
         - name: cloudsql-instance-credentials
           secret:
             secretName: cloudsql-instance-credentials
-      # [END volumes]
