@@ -2,7 +2,7 @@ import LandingPage from './pages/landing';
 import PDP from './pages/pdp';
 import Projects from './pages/list';
 import Admin from './pages/admin';
-import Login from './pages/login';
+import CallBack from './pages/callback';
 
 const publicRoutes = [
   {
@@ -30,9 +30,9 @@ const publicRoutes = [
     exact: true,
   },
   {
-    name: 'Login',
-    component: Login,
-    path: '/login',
+    name: 'Callback',
+    component: CallBack,
+    path: '/callback',
     exact: true,
   },
 ];
