@@ -78,6 +78,15 @@ export const GlobalStyle = createGlobalStyle`
       position: relative;
       z-index: 2;
     }
+    &[disabled] {
+        cursor: default;
+        background-color: #d8d8d8;
+        color: rgba(255, 255, 255, 0.74);
+        &:after,
+        &:before {
+          display: none;
+        }
+      }
     &:after, &:before{
       content:"";
       position: absolute;

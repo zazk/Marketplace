@@ -2,6 +2,7 @@ import LandingPage from './pages/landing';
 import PDP from './pages/pdp';
 import Projects from './pages/list';
 import Admin from './pages/admin';
+import Login from './pages/login';
 
 const publicRoutes = [
   {
@@ -26,6 +27,12 @@ const publicRoutes = [
     name: 'Admin',
     component: Admin,
     path: '/admin',
+    exact: true,
+  },
+  {
+    name: 'Login',
+    component: Login,
+    path: '/login',
     exact: true,
   },
 ];
