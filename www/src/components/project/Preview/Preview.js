@@ -25,7 +25,27 @@ const projectDetail = {
 };
 
 const Preview = ({ projects, fetchProjects }) => {
-  const lock = new Auth0Lock('sfj8nlpFONfJanArPrB8PpcB0E9FU4UI', 'marketplace-pachama.auth0.com');
+  const clienteId = 'sfj8nlpFONfJanArPrB8PpcB0E9FU4UI';
+  const domain = 'marketplace-pachama.auth0.com';
+  const options = {
+    auth: {
+      redirect: false,
+    },
+  };
+
+  const lock = new Auth0Lock(clienteId, domain, options);
+  lock.on('authenticated', function(authResult) {
+    // Use the token in authResult to getUserInfo() and save it if necessary
+    console.log('authResult', authResult);
+    this.getUserInfo(authResult.accessToken, function(error, profile) {
+      if (!error) {
+        // Handle error
+        console.log('hello ' + profile.name);
+        return;
+      }
+    });
+  });
+
   const openLogin = () => {
     lock.show();
   };
