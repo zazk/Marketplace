@@ -24,10 +24,11 @@ const projectDetail = {
   text_intro: 'Take part in our challenge',
 };
 
-const Preview = ({ projects, fetchProjects }) => {
+const Preview = ({ receiveUser, fetchProjects }) => {
   const clienteId = 'sfj8nlpFONfJanArPrB8PpcB0E9FU4UI';
   const domain = 'marketplace-pachama.auth0.com';
   const options = {
+    autoclose: true,
     auth: {
       redirect: false,
     },
@@ -37,10 +38,12 @@ const Preview = ({ projects, fetchProjects }) => {
   lock.on('authenticated', function(authResult) {
     // Use the token in authResult to getUserInfo() and save it if necessary
     console.log('authResult', authResult);
+
     this.getUserInfo(authResult.accessToken, function(error, profile) {
       if (!error) {
         // Handle error
-        console.log('hello ' + profile.name);
+        receiveUser(profile);
+
         return;
       }
     });
@@ -63,15 +66,14 @@ const Preview = ({ projects, fetchProjects }) => {
 
             <div className="lp-intro-down">
               <div className="lp-btn">
-                <Link to="/">
-                  <ViewProjects onClick={() => openLogin()}>
-                    <em>Login In</em>
-                  </ViewProjects>
-                </Link>
+                <ViewProjects onClick={() => openLogin()}>
+                  <em>Log In</em>
+                </ViewProjects>
               </div>
               <RequestAccess>
                 <span>Or Request Beta Access</span>
               </RequestAccess>
+
               <SubTitle>Projects available upon authentication</SubTitle>
             </div>
           </div>
