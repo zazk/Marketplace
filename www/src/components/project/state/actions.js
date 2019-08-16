@@ -1,4 +1,4 @@
-import { REQUEST_PROJECTS, RECEIVE_PROJECTS, REQUEST_FORM, RECEIVE_FORM } from './types';
+import { REQUEST_PROJECTS, RECEIVE_PROJECTS, REQUEST_FORM, RECEIVE_FORM, RECEIVE_USER } from './types';
 
 export const requestProjects = () => ({
   type: REQUEST_PROJECTS,

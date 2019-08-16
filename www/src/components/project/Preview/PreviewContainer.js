@@ -1,12 +1,16 @@
 import { connect } from 'react-redux';
 import { fetchProjects } from '../state';
+import { receiveUser } from '../../common/user/state/action';
 import Preview from './Preview';
 
-const mapStateToProps = state => ({
-  projects: state.projectState.projects,
-});
+const mapStateToProps = state => {
+  return {
+    projects: state.projectState.projects,
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
+  receiveUser: user => dispatch(receiveUser(user)),
   fetchProjects: () => dispatch(fetchProjects()),
 });
 
