@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Auth0Lock } from 'auth0-lock';
+import LoginButton from '../../LoginButton';
 
 import {
   ViewProjects,
@@ -25,34 +25,6 @@ const projectDetail = {
 };
 
 const Preview = ({ receiveUser, fetchProjects }) => {
-  const clienteId = 'sfj8nlpFONfJanArPrB8PpcB0E9FU4UI';
-  const domain = 'marketplace-pachama.auth0.com';
-  const options = {
-    autoclose: true,
-    auth: {
-      redirect: false,
-    },
-  };
-
-  const lock = new Auth0Lock(clienteId, domain, options);
-  lock.on('authenticated', function(authResult) {
-    // Use the token in authResult to getUserInfo() and save it if necessary
-    console.log('authResult', authResult);
-
-    this.getUserInfo(authResult.accessToken, function(error, profile) {
-      if (!error) {
-        // Handle error
-        receiveUser(profile);
-
-        return;
-      }
-    });
-  });
-
-  const openLogin = () => {
-    lock.show();
-  };
-
   useEffect(() => {
     fetchProjects();
   }, [fetchProjects]);
@@ -66,9 +38,7 @@ const Preview = ({ receiveUser, fetchProjects }) => {
 
             <div className="lp-intro-down">
               <div className="lp-btn">
-                <ViewProjects onClick={() => openLogin()}>
-                  <em>Log In</em>
-                </ViewProjects>
+                <LoginButton />
               </div>
               <RequestAccess>
                 <span>Or Request Beta Access</span>
