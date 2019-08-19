@@ -61,6 +61,7 @@
     "request": "^2.88.0",
     "save-dev": "^2.0.0",
     "seer": "^0.2.5",
+    "sequelize": "^5.14.0",
     "styled-components": "^4.3.2",
     "styled-jsx-plugin-postcss": "^2.0.0",
     "uid-safe": "^2.1.5",
@@ -79,7 +80,8 @@
     "husky": "^2.3.0",
     "nodemon": "^1.19.1",
     "prettier": "^1.17.1",
-    "pretty-quick": "^1.11.0"
+    "pretty-quick": "^1.11.0",
+    "sequelize-cli": "^5.5.0"
   },
   "postcss": {
     "plugins": {
