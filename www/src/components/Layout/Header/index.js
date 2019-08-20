@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Logo, HeaderMain, HeaderInner, Nav, MenuItem, MenuLink } from './style';
+import LoginButton from '../../LoginButton';
+import { Logo, HeaderMain, HeaderInner, Nav, MenuItem, MenuLink, MenuUser } from './style';
 
 class Header extends Component {
   static propTypes = { user: PropTypes.object };
 
   render() {
     const { user } = this.props;
+
     return (
       <HeaderMain>
         <HeaderInner>
@@ -17,17 +19,6 @@ class Header extends Component {
           </Logo>
           <Nav>
             <ul className="flex nav-list">
-              <MenuItem>
-                {user ? (
-                  <Link to="/auth/logout">
-                    <MenuLink>Log Out</MenuLink>
-                  </Link>
-                ) : (
-                  <Link to="/auth/login">
-                    <MenuLink>Log In</MenuLink>
-                  </Link>
-                )}
-              </MenuItem>
               <MenuItem>
                 <Link to="/">
                   <MenuLink>Home</MenuLink>
@@ -45,6 +36,9 @@ class Header extends Component {
               </MenuItem>
             </ul>
           </Nav>
+          <MenuUser>
+            <LoginButton type="dropdown" />
+          </MenuUser>
         </HeaderInner>
       </HeaderMain>
     );

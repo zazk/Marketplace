@@ -276,9 +276,7 @@ export const GlobalStyle = createGlobalStyle`
           display:none
         }
       }
-    .wrap-company-user{
-      display:none;
-    }
+
     .project-list {
       .btn-request {
         display: none;

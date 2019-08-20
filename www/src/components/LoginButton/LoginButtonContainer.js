@@ -4,7 +4,7 @@ import { receiveUser } from '../common/user/state/action';
 import LoginButton from './LoginButton';
 const mapStateToProps = state => {
   return {
-    projects: state.projectState.projects,
+    user: state.userState.user,
   };
 };
 const mapDispatchToProps = dispatch => ({

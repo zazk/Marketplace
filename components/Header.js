@@ -12,18 +12,6 @@ function Header(user) {
         <nav>
           <ul className="flex nav-list">
             <li className="menu-item">
-              {typeof user.user != 'undefined' && (
-                <Link href="/logout">
-                  <a className="menu-link">Log Out</a>
-                </Link>
-              )}
-              {typeof user.user == 'undefined' && (
-                <Link href="/login">
-                  <a className="menu-link">Log In</a>
-                </Link>
-              )}
-            </li>
-            <li className="menu-item">
               <Link href="/">
                 <a className="menu-link">Home</a>
               </Link>
@@ -31,11 +19,6 @@ function Header(user) {
             <li className="menu-item">
               <Link href="/about">
                 <a className="menu-link">About Us</a>
-              </Link>
-            </li>
-            <li className="menu-item">
-              <Link href="/contact">
-                <a className="menu-link">Contact Us</a>
               </Link>
             </li>
           </ul>
