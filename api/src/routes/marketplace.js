@@ -15,6 +15,7 @@ router.delete('/role/:id', roleController.delete);
 
 router.get('/account', accountController.list);
 router.get('/account/:id', accountController.getById);
+router.get('/account/auth0/:auth0', accountController.getByAuth0);
 router.post('/account', accountController.add);
 router.put('/account/:id', accountController.update);
 router.delete('/account/:id', accountController.delete);
