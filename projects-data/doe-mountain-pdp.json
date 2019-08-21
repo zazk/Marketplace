@@ -1,0 +1,96 @@
+{
+  "title": "Doe Mountain Improved Forest Management Project",
+  "tagline": "Covering over 8,600 acres in the northeastern corner of Tennessee, Doe Mountain is one of the largest remaining blocks of forest in private ownership in the Southern Blue Ridge region.",
+  "main_picture": "https://storage.googleapis.com/marketplace-assets/doe-mountain-main_picture.jpg",
+  "credits_avail": {
+    "quatinty": "118349",
+    "unit": "credits"
+  },
+  "project_type": "Improved Forest Management",
+  "location": {
+    "name": "Johnson County, Tennessee, USA",
+    "coordinates": [-74.72282409667969, 40.968622428884125]
+  },
+  "standard": "https://storage.googleapis.com/marketplace-assets/logo-acr.png",
+  "project_overview": "Developed in 2012, The Nature Conservancy and the state of Tennessee collaborated to purchase the mountain to be privately-held parkland open to the public. The land is open to recreation including hiking, mountain biking, horseback riding, and low-impact ATV Touring. The management plan and guidance under the Doe Mountain Recreation Authority board is designed to preserve the habitat while also stimulating recreation-based tourism in an economically depressed region. The Doe Mountain project provides a sustainable and protected habitat for 40 rare, threatened, and endangered plant and animal species.",
+  "credits_issued": {
+    "quatinty": "",
+    "unit": "total credits issued"
+  },
+  "verification": {
+    "methodology": "ACR IFM Methodology v 1.2",
+    "last_verification": "October 2018"
+  },
+  "project_developer": "Bluesource",
+  "auditor": "SCS Global Services",
+  "total_land": {
+    "area": "8485",
+    "unit": "acres"
+  },
+  "totalBiomass": "0",
+  "medianBiomass": "0",
+  "land_owner": "Doe Mountain Recreation Authority",
+  "project_images": [
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/doe-mountain-image_1.jpg",
+      "caption": "The project supports healthy populations of deer, turkey, and black bears."
+    },
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/doe-mountain-image_2.jpg",
+      "caption": "The protected acres are home to a forest comprised of oak-hickory, cove forests and oak-pine trees."
+    }
+  ],
+  "badges": {
+    "leakage": true,
+    "additionality": true,
+    "permanence": true,
+    "verifiability": true
+  },
+  "summary": {
+    "leakage": {
+      "text": "To prevent activity-shifting leakage, Doe Mountain will not conduct harvests on other lands under its\nownership that would offset the harvest reductions attributable to the project. Therefore, market leakage deduction of 40% was conservatively assumed.",
+      "source": "Section E3 from Project Description Document",
+      "source_link": "https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=24764&IDKEY=9iquwesdfmnk0iei23nnm435oiojnc909dsflk9809adlkmlkfn34149556"
+    },
+    "additionality": {
+      "text": "Additionality for the project has been shown through a regulatory surplus test, a common practice test, and an implementation barrier test. There is no relevant laws, regulations, statues, legal rulings, and other regulatory frameworks that effectively requires the forest carbon project activity and its associated GHG emissions reductions/removal enhancements. Consequently, the project passes the Regulatory Surplus test.  If the Doe Mountain Project was not implemented, the forest management of Doe Mountain Recreation Area could feasibly resemble that of industrial forestland ownership in the region. Carbon funding is reasonably expected to incentivize the project’s implementation. The implementation of the carbon project represents an opportunity cost to lost revenue associated with the potential timber harvesting that could legally and feasibly occur on the property in the lifetime of the carbon project.",
+      "source": "Section C from Project Description Document",
+      "source_link": "https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=24764&IDKEY=9iquwesdfmnk0iei23nnm435oiojnc909dsflk9809adlkmlkfn34149556"
+    },
+    "permanence": {
+      "text": "To ensure the permanence of the GHG emission reductions from this project, buffer credits from each of the projects are put on hold in a pool. When a loss event occurs (fire, diseases, pests, etc) buffer credits are taken from this pool. Based on the result of the risk assessment using the \"ACR Tool for Risk Analysis and Buffer Determination\" this project will contribute to the buffer pool 18% of their issued credits.",
+      "source": "Section B8 from Project Description Document",
+      "source_link": "https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=24764&IDKEY=9iquwesdfmnk0iei23nnm435oiojnc909dsflk9809adlkmlkfn34149556"
+    },
+    "verifiability": {
+      "text": "An objective third party—someone other than Doe Mountain Recreation Authority or the project developer—must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services acted as the third-party verifier in this project since 2018, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.",
+      "source": "",
+      "source_link": ""
+    }
+  },
+  "timeline": [
+    {
+      "date": "October 2017",
+      "text": "Project start date"
+    },
+    {
+      "date": "October 2017",
+      "text": "1st Verification started"
+    },
+    {
+      "date": "October 2018",
+      "text": "1st Verification finished"
+    },
+    {
+      "date": 2023,
+      "text": "Next  verification and Credtis issuance"
+    },
+    {
+      "date": 2037,
+      "text": "Ends crediting period"
+    }
+  ],
+  "project_files": "https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=398",
+  "un_goals": ["6", "13", "15"],
+  "tagline_footer": "With every ton of carbon that is sold, trees are protected, partnerships are formed, and our living Earth is restored to help solve climate change."
+}

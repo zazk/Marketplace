@@ -1,0 +1,96 @@
+{
+  "title": "Alligator River Avoided Conversion Project",
+  "tagline": "Comprised of 2,750 acres of forested land in the tidal region of northeastern North Carolina, this land has been safely placed under a conservation easement to ensure perpetuity of the natural forest.",
+  "main_picture": "https://storage.googleapis.com/marketplace-assets/alligator-river-main_picture.jpg",
+  "credits_avail": {
+    "quatinty": "5549",
+    "unit": "credits"
+  },
+  "project_type": "Avoided Conversion",
+  "location": {
+    "name": "Dare & Hyde counties, North Carolina, USA",
+    "coordinates": [-74.72282409667969, 40.968622428884125]
+  },
+  "standard": "https://storage.googleapis.com/marketplace-assets/logo-car.png",
+  "project_overview": "The project is comprised of 2,750 acres of forested land in the tidal region of northeastern North Carolina adjacent to the Alligator River National Wildlife Refuge. Most neighboring properties have been harvested, burned on site and then converted to agricultural land for crop production such as wheat and corn. If this land had not been placed under easement this rich and diverse ecosystem would have suffered that same fate. The proceeds from carbon revenue are used to fund the continuing management and natural restoration of this forest. The Project offers additional environmental benefits in the form of wetland conservation and protection of habitat bordering the Alligator River National Wildlife Refuge.",
+  "credits_issued": {
+    "quatinty": 0,
+    "unit": "total credits issued"
+  },
+  "verification": {
+    "methodology": "To be provided by Bluesource",
+    "last_verification": "December 2018"
+  },
+  "project_developer": "Bluesource",
+  "auditor": "Environmental Services, Inc.",
+  "total_land": {
+    "area": "2750",
+    "unit": "acres"
+  },
+  "totalBiomass": "0",
+  "medianBiomass": "0",
+  "land_owner": "Mattamuskeet Ventures I, LLC",
+  "project_images": [
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/alligator-river-image_1.jpg",
+      "caption": "Important local species include Pine and Bottom Land Hardwoods."
+    },
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/alligator-river-image_2.jpg",
+      "caption": "The project supports healthy populations of red wolf, bald eagle, and black bear."
+    }
+  ],
+  "badges": {
+    "leakage": true,
+    "additionality": true,
+    "permanence": true,
+    "verifiability": true
+  },
+  "summary": {
+    "leakage": {
+      "text": "To be provided by Bluesource",
+      "source": "To be provided by Bluesource",
+      "source_link": ""
+    },
+    "additionality": {
+      "text": "To be provided by Bluesource",
+      "source": "To be provided by Bluesource",
+      "source_link": ""
+    },
+    "permanence": {
+      "text": "To be provided by Bluesource",
+      "source": "To be provided by Bluesource",
+      "source_link": ""
+    },
+    "verifiability": {
+      "text": "An objective third party—someone other than the land owner or Blue Source—must be able to look at project data and confirm that the carbon reductions are real and credible. S&A Carbon, LLC acted as the third-party verifier in this project, who determined greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.",
+      "source": "",
+      "source_link": ""
+    }
+  },
+  "timeline": [
+    {
+      "date": "September 2010",
+      "text": "Project start date"
+    },
+    {
+      "date": "TBD October 2017",
+      "text": "1st Verification started"
+    },
+    {
+      "date": "TBD October 2018",
+      "text": "1st Verification finished"
+    },
+    {
+      "date": "TBD 2023",
+      "text": "Next  verification and Credtis issuance"
+    },
+    {
+      "date": "TBD 2037",
+      "text": "Ends crediting period"
+    }
+  ],
+  "project_files": "https://thereserve2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=497",
+  "un_goals": ["6", "13", "15"],
+  "tagline_footer": "With every ton of carbon that is sold, trees are protected, partnerships are formed, and our living Earth is restored to help solve climate change."
+}

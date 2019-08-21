@@ -1,0 +1,96 @@
+{
+  "title": "Hawk Mountain Improved Forest Management",
+  "tagline": "Hawk Mountain Sanctuary is the world's first refuge for birds of prey and provides habitat for more than 16 large birds of prey, located on over 2300 acres of oak-hickory forest in eastern Pennsylvania.",
+  "main_picture": "https://storage.googleapis.com/marketplace-assets/hawk-mountain-main_picture.jpg",
+  "credits_avail": {
+    "quatinty": "32219",
+    "unit": "credits"
+  },
+  "project_type": "Improved Forest Management",
+  "location": {
+    "name": "Drehersille, Pennsylvania, USA",
+    "coordinates": [-74.72282409667969, 40.968622428884125]
+  },
+  "standard": "https://storage.googleapis.com/marketplace-assets/logo-acr.png",
+  "project_overview": "Established in 1938, the mission of Hawk Mountain Sanctuary is to conserve raptors worldwide by providing leadership in raptor conservation science and education, and by maintaining Hawk Mountain Sanctuary as a model observation, research and education facility. While many of the forested acres surrounding the sanctuary have been heavily harvested in recent years, the  Hawk Mountain property is a model of a well-stocked mature east-central Pennsylvania forest. Today, the timber resource on the property has substantial value, but despite economic pressures to harvest, Hawk Mountain ownership has elected to establish a carbon project on the property, limiting harvesting, and ensuring maintenance of high forest stocking for years to come. Hawk Mountain Sanctuary has trained more than 400 young conservationists. Programs include a Conservation Science program, an Educational Traineeship for individuals pursuing a career in conservation education, and Summer Field Experience Traineeships.",
+  "credits_issued": {
+    "quatinty": "",
+    "unit": "total credits issued"
+  },
+  "verification": {
+    "methodology": "ACR IFM Methodology v 1.3",
+    "last_verification": "March 2018"
+  },
+  "project_developer": "Bluesource",
+  "auditor": "SCS Global Services",
+  "total_land": {
+    "area": "2380",
+    "unit": "acres"
+  },
+  "totalBiomass": "0",
+  "medianBiomass": "0",
+  "land_owner": "Hawk Mountain Sanctuary Association",
+  "project_images": [
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/hawk-mountain-image_1.jpg",
+      "caption": "The project specializes in conservation of birds of prey, including bald eagles and ospreys."
+    },
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/hawk-mountain-image_2.jpg",
+      "caption": "Northern red oak is an abundant species on this project."
+    }
+  ],
+  "badges": {
+    "leakage": true,
+    "additionality": true,
+    "permanence": true,
+    "verifiability": true
+  },
+  "summary": {
+    "leakage": {
+      "text": "Sanctuary Association will not conduct harvests on other lands under its ownership that would offset the harvest reductions attributable to the project. Therefore, leakage is limited to market leakage. We conservatively assume market leakage of 40%. All forestlands owned by Hawk Mountain Sanctuary Association have been certified by the Forest Stewardship Council (FSC).",
+      "source": "Section E3 from Project Description Document",
+      "source_link": "https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=23695&IDKEY=m903q4jsafkasjfu90amnmasdfkaidflnmdf9348r09dmfasdfi32675405"
+    },
+    "additionality": {
+      "text": "Additionality for the project has been shown through a regulatory surplus test, a common practice test, and an implementation barrier test. There is no relevant laws, regulations, statues, legal rulings, and other regulatory frameworks that effectively requires the forest carbon project activity and its associated GHG emissions reductions/removal enhancements. Consequently, the project passes the Regulatory Surplus test.  If the Hawk Mountain project was not implemented, the forest management could feasibly resemble that of industrial forestland ownership in the region. Carbon funding is reasonably expected to incentivize the project’s implementation. The implementation of the carbon project represents an opportunity cost to lost revenue associated with the potential timber harvesting that could legally and feasibly occur on the property in the lifetime of the carbon project.",
+      "source": "Section C from Project Description Document",
+      "source_link": "https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=23695&IDKEY=m903q4jsafkasjfu90amnmasdfkaidflnmdf9348r09dmfasdfi32675405"
+    },
+    "permanence": {
+      "text": "To ensure the permanence of the GHG emission reductions from this project, buffer credits from each of the projects are put on hold in a pool. When a loss event occurs (fire, diseases, pests, etc) buffer credits are taken from this pool. Based on the result of the risk assessment using the 'ACR Tool for Risk Analysis and Buffer Determination' this project will contribute to the buffer pool 19% of their issued credits.",
+      "source": "Section B8 from Project Description Document",
+      "source_link": "https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=23695&IDKEY=m903q4jsafkasjfu90amnmasdfkaidflnmdf9348r09dmfasdfi32675405"
+    },
+    "verifiability": {
+      "text": "An objective third party—someone other than the land owner, The Nature Conservancy or Bluesource—must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services acted as the third-party verifier in this project, who determined greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.",
+      "source": "",
+      "source_link": ""
+    }
+  },
+  "timeline": [
+    {
+      "date": "March 2017",
+      "text": "Project start date"
+    },
+    {
+      "date": "March 2017",
+      "text": "1st Verification started"
+    },
+    {
+      "date": "March 2018",
+      "text": "1st Verification finished"
+    },
+    {
+      "date": 2023,
+      "text": "Next  verification and Credtis issuance"
+    },
+    {
+      "date": 2037,
+      "text": "Ends crediting period"
+    }
+  ],
+  "project_files": "https://acr2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=375",
+  "un_goals": ["4", "6", "13", "15"],
+  "tagline_footer": "With every ton of carbon that is sold, trees are protected, partnerships are formed, and our living Earth is restored to help solve climate change."
+}
