@@ -3,6 +3,10 @@ module.exports = (sequelize, DataTypes) => {
   const Account = sequelize.define(
     'Account',
     {
+      auth0_id: {
+        type: DataTypes.STRING,
+        unique: true,
+      },
       role_id: {
         type: DataTypes.INTEGER,
       },

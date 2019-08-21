@@ -1,9 +1,13 @@
 import React from 'react';
 import { FormularySuccess, SuccessContent, SuccessTitle, SuccessDescription, SuccessBtn } from './style';
 
-function SuccessMessage({ isOpen, toggle }) {
+function SuccessMessage({ isOpen, toggle, type }) {
+  console.log('isopen', isOpen);
+  console.log('toggle', toggle);
   return (
-    <FormularySuccess className={`formulary-success flex ${isOpen === 1 && 'active'}`}>
+    <FormularySuccess
+      className={`formulary-success flex ${isOpen === 1 && 'active'} ${type === 'isPopup' && 'isPopup'}`}
+    >
       <SuccessContent>
         <figure>
           <img src="/static/iconos/icon-success.svg" width="80" alt="Success" />

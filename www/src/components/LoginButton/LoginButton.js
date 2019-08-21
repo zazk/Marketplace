@@ -3,6 +3,8 @@ import { Auth0Lock } from 'auth0-lock';
 import { CompanyName, CompanyImage, LoginLink, WrapLabelDropdown } from './style';
 
 function LoginButton({ receiveUser, type, user }) {
+  const datauser = user;
+
   const [openDropdown, setDropdown] = useState(0);
   const clienteId = 'sfj8nlpFONfJanArPrB8PpcB0E9FU4UI';
   const domain = 'marketplace-pachama.auth0.com';
@@ -15,11 +17,35 @@ function LoginButton({ receiveUser, type, user }) {
 
   const lock = new Auth0Lock(clienteId, domain, options);
 
+  function checkUser(profile) {
+    // 5d44751bb73c370cb90fb0c7
+    // fetch('/api/account/')
+    //   .then(response => response.json())
+    //   .then(json => {
+    //     console.log('json', json);
+    //   });
+    fetch('http://localhost:3001/api/account', {
+      method: 'post',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: {
+        role_id: 0,
+        name: profile.name,
+        auth0_id: profile.sub,
+      },
+    }).then(res => {
+      // res.status === 200;
+      console.log('res', res);
+    });
+  }
+
   lock.on('authenticated', function(authResult) {
     this.getUserInfo(authResult.accessToken, function(error, profile) {
       if (!error) {
         receiveUser(profile);
-
+        checkUser(profile);
         return;
       }
     });

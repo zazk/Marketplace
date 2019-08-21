@@ -42,6 +42,7 @@ module.exports = {
     return Account.create({
       role_id: req.body.role_id,
       name: req.body.name,
+      auth0_id: req.body.sub,
     })
       .then(account => res.status(201).send(account))
       .catch(error => res.status(400).send(error));

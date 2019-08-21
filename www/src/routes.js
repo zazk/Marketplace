@@ -3,7 +3,7 @@ import PDP from './pages/pdp';
 import Projects from './pages/list';
 import Admin from './pages/admin';
 import CallBack from './pages/callback';
-
+import CreateAccount from './pages/createacount';
 const publicRoutes = [
   {
     name: 'Home',
@@ -33,6 +33,12 @@ const publicRoutes = [
     name: 'Callback',
     component: CallBack,
     path: '/callback',
+    exact: true,
+  },
+  {
+    name: 'Create Account',
+    component: CreateAccount,
+    path: '/create-acount',
     exact: true,
   },
 ];

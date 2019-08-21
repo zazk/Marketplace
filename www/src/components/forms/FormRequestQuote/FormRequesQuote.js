@@ -76,6 +76,7 @@ function FormRequesQuote({ volumenoptions, ranges, defaultValues, submitRequest 
                       setSubmitting(false);
                       submitRequest(values);
                       setSuccessMessage(1);
+                      toggle();
                     }, 500);
                   }}
                   render={({ submitForm, isSubmitting, values, setFieldValue }) => (

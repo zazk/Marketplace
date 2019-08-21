@@ -1,4 +1,17 @@
 import styled from 'styled-components/macro';
+export const SuccessBtn = styled.div`
+  justify-content: center;
+  margin-top: 65px;
+  display: flex;
+  flex-flow: row wrap;
+  @media screen and (max-width: 480px) {
+    padding-left: 30px;
+    padding-right: 30px;
+    .btn {
+      width: 100%;
+    }
+  }
+`;
 
 export const FormularySuccess = styled.div`
   position: absolute;
@@ -14,10 +27,21 @@ export const FormularySuccess = styled.div`
   height: 0;
   overflow: hidden;
   transition: opacity 0.5s;
+  &.isPopup {
+    position: static;
+    width: 1024px;
+    ${SuccessBtn} {
+      display: none;
+    }
+  }
   &.active {
     opacity: 1;
     visibility: visible;
     height: 100%;
+    overflow: visible;
+    &.isPopup {
+      height: 590px;
+    }
   }
   @media screen and (max-width: 745px) {
     position: fixed;
@@ -53,19 +77,5 @@ export const SuccessDescription = styled.div`
   @media screen and (max-width: 640px) {
     padding-left: 30px;
     padding-right: 30px;
-  }
-`;
-
-export const SuccessBtn = styled.div`
-  justify-content: center;
-  margin-top: 65px;
-  display: flex;
-  flex-flow: row wrap;
-  @media screen and (max-width: 480px) {
-    padding-left: 30px;
-    padding-right: 30px;
-    .btn {
-      width: 100%;
-    }
   }
 `;
