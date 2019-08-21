@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
       role_id: {
         type: DataTypes.INTEGER,
       },
+      auth0: {
+        type: DataTypes.STRING,
+        unique: true,
+      },
       username: {
         type: DataTypes.STRING,
         unique: true,

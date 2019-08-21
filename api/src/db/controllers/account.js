@@ -38,6 +38,27 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
 
+  getByAuth0(req, res) {
+    return Account.findOne({
+      where: { auth0: req.params.auth0 },
+      include: [
+        {
+          model: Role,
+          as: 'role',
+        },
+      ],
+    })
+      .then(account => {
+        if (!account) {
+          return res.status(404).send({
+            message: 'Account Not Found',
+          });
+        }
+        return res.status(200).send(account);
+      })
+      .catch(error => res.status(400).send(error));
+  },
+
   add(req, res) {
     return Account.create({
       role_id: req.body.role_id,
