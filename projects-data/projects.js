@@ -24,8 +24,42 @@ const projects = {
     geojson: require('./tricity-geo.json'),
     biomass: require('./tricity-biomass.json'),
   },
+  'mccloud-river': {
+    pdp: require('./mccloud-river-pdp.json'),
+    geojson: require('./tricity-geo.json'),
+    biomass: require('./tricity-biomass.json'),
+  },
+  'alligator-river': {
+    pdp: require('./alligator-river-pdp.json'),
+    geojson: require('./tricity-geo.json'),
+    biomass: require('./tricity-biomass.json'),
+  },
+  'doe-mountain': {
+    pdp: require('./doe-mountain-pdp.json'),
+    geojson: require('./tricity-geo.json'),
+    biomass: require('./tricity-biomass.json'),
+  },
+  'hawk-mountain': {
+    pdp: require('./hawk-mountain-pdp.json'),
+    geojson: require('./tricity-geo.json'),
+    biomass: require('./tricity-biomass.json'),
+  },
+  'pocosin-lakes': {
+    pdp: require('./pocosin-lakes-pdp.json'),
+    geojson: require('./tricity-geo.json'),
+    biomass: require('./tricity-biomass.json'),
+  },
 };
 
-const dataProjects = [projects['middleburry'], projects['hudson'], projects['tricity']];
+const dataProjects = [
+  projects['middleburry'],
+  projects['hudson'],
+  projects['tricity'],
+  projects['alligator-river'],
+  projects['mccloud-river'],
+  projects['doe-mountain'],
+  projects['hawk-mountain'],
+  projects['pocosin-lakes'],
+];
 
 export default dataProjects;
