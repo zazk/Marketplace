@@ -29,9 +29,11 @@ const UppercasingTextField = props => (
     }}
   />
 );
-function FormCreateAcount({ defaultValues, submitRequestCreateAccount }) {
+function FormCreateAcount({ defaultValues, submitRequestCreateAccount, usersaved }) {
+  console.log('usersaved', usersaved);
   const [showSuccessMessage, setSuccessMessage] = useState(0);
   const [openLightbox, setOpenLightbox] = useState(false);
+
   const toggle = () => {
     setOpenLightbox(!openLightbox);
     // setSuccessMessage(0);
@@ -63,7 +65,7 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount }) {
               setTimeout(() => {
                 setSubmitting(false);
                 submitRequestCreateAccount(values);
-                setSuccessMessage(1);
+                // setSuccessMessage(1);
                 toggle();
               }, 500);
             }}

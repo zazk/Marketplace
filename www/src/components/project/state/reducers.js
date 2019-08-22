@@ -45,7 +45,7 @@ export const projectReducer = (state = INITIAL_STATE, action) => {
     case RECEIVE_CREATE_ACCOUNT:
       return {
         ...state,
-        request: action.data,
+        createAccount: action.data,
         loadingform: false,
       };
     default:
