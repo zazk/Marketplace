@@ -24,17 +24,19 @@ function LoginButton({ receiveUser, type, user }) {
     //   .then(json => {
     //     console.log('json', json);
     //   });
+    const datauser = {
+      role_id: 1,
+      name: profile.name,
+      username: profile.email,
+      email: profile.email,
+      auth0: profile.sub,
+    };
     fetch('http://localhost:3001/api/account', {
       method: 'post',
       headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
+        'Content-type': 'application/json',
       },
-      body: {
-        role_id: 0,
-        name: profile.name,
-        auth0_id: profile.sub,
-      },
+      body: JSON.stringify(datauser),
     }).then(res => {
       // res.status === 200;
       console.log('res', res);

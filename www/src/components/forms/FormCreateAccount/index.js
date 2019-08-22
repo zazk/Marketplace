@@ -3,9 +3,9 @@ import ModalBox from '../../features/ModalBox/index';
 import PropTypes from 'prop-types';
 // import { Mixpanel } from '../../utils/mixpanel';
 import { Formik, Field, Form } from 'formik';
-import { LinearProgress, MenuItem, FormControl, InputLabel, FormControlLabel } from '@material-ui/core';
+import { LinearProgress } from '@material-ui/core';
 import MuiTextField from '@material-ui/core/TextField';
-import { fieldToTextField, TextField, TextFieldProps, Select, Switch } from 'formik-material-ui';
+import { fieldToTextField, TextField } from 'formik-material-ui';
 import SuccessMessage from '../SuccessMessage';
 import {
   CreateAcount,
@@ -144,6 +144,5 @@ function FormCreateAcount({ user, url }) {
 }
 FormCreateAcount.propTypes = {
   user: PropTypes.object,
-  url: PropTypes.string.isRequired,
 };
 export default FormCreateAcount;

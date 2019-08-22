@@ -4,7 +4,7 @@ const path = require('path');
 const passport = require('passport');
 const session = require('express-session');
 const uid = require('uid-safe');
-
+const cors = require('cors');
 require('dotenv').config();
 
 const configurePassport = require('./passport');
@@ -16,9 +16,11 @@ const port = process.env.PORT || 3000;
 const host = '0.0.0.0';
 
 const app = express();
+app.use(cors()).options('*', cors());
 configurePassport();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(WWW_BUILD_PATH));
 
 const sessionConfig = {
@@ -34,7 +36,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/auth', authRoutes);
 app.use('/api', marketplaceApi);
-
+console.log('apiXXX');
 // app.get('/api/getRequest', (req, res) => {
 // //None
 //  });

@@ -60,13 +60,20 @@ module.exports = {
   },
 
   add(req, res) {
+    console.log('add en accounts.js/req', req.body);
+    // console.log('add en accounts.js/res', res);
     return Account.create({
       role_id: req.body.role_id,
       name: req.body.name,
-      auth0_id: req.body.sub,
+      username: req.body.username,
+      email: req.body.email,
+      auth0: req.body.auth0,
     })
       .then(account => res.status(201).send(account))
-      .catch(error => res.status(400).send(error));
+      .catch(error => {
+        // console.log('errorxxxx', error);
+        return res.status(500).send({ message: error });
+      });
   },
 
   update(req, res) {
