@@ -38,7 +38,7 @@ const publicRoutes = [
   {
     name: 'Create Account',
     component: CreateAccount,
-    path: '/create-acount',
+    path: '/create-account',
     exact: true,
   },
 ];

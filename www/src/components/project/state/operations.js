@@ -1,4 +1,11 @@
-import { requestProjects, receiveProjects, receiveForm, requestForm } from './actions';
+import {
+  requestProjects,
+  receiveProjects,
+  receiveForm,
+  requestForm,
+  requestCreateAccount,
+  receiveCreateAccount,
+} from './actions';
 
 export const fetchProjects = () => {
   return dispatch => {
@@ -25,6 +32,24 @@ export const submitRequest = data => {
       .then(response => response.json())
       .then(data => {
         dispatch(receiveForm(data));
+      });
+  };
+};
+
+export const submitRequestCreateAccount = data => {
+  console.log('submitRequestCreateAccountXXX');
+  return dispatch => {
+    dispatch(requestCreateAccount(data));
+    return fetch('http://localhost:3001/api/account', {
+      method: 'post',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(data => {
+        dispatch(receiveCreateAccount(data));
       });
   };
 };

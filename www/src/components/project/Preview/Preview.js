@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import LoginButton from '../../LoginButton';
 
 import {
-  ViewProjects,
   LandingProyect,
   LandingMain,
   Title,
