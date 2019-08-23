@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ModalBox from '../../features/ModalBox/index';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -29,10 +29,25 @@ const UppercasingTextField = props => (
     }}
   />
 );
-function FormCreateAcount({ defaultValues, submitRequestCreateAccount, usersaved }) {
-  console.log('usersaved', usersaved);
+function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved }) {
   const [showSuccessMessage, setSuccessMessage] = useState(0);
-  const [openLightbox, setOpenLightbox] = useState(false);
+  const [openLightbox, setOpenLightbox] = useState(0);
+  const [isError, setError] = useState(0);
+
+  useEffect(() => {
+    if (userSaved != null) {
+      if (userSaved.username) {
+        setOpenLightbox(1);
+        setSuccessMessage(1);
+      } else {
+        setError(1);
+        setOpenLightbox(1);
+        setSuccessMessage(1);
+      }
+    }
+  }, [userSaved]);
+  console.log('userSavedXXXXXX', userSaved);
+  // usersaved && setSuccessMessage(1);
 
   const toggle = () => {
     setOpenLightbox(!openLightbox);
@@ -66,7 +81,7 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, usersaved
                 setSubmitting(false);
                 submitRequestCreateAccount(values);
                 // setSuccessMessage(1);
-                toggle();
+                // toggle();
               }, 500);
             }}
             render={({ submitForm, isSubmitting, values, setFieldValue }) => (
@@ -117,7 +132,7 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, usersaved
       </CreateAccountMain>
 
       <ModalBox isOpen={openLightbox} toggle={toggle}>
-        <SuccessMessage isOpen={showSuccessMessage} toggle={toggle} type="isPopup" />
+        <SuccessMessage error={isError === 1 && 'error'} isOpen={showSuccessMessage} toggle={toggle} type="isPopup" />
         {/* <div className="wrap-success-acount">
           <div className="formulary-success flex active">
             <div className="success-content">

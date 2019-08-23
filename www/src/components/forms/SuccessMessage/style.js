@@ -30,6 +30,10 @@ export const FormularySuccess = styled.div`
   &.isPopup {
     position: static;
     width: 1024px;
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+    overflow: visible;
     ${SuccessBtn} {
       display: none;
     }
@@ -39,9 +43,6 @@ export const FormularySuccess = styled.div`
     visibility: visible;
     height: 100%;
     overflow: visible;
-    &.isPopup {
-      height: 590px;
-    }
   }
   @media screen and (max-width: 745px) {
     position: fixed;

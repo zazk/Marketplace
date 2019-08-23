@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { submitRequestCreateAccount } from '../../project/state';
+import { submitRequestCreateAccount } from '../../../components/common/user/state/operations';
 import FormCreateAccount from './FormCreateAccount';
 
 const mapStateToProps = state => {
@@ -14,9 +14,8 @@ const mapStateToProps = state => {
     phonenumber: '123-123456',
   };
   return {
-    usersaved: state.projectState.createAccount,
+    userSaved: state.userState.createAccount,
     user: state.userState.user,
-    loadingform: state.projectState.loadingform,
     defaultValues: defaultValues,
   };
 };

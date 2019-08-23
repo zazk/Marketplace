@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchProjects } from '../project/state';
-import { receiveUser } from '../common/user/state/action';
+import { receiveUser } from '../common/user/state/actions';
 import LoginButton from './LoginButton';
 const mapStateToProps = state => {
   return {

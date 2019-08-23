@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ModalBoxWrap, ModalboxClose, ModalboxOverlay, ModalboxContent } from './style';
 function ModalBox({ children, isOpen, toggle, url }) {
   return (
-    <ModalBoxWrap className={`modalbox ${isOpen === true && 'active'}`}>
+    <ModalBoxWrap className={`modalbox ${isOpen === 1 && 'active'}`}>
       <ModalboxOverlay />
       <ModalboxContent>
         {url ? (
@@ -26,7 +26,7 @@ function ModalBox({ children, isOpen, toggle, url }) {
 }
 ModalBox.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
-  isOpen: PropTypes.bool.isRequired,
+  // isOpen: PropTypes.bool.isRequired,
   toggle: PropTypes.func.isRequired,
 };
 export default ModalBox;

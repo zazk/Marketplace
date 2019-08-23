@@ -1,11 +1,4 @@
-import {
-  RECEIVE_PROJECTS,
-  REQUEST_PROJECTS,
-  REQUEST_FORM,
-  RECEIVE_FORM,
-  REQUEST_CREATE_ACCOUNT,
-  RECEIVE_CREATE_ACCOUNT,
-} from './types';
+import { RECEIVE_PROJECTS, REQUEST_PROJECTS, REQUEST_FORM, RECEIVE_FORM } from './types';
 
 const INITIAL_STATE = {
   projects: [],
@@ -37,17 +30,7 @@ export const projectReducer = (state = INITIAL_STATE, action) => {
         status: action.data,
         loadingform: false,
       };
-    case REQUEST_CREATE_ACCOUNT:
-      return {
-        ...state,
-        loadingform: true,
-      };
-    case RECEIVE_CREATE_ACCOUNT:
-      return {
-        ...state,
-        createAccount: action.data,
-        loadingform: false,
-      };
+
     default:
       return state;
   }
