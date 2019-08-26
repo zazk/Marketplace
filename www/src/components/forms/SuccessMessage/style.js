@@ -32,7 +32,7 @@ export const FormularySuccess = styled.div`
     width: 1024px;
     opacity: 1;
     visibility: visible;
-    height: 100%;
+    height: 590px;
     overflow: visible;
     ${SuccessBtn} {
       display: none;

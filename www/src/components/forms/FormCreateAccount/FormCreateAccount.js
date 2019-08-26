@@ -131,7 +131,7 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved
         </FormListInner>
       </CreateAccountMain>
 
-      <ModalBox isOpen={openLightbox} toggle={toggle}>
+      <ModalBox isOpen={openLightbox} toggle={toggle} url="/list">
         <SuccessMessage error={isError === 1 && 'error'} isOpen={showSuccessMessage} toggle={toggle} type="isPopup" />
         {/* <div className="wrap-success-acount">
           <div className="formulary-success flex active">
