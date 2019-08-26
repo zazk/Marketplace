@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import theme from '../../../../utils/theme';
 
 export const ProgressBar = styled.div`
   margin: 8px 0;
@@ -22,7 +23,7 @@ export const ProgresNumbers = styled.div`
     text-transform: uppercase;
     strong {
       font-size: 14px;
-      font-family: 'Work Sans', sans-serif;
+      font-family: ${theme.fonts.secondary};
       font-weight: 500;
       color: #363636;
       margin-right: 5px;
@@ -71,18 +72,19 @@ export const ProjectUbicationAddress = styled.p`
   position: relative;
   padding-left: 18px;
   &:before {
-    content: '';
+    content: '\\e904';
+    font-family: 'icomoon';
     position: absolute;
-    top: 3px;
+    top: 2px;
     left: 0;
     width: 13px;
     height: 17px;
-    background-image: url('/static/iconos/ico-feature-3.svg');
+    color: rgba(3, 9, 34, 0.5);
     display: inline-block;
   }
 `;
 export const ProjecprojectName = styled.h3`
-  font-family: 'Work Sans', sans-serif;
+  font-family: ${theme.fonts.secondary};
   font-weight: 500;
   font-size: 20px;
   margin: 0;
@@ -117,7 +119,7 @@ export const DescriptionItem = styled.div`
     left: 0;
   }
   span {
-    font-family: 'Work Sans', sans-serif;
+    font-family: ${theme.fonts.secondary};
     font-weight: 500;
     font-size: 14px;
   }
@@ -146,11 +148,27 @@ export const Project = styled.div`
   display: block;
   margin-bottom: 16px;
   box-sizing: border-box;
-
+  &:after {
+    content: '\\e903';
+    font-family: 'icomoon';
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 12px;
+    height: 12px;
+    bottom: 0;
+    margin: auto 0;
+    color: #000;
+    opacity: 0;
+    transition: all 0.4s;
+  }
   &:hover {
     box-shadow: 0 10px 34px 0 rgba(7, 93, 108, 0.21);
+    &:after {
+      opacity: 0.5;
+    }
   }
-  &.two-item {
+  &.columns {
     width: 49%;
     padding-top: 0;
     box-sizing: border-box;
@@ -212,7 +230,7 @@ export const Project = styled.div`
       &:before {
         top: 10px;
         left: 10px;
-        background-image: url('/static/iconos/ico-feature-w-3.svg');
+        color: ${theme.color.mono.white};
       }
       @media screen and (max-width: 960px) {
         font-size: 14px;

@@ -6,6 +6,6 @@ export const ProjectListMain = styled.div`
   max-width: 1024px;
   width: 94%;
   margin: 0 auto;
-  padding-top: 25px;
+  padding: 40px 0;
   justify-content: space-between;
 `;

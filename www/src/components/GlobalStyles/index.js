@@ -1,6 +1,99 @@
 import { createGlobalStyle } from 'styled-components/macro';
+import theme from '../../utils/theme.js';
+
+const UrlFont = 'static/assets/fonts/';
+
 export const GlobalStyle = createGlobalStyle`
-    .item-card-tooltip {
+  @font-face {
+    font-family: 'icomoon';
+    src:  url('${UrlFont}icomoon.eot?vhryx6');
+    src:  url('${UrlFont}icomoon.eot?vhryx6#iefix') format('embedded-opentype'),
+      url('${UrlFont}icomoon.ttf?vhryx6') format('truetype'),
+      url('${UrlFont}icomoon.woff?vhryx6') format('woff'),
+      url('${UrlFont}icomoon.svg?vhryx6#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  [class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .icon-arrow-right1:before {
+    content: "\\e903";
+  }
+  .icon-ubication:before {
+    content: "\\e904";
+  }
+  .icon-bluesource:before {
+    content: "\\e905";
+  }
+  .icon-calendar:before {
+    content: "\\e906";
+  }
+  .icon-check:before {
+    content: "\\e907";
+  }
+  .icon-coins:before {
+    content: "\\e908";
+  }
+  .icon-icon-eye:before {
+    content: "\\e909";
+  }
+  .icon-info:before {
+    content: "\\e90a";
+  }
+  .icon-land:before {
+    content: "\\e90b";
+  }
+  .icon-tone:before {
+    content: "\\e90c";
+  }
+  .icon-arrow-down-white:before {
+    content: "\\e90d";
+  }
+  .icon-arrow-head:before {
+    content: "\\e90e";
+  }
+  .icon-arrow-next:before {
+    content: "\\e90f";
+  }
+  .icon-arrow-prev:before {
+    content: "\\e910";
+  }
+  .icon-arrow-thin-right:before {
+    content: "\\e911";
+  }
+  .icon-carbon-credits:before {
+    content: "\\e912";
+  }
+  .icon-checked:before {
+    content: "\\e913";
+  }
+  .icon-close-big:before {
+    content: "\\e914";
+  }
+  .icon-close-box:before {
+    content: "\\e915";
+  }
+  .icon-arrow-down:before {
+    content: "\\e901";
+  }
+  .icon-lupa:before {
+    content: "\\e902";
+  }
+  .icon-arrow-right:before {
+    content: "\\e900";
+  }
+
+  .item-card-tooltip {
       width: 24%;
     }
   li{
@@ -19,8 +112,9 @@ export const GlobalStyle = createGlobalStyle`
   }
   body{
     margin:0px;
-    font-family: 'Lato', sans-serif;
+    font-family: ${theme.fonts.primary};
     font-weight: 400;
+    color: ${theme.color.primary};
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
     background-color:#fafafa;

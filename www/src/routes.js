@@ -4,6 +4,7 @@ import Projects from './pages/list';
 import Admin from './pages/admin';
 import CallBack from './pages/callback';
 import CreateAccount from './pages/createacount';
+import Explore from './pages/explore';
 const publicRoutes = [
   {
     name: 'Home',
@@ -39,6 +40,12 @@ const publicRoutes = [
     name: 'Create Account',
     component: CreateAccount,
     path: '/create-account',
+    exact: true,
+  },
+  {
+    name: 'Explore',
+    component: Explore,
+    path: '/explore',
     exact: true,
   },
 ];
