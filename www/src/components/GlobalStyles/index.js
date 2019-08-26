@@ -232,6 +232,9 @@ export const GlobalStyle = createGlobalStyle`
     .small {
       width: 115px;
     }
+    &.medium {
+      width: 214px;
+    }
     &:hover {
       &:after{
         opacity: 0;

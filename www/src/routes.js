@@ -5,6 +5,8 @@ import Admin from './pages/admin';
 import CallBack from './pages/callback';
 import CreateAccount from './pages/createacount';
 import Explore from './pages/explore';
+import ExploreRequest from './pages/explorerequest';
+import MyCertificates from './pages/mycertificates';
 const publicRoutes = [
   {
     name: 'Home',
@@ -46,6 +48,18 @@ const publicRoutes = [
     name: 'Explore',
     component: Explore,
     path: '/explore',
+    exact: true,
+  },
+  {
+    name: 'Explore Request',
+    component: ExploreRequest,
+    path: '/explore-request',
+    exact: true,
+  },
+  {
+    name: 'My Certificates',
+    component: MyCertificates,
+    path: '/my-certificates',
     exact: true,
   },
 ];

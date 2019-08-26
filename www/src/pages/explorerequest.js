@@ -4,13 +4,13 @@ import IntroCto from '../components/ProjectInfo/IntroCto';
 import ListProjects from '../components/project/ListProjects';
 import IntroWithStatistics from '../components/ProjectInfo/IntroWithStatistics';
 
-function Explore() {
+function ExploreRequest() {
   return (
     <>
-      <Statistics></Statistics>
+      <IntroCto></IntroCto>
       <ListProjects></ListProjects>
     </>
   );
 }
 
-export default Explore;
+export default ExploreRequest;
