@@ -15,6 +15,8 @@ export default {
       gray_light1: '#b9b8b8',
       gray_light2: '#eaeaea',
       gray_light3: '#d8d8d8',
+      gray_light4: '#eeeeee',
+      gray_light5: '#e5e6e8',
     },
   },
   fonts: {

@@ -25,7 +25,9 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
+  .icon-menu-point:before {
+    content: "\\e916";
+  }
   .icon-arrow-right1:before {
     content: "\\e903";
   }
@@ -168,6 +170,16 @@ export const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     border-radius:5px;
     position: relative;
+    &.border-green-small{
+      height: 41px;
+      width: 164px;
+      color: ${theme.color.secondary};
+      border: 1px solid ${theme.color.secondary};
+      &:after, &:before{
+        display: none;
+
+      }
+    }
     span{
       position: relative;
       z-index: 2;
