@@ -18,6 +18,15 @@ export const Text = styled.div`
   width: 50%;
 `;
 
+export const Description = styled.div`
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 375px;
+  margin-bottom: 40px;
+  p {
+    margin: 0;
+  }
+`;
 export const Title = styled.h3`
   margin: 0;
   margin-bottom: 20px;

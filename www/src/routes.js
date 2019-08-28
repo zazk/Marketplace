@@ -7,6 +7,7 @@ import CreateAccount from './pages/createacount';
 import Explore from './pages/explore';
 import ExploreRequest from './pages/explorerequest';
 import MyCertificates from './pages/mycertificates';
+import ProjectsUser from './pages/project-user';
 const publicRoutes = [
   {
     name: 'Home',
@@ -60,6 +61,12 @@ const publicRoutes = [
     name: 'My Certificates',
     component: MyCertificates,
     path: '/my-certificates',
+    exact: true,
+  },
+  {
+    name: 'ProjectsUser',
+    component: ProjectsUser,
+    path: '/projects-user',
     exact: true,
   },
 ];

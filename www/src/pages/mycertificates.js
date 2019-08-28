@@ -5,7 +5,7 @@ import Transactions from '../components/Transactions';
 function MyCertificates() {
   return (
     <>
-      <IntroWithStatistics></IntroWithStatistics>
+      <IntroWithStatistics title="My certificates" cto={true}></IntroWithStatistics>
       <Transactions></Transactions>
     </>
   );
