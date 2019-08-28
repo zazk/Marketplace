@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IntroWrap, Content, Text, Title, ListStatistic, ItemStatistic, Number, ItemDescription } from './style';
+import ModalBox from '../../features/ModalBox/index';
+import ShareImpact from '../../ShareImpact';
+function IntroWithStatistics() {
+  const [openLightbox, setOpenLightbox] = useState(0);
 
-function IntroCto() {
+  const toggle = () => {
+    setOpenLightbox(1);
+  };
   return (
     <IntroWrap>
       <Content>
         <Text>
           <Title>My certificates</Title>
-          <button className="btn white medium">
+
+          <button className="btn white medium" onClick={toggle}>
             <span>Share your impact</span>
           </button>
+          <ModalBox isOpen={openLightbox} toggle={toggle}>
+            <ShareImpact></ShareImpact>
+          </ModalBox>
         </Text>
         <ListStatistic>
           <ItemStatistic>
@@ -32,4 +42,4 @@ function IntroCto() {
   );
 }
 
-export default IntroCto;
+export default IntroWithStatistics;

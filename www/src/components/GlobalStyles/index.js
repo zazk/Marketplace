@@ -151,6 +151,13 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0px;
     padding: 0px;
   }
+  .btn-border{
+    border: 1px solid ${theme.color.secondary};
+    padding:5px 12px;
+    color:${theme.color.secondary};
+    border-radius: 5px;
+    font-weight: 500;
+  }
   .btn {
     color: #fff;
     height: 50px;
@@ -183,6 +190,9 @@ export const GlobalStyle = createGlobalStyle`
     span{
       position: relative;
       z-index: 2;
+    }
+    &.w115{
+      width: 115px;
     }
     &[disabled] {
         cursor: default;
