@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import ProjectProgressBar from '../../../ProjectProgressBar';
+import ProjectOffsetHistory from '../../../ProjectOffsetHistory';
 import {
-  ProgressBar,
-  ProgressbarItem,
-  ProgresNumbers,
   Project,
   ProjectPicture,
   ProjectResumen,
@@ -14,8 +12,10 @@ import {
   ProjectUbication,
   DescriptionItem,
   ProjectDetail,
+  HistoryProjects,
 } from './style';
 function ProjectItem({ project, customClass }) {
+  console.log('customClass', customClass);
   return (
     <Project to="#" className={customClass}>
       <ProjectPicture picture={project.main_picture} />
@@ -25,35 +25,53 @@ function ProjectItem({ project, customClass }) {
           <ProjectUbication>
             <ProjectUbicationAddress>{project.location.name}</ProjectUbicationAddress>
           </ProjectUbication>
-          <div className="project-progress">
-            <ProgressBar>
-              <ProgressbarItem style={{ width: `80%` }} />
-            </ProgressBar>
-            <ProgresNumbers>
-              <p>
-                <strong>{project.credits_avail.quatinty}</strong>
-                carbon credits available
-              </p>
-            </ProgresNumbers>
-          </div>
+          {customClass === 'projects-user' ? (
+            ''
+          ) : (
+            <ProjectProgressBar data={project} type={customClass}></ProjectProgressBar>
+          )}
         </ProjectResumen>
         <ProjectDescription>
-          <DescriptionItem>
-            <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
-            <div className="description-text">
-              <span>{project.total_land.area + ' ' + project.total_land.unit}</span>
-              <p>Total Area</p>
-            </div>
-          </DescriptionItem>
-          <DescriptionItem>
-            <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-            <div className="description-text">
-              <span>{project.project_type} </span>
-              <p>Project Type</p>
-            </div>
-          </DescriptionItem>
+          {customClass === 'projects-user' ? (
+            <>
+              <DescriptionItem>
+                <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
+                <div className="description-text">
+                  <span>20 tonnes </span>
+                </div>
+              </DescriptionItem>
+              <DescriptionItem>
+                <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
+                <div className="description-text">
+                  <span>$400 </span>
+                </div>
+              </DescriptionItem>
+            </>
+          ) : (
+            <>
+              <DescriptionItem>
+                <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
+                <div className="description-text">
+                  <span>{project.total_land.area + ' ' + project.total_land.unit}</span>
+                  <p>Total Area</p>
+                </div>
+              </DescriptionItem>
+              <DescriptionItem>
+                <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
+                <div className="description-text">
+                  <span>{project.project_type} </span>
+                  <p>Project Type</p>
+                </div>
+              </DescriptionItem>
+            </>
+          )}
         </ProjectDescription>
       </ProjectDetail>
+      {customClass === 'projects-user' && (
+        <HistoryProjects>
+          <ProjectOffsetHistory />
+        </HistoryProjects>
+      )}
     </Project>
   );
 }

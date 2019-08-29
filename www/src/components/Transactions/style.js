@@ -3,6 +3,9 @@ import theme from '../../utils/theme';
 
 export const TransactionsWrap = styled.div`
   padding: 32px 0;
+  &.projects-user {
+    padding-top: 0;
+  }
 `;
 export const TransactionsRow = styled.div`
   max-width: 1024px;

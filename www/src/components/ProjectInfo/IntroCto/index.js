@@ -13,9 +13,9 @@ function IntroCto() {
           </Description>
         </Text>
         <Cto>
-          <a href="" className="btn white medium">
+          <button className="btn white medium">
             <span>Request access</span>
-          </a>
+          </button>
         </Cto>
       </Content>
     </IntroWrap>

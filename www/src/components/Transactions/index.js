@@ -56,9 +56,9 @@ const dataTransactions = [
     ],
   },
 ];
-function Transactions() {
+function Transactions({ customClass }) {
   return (
-    <TransactionsWrap>
+    <TransactionsWrap className={customClass && customClass}>
       {dataTransactions.map((transaccion, i) => (
         <TransactionsRow key={i}>
           <HeadTransaction>

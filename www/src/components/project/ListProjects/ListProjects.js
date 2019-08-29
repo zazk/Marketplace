@@ -2,11 +2,11 @@ import React from 'react';
 import ProjectItem from '../ListProjects/ProjectItem';
 import { ProjectListMain } from './style';
 import PropTypes from 'prop-types';
-function ProjectList({ listprojects, type }) {
+function ProjectList({ listprojects, customClass }) {
   return (
-    <ProjectListMain>
+    <ProjectListMain className={customClass && customClass}>
       {listprojects.map((project, i) => (
-        <ProjectItem key={i} project={project.pdp} customClass={type}></ProjectItem>
+        <ProjectItem key={i} project={project.pdp} customClass={customClass}></ProjectItem>
       ))}
     </ProjectListMain>
   );

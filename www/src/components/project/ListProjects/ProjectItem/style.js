@@ -1,36 +1,6 @@
 import styled from 'styled-components/macro';
 import theme from '../../../../utils/theme';
 
-export const ProgressBar = styled.div`
-  margin: 8px 0;
-  height: 4px;
-  background-color: #e2e5ee;
-  border-radius: 3px;
-  max-width: 140px;
-`;
-export const ProgressbarItem = styled.div`
-  border-radius: 3px;
-  width: 30%;
-  background-image: linear-gradient(to left, #17b363, #33da9c);
-  height: 100%;
-  position: relative;
-`;
-export const ProgresNumbers = styled.div`
-  p {
-    margin: 0;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 12px;
-    text-transform: uppercase;
-    strong {
-      font-size: 14px;
-      font-family: ${theme.fonts.secondary};
-      font-weight: 500;
-      color: #363636;
-      margin-right: 5px;
-    }
-  }
-`;
-
 export const ProjectPicture = styled.div`
   position: absolute;
   top: 0;
@@ -136,6 +106,11 @@ export const ProjectDetail = styled.div`
   display: flex;
   flex-flow: row wrap;
 `;
+export const HistoryProjects = styled.div`
+  width: 30%;
+  padding-right: 20px;
+  box-sizing: border-box;
+`;
 export const Project = styled.div`
   width: 100%;
   overflow: hidden;
@@ -148,6 +123,9 @@ export const Project = styled.div`
   display: block;
   margin-bottom: 16px;
   box-sizing: border-box;
+  &:last-child {
+    margin-bottom: 0;
+  }
   &:after {
     content: '\\e903';
     font-family: 'icomoon';
@@ -166,6 +144,38 @@ export const Project = styled.div`
     box-shadow: 0 10px 34px 0 rgba(7, 93, 108, 0.21);
     &:after {
       opacity: 0.5;
+    }
+  }
+  &.projects-user {
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    ${ProjectDetail} {
+      width: 70%;
+    }
+    ${ProjectUbicationAddress} {
+      font-size: 14px;
+    }
+    ${ProjectResumen} {
+      width: 100%;
+      padding-right: 34px;
+    }
+    ${ProjectDescription} {
+      display: flex;
+      flex-flow: row wrap;
+      width: 100%;
+      padding-left: 24px;
+      padding-right: 34px;
+      box-sizing: border-box;
+    }
+    ${DescriptionItem} {
+      width: 45%;
+      box-sizing: border-box;
+      margin-bottom: 0;
+      .description-text {
+        margin-top: 5px;
+      }
     }
   }
   &.columns {
@@ -200,19 +210,7 @@ export const Project = styled.div`
         background-image: linear-gradient(to right, rgba(25, 36, 79, 0.91), rgba(11, 16, 36, 0));
       }
     }
-    ${ProgresNumbers} {
-      strong {
-        font-size: 16px;
-      }
-      @media screen and (max-width: 960px) {
-        p {
-          font-size: 11px;
-        }
-        strong {
-          font-size: 14px;
-        }
-      }
-    }
+
     ${ProjectResumen} {
       padding: 0;
       width: 100%;
