@@ -8,6 +8,7 @@ import Explore from './pages/explore';
 import ExploreRequest from './pages/explorerequest';
 import MyCertificates from './pages/mycertificates';
 import ProjectsUser from './pages/project-user';
+import ProjectsCalculated from './pages/projectscalculated';
 const publicRoutes = [
   {
     name: 'Home',
@@ -67,6 +68,12 @@ const publicRoutes = [
     name: 'ProjectsUser',
     component: ProjectsUser,
     path: '/projects-user',
+    exact: true,
+  },
+  {
+    name: 'Projects Calculated',
+    component: ProjectsCalculated,
+    path: '/projects-calculated',
     exact: true,
   },
 ];

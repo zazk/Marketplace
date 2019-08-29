@@ -146,6 +146,11 @@ export const Project = styled.div`
       opacity: 0.5;
     }
   }
+  &.projects-backed {
+    ${ProjectUbicationAddress} {
+      font-size: 14px;
+    }
+  }
   &.projects-user {
     display: flex;
     flex-flow: row wrap;

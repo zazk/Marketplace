@@ -25,7 +25,7 @@ function ProjectItem({ project, customClass }) {
           <ProjectUbication>
             <ProjectUbicationAddress>{project.location.name}</ProjectUbicationAddress>
           </ProjectUbication>
-          {customClass === 'projects-user' ? (
+          {customClass === 'projects-user' || customClass === 'projects-backed' ? (
             ''
           ) : (
             <ProjectProgressBar data={project} type={customClass}></ProjectProgressBar>

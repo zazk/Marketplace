@@ -8,7 +8,8 @@ export const ProjectListMain = styled.div`
   margin: 0 auto;
   padding: 40px 0;
   justify-content: space-between;
-  &.projects-user {
+  &.projects-user,
+  &.projects-backed {
     padding: 0;
     width: 100%;
   }
