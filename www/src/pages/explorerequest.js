@@ -6,7 +6,7 @@ function ExploreRequest() {
   return (
     <>
       <IntroCto></IntroCto>
-      <ListProjects></ListProjects>
+      <ListProjects customClass="list-default"></ListProjects>
     </>
   );
 }

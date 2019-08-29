@@ -6,7 +6,7 @@ function Explore() {
   return (
     <>
       <Statistics></Statistics>
-      <ListProjects></ListProjects>
+      <ListProjects customClass="list-default"></ListProjects>
     </>
   );
 }

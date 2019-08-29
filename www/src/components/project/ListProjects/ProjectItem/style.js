@@ -53,7 +53,7 @@ export const ProjectUbicationAddress = styled.p`
     display: inline-block;
   }
 `;
-export const ProjecprojectName = styled.h3`
+export const ProjectName = styled.h3`
   font-family: ${theme.fonts.secondary};
   font-weight: 500;
   font-size: 20px;
@@ -144,6 +144,79 @@ export const Project = styled.div`
     box-shadow: 0 10px 34px 0 rgba(7, 93, 108, 0.21);
     &:after {
       opacity: 0.5;
+    }
+  }
+  &.list-default {
+    @media screen and (max-width: 600px) {
+      padding: 15px;
+      padding-left: 0px;
+      ${ProjectResumen}, ${ProjectDescription} {
+        width: 100%;
+      }
+      ${ProjectResumen} {
+        padding-left: 120px;
+      }
+      ${ProjectPicture} {
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        top: 10px;
+        left: 10px;
+        overflow: hidden;
+      }
+      ${ProjectDescription} {
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 15px;
+      }
+      ${DescriptionItem} {
+        width: 50%;
+        box-sizing: border-box;
+        margin: 0px;
+        padding-right: 10px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      padding: 0;
+      padding-bottom: 24px;
+      ${ProjectPicture} {
+        height: 170px;
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      ${ProjectResumen} {
+        padding-left: 0px;
+      }
+      ${ProjectUbicationAddress} {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 10px;
+        padding-left: 28px;
+        box-sizing: border-box;
+        color: ${theme.color.mono.white};
+        &:before {
+          color: ${theme.color.mono.white};
+          top: 12px;
+          left: 10px;
+        }
+      }
+      ${ProjectDetail} {
+        padding: 15px;
+        padding-bottom: 0;
+      }
+      ${DescriptionItem} {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      ${ProjectUbication} {
+        margin: 0;
+      }
     }
   }
   &.projects-backed {

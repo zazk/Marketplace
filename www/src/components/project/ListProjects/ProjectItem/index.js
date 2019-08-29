@@ -8,7 +8,7 @@ import {
   ProjectResumen,
   ProjectDescription,
   ProjectUbicationAddress,
-  ProjecprojectName,
+  ProjectName,
   ProjectUbication,
   DescriptionItem,
   ProjectDetail,
@@ -21,7 +21,7 @@ function ProjectItem({ project, customClass }) {
       <ProjectPicture picture={project.main_picture} />
       <ProjectDetail>
         <ProjectResumen>
-          <ProjecprojectName>{project.title}</ProjecprojectName>
+          <ProjectName>{project.title}</ProjectName>
           <ProjectUbication>
             <ProjectUbicationAddress>{project.location.name}</ProjectUbicationAddress>
           </ProjectUbication>
