@@ -7,9 +7,17 @@ export const WrapShareImpact = styled.div`
   margin: 0 auto;
   background: #fff;
   border-radius: 5px;
+  @media screen and (max-width: 600px) {
+    max-width: 480px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  @media screen and (max-width: 380px) {
+    max-width: 300px;
+  }
 `;
 export const Title = styled.h3`
-  font-size: 30px;
+  font-size: calc(22px + (30 - 25) * ((100vw - 320px) / (1920 - 320)));
   color: ${theme.color.mono.black};
   font-weight: 500;
   font-family: ${theme.fonts.secondary};

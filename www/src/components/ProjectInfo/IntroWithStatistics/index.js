@@ -9,6 +9,7 @@ import {
   Number,
   ItemDescription,
   Description,
+  ButtonShare,
 } from './style';
 import ModalBox from '../../features/ModalBox/index';
 import ShareImpact from '../../ShareImpact';
@@ -23,14 +24,18 @@ function IntroWithStatistics({ title, description, cto }) {
       <Content>
         <Text>
           <Title>{title}</Title>
-          <Description>
-            <p>{description}</p>
-          </Description>
+          {description && (
+            <Description>
+              <p>{description}</p>
+            </Description>
+          )}
           {cto && (
             <>
-              <button className="btn white medium" onClick={toggle}>
-                <span>Share your impact</span>
-              </button>
+              <ButtonShare>
+                <button className="btn white medium" onClick={toggle}>
+                  <span>Share your impact</span>
+                </button>
+              </ButtonShare>
               <ModalBox isOpen={openLightbox} toggle={toggle}>
                 <ShareImpact></ShareImpact>
               </ModalBox>

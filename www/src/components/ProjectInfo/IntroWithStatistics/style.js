@@ -13,9 +13,18 @@ export const Content = styled.div`
   height: 276px;
   align-items: center;
   color: ${theme.color.mono.white};
+  @media screen and (max-width: 600px) {
+    position: relative;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
 `;
 export const Text = styled.div`
   width: 50%;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const Description = styled.div`
@@ -30,7 +39,7 @@ export const Description = styled.div`
 export const Title = styled.h3`
   margin: 0;
   margin-bottom: 20px;
-  font-size: 50px;
+  font-size: calc(25px + (50 - 25) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 500;
   font-family: ${theme.fonts.secondary};
 `;
@@ -39,6 +48,9 @@ export const ListStatistic = styled.div`
   width: 50%;
   display: flex;
   flex-flow: row wrap;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const ItemStatistic = styled.div`
@@ -60,6 +72,23 @@ export const Number = styled.div`
     font-weight: 500;
     font-style: normal;
   }
+  @media screen and (max-width: 768px) {
+    span {
+      font-size: 32px;
+    }
+    em {
+      font-size: 14px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    span {
+      font-size: 28px;
+      line-height: 25px;
+    }
+    em {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const ItemDescription = styled.div`
@@ -67,4 +96,17 @@ export const ItemDescription = styled.div`
   font-size: 16px;
   text-transform: uppercase;
   margin-top: 5px;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+`;
+export const ButtonShare = styled.div`
+  @media screen and (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+  }
 `;
