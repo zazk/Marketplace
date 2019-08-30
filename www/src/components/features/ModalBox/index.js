@@ -9,12 +9,12 @@ function ModalBox({ children, isOpen, toggle, url }) {
       <ModalboxContent>
         {url ? (
           <Link to={url}>
-            <ModalboxClose className="modalbox-close" onClick={toggle}>
+            <ModalboxClose className="modalbox-close">
               <img src="/static/iconos/close-box.svg" width="20" alt="" />
             </ModalboxClose>
           </Link>
         ) : (
-          <ModalboxClose className="modalbox-close" onClick={toggle}>
+          <ModalboxClose className="modalbox-close" onClick={() => toggle(0)}>
             <img src="/static/iconos/close-box.svg" width="20" alt="" />
           </ModalboxClose>
         )}

@@ -35,10 +35,11 @@ function FormRequesQuote({ volumenoptions, ranges, defaultValues, submitRequest 
   const [showSuccessMessage, setSuccessMessage] = useState(0);
   const [openLightbox, setOpenLightbox] = useState(false);
 
-  const toggle = () => {
-    setOpenLightbox(!openLightbox);
+  function toggle(set) {
+    setOpenLightbox(set);
     setSuccessMessage(0);
-  };
+  }
+
   // function trackRequestQuote(status) {
   //   if (user) {
   //     Mixpanel.identify(user.id);
@@ -50,7 +51,7 @@ function FormRequesQuote({ volumenoptions, ranges, defaultValues, submitRequest 
 
   return (
     <div>
-      <button type="button" className="btn" onClick={toggle}>
+      <button type="button" className="btn" onClick={() => toggle(1)}>
         <span>Request quote</span>
       </button>
 

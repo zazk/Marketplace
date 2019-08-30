@@ -14,7 +14,7 @@ export const fetchProjects = () => {
 export const submitRequest = data => {
   return dispatch => {
     dispatch(requestForm(data));
-    return fetch(`/api/requestQuote`, {
+    return fetch(`http://localhost:3001/api/requestQuote`, {
       method: 'post',
       headers: {
         Accept: 'application/json, text/plain, */*',

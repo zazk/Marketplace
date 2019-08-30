@@ -49,10 +49,9 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved
   console.log('userSavedXXXXXX', userSaved);
   // usersaved && setSuccessMessage(1);
 
-  const toggle = () => {
-    setOpenLightbox(!openLightbox);
-    // setSuccessMessage(0);
-  };
+  function toggle(set) {
+    setOpenLightbox(set);
+  }
   // function trackCreateAccount(status) {
   //   if (user) {
   //     Mixpanel.identify(user.id);
@@ -131,7 +130,7 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved
         </FormListInner>
       </CreateAccountMain>
 
-      <ModalBox isOpen={openLightbox} toggle={toggle} url="/list">
+      <ModalBox isOpen={openLightbox} toggle={toggle} url={!isError === 1 && '/list'}>
         <SuccessMessage error={isError === 1 && 'error'} isOpen={showSuccessMessage} toggle={toggle} type="isPopup" />
         {/* <div className="wrap-success-acount">
           <div className="formulary-success flex active">

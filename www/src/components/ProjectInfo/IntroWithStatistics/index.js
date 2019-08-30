@@ -16,9 +16,9 @@ import ShareImpact from '../../ShareImpact';
 function IntroWithStatistics({ title, description, cto }) {
   const [openLightbox, setOpenLightbox] = useState(0);
 
-  const toggle = () => {
-    setOpenLightbox(1);
-  };
+  function toggle(set) {
+    setOpenLightbox(set);
+  }
   return (
     <IntroWrap>
       <Content className={cto ? '' : 'not-space'}>
@@ -32,7 +32,7 @@ function IntroWithStatistics({ title, description, cto }) {
           {cto && (
             <>
               <ButtonShare>
-                <button className="btn white medium" onClick={toggle}>
+                <button className="btn white medium" onClick={() => toggle(1)}>
                   <span>Share your impact</span>
                 </button>
               </ButtonShare>
