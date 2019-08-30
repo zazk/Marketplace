@@ -21,7 +21,7 @@ function IntroWithStatistics({ title, description, cto }) {
   };
   return (
     <IntroWrap>
-      <Content>
+      <Content className={cto ? '' : 'not-space'}>
         <Text>
           <Title>{title}</Title>
           {description && (

@@ -18,6 +18,9 @@ export const Content = styled.div`
     height: auto;
     padding-top: 30px;
     padding-bottom: 100px;
+    &.not-space {
+      padding-bottom: 30px;
+    }
   }
 `;
 export const Text = styled.div`
@@ -28,12 +31,18 @@ export const Text = styled.div`
 `;
 
 export const Description = styled.div`
-  font-size: 18px;
+  font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
   line-height: 24px;
   max-width: 375px;
+  padding-right: 20px;
+  box-sizing: border-box;
   margin-bottom: 40px;
   p {
     margin: 0;
+  }
+  @media screen and (max-width: 600px) {
+    max-width: none;
+    padding-right: 0;
   }
 `;
 export const Title = styled.h3`

@@ -255,6 +255,69 @@ export const Project = styled.div`
         margin-top: 5px;
       }
     }
+    @media screen and (max-width: 640px) {
+      ${ProjectDetail} {
+        width: 100%;
+        padding-right: 24px;
+      }
+      ${HistoryProjects} {
+        width: 100%;
+        padding: 0;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 30px;
+      }
+      ${DescriptionItem} {
+        width: 50%;
+      }
+      ${ProjectResumen} {
+        padding-right: 0;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      padding: 0;
+      padding-bottom: 24px;
+      ${ProjectPicture} {
+        height: 170px;
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      ${ProjectResumen} {
+        padding-left: 0px;
+      }
+      ${ProjectUbicationAddress} {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 10px;
+        padding-left: 28px;
+        box-sizing: border-box;
+        color: ${theme.color.mono.white};
+        &:before {
+          color: ${theme.color.mono.white};
+          top: 12px;
+          left: 10px;
+        }
+      }
+      ${ProjectDetail} {
+        padding: 15px;
+        padding-bottom: 0;
+      }
+      ${DescriptionItem} {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      ${ProjectUbication} {
+        margin: 0;
+      }
+      ${ProjectDescription} {
+        padding: 0;
+      }
+    }
+
+    }
   }
   &.columns {
     width: 49%;

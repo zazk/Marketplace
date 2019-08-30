@@ -14,6 +14,7 @@ export const List = styled.div`
   strong {
     font-weight: 700;
     color: ${theme.color.primary};
+    margin-right: 5px;
   }
 `;
 export const Item = styled.div`
@@ -29,6 +30,11 @@ export const Item = styled.div`
     position: absolute;
     top: 5px;
     left: -20px;
+  }
+  @media screen and (max-width: 640px) {
+    &:before {
+      left: -12px;
+    }
   }
 `;
 export const MoreTransaccions = styled.div`

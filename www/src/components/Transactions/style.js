@@ -1,12 +1,6 @@
 import styled from 'styled-components/macro';
 import theme from '../../utils/theme';
 
-export const TransactionsWrap = styled.div`
-  padding: 32px 0;
-  &.projects-user {
-    padding-top: 0;
-  }
-`;
 export const TransactionsRow = styled.div`
   max-width: 1024px;
   padding: 24px 30px;
@@ -117,6 +111,15 @@ export const TransactionItem = styled.div`
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+`;
+export const TransactionsWrap = styled.div`
+  padding: 32px 0;
+  &.projects-user {
+    padding-top: 0;
+    ${TransactionsRow} {
+      width: 100%;
     }
   }
 `;
