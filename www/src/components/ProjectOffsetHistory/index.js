@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrap, Title, List, Item, MoreTransaccions } from './style';
+import { Wrap, Title, List, Item, MoreTransaccions, TooltipWrap } from './style';
 function ProjectOffsetHistory() {
   return (
     <>
@@ -15,7 +15,13 @@ function ProjectOffsetHistory() {
             on July 3, 2019
           </Item>
         </List>
-        <MoreTransaccions>2 more transactions</MoreTransaccions>
+        <MoreTransaccions>
+          2 more transactions
+          <TooltipWrap>
+            <p>10 credits on June 5th, 2019</p>
+            <p>15 credits on April 8th, 2019</p>
+          </TooltipWrap>
+        </MoreTransaccions>
       </Wrap>
     </>
   );

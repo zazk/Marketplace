@@ -20,7 +20,7 @@ function Statistics() {
     <StatisticsWrap>
       <StatisticsList>
         {dataStatistics.map((item, i) => (
-          <ItemStatistic>
+          <ItemStatistic key={i}>
             <Number>{item.number}</Number>
             <Description>{item.description}</Description>
           </ItemStatistic>

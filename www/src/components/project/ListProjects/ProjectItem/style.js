@@ -10,6 +10,8 @@ export const ProjectPicture = styled.div`
   background-image: url(${props => props.picture});
   background-position: center center;
   background-size: cover;
+  overflow: hidden;
+  border-radius: 10px 0px 0px 10px;
   &:after,
   &:before {
     content: '';
@@ -113,7 +115,6 @@ export const HistoryProjects = styled.div`
 `;
 export const Project = styled.div`
   width: 100%;
-  overflow: hidden;
   position: relative;
   padding: 24px 0;
   padding-left: 160px;

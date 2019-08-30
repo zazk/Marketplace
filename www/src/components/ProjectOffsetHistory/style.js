@@ -37,10 +37,54 @@ export const Item = styled.div`
     }
   }
 `;
+
+export const TooltipWrap = styled.div`
+  background-color: ${theme.color.mono.black};
+  width: 172px;
+  padding: 8px 0;
+  position: absolute;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  z-index: 10;
+  transform: translateX(-20px);
+  line-height: 18px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translatey(-10px);
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    right: 0;
+    margin: 0 auto;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 8px 6px;
+    border-color: transparent transparent #000000 transparent;
+  }
+  p {
+    color: ${theme.color.mono.white};
+    margin: 0;
+    font-size: 12px;
+  }
+`;
 export const MoreTransaccions = styled.div`
   color: ${theme.color.secondary};
   cursor: pointer;
+  padding-bottom: 10px;
+  position: relative;
   &:hover {
     text-decoration: underline;
+    ${TooltipWrap} {
+      opacity: 1;
+      transform: translateX(0px);
+      visibility: visible;
+    }
   }
 `;
