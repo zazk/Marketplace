@@ -1,12 +1,15 @@
 import styled from 'styled-components/macro';
 import theme from '../../utils/theme';
 export const Wrap = styled.div`
+  max-width: 1024px;
+  margin: 0 auto;
   width: 94%;
   padding-top: 108px;
   padding-bottom: 135px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 `;
 export const Figure = styled.figure``;
 export const Title = styled.h3`
