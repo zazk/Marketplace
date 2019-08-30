@@ -11,7 +11,8 @@ import {
   PrivateText,
 } from './style';
 function ShareImpact() {
-  const [copySuccess, setCopySuccess] = useState('');
+  const [copySuccess, setCopySuccess] = useState(0);
+  const [showPrivateUrl, setPrivateUrl] = useState(0);
   const textAreaRef = useRef(null);
   function copyToClipboard(e) {
     textAreaRef.current.select();
@@ -19,12 +20,12 @@ function ShareImpact() {
     // This is just personal preference.
     // I prefer to not show the the whole text area selected.
     e.target.focus();
-    setCopySuccess('Copied!');
+    setCopySuccess(1);
   }
   return (
     <>
       <WrapShareImpact>
-        {copySuccess && <CopySuccess>{copySuccess}</CopySuccess>}
+        {copySuccess === 1 && <CopySuccess>Copied Url</CopySuccess>}
 
         <Title>Share your impact</Title>
         <Description>
@@ -51,7 +52,9 @@ function ShareImpact() {
 
           <PrivateText>
             <ShareLink>
-              <button className="btn-border">Create</button>
+              <button className="btn-border" onClick={() => setPrivateUrl(1)}>
+                Create
+              </button>
             </ShareLink>
             <PreviewShare>
               <p>
@@ -60,17 +63,22 @@ function ShareImpact() {
               <span>Preview</span>
             </PreviewShare>
           </PrivateText>
-
-          <ShareLink>
-            <button className="btn-border">COPY</button>
-            <input type="text" defaultValue="http://pachama.org/google" />
-          </ShareLink>
-          <PreviewShare>
-            <p>
-              Will allow users <em>to see basic</em> information. Best for the general public.
-            </p>
-            <span>Preview</span>
-          </PreviewShare>
+          {showPrivateUrl === 1 && (
+            <div>
+              <ShareLink>
+                <button className="btn-border" onClick={copyToClipboard}>
+                  COPY
+                </button>
+                <input ref={textAreaRef} type="text" defaultValue="http://pachama.org/google" />
+              </ShareLink>
+              <PreviewShare>
+                <p>
+                  Will allow users <em>to see basic</em> information. Best for the general public.
+                </p>
+                <span>Preview</span>
+              </PreviewShare>
+            </div>
+          )}
         </ShareItem>
         <button className="btn w115">
           <span>Done</span>

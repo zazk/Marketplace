@@ -66,7 +66,14 @@ export const ShareLink = styled.div`
     bottom: 8px;
   }
 `;
-export const PrivateText = styled.div``;
+export const PrivateText = styled.div`
+  ${ShareLink} {
+    border-bottom: none;
+    .btn-border {
+      bottom: 0;
+    }
+  }
+`;
 export const CopySuccess = styled.div`
   font-size: 16px;
   padding: 20px;
