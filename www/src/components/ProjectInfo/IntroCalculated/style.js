@@ -3,7 +3,15 @@ import theme from '../../../utils/theme';
 export const IntroWrap = styled.div`
   background-image: linear-gradient(102deg, #0fd856, #01a697);
 `;
-
+export const Cto = styled.div`
+  @media screen and (max-width: 745px) {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+`;
 export const Content = styled.div`
   max-width: 1024px;
   width: 94%;
@@ -13,30 +21,48 @@ export const Content = styled.div`
   height: 276px;
   align-items: center;
   color: ${theme.color.mono.white};
+  @media screen and (max-width: 745px) {
+    position: relative;
+    height: auto;
+    padding: 30px 0;
+    padding-bottom: 100px;
+  }
 `;
 export const Text = styled.div`
   width: 50%;
+  @media screen and (max-width: 745px) {
+    width: 100%;
+  }
 `;
 
 export const Description = styled.div`
-  font-size: 18px;
+  font-size: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
   line-height: 24px;
   max-width: 375px;
+  padding-right: 20px;
+  box-sizing: border-box;
   margin-bottom: 40px;
   p {
     margin: 0;
+  }
+  @media screen and (max-width: 745px) {
+    max-width: none;
+    margin-bottom: 30;
   }
 `;
 export const Title = styled.h3`
   margin: 0;
   margin-bottom: 20px;
-  font-size: 50px;
+  font-size: calc(25px + (50 - 25) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 500;
   font-family: ${theme.fonts.secondary};
 `;
 
 export const ProgressCalculated = styled.div`
   width: 50%;
+  @media screen and (max-width: 745px) {
+    width: 100%;
+  }
 `;
 
 export const Numbers = styled.div`
@@ -61,6 +87,15 @@ export const NumberItem = styled.div`
   em {
     font-style: normal;
     font-weight: 500;
+    margin-left: 5px;
+  }
+  @media screen and (max-width: 480px) {
+    &.active {
+      span {
+        font-size: 28px;
+        line-height: 25px;
+      }
+    }
   }
 `;
 export const ProgressBar = styled.div`
@@ -89,5 +124,8 @@ export const DescriptionItem = styled.div`
   opacity: 0.6;
   &.active {
     opacity: 1;
+  }
+  @media screen and (max-width: 480px) {
+    max-width: 130px;
   }
 `;

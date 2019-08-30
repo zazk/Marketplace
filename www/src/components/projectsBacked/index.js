@@ -13,7 +13,7 @@ function ProjectsBacked() {
       />
       <Wrapper>
         <Title>Projects backed in 2019</Title>
-        <ListProjects customClass="projects-backed"></ListProjects>
+        <ListProjects customClass="projects-backed list-default"></ListProjects>
         <PreviousYears>Show projects backed on previous years</PreviousYears>
       </Wrapper>
     </>

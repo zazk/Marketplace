@@ -12,6 +12,7 @@ import {
   ProgressbarItem,
   DescriptionBar,
   DescriptionItem,
+  Cto,
 } from './style';
 function IntroWithStatistics({ title, description, percentage, customClass }) {
   console.log('percentage', percentage);
@@ -23,9 +24,11 @@ function IntroWithStatistics({ title, description, percentage, customClass }) {
           <Description>
             <p>{description}</p>
           </Description>
-          <button className="btn white medium">
-            <span>View certificates</span>
-          </button>
+          <Cto>
+            <button className="btn white medium">
+              <span>View certificates</span>
+            </button>
+          </Cto>
         </Text>
         <ProgressCalculated>
           <Numbers>
