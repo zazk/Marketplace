@@ -66,6 +66,17 @@ export const ShareLink = styled.div`
     bottom: 8px;
   }
 `;
+export const PrivateText = styled.div``;
+export const CopySuccess = styled.div`
+  font-size: 16px;
+  padding: 20px;
+  padding-top: 0;
+  box-sizing: border-box;
+  text-decoration: underline;
+  color: ${theme.color.secondary};
+  text-align: center;
+  width: 100%;
+`;
 export const PreviewShare = styled.div`
   margin-top: 5px;
   font-size: 12px;
@@ -74,6 +85,7 @@ export const PreviewShare = styled.div`
   font-weight: 400;
   p {
     margin: 0;
+    color: ${theme.color.mono.gray5};
   }
   em {
     font-weight: normal;

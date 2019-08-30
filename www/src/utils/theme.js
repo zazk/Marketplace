@@ -12,6 +12,7 @@ export default {
       gray2: '#e9e6e6',
       gray3: '#a3a4a4',
       gray4: '#8b8a8a',
+      gray5: '#5c5c5c',
       gray_light1: '#b9b8b8',
       gray_light2: '#eaeaea',
       gray_light3: '#d8d8d8',
