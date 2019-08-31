@@ -37,7 +37,7 @@ function IntroWithStatistics({ title, description, cto }) {
                 </button>
               </ButtonShare>
               <ModalBox isOpen={openLightbox} toggle={toggle}>
-                <ShareImpact></ShareImpact>
+                <ShareImpact toggle={toggle}></ShareImpact>
               </ModalBox>
             </>
           )}

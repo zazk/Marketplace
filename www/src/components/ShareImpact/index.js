@@ -10,7 +10,7 @@ import {
   CopySuccess,
   PrivateText,
 } from './style';
-function ShareImpact() {
+function ShareImpact({ toggle }) {
   const [copySuccess, setCopySuccess] = useState(0);
   const [showPrivateUrl, setPrivateUrl] = useState(0);
   const textAreaRef = useRef(null);
@@ -21,6 +21,10 @@ function ShareImpact() {
     // I prefer to not show the the whole text area selected.
     e.target.focus();
     setCopySuccess(1);
+    const timer = setTimeout(() => {
+      setCopySuccess(0);
+    }, 1000);
+    return () => clearTimeout(timer);
   }
   return (
     <>
@@ -37,7 +41,7 @@ function ShareImpact() {
             <button className="btn-border" onClick={copyToClipboard}>
               COPY
             </button>
-            <input ref={textAreaRef} type="text" defaultValue="http://pachama.org/google" />
+            <input readOnly ref={textAreaRef} type="text" defaultValue="http://pachama.org/google" />
           </ShareLink>
 
           <PreviewShare>
@@ -49,27 +53,28 @@ function ShareImpact() {
         </ShareItem>
         <ShareItem>
           <TitleShare>Private link</TitleShare>
-
-          <PrivateText>
-            <ShareLink>
-              <button className="btn-border" onClick={() => setPrivateUrl(1)}>
-                Create
-              </button>
-            </ShareLink>
-            <PreviewShare>
-              <p>
-                Will allow users <em>to see basic</em> information. Best for the general public.
-              </p>
-              <span>Preview</span>
-            </PreviewShare>
-          </PrivateText>
+          {showPrivateUrl === 0 && (
+            <PrivateText>
+              <ShareLink>
+                <button className="btn-border" onClick={() => setPrivateUrl(1)}>
+                  Create
+                </button>
+              </ShareLink>
+              <PreviewShare>
+                <p>
+                  Will allow users <em>to see basic</em> information. Best for the general public.
+                </p>
+                <span>Preview</span>
+              </PreviewShare>
+            </PrivateText>
+          )}
           {showPrivateUrl === 1 && (
             <div>
               <ShareLink>
                 <button className="btn-border" onClick={copyToClipboard}>
                   COPY
                 </button>
-                <input ref={textAreaRef} type="text" defaultValue="http://pachama.org/google" />
+                <input readOnly ref={textAreaRef} type="text" defaultValue="http://pachama.org/google" />
               </ShareLink>
               <PreviewShare>
                 <p>
@@ -80,7 +85,7 @@ function ShareImpact() {
             </div>
           )}
         </ShareItem>
-        <button className="btn w115">
+        <button className="btn w115" onClick={() => toggle(0)}>
           <span>Done</span>
         </button>
       </WrapShareImpact>
