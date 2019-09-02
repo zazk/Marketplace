@@ -25,6 +25,12 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  .icon-menu:before {
+    content: "\\e917";
+  }
+  .icon-close:before {
+    content: "\\e918";
+  }
   .icon-menu-point:before {
     content: "\\e916";
   }

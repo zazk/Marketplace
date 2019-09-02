@@ -23,9 +23,16 @@ export const HeaderInner = styled.div`
   @media screen and (max-width: 480px) {
     justify-content: space-between;
   }
+
+  @media screen and (max-width: 768px) {
+    height: 45px;
+  }
 `;
 export const Nav = styled.nav`
   margin-left: 27px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 export const MenuItem = styled.li`
   margin-left: 20px;

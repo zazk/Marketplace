@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginButton from '../../LoginButton';
 import { Logo, HeaderMain, HeaderInner, Nav, MenuItem, MenuLink, MenuUser } from './style';
+import MenuResponsive from '../../MenuResponsive';
 
 function Header() {
   return (
@@ -29,6 +30,7 @@ function Header() {
             </MenuItem>
           </ul>
         </Nav>
+        <MenuResponsive></MenuResponsive>
         <MenuUser>
           <LoginButton type="dropdown" />
         </MenuUser>

@@ -132,19 +132,6 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved
 
       <ModalBox isOpen={openLightbox} toggle={toggle} url={isError === 0 && '/list'}>
         <SuccessMessage error={isError === 1 && 'error'} isOpen={showSuccessMessage} toggle={toggle} type="isPopup" />
-        {/* <div className="wrap-success-acount">
-          <div className="formulary-success flex active">
-            <div className="success-content">
-              <figure>
-                <img src="/static/iconos/icon-success.svg" width="80" alt="" />
-              </figure>
-              <h3 className="success-title">You have created your account succesfully </h3>
-              <div className="success-description">
-                <p>We will send you an email with the confirmation.</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </ModalBox>
     </CreateAcount>
   );

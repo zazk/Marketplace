@@ -61,7 +61,6 @@ module.exports = {
 
   add(req, res) {
     console.log('add en accounts.js/req', req.body);
-    // console.log('add en accounts.js/res', res);
     return Account.create({
       role_id: req.body.role_id,
       name: req.body.name,
@@ -71,7 +70,6 @@ module.exports = {
     })
       .then(account => res.status(201).send(account))
       .catch(error => {
-        // console.log('errorxxxx', error);
         return res.status(500).send({ message: error });
       });
   },
