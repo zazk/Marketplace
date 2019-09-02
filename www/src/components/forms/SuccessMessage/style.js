@@ -43,6 +43,9 @@ export const FormularySuccess = styled.div`
     visibility: visible;
     height: 100%;
     overflow: visible;
+    &.isPopup {
+      height: 590px;
+    }
   }
   @media screen and (max-width: 745px) {
     position: fixed;
