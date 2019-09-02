@@ -5,8 +5,27 @@ import { CompanyName, CompanyImage, LoginLink, WrapLabelDropdown } from './style
 
 function LoginButton({ receiveUser, type, user }) {
   const [isLogin, setLogin] = useState(false);
-
+  const [isNewUser, setNewUser] = useState(false);
   const [openDropdown, setDropdown] = useState(0);
+
+  function checkUser(auth0) {
+    console.log('idxx', auth0);
+    fetch(`http://localhost:3001/api/account/auth0/${auth0}`)
+      .then(response => response.json())
+      .then(json => {
+        console.log('respuesta', json);
+        console.log('user', json.username);
+        console.log('isNewUser-por api', isNewUser);
+        if (json.username) {
+          setNewUser(false);
+          console.log('isNewUser user si existe', isNewUser);
+        } else {
+          setNewUser(true);
+          console.log('isNewUser user no existe', isNewUser);
+        }
+      });
+  }
+
   const clienteId = 'sfj8nlpFONfJanArPrB8PpcB0E9FU4UI';
   const domain = 'marketplace-pachama.auth0.com';
   const options = {
@@ -22,6 +41,7 @@ function LoginButton({ receiveUser, type, user }) {
       if (!error) {
         receiveUser(profile);
         setLogin(true);
+        checkUser(profile.sub);
         return;
       }
     });
@@ -34,47 +54,53 @@ function LoginButton({ receiveUser, type, user }) {
   const LogOut = () => {
     lock.logout();
   };
+  // debugger;
+  console.log('isNewUserxxxxx', isNewUser);
+  if (isNewUser) {
+    return <Redirect to="/create-account" />;
+    console.log('entro al ifffff');
+  } else {
+  }
+  // const redirect = () => {
+  //   isNewUser ? <Redirect to="/create-account" /> : <Redirect to="/list" />;
+  // };
 
   return (
     <div>
-      {isLogin ? (
-        <Redirect to="/create-account" />
-      ) : (
-        <div>
-          {type === 'dropdown' ? (
-            user ? (
-              <div className="wrap-company-user">
-                <CompanyName className={`wrap-drodown ${openDropdown === 1 && 'active'}`}>
-                  <WrapLabelDropdown>
-                    <CompanyImage style={{ backgroundImage: `url(${user.picture})` }} />
-                    <div className="dropdown-btn ">
-                      <div className="dropdown-open dropdown-controls" onClick={() => setDropdown(1)} />
-                      <div className="dropdown-close dropdown-controls" onClick={() => setDropdown(0)} />
-                      <span className="dropdown-label company-name">{user.name}</span>
-                      <img className="drop-down-icon" src="/static/iconos/arrow-down.svg" width="12" alt="" />
-                    </div>
-                  </WrapLabelDropdown>
-                  <div className="dropdown">
-                    <ul className="dropdown-main">
-                      <li className="dropdown-item">
-                        <span className="dropdown-link" onClick={() => LogOut()}>
-                          Log Out
-                        </span>
-                      </li>
-                    </ul>
+      <div>
+        {type === 'dropdown' ? (
+          user ? (
+            <div className="wrap-company-user">
+              <CompanyName className={`wrap-drodown ${openDropdown === 1 && 'active'}`}>
+                <WrapLabelDropdown>
+                  <CompanyImage style={{ backgroundImage: `url(${user.picture})` }} />
+                  <div className="dropdown-btn ">
+                    <div className="dropdown-open dropdown-controls" onClick={() => setDropdown(1)} />
+                    <div className="dropdown-close dropdown-controls" onClick={() => setDropdown(0)} />
+                    <span className="dropdown-label company-name">{user.name}</span>
+                    <img className="drop-down-icon" src="/static/iconos/arrow-down.svg" width="12" alt="" />
                   </div>
-                </CompanyName>
-              </div>
-            ) : (
-              <LoginLink onClick={() => openLogin()}>Log In</LoginLink>
-            )
+                </WrapLabelDropdown>
+                <div className="dropdown">
+                  <ul className="dropdown-main">
+                    <li className="dropdown-item">
+                      <span className="dropdown-link" onClick={() => LogOut()}>
+                        Log Out
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </CompanyName>
+            </div>
           ) : (
-            <button className="btn" onClick={() => (!user ? openLogin() : LogOut())}>
-              <span> {!user ? ' Log In' : 'Log Out'}</span>
-            </button>
-          )}
-        </div>
-      )}
+            <LoginLink onClick={() => openLogin()}>Log In</LoginLink>
+          )
+        ) : (
+          <button className="btn" onClick={() => (!user ? openLogin() : LogOut())}>
+            <span> {!user ? ' Log In' : 'Log Out'}</span>
+          </button>
+        )}
+      </div>
     </div>
   );
 }
