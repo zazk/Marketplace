@@ -8,13 +8,13 @@ import Biomass from '../components/project/pdp/biomass';
 import Leakage from '../components/project/pdp/Leakage';
 import Pay from '../components/project/pdp/Pay';
 import ControlsProject from '../components/project/pdp/ControlsProject';
-
+import ValidateAuth from '../components/ValidateAuth';
 function PDP({ location }) {
   const id = new URLSearchParams(location.search).get('id');
   let index = id ? id : 0;
   const { pdp, biomass, geojson } = dataProjects[index];
   return (
-    <>
+    <ValidateAuth>
       <Hero data={pdp}></Hero>
       <MapContainer data={pdp} geojson={geojson} />
       <Overview data={pdp}></Overview>
@@ -22,7 +22,7 @@ function PDP({ location }) {
       <Leakage data={pdp} />
       <Pay data={pdp} />
       <ControlsProject id={index} items={dataProjects.length} data={dataProjects} />
-    </>
+    </ValidateAuth>
   );
 }
 export default withRouter(PDP);
