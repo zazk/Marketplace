@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 import theme from '../../../../utils/theme';
-
+import { Link } from 'react-router-dom';
 export const ProjectPicture = styled.div`
   position: absolute;
   top: 0;
@@ -113,7 +113,8 @@ export const HistoryProjects = styled.div`
   padding-right: 20px;
   box-sizing: border-box;
 `;
-export const Project = styled.div`
+
+export const Project = styled(Link)`
   width: 100%;
   position: relative;
   padding: 24px 0;

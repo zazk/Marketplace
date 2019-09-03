@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProjectProgressBar from '../../../ProjectProgressBar';
 import ProjectOffsetHistory from '../../../ProjectOffsetHistory';
+
 import {
   Project,
   ProjectPicture,
@@ -14,10 +15,10 @@ import {
   ProjectDetail,
   HistoryProjects,
 } from './style';
-function ProjectItem({ project, customClass }) {
+function ProjectItem({ project, customClass, url }) {
   console.log('customClass', customClass);
   return (
-    <Project to="#" className={customClass}>
+    <Project to={url} className={customClass}>
       <ProjectPicture picture={project.main_picture} />
       <ProjectDetail>
         <ProjectResumen>
