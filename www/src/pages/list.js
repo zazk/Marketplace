@@ -1,12 +1,9 @@
 import React from 'react';
 import ListProjects from '../components/project/ListProjects';
 import ValidateAuth from '../components/ValidateAuth';
+import withAuth from '../hocs/withAuth';
 function Projects() {
-  return (
-    <ValidateAuth>
-      <ListProjects customClass="columns"></ListProjects>;
-    </ValidateAuth>
-  );
+  return <ListProjects customClass="columns"></ListProjects>;
 }
 
-export default Projects;
+export default withAuth(Projects);
