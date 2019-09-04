@@ -1,12 +1,7 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 import FormCreateAcount from '../components/forms/FormCreateAccount';
-import ValidateAuth from '../components/ValidateAuth';
-function CreateAccount({ location }) {
-  return (
-    <ValidateAuth>
-      <FormCreateAcount></FormCreateAcount>
-    </ValidateAuth>
-  );
+import withAuth from '../hocs/withAuth';
+function CreateAccount() {
+  return <FormCreateAcount></FormCreateAcount>;
 }
-export default withRouter(CreateAccount);
+export default withAuth(CreateAccount);
