@@ -16,7 +16,9 @@ const port = process.env.PORT || 3000;
 const host = '0.0.0.0';
 
 const app = express();
+
 app.use(cors()).options('*', cors());
+
 configurePassport();
 
 app.use(bodyParser.json());
@@ -36,7 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/auth', authRoutes);
 app.use('/api', marketplaceApi);
-console.log('apiXXX');
+
 // app.get('/api/getRequest', (req, res) => {
 // //None
 //  });

@@ -5,7 +5,7 @@ var router = express.Router();
 /* DB Controllers */
 const roleController = require('../db/controllers').role;
 const accountController = require('../db/controllers').account;
-console.log('markeplace-js');
+
 /* Routes */
 router.get('/role', roleController.list);
 router.get('/role/:id', roleController.getById);
