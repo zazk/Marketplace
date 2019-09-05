@@ -16,8 +16,10 @@ const port = process.env.PORT || 3000;
 const host = '0.0.0.0';
 
 const app = express();
-
-app.use(cors()).options('*', cors());
+const dev = process.env.NODE_ENV !== 'production';
+if (dev) {
+  app.use(cors()).options('*', cors());
+}
 
 configurePassport();
 
