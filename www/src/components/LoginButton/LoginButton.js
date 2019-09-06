@@ -2,24 +2,12 @@ import React, { useState } from 'react';
 import { Auth0Lock } from 'auth0-lock';
 import { withRouter } from 'react-router';
 import { CompanyName, CompanyImage, LoginLink, WrapLabelDropdown } from './style';
-
-function LoginButton({ receiveUser, type, user, history }) {
+import Const from '../../utils/const';
+function LoginButton({ receiveUser, type, user, history, checkUser }) {
   const [openDropdown, setDropdown] = useState(0);
 
-  function checkUser(auth0) {
-    fetch(`http://localhost:3001/api/account/auth0/${auth0}`)
-      .then(response => response.json())
-      .then(json => {
-        if (json.username) {
-          history.push('/list');
-        } else {
-          history.push('/create-account');
-        }
-      });
-  }
-
-  const clienteId = 'sfj8nlpFONfJanArPrB8PpcB0E9FU4UI';
-  const domain = 'marketplace-pachama.auth0.com';
+  const clienteId = Const.clienteId;
+  const domain = Const.domainAuth;
   const options = {
     autoclose: true,
     auth: {
@@ -32,7 +20,7 @@ function LoginButton({ receiveUser, type, user, history }) {
     this.getUserInfo(authResult.accessToken, function(error, profile) {
       if (!error) {
         receiveUser(profile);
-        checkUser(profile.sub);
+        checkUser(profile.sub, history);
         return;
       }
     });
