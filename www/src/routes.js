@@ -11,6 +11,8 @@ import ProjectsUser from './pages/project-user';
 import ProjectsCalculated from './pages/projectscalculated';
 import ProjectCalculatedEmpty from './pages/projects-calculated-empty';
 import ProjectNotCalculated from './pages/projects-notcalculated';
+import Dashboard from './pages/dashboard';
+
 const publicRoutes = [
   {
     name: 'Home',
@@ -89,6 +91,13 @@ const publicRoutes = [
     component: ProjectNotCalculated,
     path: '/project-not-calculated',
     exact: true,
+  },
+  {
+    name: 'Dashboard',
+    component: Dashboard,
+    path: '/dashboard',
+    exact: true,
+    customClass: 'dashboard-page',
   },
 ];
 

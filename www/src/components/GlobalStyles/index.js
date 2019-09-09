@@ -183,6 +183,27 @@ export const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     border-radius:5px;
     position: relative;
+
+    &.drop{
+      &.active{
+        span{
+          &:after{
+            transform:rotate(180deg);
+          }
+        }
+      }
+      span{
+        &:after{
+          color:#fff;
+          content:"\\e90d";
+          font-family: 'icomoon';
+          margin-left: 5px;
+          font-size: 13px;
+          display: inline-block;
+        }
+
+      }
+    }
     &.border-green-small{
       height: 41px;
       width: 164px;
@@ -196,6 +217,9 @@ export const GlobalStyle = createGlobalStyle`
     span{
       position: relative;
       z-index: 2;
+    }
+    &.w175{
+      width: 175px;
     }
     &.w115{
       width: 115px;
@@ -271,6 +295,11 @@ export const GlobalStyle = createGlobalStyle`
         opacity: 1;
       }
 
+    }
+  }
+  .dashboard-page{
+    header{
+      display:none;
     }
   }
   .content {
