@@ -33,7 +33,7 @@ function Graphics() {
             </GraphicNumber>
             <GraphicDate>
               <span>12/07/19</span>
-              <GraphicOpenLightbox onClick={() => (setInLightbox(0), toggle(1))}>
+              <GraphicOpenLightbox onClick={() => setInLightbox(0) || toggle(1)}>
                 <img src="/static/iconos/icon-info.svg" alt="" />
               </GraphicOpenLightbox>
               <p>Last verification</p>
@@ -56,7 +56,7 @@ function Graphics() {
             <GraphicDate>
               <span>12/07/19</span>
 
-              <GraphicOpenLightbox onClick={() => (setInLightbox(1), setOpenLightbox(1))}>
+              <GraphicOpenLightbox onClick={() => setInLightbox(1) || setOpenLightbox(1)}>
                 <img src="/static/iconos/icon-info.svg" alt="" />
               </GraphicOpenLightbox>
 
@@ -79,7 +79,7 @@ function Graphics() {
             <GraphicDate>
               <span>12/07/19</span>
 
-              <GraphicOpenLightbox onClick={() => (setInLightbox(2), setOpenLightbox(1))}>
+              <GraphicOpenLightbox onClick={() => setInLightbox(2) || setOpenLightbox(1)}>
                 <img src="/static/iconos/icon-info.svg" alt="" />
               </GraphicOpenLightbox>
 

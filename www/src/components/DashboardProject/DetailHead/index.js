@@ -35,7 +35,7 @@ function DetailHead() {
                 </Link>
               </li>
               <li className="dropdown-item">
-                <Link>
+                <Link to="#">
                   <span className="dropdown-link" to="#">
                     Request verification
                   </span>

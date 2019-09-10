@@ -3,6 +3,8 @@ import DetailHead from './DetailHead';
 import StatusMonitoring from './StatusMonitoring';
 import Graphics from './Graphics';
 import Benefits from './Benefits';
+import Events from './Events';
+import ProjectPictures from './ProjectPictures';
 import {
   DetailMain,
   WrapHeadTab,
@@ -21,10 +23,10 @@ function DashboardProject() {
         <DetailAside>
           <WrapHeadTab>
             <AsideHeadTab>
-              <button className={activeTab === 0 && 'active'} onClick={() => setActiveTab(0)}>
+              <button className={`${activeTab === 0 && 'active'}`} onClick={() => setActiveTab(0)}>
                 Insights
               </button>
-              <button className={activeTab === 1 && 'active'} onClick={() => setActiveTab(1)}>
+              <button className={`${activeTab === 1 && 'active'}`} onClick={() => setActiveTab(1)}>
                 Project information
               </button>
             </AsideHeadTab>
@@ -34,13 +36,15 @@ function DashboardProject() {
               <StatusMonitoring />
               <Graphics />
               <Benefits />
+              <Events />
+              <ProjectPictures />
               {/*
 
 
-              <Events />
-              <ProjectPictures /> */}
+
+               */}
             </div>
-            <AsideItemTab className={activeTab === 1 && 'active'}>
+            <AsideItemTab className={`${activeTab === 1 && 'active'}`}>
               <div className="spaces">
                 {/* <InfoResumen />
                 <InfoDescription />
