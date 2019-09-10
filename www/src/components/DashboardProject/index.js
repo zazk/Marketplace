@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import DetailHead from './DetailHead';
 import StatusMonitoring from './StatusMonitoring';
+import Graphics from './Graphics';
+import Benefits from './Benefits';
 import {
   DetailMain,
   WrapHeadTab,
@@ -30,9 +32,11 @@ function DashboardProject() {
           <AsideContentTab>
             <div className={`aside-item-tab ${activeTab === 0 && 'active'}`}>
               <StatusMonitoring />
-              {/*
               <Graphics />
               <Benefits />
+              {/*
+
+
               <Events />
               <ProjectPictures /> */}
             </div>
