@@ -9,6 +9,7 @@ import InfoResumen from './InfoResumen';
 import InfoDescription from './InfoDescription';
 import InfoList from './InfoList';
 import InfoLogo from './InfoLogo';
+import MapDetail from './MapDetail';
 import {
   DetailMain,
   DetailAside,
@@ -53,7 +54,9 @@ function DashboardProject() {
             </AsideItemTab>
           </AsideContentTab>
         </DetailAside>
-        <DetailWrapMap>{/* <MapDetail /> */}</DetailWrapMap>
+        <DetailWrapMap>
+          <MapDetail />
+        </DetailWrapMap>
       </DetailMain>
     </div>
   );
