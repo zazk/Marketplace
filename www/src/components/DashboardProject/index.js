@@ -5,12 +5,16 @@ import Graphics from './Graphics';
 import Benefits from './Benefits';
 import Events from './Events';
 import ProjectPictures from './ProjectPictures';
+import InfoResumen from './InfoResumen';
+import InfoDescription from './InfoDescription';
+import InfoList from './InfoList';
+import InfoLogo from './InfoLogo';
 import {
   DetailMain,
-  WrapHeadTab,
   DetailAside,
-  AsideContentTab,
+  WrapHeadTab,
   AsideHeadTab,
+  AsideContentTab,
   DetailWrapMap,
   AsideItemTab,
 } from './style';
@@ -32,24 +36,19 @@ function DashboardProject() {
             </AsideHeadTab>
           </WrapHeadTab>
           <AsideContentTab>
-            <div className={`aside-item-tab ${activeTab === 0 && 'active'}`}>
+            <AsideItemTab className={` ${activeTab === 0 && 'active'}`}>
               <StatusMonitoring />
               <Graphics />
               <Benefits />
               <Events />
               <ProjectPictures />
-              {/*
-
-
-
-               */}
-            </div>
+            </AsideItemTab>
             <AsideItemTab className={`${activeTab === 1 && 'active'}`}>
               <div className="spaces">
-                {/* <InfoResumen />
+                <InfoResumen />
                 <InfoDescription />
                 <InfoList />
-                <InfoLogo /> */}
+                <InfoLogo />
               </div>
             </AsideItemTab>
           </AsideContentTab>

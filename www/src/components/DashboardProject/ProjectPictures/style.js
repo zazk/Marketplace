@@ -19,6 +19,5 @@ export const ModuloItem = styled.div`
   }
 `;
 export const DetailWrapModulos = styled.div`
-  padding: 0 20px;
   margin-top: 40px;
 `;

@@ -125,6 +125,4 @@ export const Sheets = styled.figure`
   }
 `;
 
-export const WrapGraphics = styled.div`
-  padding: 0 20px;
-`;
+export const WrapGraphics = styled.div``;

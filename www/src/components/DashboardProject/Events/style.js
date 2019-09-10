@@ -1,8 +1,6 @@
 import styled from 'styled-components/macro';
 
-export const WrapsEvents = styled.div`
-  padding: 0 20px;
-`;
+export const WrapsEvents = styled.div``;
 export const EventTag = styled.span`
   display: inline-block;
   font-size: 12px;

@@ -8,8 +8,7 @@ export const Title = styled.h3`
   color: rgba(54, 54, 54, 0.8);
   text-transform: uppercase;
   margin-bottom: 13px;
-  padding-left: 20px;
-  padding-right: 20px;
+
   &.modulos {
     margin-top: 40px;
   }

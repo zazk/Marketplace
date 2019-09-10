@@ -2,7 +2,6 @@ import styled from 'styled-components/macro';
 
 export const WrapBenefits = styled.div`
   margin-bottom: 15px;
-  padding: 0 20px;
 `;
 
 export const BenefitsItem = styled.div`

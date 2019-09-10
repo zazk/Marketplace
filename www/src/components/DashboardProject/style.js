@@ -83,6 +83,8 @@ export const AsideItemTab = styled.div`
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.5s;
+  padding: 0 20px;
+  box-sizing: border-box;
   padding-bottom: 30px;
   height: 0;
   overflow: hidden;

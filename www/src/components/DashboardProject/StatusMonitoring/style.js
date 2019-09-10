@@ -2,8 +2,6 @@ import styled from 'styled-components/macro';
 
 export const StatusCircles = styled.div`
   margin-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
   display: flex;
   flex-flow: row wrap;
 `;
@@ -38,8 +36,6 @@ export const StatusItem = styled.div`
 
 export const WrapStatusText = styled.div`
   margin-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
 `;
 
 export const StatusTextItem = styled.div`
