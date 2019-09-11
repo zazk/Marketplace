@@ -9,7 +9,7 @@
   "project_type": "Improved Forest Management",
   "location": {
     "name": "Mount Shasta, California, USA",
-    "coordinates": [-74.72282409667969, 40.968622428884125]
+    "coordinates": [-121.83046200962366, 41.18323389536192]
   },
   "standard": "https://storage.googleapis.com/marketplace-assets/logo-car.png",
   "project_overview": "The project is located 20 miles southeast of Mount Shasta in Northern California. Co benefits such as protection of local water quality and habitat protection for sensitive species are achieved while timber is sustainably extracted to support the local economy. This project covers approximately 9 000 acres and comprises the largest working conservation easement west of the Rockies. It ensures that 15 square miles of forest and 8 miles of the famous McCloud River will be forested and productive in perpetuity. The McCloud River project provides a sustainable and protected habitat for rare, threatened, and endangered species such as the Northern Spotted Owl, Bald Eagle, Roosevelt Elk, and Black Bear. The project also connects to the Shasta Trinity National Forest, providing critical habitat corridors for many species.",
@@ -41,28 +41,32 @@
     }
   ],
   "badges": {
-    "leakage": true,
-    "additionality": true,
-    "permanence": true,
+    "leakage": false,
+    "additionality": false,
+    "permanence": false,
     "verifiability": true
   },
   "summary": {
     "leakage": {
+      "display": false,
       "text": "To be provided by Bluesource",
       "source": "To be provided by Bluesource",
       "source_link": ""
     },
     "additionality": {
+      "display": false,
       "text": "To be provided by Bluesource",
       "source": "To be provided by Bluesource",
       "source_link": ""
     },
     "permanence": {
+      "display": false,
       "text": "To be provided by Bluesource",
       "source": "To be provided by Bluesource",
       "source_link": ""
     },
     "verifiability": {
+      "display": true,
       "text": "An objective third party—someone other than Pondosa Forest, LLC or the project developer—must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services acted as the third-party verifier in this project since 2011, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.",
       "source": "",
       "source_link": ""
