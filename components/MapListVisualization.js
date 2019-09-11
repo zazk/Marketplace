@@ -170,20 +170,24 @@ export class MapListVisualization extends Component {
     console.log(x);
     return (
       hoveredObject && (
-        <div className="tooltip" style={{ top: y, left: x }}>
-          <div>
-            <b>Average Property Value</b>
-          </div>
-          <div>
-            <div>${hoveredObject.properties.name} / parcel</div>
-            <div>
-              ${hoveredObject.properties.name} / m<sup>2</sup>
+        <div className="tooltip-map" style={{ top: y, left: x }}>
+          <div className="tooltip-inner">
+            <div className="tooltip-item">
+              <h3 className="tooltip-title">Average Property Value</h3>
+              <ul className="tooltip-list">
+                <li>${hoveredObject.properties.name} / parcel</li>
+                <li>
+                  ${hoveredObject.properties.name} / m<sup>2</sup>
+                </li>
+              </ul>
+            </div>
+            <div className="tooltip-item">
+              <h3 className="tooltip-title">Growth</h3>
+              <ul className="tooltip-list">
+                <li>100%</li>
+              </ul>
             </div>
           </div>
-          <div>
-            <b>Growth</b>
-          </div>
-          <div>100%</div>
         </div>
       )
     );
@@ -282,9 +286,64 @@ export class MapListVisualization extends Component {
             />
           </View>
         </DeckGL>
-        <style jsx>
+        <style jsx global>
           {`
+            .tooltip-map {
+              position: absolute;
+              z-index: 10;
+              padding: 0 20px;
+              transform: translateX(-40px) translateY(50px);
+            }
+            .tooltip-list {
+              li {
+                position: relative;
+                padding-left: 10px;
+                &:after {
+                  content: '';
+                  width: 6px;
+                  height: 6px;
+                  position: absolute;
+                  left: 0;
+                  border-radius: 100%;
+                  top: 8px;
+                  background-color: #04b189;
+                }
+              }
+            }
+            .tooltip-title {
+              margin-top: 0;
+              margin-bottom: 5px;
+              color: #04b189;
+            }
+            .tooltip-item {
+              margin-bottom: 10px;
+              font-size: 14px;
+            }
+            .tooltip-inner {
+              border-radius: 7px;
+              background-color: #fff;
+              position: relative;
+              z-index: 10;
+              padding: 20px;
+              width: 350px;
+              box-shadow: 0 15px 45px 0 rgba(109, 100, 206, 0.21);
+              &:after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                bottom: 100%;
+                left: 10px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 10px 10px 10px;
+                border-color: transparent transparent #ffffff transparent;
+              }
+            }
             .detail-map {
+              position: relative;
+              width: 100vw;
+              height: calc(100vh - 70px);
               figure img {
                 width: 100%;
                 height: calc(100vh - 70px);
