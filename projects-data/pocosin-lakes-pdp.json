@@ -41,28 +41,32 @@
     }
   ],
   "badges": {
-    "leakage": true,
-    "additionality": true,
-    "permanence": true,
+    "leakage": false,
+    "additionality": false,
+    "permanence": false,
     "verifiability": true
   },
   "summary": {
     "leakage": {
+      "display": false,
       "text": "To be provided by Bluesource",
       "source": "To be provided by Bluesource",
       "source_link": ""
     },
     "additionality": {
+      "display": false,
       "text": "To be provided by Bluesource",
       "source": "To be provided by Bluesource",
       "source_link": ""
     },
     "permanence": {
+      "display": false,
       "text": "To be provided by Bluesource",
       "source": "To be provided by Bluesource",
       "source_link": ""
     },
     "verifiability": {
+      "display": true,
       "text": "An objective third party—someone other than the land owner or Blue Source—must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services and Environmental Services, Inc. acted as the third-parties verifiers in this project, who determined greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.",
       "source": "",
       "source_link": ""

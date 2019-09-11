@@ -11,36 +11,44 @@ function Leakage({ data }) {
         <div className="content-main flex">
           <div className="leakage-description">
             <span className="leakage-bg" />
-            <ItemText
-              type="two"
-              title="Leakage"
-              description={project.leakage.text}
-              source={project.leakage.source}
-              source_link={project.leakage.source_link}
-              card={false}
-              iconcard="/static/iconos/icon-card-large.svg"
-            />
-            <ItemText
-              type="two"
-              title="Additionality"
-              description={project.additionality.text}
-              source={project.additionality.source}
-              source_link={project.additionality.source_link}
-            />
-            <ItemText
-              type="two"
-              title="Permanence"
-              description={project.permanence.text}
-              source={project.permanence.source}
-              source_link={project.permanence.source_link}
-            />
-            <ItemText
-              type="two"
-              title="Verifiability"
-              description={project.verifiability.text}
-              source={project.verifiability.source}
-              source_link={project.verifiability.source_link}
-            />
+            {project.leakage.display && (
+              <ItemText
+                type="two"
+                title="Leakage"
+                description={project.leakage.text}
+                source={project.leakage.source}
+                source_link={project.leakage.source_link}
+                card={false}
+                iconcard="/static/iconos/icon-card-large.svg"
+              />
+            )}
+            {project.additionality.display && (
+              <ItemText
+                type="two"
+                title="Additionality"
+                description={project.additionality.text}
+                source={project.additionality.source}
+                source_link={project.additionality.source_link}
+              />
+            )}
+            {project.permanence.display && (
+              <ItemText
+                type="two"
+                title="Permanence"
+                description={project.permanence.text}
+                source={project.permanence.source}
+                source_link={project.permanence.source_link}
+              />
+            )}
+            {project.verifiability.display && (
+              <ItemText
+                type="two"
+                title="Verifiability"
+                description={project.verifiability.text}
+                source={project.verifiability.source}
+                source_link={project.verifiability.source_link}
+              />
+            )}
           </div>
           <SideBar data={data} />
         </div>
