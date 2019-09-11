@@ -1,51 +1,51 @@
 {
   "type": "FeatureCollection",
-  "name": "NewFeatureType",
+  "name": "proj_bndry",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
   "features": [
     {
       "type": "Feature",
-      "geometry": {
-        "type": "GeometryCollection",
-        "geometries": [
-          {
-            "type": "GeometryCollection",
-            "geometries": [
-              {
-                "type": "Polygon",
-                "coordinates": [
-                  [
-                    [-76.1363248665, 35.6345766121, 0],
-                    [-76.1265344385, 35.6427150599, 0],
-                    [-76.1357795058, 35.6464711352, 0],
-                    [-76.1455379577, 35.6383756454, 0],
-                    [-76.1363248665, 35.6345766121, 0]
-                  ]
-                ]
-              }
-            ]
-          },
-          {
-            "type": "GeometryCollection",
-            "geometries": [
-              {
-                "type": "Polygon",
-                "coordinates": [
-                  [
-                    [-76.0507965148, 35.6277648644, 0],
-                    [-76.1190645602, 35.6563957109, 0],
-                    [-76.1277173334, 35.6512510278, 0],
-                    [-76.0935193137, 35.6375158795, 0],
-                    [-76.0995899079, 35.6321706091, 0],
-                    [-76.0634334428, 35.6174747381, 0],
-                    [-76.0507965148, 35.6277648644, 0]
-                  ]
-                ]
-              }
-            ]
-          }
-        ]
+      "properties": {
+        "Name": "277.64875",
+        "Description": "<html xmlns:fo=\"http://www.w3.org/1999/XSL/Format\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\"> <head> <META http-equiv=\"Content-Type\" content=\"text/html\"> <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"> </head> <body style=\"margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;\"> <table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\"> <tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\"> <td>277.64875</td> </tr> <tr> <td> <table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px\"> <tr> <td>FID</td> <td>0</td> </tr> <tr bgcolor=\"#D4E4F3\"> <td>area_ac</td> <td>277.64875</td> </tr> </table> </td> </tr> </table> </body> </html>"
       },
-      "properties": {}
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-76.136324866496025, 35.634576612102627, 0.0],
+              [-76.126534438540176, 35.64271505992869, 0.0],
+              [-76.135779505756801, 35.646471135210469, 0.0],
+              [-76.145537957650959, 35.638375645408473, 0.0],
+              [-76.136324866496025, 35.634576612102627, 0.0]
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "2108.019114",
+        "Description": "<html xmlns:fo=\"http://www.w3.org/1999/XSL/Format\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\"> <head> <META http-equiv=\"Content-Type\" content=\"text/html\"> <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"> </head> <body style=\"margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;\"> <table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\"> <tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\"> <td>2108.019114</td> </tr> <tr> <td> <table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px\"> <tr> <td>FID</td> <td>1</td> </tr> <tr bgcolor=\"#D4E4F3\"> <td>area_ac</td> <td>2108.019114</td> </tr> </table> </td> </tr> </table> </body> </html>"
+      },
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [-76.050796514800155, 35.627764864371521, 0.0],
+              [-76.119064560216003, 35.656395710854547, 0.0],
+              [-76.127717333408057, 35.651251027843507, 0.0],
+              [-76.093519313734788, 35.637515879509863, 0.0],
+              [-76.099589907917959, 35.63217060913518, 0.0],
+              [-76.063433442829435, 35.617474738103247, 0.0],
+              [-76.050796514800155, 35.627764864371521, 0.0]
+            ]
+          ]
+        ]
+      }
     }
   ]
 }
