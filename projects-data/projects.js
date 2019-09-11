@@ -27,27 +27,27 @@ const projects = {
   'mccloud-river': {
     pdp: require('./mccloud-river-pdp.json'),
     geojson: require('./mccloud-river-geo.json'),
-    biomass: require('./tricity-biomass.json'),
+    biomass: require('./mccloud-river-biomass.json'),
   },
   'alligator-river': {
     pdp: require('./alligator-river-pdp.json'),
     geojson: require('./alligator-river-geo.json'),
-    biomass: require('./tricity-biomass.json'),
+    biomass: require('./alligator-river-biomass.json'),
   },
   'doe-mountain': {
     pdp: require('./doe-mountain-pdp.json'),
     geojson: require('./doe-mountain-geo.json'),
-    biomass: require('./tricity-biomass.json'),
+    biomass: require('./doe-mountain-biomass.json'),
   },
   'hawk-mountain': {
     pdp: require('./hawk-mountain-pdp.json'),
     geojson: require('./hawk-mountain-geo.json'),
-    biomass: require('./tricity-biomass.json'),
+    biomass: require('./hawk-mountain-biomass.json'),
   },
   'pocosin-lakes': {
     pdp: require('./pocosin-lakes-pdp.json'),
     geojson: require('./pocosin-lakes-geo.json'),
-    biomass: require('./tricity-biomass.json'),
+    biomass: require('./pocosin-lakes-biomass.json'),
   },
   'brazil-preto': {
     pdp: require('./brazil-preto-pdp.json'),

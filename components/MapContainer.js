@@ -67,12 +67,13 @@ export class MapContainer extends PureComponent {
     // Typical usage (don't forget to compare props):
     if (this.props.data !== prevProps.data) {
       this.state.projectData = this.props.data;
+      console.log(this.state.projectData.location.zoom);
       this.setState({
         viewState: {
           ...this.state.viewState,
           longitude: this.state.projectData.location.coordinates[0],
           latitude: this.state.projectData.location.coordinates[1],
-          zoom: 11.5,
+          zoom: this.state.projectData.location.zoom || 11,
           transitionDuration: 18000,
           transitionInterpolator: new FlyToInterpolator(),
         },
@@ -89,7 +90,7 @@ export class MapContainer extends PureComponent {
         ...this.state.viewState,
         longitude: this.state.projectData.location.coordinates[0],
         latitude: this.state.projectData.location.coordinates[1],
-        zoom: 11.5,
+        zoom: this.state.projectData.location.zoom || 11,
         transitionDuration: 18000,
         transitionInterpolator: new FlyToInterpolator(),
       },
@@ -194,7 +195,7 @@ export class MapContainer extends PureComponent {
             {this._renderTooltip}
             <StaticMap
               mapboxApiAccessToken="pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA"
-              mapStyle="mapbox://styles/mapbox/light-v10"
+              mapStyle="mapbox://styles/mapbox/dark-v10"
             />
           </DeckGL>
         </div>
