@@ -37,7 +37,7 @@ const lightingEffect = new LightingEffect({ ambientLight, pointLight1, pointLigh
 // https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Tile_servers
 //const tileServer = 'https://c.tile.openstreetmap.org/';
 //const tileServer = 'https://c.tile.openstreetmap.org/';
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/polok';
+const tileServer = 'https://storage.googleapis.com/projects-biomass';
 
 export class MapContainer extends PureComponent {
   constructor(props) {
