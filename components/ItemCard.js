@@ -3,11 +3,16 @@ import ReactTooltip from 'react-tooltip';
 
 function ItemCard({ title, status, tooltip, tooltipid }) {
   return (
-    <div className={`item-card ${!status && 'disabled'}`}>
-      <img className="item-card-image" src="/static/iconos/checked.svg" width="28" alt="" />
+    <div className={`item-card`}>
+      <img
+        className="item-card-image"
+        src={`/static/iconos/checked${!status ? '-disabled' : ''}.svg`}
+        width="28"
+        alt=""
+      />
       <div className="item-card-descripcion">
         <h5>{title}</h5>
-        <p>Checked</p>
+        <p>{!status ? 'Not Checked' : 'Checked'}</p>
       </div>
       <a className="link-imagen" data-tip data-for={tooltipid} href="">
         <img src="/static/iconos/info-circle-solid.svg" width="14" alt="" />

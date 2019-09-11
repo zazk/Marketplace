@@ -48,21 +48,25 @@
   },
   "summary": {
     "leakage": {
+      "display": true,
       "text": "Quantification of leakage is limited to market leakage, as no activity-shifting leakage is allowed by the methodology beyond de minimis levels. All actively harvesting forestlands in the project area have been certified by Tree Farm. To prevent activity-shifting leakage, IAT Reinsurance will not conduct harvests on other lands under its ownership that would offset the harvest reductions attributable to the project. Therefore, leakage deduction is conservatively limited to market leakage of 40%.",
       "source": "Section E3 from Project Description Document",
       "source_link": "https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=24632&IDKEY=kkjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909k33967528"
     },
     "additionality": {
+      "display": true,
       "text": "Additionality for the project has been shown through a regulatory surplus test. There is no relevant laws, regulations, statues, legal rulings, and other regulatory frameworks that effectively requires the forest carbon project activity and its associated GHG emissions reductions/removal enhancements. Consequently, the project passes the Regulatory Surplus test. As the carbon project represents an opportunity cost to lost revenue associated with the potential timber harvesting that could legally and feasibly occur on the property, the carbon funding is expected to incentivize the project’s implementation.",
       "source": "Section C from Project Description Document",
       "source_link": "https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=24632&IDKEY=kkjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909k33967528"
     },
     "permanence": {
+      "display": true,
       "text": "To ensure the permanence of the GHG emission reductions from this project, buffer credits from each of the projects are put on hold in a pool. When a loss event occurs (fire, diseases, pests, etc) buffer credits are taken from this pool. Based on the result of the risk assessment using the 'ACR Tool for Risk Analysis and Buffer Determination' this project will contribute to the buffer pool 18% of their issued credits.",
       "source": "Section B8 from Project Description Document",
       "source_link": "https://acr2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=24632&IDKEY=kkjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909k33967528"
     },
     "verifiability": {
+      "display": true,
       "text": "An objective third party—someone other than Hudson Farm Club and the project developer and —must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services  acted as the third-party verifier in this project, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.",
       "source": "",
       "source_link": ""

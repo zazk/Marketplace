@@ -1,0 +1,116 @@
+{
+  "title": "Rio Preto-Jacundá REDD+ Avoided Unplanned Deforestation",
+  "tagline": "Amidst the Amazon’s deforestation belt lies the Rio Preto Jacundá Reserve, a shelter of ample biodiversity established in the early 90s.",
+  "main_picture": "https://storage.googleapis.com/marketplace-assets/brazil-preto-main_picture.jpg",
+  "credits_avail": {
+    "quatinty": "188244",
+    "unit": "credits"
+  },
+  "project_type": "REDD+ Avoided Unplanned Deforestation",
+  "location": {
+    "name": "Machado river basin, state of Rondônia, Brazil",
+    "coordinates": [-62.262375657679044, -8.904135402768095]
+  },
+  "standard": "https://storage.googleapis.com/marketplace-assets/logo-vcs_ccb.png",
+  "project_overview": "Rio Preto-Jacundá REDD+ (Reducing emissions from deforestation and forest degradation) project is a partnership between Biofílica and the residents of Resex (Extractivist Reserve) Rio Preto-Jacundá. This project provides shelter to more than 450 flora and fauna species and was established in the early 90s. Its community has a long history of fighting for territorial rights and is a pioneer in creating a Conservation Plan for the area. Following decades of struggle, the residents of the region sought to survive among an area high in biodiversity though scarce of basic public services. The solution was found in the commercialization of environmental services in order to generate income while continuing to value the forest. The aims of the Jacundá Project range from local empowerment and the improvement of the quality of life of the local population, to the monitoring of vulnerable species, enabling a continuous process of knowledge development and observation of local biodiversity.",
+  "credits_issued": {
+    "quatinty": "",
+    "unit": "total credits issued"
+  },
+  "verification": {
+    "methodology": "VM0015 v.1.1",
+    "last_verification": "June 2016"
+  },
+  "project_developer": "Biofílica",
+  "auditor": "Rainforest Alliance",
+  "total_land": {
+    "area": "74038",
+    "unit": "hectares"
+  },
+  "totalBiomass": "0",
+  "medianBiomass": "0",
+  "land_owner": "Asmorex (Extractive Reserve)",
+  "project_images": [
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/brazil-preto-image_1.jpg",
+      "caption": "The project area is categorized as of “very high” priority for conservation, as it contains several species in some degree of threat."
+    },
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/brazil-preto-image_2.jpg",
+      "caption": "30 traditional families of rubber-tapping origin are impacted by the project, from which 51% of the population are women."
+    }
+  ],
+  "badges": {
+    "leakage": false,
+    "additionality": true,
+    "permanence": true,
+    "verifiability": true
+  },
+  "summary": {
+    "leakage": {
+      "display": false,
+      "text": "",
+      "source": "",
+      "source_link": ""
+    },
+    "additionality": {
+      "display": true,
+      "text": "Additionality for the project has been shown through identifying the \"alternative land-use scenarios\" that would have occurred in the absence of this project, a \"barrier analysis\" was performed showing that the project activities would have not occur without the income from the sale of credits. Additionaly, a \"common practice analysis\" showed that the activities proposed by the project are not common practices, there is no management of structured plans as well as planning activities ranging from reducing deforestation to the rescue of the traditional riverside and extractive way of life. The project passes all analyses that proved the additionality of the project., this analysis followed the requirements of the \"tool for the demonstration and assessment of additionality in VCS AFOLU project activities\" VT0001.",
+      "source": "Section 4.6 from Project Description Document",
+      "source_link": "https://www.vcsprojectdatabase.org/services/publicViewServices/downloadDocumentById/29356"
+    },
+    "permanence": {
+      "display": true,
+      "text": "To ensure the permanence of the GHG emission reductions from this project, buffer credits from each of the projects are put on hold in a pool. When a loss event occurs (fire, diseases, pests, etc) buffer credits are taken from this pool. Based on the result of the risk assessment using the “AFOLU Non-Permanence Risk Tool v3.2” this project will contribute to the buffer pool 10% of their issued credits.",
+      "source": "Section 2.3 from Project Description Document",
+      "source_link": "https://www.vcsprojectdatabase.org/services/publicViewServices/downloadDocumentById/29356"
+    },
+    "verifiability": {
+      "display": true,
+      "text": "An objective third party—someone other than the landowner and Biofilica —must be able to look at project data and confirm that the carbon reductions are real and credible. Rainforest Alliance and Imaflora acted as the third-party verifier in this project since 2015, who determined the proper greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.",
+      "source": "",
+      "source_link": ""
+    }
+  },
+  "timeline": [
+    {
+      "date": "October 1st 2012",
+      "text": "Project start date"
+    },
+    {
+      "date": "October 2012",
+      "text": "1st Verification started"
+    },
+    {
+      "date": "September 2013",
+      "text": "1st Verification finished"
+    },
+    {
+      "date": "October 2013",
+      "text": "2nd Verification started"
+    },
+    {
+      "date": "September 2014",
+      "text": "2nd Verification finished"
+    },
+    {
+      "date": "October 2014",
+      "text": "3rd Verification started"
+    },
+    {
+      "date": "September 2015",
+      "text": "3rd Verification finished"
+    },
+    {
+      "date": "???????? ",
+      "text": "Next  verification and Credtis issuance"
+    },
+    {
+      "date": "September 2042",
+      "text": "Ends crediting period"
+    }
+  ],
+  "project_files": "https://www.vcsprojectdatabase.org/#/project_details/1503",
+  "un_goals": ["2", "4", "5", "12", "13", "15"],
+  "tagline_footer": "With every ton of carbon that is sold, trees are protected, partnerships are formed, and our living Earth is restored to help solve climate change."
+}
