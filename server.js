@@ -66,6 +66,7 @@ app.prepare().then(() => {
   server.use('/map', restrictAccess);
   server.use('/list', restrictAccess);
   server.use('/pdp', restrictAccess);
+  server.use('/maplist', restrictAccess);
 
   // Redirect to Pachama.com
   server.get('/about', function(req, res) {
