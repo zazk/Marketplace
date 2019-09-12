@@ -20,7 +20,6 @@
     "extends": "react-app"
   },
   "dependencies": {
-    "@mapbox/geojson-merge": "^1.0.2",
     "@material-ui/core": "^4.1.1",
     "@material-ui/styles": "^4.1.1",
     "auth0": "^2.18.0",
@@ -32,7 +31,6 @@
     "express-session": "^1.16.2",
     "formik": "^1.5.7",
     "formik-material-ui": "^0.0.18",
-    "fs": "^0.0.1-security",
     "isomorphic-fetch": "^2.2.1",
     "mixpanel": "^0.10.2",
     "mixpanel-browser": "^2.29.0",
