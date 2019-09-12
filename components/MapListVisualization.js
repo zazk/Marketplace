@@ -8,6 +8,7 @@ import { HexagonLayer } from '@deck.gl/aggregation-layers';
 import { TileLayer, BitmapLayer, GeoJsonLayer, MapView, View } from 'deck.gl';
 import DeckGL from '@deck.gl/react';
 import Router from 'next/router';
+import ProjectItem from '../components/ProjectItem';
 //import testGeoJson from './geo.js';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA'; // eslint-disable-line
@@ -37,6 +38,8 @@ for (let i = 0; i < dataProjects.length; i++) {
     },
     properties: {
       name: dataProjects[i]['pdp']['title'],
+      picture: dataProjects[i]['pdp']['main_picture'],
+      location: dataProjects[i]['pdp']['location']['name'],
       credits: credits,
       area: area,
       url: url,
@@ -181,17 +184,27 @@ export class MapListVisualization extends Component {
     const { x, y, hoveredObject } = this.state;
     return (
       hoveredObject && (
-        <div className="tooltip-map" style={{ top: y, left: x }}>
-          <div className="tooltip-inner">
-            <div className="tooltip-item">
-              <h3 className="tooltip-title">{hoveredObject.properties.name}</h3>
-              <ul className="tooltip-list">
-                <li>Credits Available: {hoveredObject.properties.credits}</li>
-                <li>Total Area: {hoveredObject.properties.area}</li>
-              </ul>
+        <>
+          <div className="tooltip-map" style={{ top: y, left: x }}>
+            <div className="tooltip-inner">
+              <ProjectItem
+                customclass="small"
+                picture={hoveredObject.properties.picture}
+                location={hoveredObject.properties.location}
+                name={hoveredObject.properties.name}
+                credits={hoveredObject.properties.credits}
+                area={hoveredObject.properties.area}
+              />
+              {/* <div className="tooltip-item">
+                <h3 className="tooltip-title">{hoveredObject.properties.name}</h3>
+                <ul className="tooltip-list">
+                  <li>Credits Available: {hoveredObject.properties.credits}</li>
+                  <li>Total Area: {hoveredObject.properties.area}</li>
+                </ul>
+              </div> */}
             </div>
           </div>
-        </div>
+        </>
       )
     );
   }
@@ -295,8 +308,7 @@ export class MapListVisualization extends Component {
             .tooltip-map {
               position: absolute;
               z-index: 10;
-              padding: 0 20px;
-              transform: translateX(-40px) translateY(50px);
+              transform: translateX(-40px) translateY(30px);
             }
             .tooltip-list {
               li {
@@ -324,12 +336,10 @@ export class MapListVisualization extends Component {
               font-size: 14px;
             }
             .tooltip-inner {
-              border-radius: 7px;
               background-color: #fff;
+              border-radius: 7px;
               position: relative;
               z-index: 10;
-              padding: 20px;
-              width: 350px;
               box-shadow: 0 15px 45px 0 rgba(109, 100, 206, 0.21);
               &:after {
                 content: '';
