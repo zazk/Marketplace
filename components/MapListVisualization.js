@@ -182,7 +182,7 @@ export class MapListVisualization extends Component {
           <div className="tooltip-map" style={{ top: y, left: x }}>
             <div className="tooltip-inner">
               <ProjectItem
-                url={url}
+                url={selectedObject.properties.url}
                 customclass="small"
                 picture={selectedObject.properties.picture}
                 location={selectedObject.properties.location}
