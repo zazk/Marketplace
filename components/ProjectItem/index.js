@@ -2,13 +2,13 @@ import React from 'react';
 import dataProjects from '../../projects-data/projects';
 import PropTypes from 'prop-types';
 
-function ProjectItem({ customclass, name, picture, location, credits, area }) {
+function ProjectItem({ customclass, name, picture, location, credits, area, url }) {
   const project = dataProjects[0];
 
   return (
     <div>
       <div className="content-main project-list-main feature-two">
-        <a className={`project-item ${customclass ? customclass : ''}`}>
+        <a href={url} className={`project-item ${customclass ? customclass : ''}`}>
           <div
             className="project-picture"
             style={{
@@ -326,7 +326,7 @@ function ProjectItem({ customclass, name, picture, location, credits, area }) {
             position: relative;
             padding: 24px 0;
             padding-left: 160px;
-            border-radius: 10px;
+            border-radius: 2px;
             border: solid 1px #eeeeee;
             background-color: #ffffff;
             display: block;
@@ -336,7 +336,7 @@ function ProjectItem({ customclass, name, picture, location, credits, area }) {
               box-shadow: 0 10px 34px 0 rgba(7, 93, 108, 0.21);
             }
             &.small {
-              width: 350px !important;
+              width: 280px !important;
               border: none;
               padding-bottom: 0;
               margin-bottom: 0;

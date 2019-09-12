@@ -182,6 +182,7 @@ export class MapListVisualization extends Component {
           <div className="tooltip-map" style={{ top: y, left: x }}>
             <div className="tooltip-inner">
               <ProjectItem
+                url={url}
                 customclass="small"
                 picture={selectedObject.properties.picture}
                 location={selectedObject.properties.location}
@@ -290,10 +291,11 @@ export class MapListVisualization extends Component {
         </DeckGL>
         <style jsx global>
           {`
+            #view-child-main-1 {
+              pointer-events: inherit !important;
+            }
             .tooltip-map {
               position: absolute;
-              z-index: 10;
-              transform: translateX(-40px) translateY(30px);
             }
             .tooltip-list {
               li {
@@ -321,22 +323,27 @@ export class MapListVisualization extends Component {
               font-size: 14px;
             }
             .tooltip-inner {
+              position: absolute;
+              bottom: 0;
+              z-index: 10;
+              transform: translateX(-50%) translateY(-25px);
               background-color: #fff;
               border-radius: 7px;
-              position: relative;
               z-index: 10;
               box-shadow: 0 15px 45px 0 rgba(109, 100, 206, 0.21);
               &:after {
                 content: '';
                 display: inline-block;
                 position: absolute;
-                bottom: 100%;
-                left: 10px;
+                top: 100%;
+                left: 0px;
+                right: 0;
+                margin: 0 auto;
                 width: 0;
                 height: 0;
                 border-style: solid;
-                border-width: 0 10px 10px 10px;
-                border-color: transparent transparent #ffffff transparent;
+                border-width: 10px 10px 0 10px;
+                border-color: #ffffff transparent transparent transparent;
               }
             }
             .detail-map {
