@@ -27,8 +27,8 @@
     "area": "74038",
     "unit": "hectares"
   },
-  "totalBiomass": "0",
-  "medianBiomass": "0",
+  "totalBiomass": "9350123 tons",
+  "medianBiomass": "134 tons",
   "land_owner": "Triângulo Pisos e Painéis Ltda.",
   "project_images": [
     {
@@ -41,17 +41,17 @@
     }
   ],
   "badges": {
-    "leakage": false,
+    "leakage": true,
     "additionality": true,
     "permanence": true,
     "verifiability": true
   },
   "summary": {
     "leakage": {
-      "display": false,
-      "text": "",
-      "source": "",
-      "source_link": ""
+      "display": true,
+      "text": "The VCS methodology applied to the Manoa REDD+ Project foresees the monitoring of leakage displacement by defining a spatial boundary called as Leakage Belt. By means of baseline measurements it is possible to determine whether or not there was a leakage displacement and a quantity of credits is discounted when it happens. To prevent the occurrence of leakage, is performed a frequent monitoring of the Leakage Belt.",
+      "source": "Section 5.5 and Section 8 from Project Description Document",
+      "source_link": "https://www.vcsprojectdatabase.org/services/publicViewServices/downloadDocumentById/29356"
     },
     "additionality": {
       "display": true,
@@ -110,7 +110,7 @@
       "text": "4th Verification finished"
     },
     {
-      "date": "???????? ",
+      "date": "2022",
       "text": "Next  verification and Credtis issuance"
     },
     {

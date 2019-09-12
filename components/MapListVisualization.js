@@ -127,8 +127,6 @@ export class MapListVisualization extends Component {
   }
 
   layerFilter({ layer, viewport }) {
-    // console.log(layer);
-    //console.log(viewport);
     if (viewport.id === 'minimap') {
       // Do not draw the car layer in the first person view
       return false;
@@ -173,7 +171,6 @@ export class MapListVisualization extends Component {
   }
 
   _onClick({ x, y, object }) {
-    console.log(object);
     Router.push(object.properties.url);
   }
 
