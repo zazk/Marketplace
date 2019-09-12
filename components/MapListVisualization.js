@@ -94,10 +94,9 @@ export class MapListVisualization extends Component {
     this.state = {
       elevationScale: elevationScale.min,
       viewState: INITIAL_VIEW_STATE,
-      hoveredObject: null,
+      selectedObject: null,
     };
 
-    this._openTooltip = this._openTooltip.bind(this);
     this._onClick = this._onClick.bind(this);
     this._renderTooltip = this._renderTooltip.bind(this);
 
@@ -107,7 +106,6 @@ export class MapListVisualization extends Component {
     this._onViewStateChange = this._onViewStateChange.bind(this);
     this._startAnimate = this._startAnimate.bind(this);
     this._animateHeight = this._animateHeight.bind(this);
-    this._test = this._test.bind(this);
   }
 
   componentDidMount() {
@@ -160,28 +158,36 @@ export class MapListVisualization extends Component {
     this.setState({ viewState });
   }
 
-  _openTooltip({ x, y, object }) {
-    this.setState({ x, y, hoveredObject: object });
-  }
-
-  _onClick({ x, y, object }) {
-    Router.push(object.properties.url);
+  _onClick(info) {
+    if (!info.object) {
+      this.setState({
+        x: info.x,
+        y: info.y,
+        selectedObject: null,
+      });
+    } else {
+      this.setState({
+        x: info.x,
+        y: info.y,
+        selectedObject: info.object,
+      });
+    }
   }
 
   _renderTooltip() {
-    const { x, y, hoveredObject } = this.state;
+    const { x, y, selectedObject } = this.state;
     return (
-      hoveredObject && (
+      selectedObject && (
         <>
           <div className="tooltip-map" style={{ top: y, left: x }}>
             <div className="tooltip-inner">
               <ProjectItem
                 customclass="small"
-                picture={hoveredObject.properties.picture}
-                location={hoveredObject.properties.location}
-                name={hoveredObject.properties.name}
-                credits={hoveredObject.properties.credits}
-                area={hoveredObject.properties.area}
+                picture={selectedObject.properties.picture}
+                location={selectedObject.properties.location}
+                name={selectedObject.properties.name}
+                credits={selectedObject.properties.credits}
+                area={selectedObject.properties.area}
               />
             </div>
           </div>
@@ -189,9 +195,7 @@ export class MapListVisualization extends Component {
       )
     );
   }
-  _test() {
-    console.log('test test');
-  }
+
   _renderLayers() {
     const { data, radius = 210, upperPercentile = 90, coverage = 0.9 } = this.props;
     const { autoHighlight = true, highlightColor = [60, 60, 60, 40] } = this.props;
@@ -215,8 +219,7 @@ export class MapListVisualization extends Component {
         autoHighlight: true,
         getColor: [10, 4, 91],
         getFillColor: [10, 200, 155, 130],
-        // onHover: this._openTooltip,
-        onClick: this._openTooltip,
+        onClick: info => this._onClick(info),
       }),
       new TileLayer({
         pickable: false,
@@ -251,6 +254,7 @@ export class MapListVisualization extends Component {
           viewState={viewState}
           onViewStateChange={this._onViewStateChange}
           controller={true}
+          onClick={this._onClick}
           views={[
             new MapView({ id: 'main' }),
             new MapView({
