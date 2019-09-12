@@ -24,6 +24,7 @@ var featureCollection = {
 
 var geoJsonFeatures = [];
 for (let i = 0; i < dataProjects.length; i++) {
+  var progress = 40;
   var credits = dataProjects[i]['pdp']['credits_avail']['quatinty'];
   var area = dataProjects[i]['pdp']['total_land']['area'] + ' ' + dataProjects[i]['pdp']['total_land']['unit'];
   var url = '/pdp?id=' + i;
@@ -40,6 +41,7 @@ for (let i = 0; i < dataProjects.length; i++) {
       credits: credits,
       area: area,
       url: url,
+      progress: progress,
     },
   };
   geoJsonFeatures.push(feature);
@@ -182,7 +184,8 @@ export class MapListVisualization extends Component {
           <div className="tooltip-map" style={{ top: y, left: x }}>
             <div className="tooltip-inner">
               <ProjectItem
-                url={url}
+                progress={selectedObject.properties.progress}
+                url={selectedObject.properties.url}
                 customclass="small"
                 picture={selectedObject.properties.picture}
                 location={selectedObject.properties.location}
