@@ -2,17 +2,14 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { StaticMap } from 'react-map-gl';
-import { PhongMaterial } from '@luma.gl/core';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
-import { HexagonLayer } from '@deck.gl/aggregation-layers';
 import { TileLayer, BitmapLayer, GeoJsonLayer, MapView, View } from 'deck.gl';
 import DeckGL from '@deck.gl/react';
 import Router from 'next/router';
 import ProjectItem from '../components/ProjectItem';
-//import testGeoJson from './geo.js';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA'; // eslint-disable-line
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/polok';
+const tileServer = 'https://storage.googleapis.com/projects-biomass';
 //const geojson = testGeoJson;
 import dataProjects from '../projects-data/projects';
 
@@ -72,19 +69,12 @@ const pointLight2 = new PointLight({
 
 const lightingEffect = new LightingEffect({ ambientLight, pointLight1, pointLight2 });
 
-const material = new PhongMaterial({
-  ambient: 0.64,
-  diffuse: 0.6,
-  shininess: 32,
-  specularColor: [51, 51, 51],
-});
-
 const INITIAL_VIEW_STATE = {
   longitude: project.location.coordinates[0] + 0.025,
   latitude: project.location.coordinates[1],
   zoom: 5,
   minZoom: 2,
-  maxZoom: 8,
+  maxZoom: 13,
   pitch: 40.5,
   bearing: -27.396674584323023,
 };
@@ -192,13 +182,6 @@ export class MapListVisualization extends Component {
                 credits={hoveredObject.properties.credits}
                 area={hoveredObject.properties.area}
               />
-              {/* <div className="tooltip-item">
-                <h3 className="tooltip-title">{hoveredObject.properties.name}</h3>
-                <ul className="tooltip-list">
-                  <li>Credits Available: {hoveredObject.properties.credits}</li>
-                  <li>Total Area: {hoveredObject.properties.area}</li>
-                </ul>
-              </div> */}
             </div>
           </div>
         </>
@@ -209,11 +192,31 @@ export class MapListVisualization extends Component {
   _renderLayers() {
     const { data, radius = 210, upperPercentile = 90, coverage = 0.9 } = this.props;
     const { autoHighlight = true, highlightColor = [60, 60, 60, 40] } = this.props;
-
     return [
+      new GeoJsonLayer({
+        id: 'projects',
+        data: geojson,
+        lineWidthScale: 20,
+        lineWidthMinPixels: 16,
+        getLineColor: [100, 130, 90],
+        getRadius: 10,
+        getLineWidth: 10,
+        opacity: 1,
+        stroked: true,
+        filled: true,
+        extruded: true,
+        wireframe: true,
+        fp64: true,
+        getElevation: 90,
+        pickable: true,
+        autoHighlight: true,
+        getColor: [10, 4, 91],
+        getFillColor: [10, 200, 155, 130],
+        onHover: this._onHover,
+        onClick: this._onClick,
+      }),
       new TileLayer({
         pickable: false,
-        onHover: this._onHover,
         autoHighlight,
         highlightColor,
         opacity: 1,
@@ -230,33 +233,11 @@ export class MapListVisualization extends Component {
           });
         },
       }),
-      new GeoJsonLayer({
-        id: 'objectSelected',
-        data: geojson,
-        lineWidthScale: 20,
-        lineWidthMinPixels: 50,
-        getLineColor: [80, 150, 180],
-        getRadius: 10,
-        getLineWidth: 10,
-        opacity: 1,
-        stroked: true,
-        filled: true,
-        extruded: true,
-        wireframe: true,
-        fp64: true,
-        getElevation: 10,
-        pickable: true,
-        autoHighlight: true,
-        getColor: [10, 4, 91],
-        getFillColor: [10, 200, 155, 130],
-        onHover: this._onHover,
-        onClick: this._onClick,
-      }),
     ];
   }
 
   render() {
-    const { mapStyle = 'mapbox://styles/pachama/ck0fwm1gc05431cpex3dg0djo' } = this.props;
+    const { mapStyle = 'mapbox://styles/pachama/ck0h6nzwy1buy1ctipdv1swze' } = this.props;
     const { viewState } = this.state;
 
     return (
