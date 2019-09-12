@@ -2,16 +2,14 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { StaticMap } from 'react-map-gl';
-import { PhongMaterial } from '@luma.gl/core';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
-import { HexagonLayer } from '@deck.gl/aggregation-layers';
 import { TileLayer, BitmapLayer, GeoJsonLayer, MapView, View } from 'deck.gl';
 import DeckGL from '@deck.gl/react';
 import Router from 'next/router';
-//import testGeoJson from './geo.js';
+import ProjectItem from '../components/ProjectItem';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA'; // eslint-disable-line
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/polok';
+const tileServer = 'https://storage.googleapis.com/projects-biomass';
 //const geojson = testGeoJson;
 import dataProjects from '../projects-data/projects';
 
@@ -37,6 +35,8 @@ for (let i = 0; i < dataProjects.length; i++) {
     },
     properties: {
       name: dataProjects[i]['pdp']['title'],
+      picture: dataProjects[i]['pdp']['main_picture'],
+      location: dataProjects[i]['pdp']['location']['name'],
       credits: credits,
       area: area,
       url: url,
@@ -69,19 +69,12 @@ const pointLight2 = new PointLight({
 
 const lightingEffect = new LightingEffect({ ambientLight, pointLight1, pointLight2 });
 
-const material = new PhongMaterial({
-  ambient: 0.64,
-  diffuse: 0.6,
-  shininess: 32,
-  specularColor: [51, 51, 51],
-});
-
 const INITIAL_VIEW_STATE = {
   longitude: project.location.coordinates[0] + 0.025,
   latitude: project.location.coordinates[1],
   zoom: 5,
   minZoom: 2,
-  maxZoom: 8,
+  maxZoom: 13,
   pitch: 40.5,
   bearing: -27.396674584323023,
 };
@@ -101,10 +94,9 @@ export class MapListVisualization extends Component {
     this.state = {
       elevationScale: elevationScale.min,
       viewState: INITIAL_VIEW_STATE,
-      hoveredObject: null,
+      selectedObject: null,
     };
 
-    this._onHover = this._onHover.bind(this);
     this._onClick = this._onClick.bind(this);
     this._renderTooltip = this._renderTooltip.bind(this);
 
@@ -166,29 +158,41 @@ export class MapListVisualization extends Component {
     this.setState({ viewState });
   }
 
-  _onHover({ x, y, object }) {
-    this.setState({ x, y, hoveredObject: object });
-  }
-
-  _onClick({ x, y, object }) {
-    Router.push(object.properties.url);
+  _onClick(info) {
+    if (!info.object) {
+      this.setState({
+        x: info.x,
+        y: info.y,
+        selectedObject: null,
+      });
+    } else {
+      this.setState({
+        x: info.x,
+        y: info.y,
+        selectedObject: info.object,
+      });
+    }
   }
 
   _renderTooltip() {
-    const { x, y, hoveredObject } = this.state;
+    const { x, y, selectedObject } = this.state;
     return (
-      hoveredObject && (
-        <div className="tooltip-map" style={{ top: y, left: x }}>
-          <div className="tooltip-inner">
-            <div className="tooltip-item">
-              <h3 className="tooltip-title">{hoveredObject.properties.name}</h3>
-              <ul className="tooltip-list">
-                <li>Credits Available: {hoveredObject.properties.credits}</li>
-                <li>Total Area: {hoveredObject.properties.area}</li>
-              </ul>
+      selectedObject && (
+        <>
+          <div className="tooltip-map" style={{ top: y, left: x }}>
+            <div className="tooltip-inner">
+              <ProjectItem
+                url={url}
+                customclass="small"
+                picture={selectedObject.properties.picture}
+                location={selectedObject.properties.location}
+                name={selectedObject.properties.name}
+                credits={selectedObject.properties.credits}
+                area={selectedObject.properties.area}
+              />
             </div>
           </div>
-        </div>
+        </>
       )
     );
   }
@@ -196,11 +200,30 @@ export class MapListVisualization extends Component {
   _renderLayers() {
     const { data, radius = 210, upperPercentile = 90, coverage = 0.9 } = this.props;
     const { autoHighlight = true, highlightColor = [60, 60, 60, 40] } = this.props;
-
     return [
+      new GeoJsonLayer({
+        id: 'projects',
+        data: geojson,
+        lineWidthScale: 20,
+        lineWidthMinPixels: 30,
+        getLineColor: [100, 130, 90],
+        getRadius: 10,
+        getLineWidth: 10,
+        opacity: 1,
+        stroked: true,
+        filled: true,
+        extruded: true,
+        wireframe: true,
+        fp64: true,
+        getElevation: 90,
+        pickable: true,
+        autoHighlight: true,
+        getColor: [10, 4, 91],
+        getFillColor: [10, 200, 155, 130],
+        onClick: info => this._onClick(info),
+      }),
       new TileLayer({
         pickable: false,
-        onHover: this._onHover,
         autoHighlight,
         highlightColor,
         opacity: 1,
@@ -217,33 +240,11 @@ export class MapListVisualization extends Component {
           });
         },
       }),
-      new GeoJsonLayer({
-        id: 'objectSelected',
-        data: geojson,
-        lineWidthScale: 20,
-        lineWidthMinPixels: 50,
-        getLineColor: [80, 150, 180],
-        getRadius: 10,
-        getLineWidth: 10,
-        opacity: 1,
-        stroked: true,
-        filled: true,
-        extruded: true,
-        wireframe: true,
-        fp64: true,
-        getElevation: 10,
-        pickable: true,
-        autoHighlight: true,
-        getColor: [10, 4, 91],
-        getFillColor: [10, 200, 155, 130],
-        onHover: this._onHover,
-        onClick: this._onClick,
-      }),
     ];
   }
 
   render() {
-    const { mapStyle = 'mapbox://styles/pachama/ck0fwm1gc05431cpex3dg0djo' } = this.props;
+    const { mapStyle = 'mapbox://styles/pachama/ck0h6nzwy1buy1ctipdv1swze' } = this.props;
     const { viewState } = this.state;
 
     return (
@@ -254,6 +255,7 @@ export class MapListVisualization extends Component {
           viewState={viewState}
           onViewStateChange={this._onViewStateChange}
           controller={true}
+          onClick={this._onClick}
           views={[
             new MapView({ id: 'main' }),
             new MapView({
@@ -289,11 +291,11 @@ export class MapListVisualization extends Component {
         </DeckGL>
         <style jsx global>
           {`
+            #view-child-main-1 {
+              pointer-events: inherit !important;
+            }
             .tooltip-map {
               position: absolute;
-              z-index: 10;
-              padding: 0 20px;
-              transform: translateX(-40px) translateY(50px);
             }
             .tooltip-list {
               li {
@@ -321,24 +323,27 @@ export class MapListVisualization extends Component {
               font-size: 14px;
             }
             .tooltip-inner {
-              border-radius: 7px;
-              background-color: #fff;
-              position: relative;
+              position: absolute;
+              bottom: 0;
               z-index: 10;
-              padding: 20px;
-              width: 350px;
+              transform: translateX(-50%) translateY(-25px);
+              background-color: #fff;
+              border-radius: 7px;
+              z-index: 10;
               box-shadow: 0 15px 45px 0 rgba(109, 100, 206, 0.21);
               &:after {
                 content: '';
                 display: inline-block;
                 position: absolute;
-                bottom: 100%;
-                left: 10px;
+                top: 100%;
+                left: 0px;
+                right: 0;
+                margin: 0 auto;
                 width: 0;
                 height: 0;
                 border-style: solid;
-                border-width: 0 10px 10px 10px;
-                border-color: transparent transparent #ffffff transparent;
+                border-width: 10px 10px 0 10px;
+                border-color: #ffffff transparent transparent transparent;
               }
             }
             .detail-map {
