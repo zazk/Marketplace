@@ -195,7 +195,7 @@ export class MapContainer extends PureComponent {
             {this._renderTooltip}
             <StaticMap
               mapboxApiAccessToken="pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA"
-              mapStyle="mapbox://styles/pachama/ck0fwm1gc05431cpex3dg0djo"
+              mapStyle="mapbox://styles/pachama/ck0h6nzwy1buy1ctipdv1swze"
             />
           </DeckGL>
         </div>
