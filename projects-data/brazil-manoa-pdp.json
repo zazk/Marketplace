@@ -9,7 +9,8 @@
   "project_type": "REDD+ Avoided Unplanned Deforestation",
   "location": {
     "name": "Cujubim, state of Rondônia, Brazil",
-    "coordinates": [-62.69262973891786, -8.83019005211992]
+    "coordinates": [-62.77262973891786, -8.83019005211992],
+    "zoom": 9
   },
   "standard": "https://storage.googleapis.com/marketplace-assets/logo-vcs_ccb.png",
   "project_overview": "Manoa REDD+ (Reducing emissions from deforestation and forest degradation) project is a partnership between Biofílica and Grupo Triângulo, located at Manoa Farm, city of Cujubim, state of Rondônia, in an area of 74,000 hectares. The history demonstrates the pioneering in sustainable forest management, and are one of the few forest areas remaining in private area in the region, constantly threatened by invasions and timber theft. Manoa is of paramount importance in the landscape connectivity, as it is close to conservation units and provides shelter for more than 900 flora and fauna species.",
