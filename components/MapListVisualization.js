@@ -7,6 +7,7 @@ import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { HexagonLayer } from '@deck.gl/aggregation-layers';
 import { TileLayer, BitmapLayer, GeoJsonLayer, MapView, View } from 'deck.gl';
 import DeckGL from '@deck.gl/react';
+import Router from 'next/router';
 //import testGeoJson from './geo.js';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA'; // eslint-disable-line
@@ -25,6 +26,9 @@ var featureCollection = {
 
 var geoJsonFeatures = [];
 for (let i = 0; i < dataProjects.length; i++) {
+  var credits = dataProjects[i]['pdp']['credits_avail']['quatinty'];
+  var area = dataProjects[i]['pdp']['total_land']['area'] + ' ' + dataProjects[i]['pdp']['total_land']['unit'];
+  var url = '/pdp?id=' + i;
   var feature = {
     type: 'Feature',
     geometry: {
@@ -33,6 +37,9 @@ for (let i = 0; i < dataProjects.length; i++) {
     },
     properties: {
       name: dataProjects[i]['pdp']['title'],
+      credits: credits,
+      area: area,
+      url: url,
     },
   };
   geoJsonFeatures.push(feature);
@@ -98,6 +105,7 @@ export class MapListVisualization extends Component {
     };
 
     this._onHover = this._onHover.bind(this);
+    this._onClick = this._onClick.bind(this);
     this._renderTooltip = this._renderTooltip.bind(this);
 
     this.startAnimationTimer = null;
@@ -161,30 +169,25 @@ export class MapListVisualization extends Component {
   }
 
   _onHover({ x, y, object }) {
-    console.log(object);
     this.setState({ x, y, hoveredObject: object });
+  }
+
+  _onClick({ x, y, object }) {
+    console.log(object);
+    Router.push(object.properties.url);
   }
 
   _renderTooltip() {
     const { x, y, hoveredObject } = this.state;
-    console.log(x);
     return (
       hoveredObject && (
         <div className="tooltip-map" style={{ top: y, left: x }}>
           <div className="tooltip-inner">
             <div className="tooltip-item">
-              <h3 className="tooltip-title">Average Property Value</h3>
+              <h3 className="tooltip-title">{hoveredObject.properties.name}</h3>
               <ul className="tooltip-list">
-                <li>${hoveredObject.properties.name} / parcel</li>
-                <li>
-                  ${hoveredObject.properties.name} / m<sup>2</sup>
-                </li>
-              </ul>
-            </div>
-            <div className="tooltip-item">
-              <h3 className="tooltip-title">Growth</h3>
-              <ul className="tooltip-list">
-                <li>100%</li>
+                <li>Credits Available: {hoveredObject.properties.credits}</li>
+                <li>Total Area: {hoveredObject.properties.area}</li>
               </ul>
             </div>
           </div>
@@ -237,12 +240,13 @@ export class MapListVisualization extends Component {
         getColor: [10, 4, 91],
         getFillColor: [10, 200, 155, 130],
         onHover: this._onHover,
+        onClick: this._onClick,
       }),
     ];
   }
 
   render() {
-    const { mapStyle = 'mapbox://styles/mapbox/satellite-v9' } = this.props;
+    const { mapStyle = 'mapbox://styles/pachama/ck0fwm1gc05431cpex3dg0djo' } = this.props;
     const { viewState } = this.state;
 
     return (
