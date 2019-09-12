@@ -2,7 +2,7 @@ import React from 'react';
 import dataProjects from '../../projects-data/projects';
 import PropTypes from 'prop-types';
 
-function ProjectItem({ customclass, name, picture, location, credits, area, url }) {
+function ProjectItem({ customclass, name, picture, location, credits, area, url, progress }) {
   const project = dataProjects[0];
 
   return (
@@ -23,7 +23,7 @@ function ProjectItem({ customclass, name, picture, location, credits, area, url 
               </div>
               <div className="project-progress">
                 <div className="progressbar">
-                  <div className="progressbar-item" style={{ width: `80%` }} />
+                  <div className="progressbar-item" style={{ width: `${progress}%` }} />
                 </div>
                 <div className="progres-numbers">
                   <p>
