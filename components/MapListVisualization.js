@@ -97,7 +97,7 @@ export class MapListVisualization extends Component {
       hoveredObject: null,
     };
 
-    this._onHover = this._onHover.bind(this);
+    this._openTooltip = this._openTooltip.bind(this);
     this._onClick = this._onClick.bind(this);
     this._renderTooltip = this._renderTooltip.bind(this);
 
@@ -107,6 +107,7 @@ export class MapListVisualization extends Component {
     this._onViewStateChange = this._onViewStateChange.bind(this);
     this._startAnimate = this._startAnimate.bind(this);
     this._animateHeight = this._animateHeight.bind(this);
+    this._test = this._test.bind(this);
   }
 
   componentDidMount() {
@@ -159,7 +160,7 @@ export class MapListVisualization extends Component {
     this.setState({ viewState });
   }
 
-  _onHover({ x, y, object }) {
+  _openTooltip({ x, y, object }) {
     this.setState({ x, y, hoveredObject: object });
   }
 
@@ -188,7 +189,9 @@ export class MapListVisualization extends Component {
       )
     );
   }
-
+  _test() {
+    console.log('test test');
+  }
   _renderLayers() {
     const { data, radius = 210, upperPercentile = 90, coverage = 0.9 } = this.props;
     const { autoHighlight = true, highlightColor = [60, 60, 60, 40] } = this.props;
@@ -212,8 +215,8 @@ export class MapListVisualization extends Component {
         autoHighlight: true,
         getColor: [10, 4, 91],
         getFillColor: [10, 200, 155, 130],
-        onHover: this._onHover,
-        onClick: this._onClick,
+        // onHover: this._openTooltip,
+        onClick: this._openTooltip,
       }),
       new TileLayer({
         pickable: false,
