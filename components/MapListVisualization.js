@@ -205,7 +205,7 @@ export class MapListVisualization extends Component {
         id: 'projects',
         data: geojson,
         lineWidthScale: 20,
-        lineWidthMinPixels: 16,
+        lineWidthMinPixels: 30,
         getLineColor: [100, 130, 90],
         getRadius: 10,
         getLineWidth: 10,
