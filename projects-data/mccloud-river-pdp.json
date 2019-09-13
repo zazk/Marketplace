@@ -3,7 +3,7 @@
   "tagline": "The McCloud River project generates emissions reductions through conservation-based management of commercial timberlands about 20 miles southeast of Mount Shasta in northern California.",
   "main_picture": "https://storage.googleapis.com/marketplace-assets/mccloud-main_picture.jpg",
   "credits_avail": {
-    "quatinty": "104879",
+    "quatinty": "104,879",
     "unit": "credits"
   },
   "project_type": "Improved Forest Management",
@@ -25,10 +25,10 @@
   "project_developer": "Bluesource",
   "auditor": "SCS Global Services",
   "total_land": {
-    "area": "9200",
-    "unit": "acres"
+    "area": "3,723",
+    "unit": "hectares"
   },
-  "totalBiomass": "718862 tns",
+  "totalBiomass": "718,862 tns",
   "medianBiomass": "200 tns",
   "land_owner": "Pondosa Forest, LLC",
   "project_images": [
