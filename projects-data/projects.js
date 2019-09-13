@@ -57,7 +57,7 @@ const projects = {
   'brazil-manoa': {
     pdp: require('./brazil-manoa-pdp.json'),
     geojson: require('./brazil-manoa-geo.json'),
-    biomass: require('./tricity-biomass.json'),
+    biomass: false,
   },
 };
 
