@@ -3,7 +3,7 @@
   "tagline": "Throughout its almost 30 years of history, Manoa has improved its management techniques, becoming a model of worldwide reference of forest exploration ally to with the conservation of nature.",
   "main_picture": "https://storage.googleapis.com/marketplace-assets/brazil-manoa-main_picture.jpg",
   "credits_avail": {
-    "quatinty": "121765",
+    "quatinty": "121,765",
     "unit": "credits"
   },
   "project_type": "REDD+ Avoided Unplanned Deforestation",
@@ -25,10 +25,10 @@
   "project_developer": "Biofílica",
   "auditor": "Rainforest Alliance",
   "total_land": {
-    "area": "74038",
+    "area": "74,038",
     "unit": "hectares"
   },
-  "totalBiomass": "9350123 tons",
+  "totalBiomass": "9,350,123 tons",
   "medianBiomass": "134 tons",
   "land_owner": "Triângulo Pisos e Painéis Ltda.",
   "project_images": [

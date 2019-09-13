@@ -52,12 +52,12 @@ const projects = {
   'brazil-preto': {
     pdp: require('./brazil-preto-pdp.json'),
     geojson: require('./brazil-preto-geo.json'),
-    biomass: require('./tricity-biomass.json'),
+    biomass: require('./brazil-preto-biomass.json'),
   },
   'brazil-manoa': {
     pdp: require('./brazil-manoa-pdp.json'),
     geojson: require('./brazil-manoa-geo.json'),
-    biomass: require('./tricity-biomass.json'),
+    biomass: false,
   },
 };
 

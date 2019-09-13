@@ -25,10 +25,10 @@
   "auditor": "SCS Global services",
   "total_land": {
     "area": "5,469.58",
-    "unit": "ha"
+    "unit": "hectares"
   },
-  "totalBiomass": "91,831,049.7 tns",
-  "medianBiomass": "1,685.31 tns/ha",
+  "totalBiomass": "91,831,050 tns",
+  "medianBiomass": "169 tns/ha",
   "land_owner": "The Cities of Westfield, West Springfield and Holyoke",
   "project_images": [
     {

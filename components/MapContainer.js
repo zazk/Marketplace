@@ -128,8 +128,8 @@ export class MapContainer extends PureComponent {
         highlightColor,
         opacity: 1,
         // https://wiki.openstreetmap.org/wiki/Zoom_levels
-        minZoom: 10,
-        maxZoom: 17,
+        minZoom: 8,
+        maxZoom: 16,
         renderSubLayers: props => {
           const { x, y, z, bbox } = props.tile;
           const { west, south, east, north } = bbox;

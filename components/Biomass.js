@@ -8,45 +8,49 @@ function Biomass({ data, biomass }) {
   return (
     <div className="biomass content">
       <div className="content-main">
-        <div className="biomass-intro">
-          <ItemText
-            icontitle="/static/iconos/globe-europe-solid.svg"
-            title="Biomass"
-            description="We use remote sensing technologies to measure aboveground biomass (ABG), which includes the stem, stump, branches, bark, seeds and foliage. The data is a product of annually composited satellite imagery, field observations, and LiDAR data."
-          />
-        </div>
-        <div className="biomas-grafico-detail flex">
-          <figure>
-            <div className="biommas-numbers flex" style={{ display: `none` }}>
-              <div className="biomas-number-item">
-                <span>40.3%</span>
-                <p>current cover</p>
+        {biomass && (
+          <>
+            <div className="biomass-intro">
+              <ItemText
+                icontitle="/static/iconos/globe-europe-solid.svg"
+                title="Biomass"
+                description="We use remote sensing technologies to measure aboveground biomass (ABG), which includes the stem, stump, branches, bark, seeds and foliage. The data is a product of annually composited satellite imagery, field observations, and LiDAR data."
+              />
+            </div>
+            <div className="biomas-grafico-detail flex">
+              <figure>
+                <div className="biommas-numbers flex" style={{ display: `none` }}>
+                  <div className="biomas-number-item">
+                    <span>40.3%</span>
+                    <p>current cover</p>
+                  </div>
+                  <div className="biomas-number-item info">
+                    <span>12/07/19</span>
+                    <span className="biommas-icon">
+                      <img src="/static/iconos/icon-info.svg" alt="" />
+                    </span>
+                    <p>Last verification</p>
+                  </div>
+                </div>
+                <BiomassChart data={biomass} />
+              </figure>
+              <div className="biomass-detail">
+                <div className="graphic-item first">
+                  <span />
+                  <p>5-95%</p>
+                </div>
+                <div className="graphic-item second">
+                  <span />
+                  <p>25-75%</p>
+                </div>
+                <div className="graphic-item three">
+                  <span />
+                  <p>50%</p>
+                </div>
               </div>
-              <div className="biomas-number-item info">
-                <span>12/07/19</span>
-                <span className="biommas-icon">
-                  <img src="/static/iconos/icon-info.svg" alt="" />
-                </span>
-                <p>Last verification</p>
-              </div>
             </div>
-            <BiomassChart data={biomass} />
-          </figure>
-          <div className="biomass-detail">
-            <div className="graphic-item first">
-              <span />
-              <p>5-95%</p>
-            </div>
-            <div className="graphic-item second">
-              <span />
-              <p>25-75%</p>
-            </div>
-            <div className="graphic-item three">
-              <span />
-              <p>50%</p>
-            </div>
-          </div>
-        </div>
+          </>
+        )}
         <div className="biomass-items flex">
           <ItemCard
             title="Additionality"

@@ -3,7 +3,7 @@
   "tagline": "Amidst the Amazon’s deforestation belt lies the Rio Preto Jacundá Reserve, a shelter of ample biodiversity established in the early 90s.",
   "main_picture": "https://storage.googleapis.com/marketplace-assets/brazil-preto-main_picture.jpg",
   "credits_avail": {
-    "quatinty": "188244",
+    "quatinty": "188,244",
     "unit": "credits"
   },
   "project_type": "REDD+ Avoided Unplanned Deforestation",
@@ -25,11 +25,11 @@
   "project_developer": "Biofílica",
   "auditor": "Rainforest Alliance",
   "total_land": {
-    "area": "74038",
+    "area": "94,289",
     "unit": "hectares"
   },
-  "totalBiomass": "0",
-  "medianBiomass": "0",
+  "totalBiomass": "11,876,521 tons",
+  "medianBiomass": "131 tons",
   "land_owner": "Asmorex (Extractive Reserve)",
   "project_images": [
     {
@@ -101,10 +101,6 @@
     {
       "date": "September 2015",
       "text": "3rd Verification finished"
-    },
-    {
-      "date": "???????? ",
-      "text": "Next  verification and Credtis issuance"
     },
     {
       "date": "September 2042",

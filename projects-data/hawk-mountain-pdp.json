@@ -3,7 +3,7 @@
   "tagline": "Hawk Mountain Sanctuary is the world's first refuge for birds of prey and provides habitat for more than 16 large birds of prey, located on over 2300 acres of oak-hickory forest in eastern Pennsylvania.",
   "main_picture": "https://storage.googleapis.com/marketplace-assets/hawk-mountain-main_picture.jpg",
   "credits_avail": {
-    "quatinty": "32219",
+    "quatinty": "32,219",
     "unit": "credits"
   },
   "project_type": "Improved Forest Management",
@@ -24,10 +24,10 @@
   "project_developer": "Bluesource",
   "auditor": "SCS Global Services",
   "total_land": {
-    "area": "2380",
-    "unit": "acres"
+    "area": "963",
+    "unit": "hectares"
   },
-  "totalBiomass": "145276 tns",
+  "totalBiomass": "145,276 tns",
   "medianBiomass": "151 tns",
   "land_owner": "Hawk Mountain Sanctuary Association",
   "project_images": [

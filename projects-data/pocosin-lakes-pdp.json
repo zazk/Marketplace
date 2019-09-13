@@ -1,21 +1,21 @@
 {
   "title": "Pocosin Lakes Avoided Conversion Project",
-  "tagline": "Pocosin\n Lakes Forest Conservation Project is comprised of 1,349 acres of forested land in Tyrrell County, North\nCarolina. The property has been placed under a conservation easement to ensure that the \nnatural land will not be disturbed by human development.",
+  "tagline": "Pocosin Lakes Forest Conservation Project is comprised of 1,349 acres of forested land in Tyrrell County, North Carolina. The property has been placed under a conservation easement to ensure that the natural land will not be disturbed by human development.",
   "main_picture": "https://storage.googleapis.com/marketplace-assets/pocosin-lake-main_picture.jpg",
   "credits_avail": {
-    "quatinty": "6347",
+    "quatinty": "6,347",
     "unit": "credits"
   },
   "project_type": "Avoided Conversion",
   "location": {
     "name": "Tyrell County, North Carolina, USA",
-    "coordinates": [-76.19816723622555, 35.6369352244789],
+    "coordinates": [-76.19816723622554, 35.6369352244789],
     "zoom": 11
   },
   "standard": "https://storage.googleapis.com/marketplace-assets/logo-car.png",
   "project_overview": "Placed under a conservation easement with the USDA, the Pocosin Lakes Projects ensure that the natural land will not be disturbed by human development such as burning, digging, plowing, draining, or planting crop. In the absence of this protection, the forest would have been harvested, burned on site, and converted to agricultural land for wheat or corn crop production, similar to neighboring properties. The management practices of the project allow the forest to regenerate naturally, which will promote and maintain a diversity of native species and forests comprised of multiple ages and mixed native species at multiple land cape scales. The project sequesters around 15 000 metric tons of CO2 per year. The project provides a sustainable and protected habitat for the mixed hardwood and conifer forest, as well as the animals that live within it. The project also supports healthy populations of red wolf, bald eagle, black bear, and neotropical migratory bird species.",
   "credits_issued": {
-    "quatinty": "",
+    "quatinty": 203693,
     "unit": "total credits issued"
   },
   "verification": {
@@ -25,10 +25,10 @@
   "project_developer": "Bluesource",
   "auditor": "S&A Carbon, LLC",
   "total_land": {
-    "area": "1349",
-    "unit": "acres"
+    "area": "546",
+    "unit": "hectares"
   },
-  "totalBiomass": "94675 tns",
+  "totalBiomass": "94,675 tns",
   "medianBiomass": "190 tns",
   "land_owner": "Brinkley Melvin and Robin Melvin",
   "project_images": [
@@ -42,56 +42,56 @@
     }
   ],
   "badges": {
-    "leakage": false,
-    "additionality": false,
-    "permanence": false,
+    "leakage": true,
+    "additionality": true,
+    "permanence": true,
     "verifiability": true
   },
   "summary": {
     "leakage": {
-      "display": false,
-      "text": "To be provided by Bluesource",
-      "source": "To be provided by Bluesource",
-      "source_link": ""
+      "text": "A default conversion displacement risk of 3.6 % from the state of California was applied. Leakage was determied using the CAR FPP v3.1 Figure 6.3 decsion tree and then applying equation 6.7",
+      "source": "Section 23 from the Project Description Document",
+      "source_link": "https://thereserve2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=10796&IDKEY=diquwesdfmnk0iei23nnm435oiojnc909dsflk9809adlkmlkf214887684",
+      "display": true
     },
     "additionality": {
-      "display": false,
-      "text": "To be provided by Bluesource",
-      "source": "To be provided by Bluesource",
-      "source_link": ""
+      "text": "Additionality was ensured through the application of 'Legal Requirement Test for Avoided Conversion Projects' via documentation indicating that the current land use policies, including zoning and general plan ordinances, and other local and state statutes and regulations, permit the anticipated type of conversion and 'The Performance Test for Avoided Conversion Projects' via appraisal identifying specific portions of the Project Area suitable for the identified alternative land use.",
+      "source": "Appendix B and C from the Project Design Document",
+      "source_link": "https://thereserve2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=10796&IDKEY=diquwesdfmnk0iei23nnm435oiojnc909dsflk9809adlkmlkf214887684",
+      "display": true
     },
     "permanence": {
-      "display": false,
-      "text": "To be provided by Bluesource",
-      "source": "To be provided by Bluesource",
-      "source_link": ""
+      "text": "Permanence was is ensured via the three mechanism approach:\n1.-The requirement for all Forest Owners to monitor onsite carbon stocks, submit annual monitoring reports, and submit to annual third-party verification of those reports along with periodic verifier site visits for the duration of the Project Life.\n2.-The requirement for all Forest Owners to sign a Project Implementation Agreement with the Climate Action Reserve which obligates Forest Owners to retire credits to compensate for reversals of GHG reductions and removals.\n3.-The maintenance of a Buffer Pool of 20.85% from the credits issued to provide insurance against reversals of GHG reductions and removals due to unavoidable causes (including natural disturbances such fires, pest infestations, or disease outbreaks).",
+      "source": "Section 22 from the Project Description Document",
+      "source_link": "https://thereserve2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=10796&IDKEY=diquwesdfmnk0iei23nnm435oiojnc909dsflk9809adlkmlkf214887684",
+      "display": true
     },
     "verifiability": {
-      "display": true,
       "text": "An objective third party—someone other than the land owner or Blue Source—must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services and Environmental Services, Inc. acted as the third-parties verifiers in this project, who determined greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.",
       "source": "",
-      "source_link": ""
+      "source_link": "",
+      "display": true
     }
   },
   "timeline": [
     {
-      "date": "September 2010",
+      "date": "30 October 2003",
       "text": "Project start date"
     },
     {
-      "date": "TBD October 2017",
+      "date": "30 October 2003",
       "text": "1st Verification started"
     },
     {
-      "date": "TBD October 2018",
+      "date": "15 November 2012",
       "text": "1st Verification finished"
     },
     {
-      "date": "TBD 2023",
+      "date": "31 December 2022",
       "text": "Next  verification and Credtis issuance"
     },
     {
-      "date": "TBD 2037",
+      "date": "9 October 2102",
       "text": "Ends crediting period"
     }
   ],
