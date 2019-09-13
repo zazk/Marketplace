@@ -2,8 +2,11 @@ import React from 'react';
 import dataProjects from '../../projects-data/projects';
 import PropTypes from 'prop-types';
 
-function ProjectItem({ customclass, name, picture, location, credits, area, url }) {
+function ProjectItem({ customclass, name, picture, location, credits, area, url, progress }) {
   const project = dataProjects[0];
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
 
   return (
     <div>
@@ -23,11 +26,11 @@ function ProjectItem({ customclass, name, picture, location, credits, area, url 
               </div>
               <div className="project-progress">
                 <div className="progressbar">
-                  <div className="progressbar-item" style={{ width: `80%` }} />
+                  <div className="progressbar-item" style={{ width: `${progress}%` }} />
                 </div>
                 <div className="progres-numbers">
                   <p>
-                    <strong>{credits}</strong>
+                    <strong>{numberWithCommas(credits)}</strong>
                     Carbon Credits Available
                   </p>
                 </div>
@@ -37,7 +40,7 @@ function ProjectItem({ customclass, name, picture, location, credits, area, url 
               <div className="description-item">
                 <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
                 <div className="description-text">
-                  <span>{area} </span>
+                  <span>{numberWithCommas(area)} </span>
                   <p>Total Area</p>
                 </div>
               </div>
