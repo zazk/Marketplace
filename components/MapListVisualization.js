@@ -24,9 +24,17 @@ var featureCollection = {
 
 var geoJsonFeatures = [];
 for (let i = 0; i < dataProjects.length; i++) {
-  var credits = dataProjects[i]['pdp']['credits_avail']['quatinty'];
-  var area = dataProjects[i]['pdp']['total_land']['area'] + ' ' + dataProjects[i]['pdp']['total_land']['unit'];
+  var progress = 80;
+  var creditsStr = dataProjects[i]['pdp']['credits_avail']['quatinty'].toString();
+  var credits = parseInt(creditsStr.replace(/,/g, ''));
+  var totalCreditsStr = dataProjects[i]['pdp']['credits_issued']['quatinty'].toString();
+  var totalCredits = parseInt(totalCreditsStr.replace(/,/g, ''));
+  var areaStr = dataProjects[i]['pdp']['total_land']['area'];
+  var area = areaStr + ' ' + dataProjects[i]['pdp']['total_land']['unit'];
   var url = '/pdp?id=' + i;
+  if (credits > 0 && totalCredits > 0 && credits < totalCredits) {
+    progress = Math.floor((credits / totalCredits) * 100);
+  }
   var feature = {
     type: 'Feature',
     geometry: {
@@ -40,6 +48,7 @@ for (let i = 0; i < dataProjects.length; i++) {
       credits: credits,
       area: area,
       url: url,
+      progress: progress,
     },
   };
   geoJsonFeatures.push(feature);
@@ -182,7 +191,8 @@ export class MapListVisualization extends Component {
           <div className="tooltip-map" style={{ top: y, left: x }}>
             <div className="tooltip-inner">
               <ProjectItem
-                url={url}
+                progress={selectedObject.properties.progress}
+                url={selectedObject.properties.url}
                 customclass="small"
                 picture={selectedObject.properties.picture}
                 location={selectedObject.properties.location}

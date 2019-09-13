@@ -20,11 +20,18 @@ function Header(user) {
               </Link>
             </li>
             {typeof user.user != 'undefined' && (
-              <li className="menu-item">
-                <Link href="/list">
-                  <a className="menu-link">View Projects</a>
-                </Link>
-              </li>
+              <>
+                <li className="menu-item">
+                  <Link href="/list">
+                    <a className="menu-link">View Projects</a>
+                  </Link>
+                </li>
+                <li className="menu-item">
+                  <Link href="/maplist">
+                    <a className="menu-link">View Map</a>
+                  </Link>
+                </li>
+              </>
             )}
           </ul>
         </nav>
