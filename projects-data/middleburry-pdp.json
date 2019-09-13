@@ -25,9 +25,9 @@
   "auditor": "SCS Global services",
   "total_land": {
     "area": "1,080",
-    "unit": "ha"
+    "unit": "hectares"
   },
-  "totalBiomass": "21,211,887 tns",
+  "totalBiomass": "21,212 tns",
   "medianBiomass": "149.9 tns",
   "land_owner": "Middlebury College",
   "project_images": [

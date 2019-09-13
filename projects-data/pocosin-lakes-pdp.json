@@ -3,7 +3,7 @@
   "tagline": "Pocosin Lakes Forest Conservation Project is comprised of 1,349 acres of forested land in Tyrrell County, North Carolina. The property has been placed under a conservation easement to ensure that the natural land will not be disturbed by human development.",
   "main_picture": "https://storage.googleapis.com/marketplace-assets/pocosin-lake-main_picture.jpg",
   "credits_avail": {
-    "quatinty": "6347",
+    "quatinty": "6,347",
     "unit": "credits"
   },
   "project_type": "Avoided Conversion",
@@ -25,10 +25,10 @@
   "project_developer": "Bluesource",
   "auditor": "S&A Carbon, LLC",
   "total_land": {
-    "area": "1349",
-    "unit": "acres"
+    "area": "546",
+    "unit": "hectares"
   },
-  "totalBiomass": "94675 tns",
+  "totalBiomass": "94,675 tns",
   "medianBiomass": "190 tns",
   "land_owner": "Brinkley Melvin and Robin Melvin",
   "project_images": [

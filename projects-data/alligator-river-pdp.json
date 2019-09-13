@@ -3,7 +3,7 @@
   "tagline": "Comprised of 2,750 acres of forested land in the tidal region of northeastern North Carolina, this land has been safely placed under a conservation easement to ensure perpetuity of the natural forest.",
   "main_picture": "https://storage.googleapis.com/marketplace-assets/alligator-river-main_picture.jpg",
   "credits_avail": {
-    "quatinty": "5549",
+    "quatinty": "5,549",
     "unit": "credits"
   },
   "project_type": "Avoided Conversion",
@@ -25,10 +25,10 @@
   "project_developer": "Bluesource",
   "auditor": "Environmental Services, Inc.",
   "total_land": {
-    "area": "2750",
-    "unit": "acres"
+    "area": "1,113",
+    "unit": "hectares"
   },
-  "totalBiomass": "196679 tns",
+  "totalBiomass": "196,679 tns",
   "medianBiomass": "234 tns",
   "land_owner": "Mattamuskeet Ventures I, LLC",
   "project_images": [

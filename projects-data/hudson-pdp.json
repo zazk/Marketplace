@@ -25,10 +25,10 @@
   "auditor": "SCS Global Services",
   "total_land": {
     "area": "1,283",
-    "unit": "ha"
+    "unit": "hectares"
   },
   "totalBiomass": "28,457,565 tns",
-  "medianBiomass": "168.9 tns",
+  "medianBiomass": "169 tns",
   "land_owner": "Hudson Farm Club",
   "project_images": [
     {
