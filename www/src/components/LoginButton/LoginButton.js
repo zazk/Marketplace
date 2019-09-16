@@ -25,7 +25,9 @@ function LoginButton({ receiveUser, type, user, history, checkUser }) {
       }
     });
   });
-
+  lock.checkSession({}, function(err, authResult) {
+    console.log('authResult', authResult);
+  });
   const openLogin = () => {
     lock.show();
   };
