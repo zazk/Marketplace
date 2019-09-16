@@ -28,8 +28,8 @@ export const MenuMobileOpen = styled.div`
   display: none;
   transition: all 0.45s ease;
   position: absolute;
-  top: 13px;
-  right: 10px;
+  top: 12px;
+  right: 8px;
   font-size: 23px;
   color: ${theme.color.primary};
   &.active {

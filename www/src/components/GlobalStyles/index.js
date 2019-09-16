@@ -416,6 +416,9 @@ export const GlobalStyle = createGlobalStyle`
         .dropdown-label{
           color:#050b24;
           font-size: 16px;
+          @media screen and (max-width: 480px){
+            display:none;
+          }
         }
         .dropdown-controls{
           position: absolute;
