@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ModalBox from '../../features/ModalBox/index';
 import PropTypes from 'prop-types';
 // import { Mixpanel } from '../../../utils/mixpanel';
@@ -31,9 +31,24 @@ const UppercasingTextField = props => (
   />
 );
 
-function FormRequesQuote({ volumenoptions, ranges, defaultValues, submitRequest }) {
+function FormRequesQuote({ volumenoptions, ranges, defaultValues, submitRequest, formsuccess }) {
   const [showSuccessMessage, setSuccessMessage] = useState(0);
   const [openLightbox, setOpenLightbox] = useState(false);
+
+  useEffect(() => {
+    if (formsuccess != null) {
+      console.log('entro al IFF');
+      // if (userSaved.username) {
+      //   setOpenLightbox(1);
+      //   setSuccessMessage(1);
+      // } else {
+      //   setError(1);
+      //   setOpenLightbox(1);
+      //   setSuccessMessage(1);
+      // }
+    }
+  }, [formsuccess]);
+  console.log('formsuccess', formsuccess);
 
   function toggle(set) {
     setOpenLightbox(set);

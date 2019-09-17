@@ -3,6 +3,7 @@ import { RECEIVE_PROJECTS, REQUEST_PROJECTS, REQUEST_FORM, RECEIVE_FORM } from '
 const INITIAL_STATE = {
   projects: [],
   loading: false,
+  formsuccess: null,
 };
 
 export const projectReducer = (state = INITIAL_STATE, action) => {
@@ -27,7 +28,7 @@ export const projectReducer = (state = INITIAL_STATE, action) => {
     case RECEIVE_FORM:
       return {
         ...state,
-        status: action.data,
+        formsuccess: action.data,
         loadingform: false,
       };
 
