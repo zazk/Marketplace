@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
-import theme from '../../utils/theme';
+import theme from '../../../../utils/theme';
+
 export const ProgressBar = styled.div`
   margin: 8px 0;
   height: 4px;

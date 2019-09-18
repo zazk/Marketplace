@@ -1,37 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProjectProgressBar from '../../../ProjectProgressBar';
-import ProjectOffsetHistory from '../../../ProjectOffsetHistory';
+import ProjectProgressBar from './ProgressBar';
+import ProjectOffsetHistory from './OffsetHistory';
 
 import {
   Project,
   ProjectPicture,
-  ProjectResumen,
-  ProjectDescription,
-  ProjectUbicationAddress,
-  ProjectName,
-  ProjectUbication,
-  DescriptionItem,
   ProjectDetail,
-  HistoryProjects,
+  ProjectOverview,
+  ProjectName,
+  ProjectLocation,
+  ProjectLocationName,
+  ProjectDescription,
+  DescriptionItem,
+  ProjectHistory,
 } from './style';
-function ProjectItem({ project, customClass, url }) {
-  console.log('customClass', customClass);
+
+function ProjectCard({ project, customClass, url }) {
   return (
     <Project to={url} className={customClass}>
       <ProjectPicture picture={project.main_picture} />
       <ProjectDetail>
-        <ProjectResumen>
+        <ProjectOverview>
           <ProjectName>{project.title}</ProjectName>
-          <ProjectUbication>
-            <ProjectUbicationAddress>{project.location.name}</ProjectUbicationAddress>
-          </ProjectUbication>
+          <ProjectLocation>
+            <ProjectLocationName>{project.location.name}</ProjectLocationName>
+          </ProjectLocation>
           {customClass === 'projects-user' || customClass === 'projects-backed' ? (
             ''
           ) : (
-            <ProjectProgressBar data={project} type={customClass}></ProjectProgressBar>
+            <ProjectProgressBar data={project} type={customClass} />
           )}
-        </ProjectResumen>
+        </ProjectOverview>
         <ProjectDescription>
           {customClass === 'projects-user' ? (
             <>
@@ -69,14 +69,15 @@ function ProjectItem({ project, customClass, url }) {
         </ProjectDescription>
       </ProjectDetail>
       {customClass === 'projects-user' && (
-        <HistoryProjects>
+        <ProjectHistory>
           <ProjectOffsetHistory />
-        </HistoryProjects>
+        </ProjectHistory>
       )}
     </Project>
   );
 }
-ProjectItem.propTypes = {
+
+ProjectCard.propTypes = {
   customClass: PropTypes.string,
   project: PropTypes.shape({
     main_picture: PropTypes.string,
@@ -94,4 +95,5 @@ ProjectItem.propTypes = {
     project_type: PropTypes.string,
   }),
 };
-export default ProjectItem;
+
+export default ProjectCard;

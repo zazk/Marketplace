@@ -15,14 +15,15 @@ function PDP({ location }) {
   const { pdp, biomass, geojson } = dataProjects[index];
   return (
     <>
-      <Hero data={pdp}></Hero>
+      <Hero data={pdp} />
       <MapContainer data={pdp} geojson={geojson} />
-      <Overview data={pdp}></Overview>
-      <Biomass data={pdp} biomass={biomass}></Biomass>
+      <Overview data={pdp} />
+      <Biomass data={pdp} biomass={biomass} />
       <Leakage data={pdp} />
       <Pay data={pdp} />
       <ControlsProject id={index} items={dataProjects.length} data={dataProjects} />
     </>
   );
 }
-export default withAuth(withRouter(PDP));
+//export default withAuth(withRouter(PDP));
+export default withRouter(PDP);
