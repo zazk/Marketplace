@@ -5,6 +5,7 @@ import dataProjects from '../../../projects-data/projects';
 
 const mapStateToProps = state => {
   return {
+    user: state.userState.user,
     projects: state.projectState.projects,
     listprojects: dataProjects,
   };

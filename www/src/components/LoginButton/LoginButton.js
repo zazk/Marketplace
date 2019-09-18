@@ -19,15 +19,22 @@ function LoginButton({ receiveUser, type, user, history, checkUser }) {
   lock.on('authenticated', function(authResult) {
     this.getUserInfo(authResult.accessToken, function(error, profile) {
       if (!error) {
+        console.log('authentica 1');
         receiveUser(profile);
         checkUser(profile.sub, history);
         return;
       }
     });
   });
-  lock.checkSession({}, function(err, authResult) {
-    console.log('authResult', authResult);
-  });
+  // if (!user) {
+  //   lock.checkSession({}, function(err, authResult) {
+  //     if (user && authResult) {
+  //       user.accesstoken = authResult.accessToken;
+  //       receiveUser({ ...user });
+  //     }
+  //     console.log('authResult - 2', authResult);
+  //   });
+  // }
   const openLogin = () => {
     lock.show();
   };
