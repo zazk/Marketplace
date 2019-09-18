@@ -8,7 +8,7 @@ import Biomass from '../components/project/pdp/biomass';
 import Leakage from '../components/project/pdp/Leakage';
 import Pay from '../components/project/pdp/Pay';
 import ControlsProject from '../components/project/pdp/ControlsProject';
-
+import withAuth from '../hocs/withAuth';
 function PDP({ location }) {
   const id = new URLSearchParams(location.search).get('id');
   let index = id ? id : 0;
@@ -25,4 +25,4 @@ function PDP({ location }) {
     </>
   );
 }
-export default withRouter(PDP);
+export default withAuth(withRouter(PDP));

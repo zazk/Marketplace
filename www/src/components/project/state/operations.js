@@ -1,5 +1,5 @@
 import { requestProjects, receiveProjects, receiveForm, requestForm } from './actions';
-
+import Const from '../../../utils/const';
 export const fetchProjects = () => {
   return dispatch => {
     dispatch(requestProjects);
@@ -14,7 +14,7 @@ export const fetchProjects = () => {
 export const submitRequest = data => {
   return dispatch => {
     dispatch(requestForm(data));
-    return fetch(`/api/requestQuote`, {
+    return fetch(`${Const.urlSite}api/requestQuote`, {
       method: 'post',
       headers: {
         Accept: 'application/json, text/plain, */*',
@@ -22,8 +22,12 @@ export const submitRequest = data => {
       },
       body: JSON.stringify(data),
     })
-      .then(response => response.json())
+      .then(response => {
+        console.log('1er thenxxxx', response);
+        return response.json();
+      })
       .then(data => {
+        console.log('responsexxxx', data);
         dispatch(receiveForm(data));
       });
   };

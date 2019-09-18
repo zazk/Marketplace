@@ -60,12 +60,22 @@ module.exports = {
   },
 
   add(req, res) {
+    const infoExtra = {
+      companyname: req.body.companyname,
+      phonenumber: req.body.phonenumber,
+    };
     return Account.create({
       role_id: req.body.role_id,
       name: req.body.name,
+      username: req.body.username,
+      email: req.body.email,
+      auth0: req.body.auth0,
+      extra: JSON.stringify(infoExtra),
     })
       .then(account => res.status(201).send(account))
-      .catch(error => res.status(400).send(error));
+      .catch(error => {
+        return res.status(500).send({ message: error });
+      });
   },
 
   update(req, res) {

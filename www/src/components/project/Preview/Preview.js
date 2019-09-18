@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import LoginButton from '../../LoginButton';
+
 import {
-  ViewProjects,
   LandingProyect,
   LandingMain,
   Title,
@@ -22,7 +22,7 @@ const projectDetail = {
   text_intro: 'Take part in our challenge',
 };
 
-const Preview = ({ projects, fetchProjects }) => {
+const Preview = ({ receiveUser, fetchProjects }) => {
   useEffect(() => {
     fetchProjects();
   }, [fetchProjects]);
@@ -36,15 +36,12 @@ const Preview = ({ projects, fetchProjects }) => {
 
             <div className="lp-intro-down">
               <div className="lp-btn">
-                <Link to="/">
-                  <ViewProjects>
-                    <em>View projects</em>
-                  </ViewProjects>
-                </Link>
+                <LoginButton />
               </div>
               <RequestAccess>
-                <a href="/">Or Request Beta Access</a>
+                <span>Or Request Beta Access</span>
               </RequestAccess>
+
               <SubTitle>Projects available upon authentication</SubTitle>
             </div>
           </div>

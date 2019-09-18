@@ -1,7 +1,9 @@
 var express = require('express');
 var secured = require('../utils/secured');
+const bodyParser = require('body-parser');
+const mailer = require('../utils/mailer');
 var router = express.Router();
-
+router.use(bodyParser.json());
 /* DB Controllers */
 const roleController = require('../db/controllers').role;
 const accountController = require('../db/controllers').account;
@@ -19,6 +21,33 @@ router.get('/account/auth0/:auth0', accountController.getByAuth0);
 router.post('/account', accountController.add);
 router.put('/account/:id', accountController.update);
 router.delete('/account/:id', accountController.delete);
+
+router.post('/requestQuote', (req, res) => {
+  console.log('test envio form XXX');
+  const { name, email, companyname, phonenumber, selectvolumen, selectbudget, message } = req.body;
+  const from = `${process.env.PACHAMA_MARKETPLACE_FROM} <${process.env.PACHAMA_MARKETPLACE_MAIL}>`;
+  const to = process.env.PACHAMA_SALES_MAIL;
+  const replyTo = `${name} <${email}>`;
+  const subject = 'Marketplace request quote';
+  const text = `
+  Request quote received
+    From: ${name}
+    Email: ${email}
+    Company: ${companyname}
+    Phone: ${phonenumber}
+    Volume: ${selectvolumen}
+    Budget: ${selectbudget}
+    Message: ${message}
+  `;
+
+  mailer({ from, to, replyTo, subject, text })
+    .then(() => {
+      res.send({ message: 'success' });
+    })
+    .catch(error => {
+      res.send('error');
+    });
+});
 
 /* GET user profile. */
 router.get('/user', secured(), function(req, res, next) {

@@ -5,6 +5,8 @@ export const Logo = styled.figure`
 `;
 export const HeaderMain = styled.header`
   background-color: #fff;
+  position: relative;
+  z-index: 100;
 `;
 export const HeaderInner = styled.div`
   max-width: 1280px;
@@ -21,9 +23,16 @@ export const HeaderInner = styled.div`
   @media screen and (max-width: 480px) {
     justify-content: space-between;
   }
+
+  @media screen and (max-width: 768px) {
+    height: 45px;
+  }
 `;
 export const Nav = styled.nav`
   margin-left: 27px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 export const MenuItem = styled.li`
   margin-left: 20px;
@@ -36,5 +45,17 @@ export const MenuLink = styled.span`
   font-family: 'Lato', sans-serif;
   &:hover {
     opacity: 0.5;
+  }
+`;
+export const MenuUser = styled.div`
+  position: absolute;
+  top: 0;
+  right: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    right: 40px;
   }
 `;

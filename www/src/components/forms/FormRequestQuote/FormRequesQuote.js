@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ModalBox from '../../features/ModalBox/index';
 import PropTypes from 'prop-types';
 // import { Mixpanel } from '../../../utils/mixpanel';
@@ -31,14 +31,30 @@ const UppercasingTextField = props => (
   />
 );
 
-function FormRequesQuote({ volumenoptions, ranges, defaultValues, submitRequest }) {
+function FormRequesQuote({ volumenoptions, ranges, defaultValues, submitRequest, formsuccess }) {
   const [showSuccessMessage, setSuccessMessage] = useState(0);
   const [openLightbox, setOpenLightbox] = useState(false);
 
-  const toggle = () => {
-    setOpenLightbox(!openLightbox);
+  useEffect(() => {
+    if (formsuccess != null) {
+      console.log('entro al IFF');
+      // if (userSaved.username) {
+      //   setOpenLightbox(1);
+      //   setSuccessMessage(1);
+      // } else {
+      //   setError(1);
+      //   setOpenLightbox(1);
+      //   setSuccessMessage(1);
+      // }
+    }
+  }, [formsuccess]);
+  console.log('formsuccess', formsuccess);
+
+  function toggle(set) {
+    setOpenLightbox(set);
     setSuccessMessage(0);
-  };
+  }
+
   // function trackRequestQuote(status) {
   //   if (user) {
   //     Mixpanel.identify(user.id);
@@ -50,7 +66,7 @@ function FormRequesQuote({ volumenoptions, ranges, defaultValues, submitRequest 
 
   return (
     <div>
-      <button type="button" className="btn" onClick={toggle}>
+      <button type="button" className="btn" onClick={() => toggle(1)}>
         <span>Request quote</span>
       </button>
 
@@ -76,6 +92,7 @@ function FormRequesQuote({ volumenoptions, ranges, defaultValues, submitRequest 
                       setSubmitting(false);
                       submitRequest(values);
                       setSuccessMessage(1);
+                      toggle();
                     }, 500);
                   }}
                   render={({ submitForm, isSubmitting, values, setFieldValue }) => (
