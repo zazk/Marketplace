@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import theme from '../../utils/theme';
+import theme from '../../../../utils/theme';
 
 export const Wrap = styled.div`
   font-size: 14px;

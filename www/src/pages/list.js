@@ -1,8 +1,9 @@
 import React from 'react';
-import ListProjects from '../components/project/ListProjects';
+import ProjectList from '../components/project/List';
 import withAuth from '../hocs/withAuth';
 function Projects() {
-  return <ListProjects customClass="columns"></ListProjects>;
+  return <ProjectList customClass="columns" />;
 }
 
-export default withAuth(Projects);
+//export default withAuth(Projects);
+export default Projects;

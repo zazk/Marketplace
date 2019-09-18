@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import theme from '../../../../utils/theme';
+import theme from '../../../utils/theme';
 import { Link } from 'react-router-dom';
 export const ProjectPicture = styled.div`
   position: absolute;
@@ -29,7 +29,7 @@ export const ProjectPicture = styled.div`
     opacity: 0.3;
   }
 `;
-export const ProjectResumen = styled.div`
+export const ProjectOverview = styled.div`
   width: 61%;
   padding-left: 24px;
   padding-right: 10px;
@@ -40,7 +40,7 @@ export const ProjectDescription = styled.div`
   width: 39%;
   box-sizing: border-box;
 `;
-export const ProjectUbicationAddress = styled.p`
+export const ProjectLocationName = styled.p`
   position: relative;
   padding-left: 18px;
   &:before {
@@ -66,7 +66,7 @@ export const ProjectName = styled.h3`
     font-size: 16px;
   }
 `;
-export const ProjectUbication = styled.div`
+export const ProjectLocation = styled.div`
   margin-bottom: 20px;
   p {
     margin: 0;
@@ -108,7 +108,7 @@ export const ProjectDetail = styled.div`
   display: flex;
   flex-flow: row wrap;
 `;
-export const HistoryProjects = styled.div`
+export const ProjectHistory = styled.div`
   width: 30%;
   padding-right: 20px;
   box-sizing: border-box;
@@ -152,10 +152,10 @@ export const Project = styled(Link)`
     @media screen and (max-width: 600px) {
       padding: 15px;
       padding-left: 0px;
-      ${ProjectResumen}, ${ProjectDescription} {
+      ${ProjectOverview}, ${ProjectDescription} {
         width: 100%;
       }
-      ${ProjectResumen} {
+      ${ProjectOverview} {
         padding-left: 120px;
       }
       ${ProjectPicture} {
@@ -191,10 +191,10 @@ export const Project = styled(Link)`
         top: 0;
         left: 0;
       }
-      ${ProjectResumen} {
+      ${ProjectOverview} {
         padding-left: 0px;
       }
-      ${ProjectUbicationAddress} {
+      ${ProjectLocationName} {
         position: absolute;
         top: 0px;
         left: 0px;
@@ -216,13 +216,13 @@ export const Project = styled(Link)`
         width: 100%;
         margin-bottom: 5px;
       }
-      ${ProjectUbication} {
+      ${ProjectLocation} {
         margin: 0;
       }
     }
   }
   &.projects-backed {
-    ${ProjectUbicationAddress} {
+    ${ProjectLocationName} {
       font-size: 14px;
     }
   }
@@ -234,10 +234,10 @@ export const Project = styled(Link)`
     ${ProjectDetail} {
       width: 70%;
     }
-    ${ProjectUbicationAddress} {
+    ${ProjectLocationName} {
       font-size: 14px;
     }
-    ${ProjectResumen} {
+    ${ProjectOverview} {
       width: 100%;
       padding-right: 34px;
     }
@@ -262,7 +262,7 @@ export const Project = styled(Link)`
         width: 100%;
         padding-right: 24px;
       }
-      ${HistoryProjects} {
+      ${ProjectHistory} {
         width: 100%;
         padding: 0;
         padding-left: 24px;
@@ -272,7 +272,7 @@ export const Project = styled(Link)`
       ${DescriptionItem} {
         width: 50%;
       }
-      ${ProjectResumen} {
+      ${ProjectOverview} {
         padding-right: 0;
       }
     }
@@ -286,10 +286,10 @@ export const Project = styled(Link)`
         top: 0;
         left: 0;
       }
-      ${ProjectResumen} {
+      ${ProjectOverview} {
         padding-left: 0px;
       }
-      ${ProjectUbicationAddress} {
+      ${ProjectLocationName} {
         position: absolute;
         top: 0px;
         left: 0px;
@@ -311,7 +311,7 @@ export const Project = styled(Link)`
         width: 100%;
         margin-bottom: 5px;
       }
-      ${ProjectUbication} {
+      ${ProjectLocation} {
         margin: 0;
       }
       ${ProjectDescription} {
@@ -354,11 +354,11 @@ export const Project = styled(Link)`
       }
     }
 
-    ${ProjectResumen} {
+    ${ProjectOverview} {
       padding: 0;
       width: 100%;
     }
-    ${ProjectUbicationAddress} {
+    ${ProjectLocationName} {
       position: absolute;
       z-index: 3;
       top: 0;
@@ -383,7 +383,7 @@ export const Project = styled(Link)`
       width: 100%;
       margin-top: 25px;
     }
-    ${ProjectUbication} {
+    ${ProjectLocation} {
       margin-bottom: 0;
     }
     ${DescriptionItem} {

@@ -1,6 +1,6 @@
 import React from 'react';
 import IntroCalculated from '../ProjectInfo/IntroCalculated';
-import ListProjects from '../project/ListProjects';
+import ProjectList from '../project/List';
 import { Title, Wrapper, PreviousYears } from './style';
 function ProjectsBacked() {
   return (
@@ -13,7 +13,7 @@ function ProjectsBacked() {
       />
       <Wrapper>
         <Title>Projects backed in 2019</Title>
-        <ListProjects customClass="projects-backed list-default"></ListProjects>
+        <ProjectList customClass="projects-backed list-default" />
         <PreviousYears>Show projects backed on previous years</PreviousYears>
       </Wrapper>
     </>

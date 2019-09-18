@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectItem from '../ListProjects/ProjectItem';
+import ProjectCard from '../Card';
 import { ProjectListMain } from './style';
 import PropTypes from 'prop-types';
 import Const from '../../../utils/const';
@@ -26,7 +26,7 @@ function ProjectList({ listprojects, customClass, user }) {
   return (
     <ProjectListMain className={customClass && customClass}>
       {listprojects.map((project, i) => (
-        <ProjectItem url={'/pdp?id=' + i} key={i} project={project.pdp} customClass={customClass}></ProjectItem>
+        <ProjectCard url={'/pdp?id=' + i} key={i} project={project.pdp} customClass={customClass} />
       ))}
     </ProjectListMain>
   );
