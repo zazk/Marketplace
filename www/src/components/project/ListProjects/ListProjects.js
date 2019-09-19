@@ -7,21 +7,24 @@ import Const from '../../../utils/const';
 function ProjectList({ listprojects, customClass, user }) {
   if (user) {
     console.log('userdata', JSON.stringify(user));
-    console.log('accesstokenxxxxx', user.accesstoken);
+    console.log('accesstokenxxxxx', user && user.accesstoken);
   }
-  // console.log('userdata', user.accesstoken);
-  // if (user.accesstoken) {
-  //   // test
-  //   fetch(`${Const.urlSite}test`, {
-  //     headers: {
-  //       Authorization: 'Bearer ' + user.accesstoken,
-  //     },
-  //   })
-  //     .then(response => response.json())
-  //     .then(json => {
-  //       console.log('jsonxx', json);
-  //     });
-  // }
+  if (user && user.accesstoken) {
+    localStorage.setItem('token', user.accesstoken);
+  }
+  console.log('userdata', user.accesstoken);
+  if (user.accesstoken) {
+    // test
+    fetch(`${Const.urlSite}test`, {
+      headers: {
+        authorization: 'Bearer ' + user.accesstoken,
+      },
+    })
+      .then(response => response.json())
+      .then(json => {
+        console.log('jsonxx', json);
+      });
+  }
 
   return (
     <ProjectListMain className={customClass && customClass}>

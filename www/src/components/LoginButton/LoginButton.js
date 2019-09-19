@@ -16,25 +16,31 @@ function LoginButton({ receiveUser, type, user, history, checkUser }) {
   };
 
   const lock = new Auth0Lock(clienteId, domain, options);
-  lock.on('authenticated', function(authResult) {
-    this.getUserInfo(authResult.accessToken, function(error, profile) {
-      if (!error) {
-        console.log('authentica 1');
-        receiveUser(profile);
-        checkUser(profile.sub, history);
-        return;
-      }
+
+  if (!user) {
+    lock.on('authenticated', function(authResult) {
+      console.log(user, 'authenticated!!');
+      this.getUserInfo(authResult.accessToken, function(error, profile) {
+        if (!error) {
+          console.log('authentica 1');
+          receiveUser(profile);
+          checkUser(profile.sub, history);
+          return;
+        }
+      });
     });
-  });
-  // if (!user) {
-  //   lock.checkSession({}, function(err, authResult) {
-  //     if (user && authResult) {
-  //       user.accesstoken = authResult.accessToken;
-  //       receiveUser({ ...user });
-  //     }
-  //     console.log('authResult - 2', authResult);
-  //   });
-  // }
+  }
+
+  if (user && !user.accesstoken) {
+    console.log(' want to check session', user, 'USER ---');
+    lock.checkSession({}, function(err, authResult) {
+      if (user && authResult) {
+        user.accesstoken = authResult.accessToken;
+        receiveUser({ ...user });
+      }
+      console.log('authResult - 2', authResult);
+    });
+  }
   const openLogin = () => {
     lock.show();
   };
