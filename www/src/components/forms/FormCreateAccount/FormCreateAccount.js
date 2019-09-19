@@ -7,7 +7,7 @@ import { Formik, Field, Form } from 'formik';
 import { LinearProgress } from '@material-ui/core';
 import MuiTextField from '@material-ui/core/TextField';
 import { fieldToTextField, TextField } from 'formik-material-ui';
-import SuccessMessage from '../SuccessMessage';
+import SuccessMessage from '../../features/SuccessMessage';
 import {
   CreateAcount,
   AcountBanner,

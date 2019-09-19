@@ -1,21 +1,23 @@
 import React from 'react';
 import IntroHero from './IntroHero';
 import ItemListHero from './ItemListHero';
-import FormRequesQuote from '../../../forms/FormRequestQuote';
+import FormRequestQuote from '../../FormRequestQuote';
 import {
+  Banner,
   Bgbanner,
   BannerMain,
-  Banner,
+  BannerIntro,
   FeatureDescription,
   Progressbar,
   ProgressbarItem,
-  BannerIntro,
   FeatureList,
   FeatureControls,
 } from './style';
 
 function Hero({ project, list }) {
   const DataFeatureList = () => list.map((item, i) => <ItemListHero key={i} title={item.title} />);
+  // TODO: It will be good to use ProjectCard here
+  // since it looks like the same use differente presentation
   return (
     <Banner>
       <Bgbanner style={{ backgroundImage: `url(${project.main_picture})` }} />
@@ -35,7 +37,7 @@ function Hero({ project, list }) {
             <DataFeatureList />
           </FeatureList>
           <FeatureControls>
-            <FormRequesQuote />
+            <FormRequestQuote />
             <figure className="feature-logo">
               <img src={project.standard} width="96" alt="" />
             </figure>

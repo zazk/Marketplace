@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProjectProgressBar from './ProgressBar';
-import ProjectOffsetHistory from './OffsetHistory';
 
 import {
   Project,
