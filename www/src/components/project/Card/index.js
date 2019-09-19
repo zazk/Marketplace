@@ -68,11 +68,6 @@ function ProjectCard({ project, customClass, url }) {
           )}
         </ProjectDescription>
       </ProjectDetail>
-      {customClass === 'projects-user' && (
-        <ProjectHistory>
-          <ProjectOffsetHistory />
-        </ProjectHistory>
-      )}
     </Project>
   );
 }
