@@ -11,9 +11,9 @@ function ProjectList({ listprojects, customClass, user }) {
   }
   if (user && user.accesstoken) {
     localStorage.setItem('token', user.accesstoken);
+    console.log('userdata', user.accesstoken);
   }
-  console.log('userdata', user.accesstoken);
-  if (user.accesstoken) {
+  if (user && user.accesstoken) {
     // test
     fetch(`${Const.urlSite}test`, {
       headers: {

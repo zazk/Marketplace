@@ -11,7 +11,7 @@ function LoginButton({ receiveUser, type, user, history, checkUser }) {
   const options = {
     autoclose: true,
     auth: {
-      // audience: 'api.marketplace.pachama.com',
+      audience: 'api.marketplace.pachama.com',
       responseType: 'token id_token',
       redirect: false,
     },
