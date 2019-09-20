@@ -52,7 +52,7 @@ const checkJwt = jwt({
     jwksRequestsPerMinute: 5,
     jwksUri: `https://marketplace-pachama.auth0.com/.well-known/jwks.json`,
   }),
-  audience: 'http://api.marketplace.pachama.com',
+  audience: 'api.marketplace.pachama.com',
   issuer: `https://marketplace-pachama.auth0.com`,
   algorithms: ['RS256'],
 });

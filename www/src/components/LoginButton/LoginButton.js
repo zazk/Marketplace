@@ -11,6 +11,8 @@ function LoginButton({ receiveUser, type, user, history, checkUser }) {
   const options = {
     autoclose: true,
     auth: {
+      // audience: 'api.marketplace.pachama.com',
+      responseType: 'token id_token',
       redirect: false,
     },
   };
@@ -35,7 +37,7 @@ function LoginButton({ receiveUser, type, user, history, checkUser }) {
     console.log(' want to check session', user, 'USER ---');
     lock.checkSession({}, function(err, authResult) {
       if (user && authResult) {
-        user.accesstoken = authResult.accessToken;
+        user.accesstoken = authResult.idToken;
         receiveUser({ ...user });
       }
       console.log('authResult - 2', authResult);
