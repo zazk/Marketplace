@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Const from '../../../utils/const';
 
 function ProjectList({ listprojects, customClass, user }) {
+  console.log(listprojects);
   if (user) {
     console.log('userdata', JSON.stringify(user));
     console.log('accesstokenxxxxx', user.accesstoken);
