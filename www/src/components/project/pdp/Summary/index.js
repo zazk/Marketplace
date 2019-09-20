@@ -1,9 +1,9 @@
 import React from 'react';
 import SumnmaryItem from './Item';
-import SideBar from '../SideBar';
+import SideBar from './SideBar';
 import { LeakageDescription, LeakageContent } from './style';
 
-function Leakage({ data }) {
+function Leakage({ data, sidebar }) {
   const project = data.summary;
 
   return (
@@ -35,13 +35,15 @@ function Leakage({ data }) {
           />
           <SumnmaryItem
             type="two"
-            title="Permanence"
+            title="Verifiability"
             description={project.verifiability.text}
             source={project.verifiability.source}
             source_link={project.verifiability.source_link}
           />
         </LeakageDescription>
-        <SideBar data={data} />
+        {sidebar &&
+          <SideBar data={data} />
+        }
       </div>
     </LeakageContent>
   );

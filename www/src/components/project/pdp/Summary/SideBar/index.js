@@ -1,7 +1,7 @@
 import React from 'react';
-import ProjectTimeline from '../ProjecTimeline';
-import ProjectFiles from '../ProjectFiles';
-import UnCompliant from '../UnCompliant';
+import ProjectTimeline from '../../Timeline';
+import ProjectFiles from '../../ProjectFiles';
+import UnCompliant from '../../UnCompliant';
 import { SidebarItemRow, LeakageSidebar } from './style';
 
 function SideBar({ data }) {

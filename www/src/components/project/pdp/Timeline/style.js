@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 
-export const SidebarChecked = styled.span`
+export const TimelineItemChecked = styled.span`
   width: 20px;
   height: 20px;
   top: 2px;
@@ -22,7 +22,7 @@ export const SidebarChecked = styled.span`
   }
 `;
 
-export const SidebarItem = styled.div`
+export const TimelineItem = styled.div`
   padding-bottom: 20px;
   position: relative;
   padding-left: 50px;
