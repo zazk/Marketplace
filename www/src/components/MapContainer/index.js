@@ -3,17 +3,11 @@ import React, { PureComponent } from 'react';
 import DeckGL, { GeoJsonLayer, TileLayer, BitmapLayer, FlyToInterpolator } from 'deck.gl';
 import { StaticMap } from 'react-map-gl';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
+import MapLegend from './Legend';
 
 import {
   FeatureMap,
   MapFeature,
-  ImagenTextItem,
-  InfoFigure,
-  ImagenNumbers,
-  NumbersItem,
-  InfoTitle,
-  ImagenInfo,
-  ContentMain,
 } from './style';
 //pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA
 export const lightSettings = {
@@ -174,31 +168,7 @@ export class MapContainer extends PureComponent {
     const { viewState } = this.state;
     return (
       <MapFeature>
-        <ContentMain>
-          <ImagenInfo>
-            <InfoTitle>BIOMASS</InfoTitle>
-            <InfoFigure>
-              <img src="/static/assets/images/bar-colors.svg" width="285" alt="" />
-              <ImagenNumbers>
-                <NumbersItem>0</NumbersItem>
-                <NumbersItem>...</NumbersItem>
-                <NumbersItem>300</NumbersItem>
-              </ImagenNumbers>
-            </InfoFigure>
-            <ImagenTextItem>
-              <h3>{this.state.projectData.totalBiomass}</h3>
-              <p>Total biomass</p>
-            </ImagenTextItem>
-            <ImagenTextItem>
-              <h3>{this.state.projectData.medianBiomass}</h3>
-              <p>Median biomass per hectare</p>
-            </ImagenTextItem>
-            <div className="link-imagen">
-              <img src="/static/iconos/info-circle-solid.svg" width="14" alt="" />
-              <p>What is biomass?</p>
-            </div>
-          </ImagenInfo>
-        </ContentMain>
+        <MapLegend projectData={this.state.projectData} />
         <FeatureMap>
           <DeckGL viewState={viewState} layers={this._renderLayers()} controller={controller}>
             {this._renderTooltip}

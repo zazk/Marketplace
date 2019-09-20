@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { submitRequest } from '../../project/state';
-import FormRequesQuote from './FormRequesQuote';
+import { submitRequest } from '../state';
+import FormRequestQuote from './FormRequestQuote';
 
 const volumenoptions = [
   {
@@ -62,4 +62,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FormRequesQuote);
+)(FormRequestQuote);

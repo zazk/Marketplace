@@ -55,32 +55,6 @@ function Biomass({ biomass }) {
             </GraphicItem>
           </BiomassDetail>
         </BiomasGraficoDetail>
-        <BiomassItems>
-          <ItemCard
-            title="Additionality"
-            status={true}
-            tooltip="The proposed project reduces greenhouse gas emissions that would not be reduced through other incentives"
-            tooltipid="additionality"
-          />
-          <ItemCard
-            title="Leakage"
-            status={true}
-            tooltip="An additional criteria is leakage. A reduction of greenhouse gas emissions through one project might simply shift, or leak, to another location or activity"
-            tooltipid="leakage"
-          />
-          <ItemCard
-            title="Permanence"
-            status={true}
-            tooltip="Tied into leakage prevention is the standard of permanence. Greenhouse gases prevented from entering the atmosphere should be stopped permanently. "
-            tooltipid="permanence"
-          />
-          <ItemCard
-            title="Verifiability"
-            status={true}
-            tooltip="An objective third party must be able to look at project data and confirm that the carbon reductions are real and credible."
-            tooltipid="verifiability"
-          />
-        </BiomassItems>
       </div>
     </BiomassContent>
   );

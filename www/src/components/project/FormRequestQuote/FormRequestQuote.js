@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import ModalBox from '../../features/ModalBox/index';
+import ModalBox from '../../features/ModalBox';
 import PropTypes from 'prop-types';
 // import { Mixpanel } from '../../../utils/mixpanel';
 import { Formik, Field, Form } from 'formik';
 import { LinearProgress, MenuItem } from '@material-ui/core';
 import MuiTextField from '@material-ui/core/TextField';
 import { fieldToTextField, TextField } from 'formik-material-ui';
-import SuccessMessage from '../SuccessMessage';
+import SuccessMessage from '../../features/SuccessMessage';
 import {
   Formulary,
   FormularyMain,
