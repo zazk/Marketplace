@@ -4,11 +4,16 @@ import { CardContent, CardHeader, CardIcon } from './style';
 
 function FeatureCard({ title, status, tooltip, tooltipid }) {
   return (
-    <CardContent className={`item-card ${!status && 'disabled'}`}>
-      <img className="item-card-image" src="/static/iconos/checked.svg" width="28" alt="" />
+    <CardContent className={`item-card`}>
+      <img
+        className="item-card-image"
+        src={`/static/iconos/checked${!status ? '-disabled' : ''}.svg`}
+        width="28"
+        alt=""
+      />
       <CardHeader>
         <h5>{title}</h5>
-        <p>Checked</p>
+        <p>{!status ? 'Not Checked' : 'Checked'}</p>
       </CardHeader>
       <div className="link-imagen" data-tip data-for={tooltipid}>
         <CardIcon src="/static/iconos/info-circle-solid.svg" width="14" alt="" />

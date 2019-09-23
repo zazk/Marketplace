@@ -23,7 +23,7 @@ function ProjectNavigation({ id, items, data }) {
   return (
     <Navigation>
       <NavigationContent>
-        <Link to={`/pdp/?id=${prev}`} onClick={() => prev}>
+        <Link to={`/pdp?id=${prev}`} onClick={() => prev}>
           <NavigationItem className="prev">
             <h5>{data[prev].pdp.title}</h5>
             <p>
@@ -32,7 +32,7 @@ function ProjectNavigation({ id, items, data }) {
             </p>
           </NavigationItem>
         </Link>
-        <Link to={`/pdp/?id=${next}`} onClick={() => next}>
+        <Link to={`/pdp?id=${next}`} onClick={() => next}>
           <NavigationItem className="next">
             <h5>{data[next].pdp.title}</h5>
             <p>
