@@ -47,3 +47,34 @@ spec:
               value: marketplace@pachama.com
             - name: PACHAMA_LANDING_URL
               value: _PACHAMA_LANDING_URL_
+            - name: DB_HOST
+              value: _DB_HOST_
+            - name: DB_PORT
+              value: '_DB_PORT_'
+            - name: DB_DATABASE
+              value: _DB_DATABASE_
+            - name: DB_USER
+              value: _DB_USER_
+            - name: DB_PASSWORD
+              value: _DB_PASSWORD_
+            - name: DB_DIALECT
+              value: postgres
+        - name: cloudsql-proxy
+          image: gcr.io/cloudsql-docker/gce-proxy:1.14
+          command:
+            [
+              '/cloud_sql_proxy',
+              '-instances=pachama-demo:us-central1:marketplace-stage=tcp:5432',
+              '-credential_file=/secrets/cloudsql/credentials.json',
+            ]
+          securityContext:
+            runAsUser: 2 # non-root user
+            allowPrivilegeEscalation: false
+          volumeMounts:
+            - name: cloudsql-instance-credentials
+              mountPath: /secrets/cloudsql
+              readOnly: true
+      volumes:
+        - name: cloudsql-instance-credentials
+          secret:
+            secretName: cloudsql-instance-credentials

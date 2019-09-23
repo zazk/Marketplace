@@ -9,3 +9,5 @@ steps:
 # my-image is pushed to Container Registry
 images:
   - 'gcr.io/$PROJECT_ID/${_IMAGE_NAME}'
+options:
+  machineType: 'N1_HIGHCPU_8'
