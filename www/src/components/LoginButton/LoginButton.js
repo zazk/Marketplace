@@ -21,10 +21,8 @@ function LoginButton({ receiveUser, type, user, history, checkUser }) {
 
   if (!user) {
     lock.on('authenticated', function(authResult) {
-      console.log(user, 'authenticated!!');
       this.getUserInfo(authResult.accessToken, function(error, profile) {
         if (!error) {
-          console.log('authentica 1');
           receiveUser(profile);
           checkUser(profile.sub, history);
           return;
@@ -34,14 +32,12 @@ function LoginButton({ receiveUser, type, user, history, checkUser }) {
   }
 
   if (user && !user.accesstoken) {
-    console.log(' want to check session', user, 'USER ---');
     lock.checkSession({}, function(err, authResult) {
       if (user && authResult) {
         user.accesstoken = authResult.accessToken;
         user.idtoken = authResult.idToken;
         receiveUser({ ...user });
       }
-      console.log('authResult - 2', authResult);
     });
   }
   const openLogin = () => {

@@ -61,7 +61,6 @@ module.exports = {
   },
 
   async add(req, res) {
-    console.log('req.body', req.body);
     const infoExtra = {
       companyname: req.body.companyname,
       phonenumber: req.body.phonenumber,
@@ -70,24 +69,16 @@ module.exports = {
 
     const getUser = async url => {
       try {
-        console.log('respuesta  bodytokenXXXXX', req.body.token);
         const response = await fetch(url, {
           headers: {
             authorization: 'Bearer ' + req.body.token,
           },
         });
         const user = await response.json();
-
-        console.log('respuesta ADDAcount', user);
         return user;
-      } catch (error) {
-        console.log('respuesta ERROR ADDAcount', error);
-      }
+      } catch (error) {}
     };
     const user = await getUser(url);
-    console.log('new dataXXXXX', user);
-    // return res.status(201).send({ sucess: 'ok' });
-
     return Account.create({
       role_id: 1,
       name: user.name,

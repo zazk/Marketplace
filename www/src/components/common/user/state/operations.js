@@ -1,8 +1,6 @@
 import { requestCreateAccount, receiveCreateAccount } from './actions';
 import Const from '../../../../utils/const';
 export const submitRequestCreateAccount = (data, token) => {
-  console.log('token', data, token);
-  // data.token = token;
   return dispatch => {
     dispatch(requestCreateAccount(data));
     return fetch(`${Const.urlSite}api/account`, {

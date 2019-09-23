@@ -16,20 +16,7 @@ function ProjectList({ listprojects, customClass, user }) {
       },
     })
       .then(response => response.json())
-      .then(json => {
-        console.log('jsonxx', json);
-      });
-
-    // get user with token
-    fetch(`https://marketplace-pachama.auth0.com/userinfo`, {
-      headers: {
-        authorization: 'Bearer ' + user.accesstoken,
-      },
-    })
-      .then(response => response.json())
-      .then(json => {
-        console.log('userdata-with-token', json);
-      });
+      .then(json => {});
   }
 
   return (
