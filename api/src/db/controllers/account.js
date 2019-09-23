@@ -1,7 +1,7 @@
 const Account = require('../models').Account;
 const Role = require('../models').Role;
 const fetch = require('node-fetch');
-
+const authConfig = require('../../../src/auth_config.json');
 module.exports = {
   list(req, res) {
     return Account.findAll({
@@ -65,7 +65,8 @@ module.exports = {
       companyname: req.body.companyname,
       phonenumber: req.body.phonenumber,
     };
-    const url = 'https://marketplace-pachama.auth0.com/userinfo';
+
+    const url = authConfig.userprofile;
 
     const getUser = async url => {
       try {
