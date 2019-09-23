@@ -5,25 +5,18 @@ import PropTypes from 'prop-types';
 import Const from '../../../utils/const';
 
 function ProjectList({ listprojects, customClass, user }) {
-  if (user) {
-    console.log('userdata', JSON.stringify(user));
-    console.log('accesstokenxxxxx', user && user.accesstoken);
-  }
   if (user && user.accesstoken) {
     localStorage.setItem('token', user.accesstoken);
-    console.log('userdata', user.accesstoken);
   }
   if (user && user.accesstoken) {
     // test
     fetch(`${Const.urlSite}test`, {
       headers: {
-        authorization: 'Bearer ' + user.accesstoken,
+        authorization: 'Bearer ' + user.idtoken,
       },
     })
       .then(response => response.json())
-      .then(json => {
-        console.log('jsonxx', json);
-      });
+      .then(json => {});
   }
 
   return (

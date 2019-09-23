@@ -6,7 +6,6 @@ const session = require('express-session');
 const uid = require('uid-safe');
 const cors = require('cors');
 const jwt = require('express-jwt');
-const jwtAuthz = require('express-jwt-authz');
 const jwksRsa = require('jwks-rsa');
 const authConfig = require('../src/auth_config.json');
 

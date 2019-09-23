@@ -1,5 +1,6 @@
 {
   "domain": "marketplace-pachama.auth0.com",
   "clientId": "sfj8nlpFONfJanArPrB8PpcB0E9FU4UI",
-  "audience": "api.marketplace.pachama.com"
+  "audience": "api.marketplace.pachama.com",
+  "userprofile": "https://marketplace-pachama.auth0.com/userinfo"
 }

@@ -23,11 +23,9 @@ export const submitRequest = data => {
       body: JSON.stringify(data),
     })
       .then(response => {
-        console.log('1er thenxxxx', response);
         return response.json();
       })
       .then(data => {
-        console.log('responsexxxx', data);
         dispatch(receiveForm(data));
       });
   };
