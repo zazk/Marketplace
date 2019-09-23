@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import ModalBox from '../../features/ModalBox/index';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-// import { Mixpanel } from '../../utils/mixpanel';
 import { Formik, Field, Form } from 'formik';
 import { LinearProgress } from '@material-ui/core';
 import MuiTextField from '@material-ui/core/TextField';
@@ -29,7 +28,7 @@ const UppercasingTextField = props => (
     }}
   />
 );
-function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved }) {
+function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved, user }) {
   const [showSuccessMessage, setSuccessMessage] = useState(0);
   const [openLightbox, setOpenLightbox] = useState(0);
   const [isError, setError] = useState(0);
@@ -46,20 +45,10 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved
       }
     }
   }, [userSaved]);
-  console.log('userSavedXXXXXX', userSaved);
-  // usersaved && setSuccessMessage(1);
 
   function toggle(set) {
     setOpenLightbox(set);
   }
-  // function trackCreateAccount(status) {
-  //   if (user) {
-  //     Mixpanel.identify(user.id);
-  //   }
-  //   var event = status + ' Create Acount';
-  //   Mixpanel.track(event);
-  // }
-  // trackCreateAccount('Filling');
 
   return (
     <CreateAcount className="formulary">
@@ -77,28 +66,23 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved
             initialValues={defaultValues}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
+                submitRequestCreateAccount(values, user.accesstoken);
                 setSubmitting(false);
-                submitRequestCreateAccount(values);
-                // setSuccessMessage(1);
-                // toggle();
               }, 500);
             }}
             render={({ submitForm, isSubmitting, values, setFieldValue }) => (
               <Form>
                 <InputAcountItem>
-                  <Field fullWidth name="role_id" type="text" label="Role id" component={TextField} />
-                </InputAcountItem>
-                <InputAcountItem>
-                  <Field fullWidth name="username" type="text" label="User Name" component={TextField} />
-                </InputAcountItem>
-                <InputAcountItem>
-                  <Field fullWidth name="auth0" type="text" label="auth0" component={TextField} />
-                </InputAcountItem>
-                <InputAcountItem>
-                  <Field fullWidth name="email" type="email" label="Email" component={UppercasingTextField} />
-                </InputAcountItem>
-                <InputAcountItem>
-                  <Field fullWidth name="name" type="text" label="Name" component={TextField} />
+                  <Field
+                    fullWidth
+                    name="email"
+                    InputProps={{
+                      disabled: true,
+                    }}
+                    type="email"
+                    label="Email"
+                    component={UppercasingTextField}
+                  />
                 </InputAcountItem>
                 <InputAcountItem>
                   <Field fullWidth name="companyname" type="text" label="Company name" component={TextField} />
@@ -114,13 +98,7 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved
                 </AcountTerms>
                 {isSubmitting && <LinearProgress />}
                 <div className="form-btn">
-                  <button
-                    className="btn"
-                    type="submit"
-                    disabled={isSubmitting}
-                    // onClick={() => (trackCreateAccount('Submit'), submitForm)}
-                    onClick={() => submitForm}
-                  >
+                  <button className="btn" type="submit" disabled={isSubmitting} onClick={() => submitForm}>
                     <span>Create an account</span>
                   </button>
                 </div>

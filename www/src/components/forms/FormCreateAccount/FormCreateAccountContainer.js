@@ -5,11 +5,7 @@ import FormCreateAccount from './FormCreateAccount';
 const mapStateToProps = state => {
   const user = state.userState.user;
   const defaultValues = {
-    role_id: user ? 1 : '0',
-    name: user ? user.name : 'Jhon Perez',
-    username: user ? user.email : 'email@mail.com',
     email: user ? user.email : 'email@mail.com',
-    auth0: user ? user.sub : '00000',
     companyname: 'For Company ',
     phonenumber: '123-123456',
   };
@@ -21,7 +17,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  submitRequestCreateAccount: data => dispatch(submitRequestCreateAccount(data)),
+  submitRequestCreateAccount: (data, token) => dispatch(submitRequestCreateAccount(data, token)),
 });
 
 export default connect(

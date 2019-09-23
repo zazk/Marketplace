@@ -6,8 +6,8 @@ const session = require('express-session');
 const uid = require('uid-safe');
 const cors = require('cors');
 const jwt = require('express-jwt');
-const jwtAuthz = require('express-jwt-authz');
 const jwksRsa = require('jwks-rsa');
+const authConfig = require('../src/auth_config.json');
 
 require('dotenv').config();
 
@@ -50,11 +50,11 @@ const checkJwt = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `https://marketplace-pachama.auth0.com/.well-known/jwks.json`,
+    jwksUri: `https://${authConfig.domain}/.well-known/jwks.json`,
   }),
-  audience: 'http://api.marketplace.pachama.com',
-  issuer: `https://marketplace-pachama.auth0.com`,
-  algorithms: ['RS256'],
+
+  issuer: `https://${authConfig.domain}/`,
+  algorithm: ['RS256'],
 });
 
 app.get('/api/public', function(req, res) {

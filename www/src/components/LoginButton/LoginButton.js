@@ -11,30 +11,35 @@ function LoginButton({ receiveUser, type, user, history, checkUser }) {
   const options = {
     autoclose: true,
     auth: {
+      audience: 'api.marketplace.pachama.com',
+      responseType: 'token id_token',
       redirect: false,
     },
   };
 
   const lock = new Auth0Lock(clienteId, domain, options);
-  lock.on('authenticated', function(authResult) {
-    this.getUserInfo(authResult.accessToken, function(error, profile) {
-      if (!error) {
-        console.log('authentica 1');
-        receiveUser(profile);
-        checkUser(profile.sub, history);
-        return;
+
+  if (!user) {
+    lock.on('authenticated', function(authResult) {
+      this.getUserInfo(authResult.accessToken, function(error, profile) {
+        if (!error) {
+          receiveUser(profile);
+          checkUser(profile.sub, history);
+          return;
+        }
+      });
+    });
+  }
+
+  if (user && !user.accesstoken) {
+    lock.checkSession({}, function(err, authResult) {
+      if (user && authResult) {
+        user.accesstoken = authResult.accessToken;
+        user.idtoken = authResult.idToken;
+        receiveUser({ ...user });
       }
     });
-  });
-  // if (!user) {
-  //   lock.checkSession({}, function(err, authResult) {
-  //     if (user && authResult) {
-  //       user.accesstoken = authResult.accessToken;
-  //       receiveUser({ ...user });
-  //     }
-  //     console.log('authResult - 2', authResult);
-  //   });
-  // }
+  }
   const openLogin = () => {
     lock.show();
   };

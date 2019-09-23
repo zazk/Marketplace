@@ -31,9 +31,7 @@ function Header() {
           </ul>
         </Nav>
         <MenuResponsive></MenuResponsive>
-        <MenuUser>
-          <LoginButton type="dropdown" />
-        </MenuUser>
+        <MenuUser></MenuUser>
       </HeaderInner>
     </HeaderMain>
   );

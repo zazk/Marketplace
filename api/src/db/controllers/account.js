@@ -1,6 +1,7 @@
 const Account = require('../models').Account;
 const Role = require('../models').Role;
-
+const fetch = require('node-fetch');
+const authConfig = require('../../../src/auth_config.json');
 module.exports = {
   list(req, res) {
     return Account.findAll({
@@ -59,17 +60,32 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
 
-  add(req, res) {
+  async add(req, res) {
     const infoExtra = {
       companyname: req.body.companyname,
       phonenumber: req.body.phonenumber,
     };
+
+    const url = authConfig.userprofile;
+
+    const getUser = async url => {
+      try {
+        const response = await fetch(url, {
+          headers: {
+            authorization: 'Bearer ' + req.body.token,
+          },
+        });
+        const user = await response.json();
+        return user;
+      } catch (error) {}
+    };
+    const user = await getUser(url);
     return Account.create({
-      role_id: req.body.role_id,
-      name: req.body.name,
-      username: req.body.username,
-      email: req.body.email,
-      auth0: req.body.auth0,
+      role_id: 1,
+      name: user.name,
+      username: user.name,
+      email: user.email,
+      auth0: user.sub,
       extra: JSON.stringify(infoExtra),
     })
       .then(account => res.status(201).send(account))

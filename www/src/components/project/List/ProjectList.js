@@ -5,24 +5,19 @@ import PropTypes from 'prop-types';
 import Const from '../../../utils/const';
 
 function ProjectList({ listprojects, customClass, user }) {
-  console.log(listprojects);
-  if (user) {
-    console.log('userdata', JSON.stringify(user));
-    console.log('accesstokenxxxxx', user.accesstoken);
+  if (user && user.accesstoken) {
+    localStorage.setItem('token', user.accesstoken);
   }
-  // console.log('userdata', user.accesstoken);
-  // if (user.accesstoken) {
-  //   // test
-  //   fetch(`${Const.urlSite}test`, {
-  //     headers: {
-  //       Authorization: 'Bearer ' + user.accesstoken,
-  //     },
-  //   })
-  //     .then(response => response.json())
-  //     .then(json => {
-  //       console.log('jsonxx', json);
-  //     });
-  // }
+  if (user && user.accesstoken) {
+    // test
+    fetch(`${Const.urlSite}test`, {
+      headers: {
+        authorization: 'Bearer ' + user.idtoken,
+      },
+    })
+      .then(response => response.json())
+      .then(json => {});
+  }
 
   return (
     <ProjectListMain className={customClass && customClass}>
