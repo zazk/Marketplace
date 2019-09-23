@@ -41,8 +41,7 @@ const lightingEffect = new LightingEffect({ ambientLight, pointLight1, pointLigh
 // https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Tile_servers
 //const tileServer = 'https://c.tile.openstreetmap.org/';
 //const tileServer = 'https://c.tile.openstreetmap.org/';
-const tileServer = 'https://storage.googleapis.com/new-england-biomass/polok';
-
+const tileServer = 'https://storage.googleapis.com/projects-biomass';
 export class MapContainer extends PureComponent {
   constructor(props) {
     super(props);
@@ -76,7 +75,7 @@ export class MapContainer extends PureComponent {
           ...this.state.viewState,
           longitude: this.state.projectData.location.coordinates[0],
           latitude: this.state.projectData.location.coordinates[1],
-          zoom: 11.5,
+          zoom: this.state.projectData.location.zoom || 11,
           transitionDuration: 18000,
           transitionInterpolator: new FlyToInterpolator(),
         },
@@ -93,7 +92,7 @@ export class MapContainer extends PureComponent {
         ...this.state.viewState,
         longitude: this.state.projectData.location.coordinates[0],
         latitude: this.state.projectData.location.coordinates[1],
-        zoom: 11.5,
+        zoom: this.state.projectData.location.zoom || 11,
         transitionDuration: 18000,
         transitionInterpolator: new FlyToInterpolator(),
       },
@@ -131,8 +130,8 @@ export class MapContainer extends PureComponent {
         highlightColor,
         opacity: 1,
         // https://wiki.openstreetmap.org/wiki/Zoom_levels
-        minZoom: 10,
-        maxZoom: 17,
+        minZoom: 8,
+        maxZoom: 16,
         renderSubLayers: props => {
           const { x, y, z, bbox } = props.tile;
           const { west, south, east, north } = bbox;
@@ -174,7 +173,7 @@ export class MapContainer extends PureComponent {
             {this._renderTooltip}
             <StaticMap
               mapboxApiAccessToken="pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA"
-              mapStyle="mapbox://styles/mapbox/light-v10"
+              mapStyle="mapbox://styles/pachama/ck0h6nzwy1buy1ctipdv1swze"
             />
           </DeckGL>
         </FeatureMap>
