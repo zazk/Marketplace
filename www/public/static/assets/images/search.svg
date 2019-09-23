@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="147px" height="180px" viewBox="0 0 147 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="marketplace---v4-results-search" transform="translate(-566.000000, -277.000000)">
+            <g id="Group-7" transform="translate(454.000000, 277.000000)">
+                <g id="Group-4" transform="translate(113.000000, 0.000000)">
+                    <g id="Group-2">
+                        <rect id="Rectangle" stroke="#EAEAEA" fill="#FFFFFF" x="49.5" y="0.5" width="96" height="117" rx="10"></rect>
+                        <path d="M64,26.5 L130.999875,26.5" id="Line-5" stroke="#D6D6D6" stroke-width="3" opacity="0.5" stroke-linecap="round"></path>
+                        <path d="M64,55 L130.999875,55" id="Line-5-Copy" stroke="#D6D6D6" stroke-width="3" opacity="0.5" stroke-linecap="round"></path>
+                        <path d="M64,84 L130.999875,84" id="Line-5-Copy-2" stroke="#D6D6D6" stroke-width="3" opacity="0.5" stroke-linecap="round"></path>
+                        <g id="Shape-2" transform="translate(0.000000, 41.000000)" fill="#09C173" fill-rule="nonzero" opacity="0.200000003" stroke="#09C173">
+                            <path d="M132.273086,133.712622 L93.522947,93.413417 C103.406723,83.5009547 109.52997,69.8357871 109.52997,54.7649848 C109.52997,24.5660075 84.9639622,2.13162821e-14 54.7649848,2.13162821e-14 C24.5660075,2.13162821e-14 -4.68958206e-13,24.5660075 -4.68958206e-13,54.7649848 C-4.68958206e-13,84.9639622 24.5660075,109.52997 54.7649848,109.52997 C68.020719,109.52997 80.1863692,104.791495 89.6685352,96.9288075 L128.512557,137.327111 C129.023696,137.861722 129.706955,138.127723 130.392821,138.127723 C131.044785,138.127723 131.694141,137.885193 132.200066,137.400131 C133.237992,136.401322 133.269287,134.750549 132.273086,133.712622 Z M54.7649848,104.314257 C27.4424731,104.314257 5.21571284,82.0874966 5.21571284,54.7649848 C5.21571284,27.4424731 27.4424731,5.21571284 54.7649848,5.21571284 C82.0874966,5.21571284 104.314257,27.4424731 104.314257,54.7649848 C104.314257,82.0874966 82.0848887,104.314257 54.7649848,104.314257 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                    <circle id="Oval" fill="#FFFFFF" opacity="0.5" cx="55" cy="96" r="50"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
