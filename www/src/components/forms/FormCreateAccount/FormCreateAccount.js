@@ -73,16 +73,16 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved
             render={({ submitForm, isSubmitting, values, setFieldValue }) => (
               <Form>
                 <InputAcountItem>
-                  <Field fullWidth name="username" type="text" label="User Name" component={TextField} />
-                </InputAcountItem>
-                <InputAcountItem>
-                  <Field fullWidth name="auth0" type="text" label="auth0" component={TextField} />
-                </InputAcountItem>
-                <InputAcountItem>
-                  <Field fullWidth name="email" type="email" label="Email" component={UppercasingTextField} />
-                </InputAcountItem>
-                <InputAcountItem>
-                  <Field fullWidth name="name" type="text" label="Name" component={TextField} />
+                  <Field
+                    fullWidth
+                    name="email"
+                    InputProps={{
+                      disabled: true,
+                    }}
+                    type="email"
+                    label="Email"
+                    component={UppercasingTextField}
+                  />
                 </InputAcountItem>
                 <InputAcountItem>
                   <Field fullWidth name="companyname" type="text" label="Company name" component={TextField} />

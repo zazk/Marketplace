@@ -5,10 +5,7 @@ import FormCreateAccount from './FormCreateAccount';
 const mapStateToProps = state => {
   const user = state.userState.user;
   const defaultValues = {
-    name: user ? user.name : 'Jhon Perez',
-    username: user ? user.email : 'email@mail.com',
     email: user ? user.email : 'email@mail.com',
-    auth0: user ? user.sub : '00000',
     companyname: 'For Company ',
     phonenumber: '123-123456',
   };
