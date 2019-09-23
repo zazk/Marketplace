@@ -5,12 +5,14 @@ export const receiveUser = user => ({
   user: user,
 });
 
-export const requestCreateAccount = data => ({
+export const requestCreateAccount = (data, token) => ({
   type: REQUEST_CREATE_ACCOUNT,
   data: data,
+  token: token,
 });
 
-export const receiveCreateAccount = data => ({
+export const receiveCreateAccount = (data, token) => ({
   type: RECEIVE_CREATE_ACCOUNT,
   data: data,
+  token: token,
 });

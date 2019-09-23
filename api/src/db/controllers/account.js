@@ -1,5 +1,6 @@
 const Account = require('../models').Account;
 const Role = require('../models').Role;
+const fetch = require('node-fetch');
 
 module.exports = {
   list(req, res) {
@@ -59,17 +60,40 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
 
-  add(req, res) {
+  async add(req, res) {
+    console.log('req.body', req.body);
     const infoExtra = {
       companyname: req.body.companyname,
       phonenumber: req.body.phonenumber,
     };
+    const url = 'https://marketplace-pachama.auth0.com/userinfo';
+
+    const getUser = async url => {
+      try {
+        console.log('respuesta  bodytokenXXXXX', req.body.token);
+        const response = await fetch(url, {
+          headers: {
+            authorization: 'Bearer ' + req.body.token,
+          },
+        });
+        const user = await response.json();
+
+        console.log('respuesta ADDAcount', user);
+        return user;
+      } catch (error) {
+        console.log('respuesta ERROR ADDAcount', error);
+      }
+    };
+    const user = await getUser(url);
+    console.log('new dataXXXXX', user);
+    // return res.status(201).send({ sucess: 'ok' });
+
     return Account.create({
-      role_id: req.body.role_id,
-      name: req.body.name,
-      username: req.body.username,
-      email: req.body.email,
-      auth0: req.body.auth0,
+      role_id: 1,
+      name: user.name,
+      username: user.name,
+      email: user.email,
+      auth0: user.sub,
       extra: JSON.stringify(infoExtra),
     })
       .then(account => res.status(201).send(account))

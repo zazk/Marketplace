@@ -29,7 +29,7 @@ const UppercasingTextField = props => (
     }}
   />
 );
-function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved }) {
+function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved, user }) {
   const [showSuccessMessage, setSuccessMessage] = useState(0);
   const [openLightbox, setOpenLightbox] = useState(0);
   const [isError, setError] = useState(0);
@@ -46,7 +46,7 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved
       }
     }
   }, [userSaved]);
-  console.log('userSavedXXXXXX', userSaved);
+
   // usersaved && setSuccessMessage(1);
 
   function toggle(set) {
@@ -77,8 +77,9 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved
             initialValues={defaultValues}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
+                console.log('tokenxxxx', user, user.accesstoken);
+                submitRequestCreateAccount(values, user.accesstoken);
                 setSubmitting(false);
-                submitRequestCreateAccount(values);
                 // setSuccessMessage(1);
                 // toggle();
               }, 500);
@@ -87,6 +88,16 @@ function FormCreateAcount({ defaultValues, submitRequestCreateAccount, userSaved
               <Form>
                 <InputAcountItem>
                   <Field fullWidth name="role_id" type="text" label="Role id" component={TextField} />
+                </InputAcountItem>
+                <InputAcountItem>
+                  <Field
+                    fullWidth
+                    name="accesstoken"
+                    defaultValue={user.accesstoken}
+                    type="text"
+                    label="Token"
+                    component={TextField}
+                  />
                 </InputAcountItem>
                 <InputAcountItem>
                   <Field fullWidth name="username" type="text" label="User Name" component={TextField} />

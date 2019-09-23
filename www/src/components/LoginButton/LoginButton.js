@@ -37,7 +37,8 @@ function LoginButton({ receiveUser, type, user, history, checkUser }) {
     console.log(' want to check session', user, 'USER ---');
     lock.checkSession({}, function(err, authResult) {
       if (user && authResult) {
-        user.accesstoken = authResult.idToken;
+        user.accesstoken = authResult.accessToken;
+        user.idtoken = authResult.idToken;
         receiveUser({ ...user });
       }
       console.log('authResult - 2', authResult);

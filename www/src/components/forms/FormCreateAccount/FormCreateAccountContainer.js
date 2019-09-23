@@ -21,7 +21,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  submitRequestCreateAccount: data => dispatch(submitRequestCreateAccount(data)),
+  submitRequestCreateAccount: (data, token) => dispatch(submitRequestCreateAccount(data, token)),
 });
 
 export default connect(
