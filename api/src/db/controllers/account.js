@@ -61,7 +61,6 @@ module.exports = {
   },
 
   async add(req, res) {
-    console.log('urlxxxxx', authConfig.userprofile);
     const infoExtra = {
       companyname: req.body.companyname,
       phonenumber: req.body.phonenumber,
