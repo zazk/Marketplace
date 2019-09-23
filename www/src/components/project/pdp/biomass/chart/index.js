@@ -10,17 +10,16 @@ function BiomassChart({ data }) {
       biomass: '5',
     },
     {
-      fill: '#e9ecf2',
+      fill: '#c1dfdb',
       interpolation: 'natural',
       biomass: '25',
     },
     {
-      fill: '#e9ecf2',
+      fill: '#17b363',
       interpolation: 'natural',
       biomass: '50',
     },
   ];
-
   return (
     <VictoryChart width={631} height={350} theme={VictoryTheme.material} animate={{ duration: 1000 }}>
       {charts.map(({ fill, interpolation, biomass }, i) => (
