@@ -8,7 +8,7 @@
   },
   "project_type": "Improved Forest Management",
   "location": {
-    "name": "Holyoke, Westfield, and West Springfield, Massachusetts, USA",
+    "name": "Holyoke, Westfield and West Springfield, Massachusetts, USA",
     "coordinates": [-72.7439, 42.1802]
   },
   "standard": "https://storage.googleapis.com/marketplace-assets/logo-acr.png",
@@ -25,10 +25,10 @@
   "auditor": "SCS Global services",
   "total_land": {
     "area": "5,469.58",
-    "unit": "ha"
+    "unit": "hectares"
   },
-  "totalBiomass": "91,831,049.7 tns",
-  "medianBiomass": "1,685.31 tns/ha",
+  "totalBiomass": "91,831,050 tns",
+  "medianBiomass": "169 tns/ha",
   "land_owner": "The Cities of Westfield, West Springfield and Holyoke",
   "project_images": [
     {
@@ -48,21 +48,25 @@
   },
   "summary": {
     "leakage": {
+      "display": true,
       "text": "Quantification of leakage is limited to market leakage. All active harvest in the forest has been certified by the Forest Stewardship Council (FSC). This demonstrates that there will be no leakage beyond de minimus levels through activity-shifting leakage to other lands. Market leakage deduction of 40% was conservatively assumed.",
       "source": "Section E3 from Project Description Document",
       "source_link": "https://drive.google.com/a/pachama.com/file/d/1uaQvZVEOvoJNPTca78MnnCb4qdCGNw1o/view?usp=sharing"
     },
     "additionality": {
+      "display": true,
       "text": "Additionality for the project has been shown through a regulatory surplus test, a common practice test, and an implementation barrier test. There is no relevant laws, regulations, statues, legal rulings, and other regulatory frameworks that effectively requires the forest carbon project activity and its associated GHG emissions reductions/removal enhancements. Consequently, the project passes the Regulatory Surplus test. Carbon funding is reasonably expected to incentivize the project’s implementation. The implementation of the carbon project represents an opportunity cost to lost revenue associated with the potential timber harvesting that could legally and feasibly occur on the property in the lifetime of the carbon project.",
       "source": "Section C from Project Description Document",
       "source_link": "https://drive.google.com/a/pachama.com/file/d/1uaQvZVEOvoJNPTca78MnnCb4qdCGNw1o/view?usp=sharing"
     },
     "permanence": {
+      "display": true,
       "text": "To ensure the permanence of the GHG emission reductions from this project, buffer credits from each of the projects are put on hold in a pool. When a loss event occurs (fire, diseases, pets, etc) buffer credits are taken from this pool. Based on the result of the risk assessment using the \"ACR Tool for Risk Analysis and Buffer Determination\" this project will contribute to the buffer pool 16% of their issued credits.",
       "source": "Section B8 from Project Description Document",
       "source_link": "https://drive.google.com/a/pachama.com/file/d/1uaQvZVEOvoJNPTca78MnnCb4qdCGNw1o/view?usp=sharing"
     },
     "verifiability": {
+      "display": true,
       "text": "An objective third party—someone other than Middlebury College and the project developer and —must be able to look at project data and confirm that the carbon reductions are real and credible. SCS Global Services acted as the third-party verifier in this project, who determined the proper baseline for greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.",
       "source": "",
       "source_link": ""
@@ -91,10 +95,6 @@
     }
   ],
   "project_files": "https://acr2.apx.com/mymodule/reg/prjView.asp?id1=376",
-  "un_goals": [
-    "https://storage.googleapis.com/marketplace-assets/un_goals-6.jpg",
-    "https://storage.googleapis.com/marketplace-assets/un_goals-13.png",
-    "https://storage.googleapis.com/marketplace-assets/un_goals-15.png"
-  ],
+  "un_goals": ["6", "13", "15"],
   "tagline_footer": "With every ton of carbon that is sold, trees are protected, partnerships are formed, and our living Earth is restored to help solve climate change."
 }

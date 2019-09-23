@@ -1,0 +1,101 @@
+{
+  "title": "Alligator River Avoided Conversion Project",
+  "tagline": "Comprised of 2,750 acres of forested land in the tidal region of northeastern North Carolina, this land has been safely placed under a conservation easement to ensure perpetuity of the natural forest.",
+  "main_picture": "https://storage.googleapis.com/marketplace-assets/alligator-river-main_picture.jpg",
+  "credits_avail": {
+    "quatinty": "5,549",
+    "unit": "credits"
+  },
+  "project_type": "Avoided Conversion",
+  "location": {
+    "name": "Dare & Hyde counties, North Carolina, USA",
+    "coordinates": [-76.14544935176104, 35.58555678388558],
+    "zoom": 11
+  },
+  "standard": "https://storage.googleapis.com/marketplace-assets/logo-car.png",
+  "project_overview": "The project is comprised of 2,750 acres of forested land in the tidal region of northeastern North Carolina adjacent to the Alligator River National Wildlife Refuge. Most neighboring properties have been harvested, burned on site and then converted to agricultural land for crop production such as wheat and corn. If this land had not been placed under easement this rich and diverse ecosystem would have suffered that same fate. The proceeds from carbon revenue are used to fund the continuing management and natural restoration of this forest. The Project offers additional environmental benefits in the form of wetland conservation and protection of habitat bordering the Alligator River National Wildlife Refuge.",
+  "credits_issued": {
+    "quatinty": 528570,
+    "unit": "total credits issued"
+  },
+  "verification": {
+    "methodology": "CAR Forest Project Protocol v 3.1",
+    "last_verification": "December 2018"
+  },
+  "project_developer": "Bluesource",
+  "auditor": "Environmental Services, Inc.",
+  "total_land": {
+    "area": "1,113",
+    "unit": "hectares"
+  },
+  "totalBiomass": "196,679 tns",
+  "medianBiomass": "234 tns",
+  "land_owner": "Mattamuskeet Ventures I, LLC",
+  "project_images": [
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/alligator-river-image_1.jpg",
+      "caption": "Important local species include Pine and Bottom Land Hardwoods."
+    },
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/alligator-river-image_2.jpg",
+      "caption": "The project supports healthy populations of red wolf, bald eagle, and black bear."
+    }
+  ],
+  "badges": {
+    "leakage": true,
+    "additionality": true,
+    "permanence": true,
+    "verifiability": true
+  },
+  "summary": {
+    "leakage": {
+      "text": "A default conversion displacement risk of 3.6 % from the state of California was applied. Leakage was determied using the CAR FPP v3.1 Figure 6.3 decsion tree and then applying equation 6.7",
+      "source": "Section 23 from the Project Description Document",
+      "source_link": "https://thereserve2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=5613&IDKEY=skjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909f7740327",
+      "display": true
+    },
+    "additionality": {
+      "text": "Additionality was ensured through the application of the \"Legal Requirement Test for Avoided Conversion Projects\" via documentation indicating that the current land use policies, including zoning and general plan ordinances, and other local and state statutes and regulations, permit the anticipated type of conversion and \"The Performance Test for Avoided Conversion Projects\" via appraisal identifying specific portions of the Project Area suitable for the identified alternative land use.",
+      "source": "Appendix B and C from the Project Design Document",
+      "source_link": "https://thereserve2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=5613&IDKEY=skjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909f7740327",
+      "display": true
+    },
+    "permanence": {
+      "text": "Permanence was is ensured via the three mechanism approach: \n1.-The requirement for all Forest Owners to monitor onsite carbon stocks, submit annual monitoring reports, and submit to annual third-party verification of those reports along with periodic verifier site visits for the duration of the Project Life. \n2.-The requirement for all Forest Owners to sign a Project Implementation Agreement with the Climate Action Reserve which obligates Forest Owners to retire credits to compensate for reversals of GHG reductions and removals.\n3.-The maintenance of a Buffer Pool of 20.937% from the credits issued to provide insurance against reversals of GHG reductions and removals due to unavoidable causes (including natural disturbances such fires, pest infestations, or disease outbreaks).",
+      "source": "Section 22 from the Project Description Document",
+      "source_link": "https://thereserve2.apx.com/mymodule/ProjectDoc/Project_ViewFile.asp?FileID=5613&IDKEY=skjalskjf098234kj28098sfkjlf098098kl32lasjdflkj909f7740327",
+      "display": true
+    },
+    "verifiability": {
+      "text": "An objective third party—someone other than the land owner or Blue Source—must be able to look at project data and confirm that the carbon reductions are real and credible. S&A Carbon, LLC acted as the third-party verifier in this project, who determined greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.",
+      "source": "",
+      "source_link": "",
+      "display": true
+    }
+  },
+  "timeline": [
+    {
+      "date": "14 May 2010",
+      "text": "Project start date"
+    },
+    {
+      "date": "14 May 2010",
+      "text": "1st Verification started"
+    },
+    {
+      "date": "31 December 2010",
+      "text": "1st Verification finished"
+    },
+    {
+      "date": "31 Decemeber 2019",
+      "text": "Next  verification and Credtis issuance"
+    },
+    {
+      "date": "13 May 2109",
+      "text": "Ends crediting period"
+    }
+  ],
+  "project_files": "https://thereserve2.apx.com/mymodule/reg/TabDocuments.asp?r=111&ad=Prpt&act=update&type=PRO&aProj=pub&tablename=doc&id1=497",
+  "un_goals": ["6", "13", "15"],
+  "tagline_footer": "With every ton of carbon that is sold, trees are protected, partnerships are formed, and our living Earth is restored to help solve climate change."
+}

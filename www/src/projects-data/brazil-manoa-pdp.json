@@ -1,0 +1,125 @@
+{
+  "title": "Manoa REDD+ Avoided Unplanned Deforestation",
+  "tagline": "Throughout its almost 30 years of history, Manoa has improved its management techniques, becoming a model of worldwide reference of forest exploration ally to with the conservation of nature.",
+  "main_picture": "https://storage.googleapis.com/marketplace-assets/brazil-manoa-main_picture.jpg",
+  "credits_avail": {
+    "quatinty": "121,765",
+    "unit": "credits"
+  },
+  "project_type": "REDD+ Avoided Unplanned Deforestation",
+  "location": {
+    "name": "Cujubim, state of Rondônia, Brazil",
+    "coordinates": [-62.77262973891786, -8.83019005211992],
+    "zoom": 9
+  },
+  "standard": "https://storage.googleapis.com/marketplace-assets/logo-vcs_ccb.png",
+  "project_overview": "Manoa REDD+ (Reducing emissions from deforestation and forest degradation) project is a partnership between Biofílica and Grupo Triângulo, located at Manoa Farm, city of Cujubim, state of Rondônia, in an area of 74,000 hectares. The history demonstrates the pioneering in sustainable forest management, and are one of the few forest areas remaining in private area in the region, constantly threatened by invasions and timber theft. Manoa is of paramount importance in the landscape connectivity, as it is close to conservation units and provides shelter for more than 900 flora and fauna species.",
+  "credits_issued": {
+    "quatinty": "",
+    "unit": "total credits issued"
+  },
+  "verification": {
+    "methodology": "VM0015 v.1.1",
+    "last_verification": "November 2017"
+  },
+  "project_developer": "Biofílica",
+  "auditor": "Rainforest Alliance",
+  "total_land": {
+    "area": "74,038",
+    "unit": "hectares"
+  },
+  "totalBiomass": "9,350,123 tons",
+  "medianBiomass": "134 tons",
+  "land_owner": "Triângulo Pisos e Painéis Ltda.",
+  "project_images": [
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/brazil-manoa-image_1.jpg",
+      "caption": "The Manoa projects is of fundamental importance in the connectivity of the landscape, providing shelter 785 fauna species."
+    },
+    {
+      "image": "https://storage.googleapis.com/marketplace-assets/brazil-manoa-image_2.jpg",
+      "caption": "Through its own training center, the project provides training in techniques aimed at encouraging sustainable development practices."
+    }
+  ],
+  "badges": {
+    "leakage": true,
+    "additionality": true,
+    "permanence": true,
+    "verifiability": true
+  },
+  "summary": {
+    "leakage": {
+      "display": true,
+      "text": "The VCS methodology applied to the Manoa REDD+ Project foresees the monitoring of leakage displacement by defining a spatial boundary called as Leakage Belt. By means of baseline measurements it is possible to determine whether or not there was a leakage displacement and a quantity of credits is discounted when it happens. To prevent the occurrence of leakage, is performed a frequent monitoring of the Leakage Belt.",
+      "source": "Section 5.5 and Section 8 from Project Description Document",
+      "source_link": "https://www.vcsprojectdatabase.org/services/publicViewServices/downloadDocumentById/29356"
+    },
+    "additionality": {
+      "display": true,
+      "text": "Additionality for the project has been shown through identifying the 'alternative land-use scenarios' that would have occurred in the absence of this project, a 'barrier analysis' was performed showing that the project activities would have not occur without the income from the sale of credits. Additionally, a 'common practice analysis' showed that the activities proposed by the project are not common practices. The project passes all analyses that proved the additionality of the project, this analysis followed the requirements of the 'tool for the demonstration and assessment of additionality in VCS AFOLU project activities' VT0001.",
+      "source": "Section 4.6 from Project Description Document",
+      "source_link": "https://www.vcsprojectdatabase.org/services/publicViewServices/downloadDocumentById/29134"
+    },
+    "permanence": {
+      "display": true,
+      "text": "To ensure the permanence of the GHG emission reductions from this project, buffer credits from each of the projects are put on hold in a pool. When a loss event occurs (fire, diseases, pests, etc) buffer credits are taken from this pool. Based on the result of the risk assessment using the 'AFOLU Non-Permanence Risk Tool v3.2' this project will contribute to the buffer pool 10% of their issued credits.",
+      "source": "Section 2.3 from Project Description Document",
+      "source_link": "https://www.vcsprojectdatabase.org/services/publicViewServices/downloadDocumentById/29134"
+    },
+    "verifiability": {
+      "display": true,
+      "text": "An objective third party—someone other than Triângulo Pisos e Painéis Ltda. or the project developer—must be able to look at project data and confirm that the carbon reductions are real and credible. Rainforest Alliance and Imaflora acted as the third-party verifier in this project since 2016, who determined the proper greenhouse gas reductions and verified that the reductions adhere to strict monitoring and reporting standards.",
+      "source": "",
+      "source_link": ""
+    }
+  },
+  "timeline": [
+    {
+      "date": "January 1st 2013",
+      "text": "Project start date"
+    },
+    {
+      "date": "January 2013",
+      "text": "1st Verification started"
+    },
+    {
+      "date": "December 2013",
+      "text": "1st Verification finished"
+    },
+    {
+      "date": "January 2014",
+      "text": "2nd Verification started"
+    },
+    {
+      "date": "December 2014",
+      "text": "2nd Verification finished"
+    },
+    {
+      "date": "January 2015",
+      "text": "3rd Verification started"
+    },
+    {
+      "date": "December 2015",
+      "text": "3rd Verification finished"
+    },
+    {
+      "date": "January 2016",
+      "text": "4th Verification started"
+    },
+    {
+      "date": "December 2016",
+      "text": "4th Verification finished"
+    },
+    {
+      "date": "2022",
+      "text": "Next  verification and Credtis issuance"
+    },
+    {
+      "date": "September 2042",
+      "text": "Ends crediting period"
+    }
+  ],
+  "project_files": "https://www.vcsprojectdatabase.org/#/project_details/1571",
+  "un_goals": ["2", "4", "5", "12", "13", "15"],
+  "tagline_footer": "With every ton of carbon that is sold, trees are protected, partnerships are formed, and our living Earth is restored to help solve climate change."
+}
