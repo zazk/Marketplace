@@ -1,11 +1,15 @@
+import Config from '../../../utils/config';
+
 class ApiClass {
   constructor() {
-    this.url = `/api`;
+    this.host = Config.api.host;
+    this.endpoint = Config.api.endpoint;
+    this.url = this.host ? this.host + this.endpoint : this.endpoint;
   }
 
-  makeRequest = ({ url, data }) => {
+  makeRequest = ({ path, data }) => {
     return new Promise(function(resolve, reject) {
-      fetch(url, data)
+      fetch(`${this.url}${path}`, data)
         .then(response => {
           response.json().then(data => {
             if (response.status >= 300) {
