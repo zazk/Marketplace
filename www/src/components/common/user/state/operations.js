@@ -8,7 +8,7 @@ export const submitRequestCreateAccount = (data, token) => {
     return Api.makeRequest({
       url: '/account',
       data: {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-type': 'application/json',
         },

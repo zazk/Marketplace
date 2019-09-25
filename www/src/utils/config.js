@@ -1,7 +1,7 @@
 const Config = {
   publicUrl: process.env.PUBLIC_URL,
   api: {
-    host: (process.env.NODE_ENV == 'development') ? 'localhost:3001' : false,
+    host: (process.env.NODE_ENV == 'development') ? 'http://localhost:3001' : false,
     endpoint: '/api'
   },
   auth0: {

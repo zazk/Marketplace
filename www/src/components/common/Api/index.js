@@ -7,9 +7,10 @@ class ApiClass {
     this.url = this.host ? this.host + this.endpoint : this.endpoint;
   }
 
-  makeRequest = ({ path, data }) => {
+  makeRequest = ({url, data}) => {
+    var self = this;
     return new Promise(function(resolve, reject) {
-      fetch(`${this.url}${path}`, data)
+      fetch(`${self.url}${url}`, data)
         .then(response => {
           response.json().then(data => {
             if (response.status >= 300) {
@@ -25,8 +26,9 @@ class ApiClass {
   };
 
   fetchProject = project => {
-    return this.makeRequest({
-      url: `${this.url}/project`,
+    var self = this;
+    return self.makeRequest({
+      url: `${self.url}/project`,
       data: {
         method: 'GET',
       },
