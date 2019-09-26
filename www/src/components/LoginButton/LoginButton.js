@@ -1,52 +1,12 @@
 import React, { useState } from 'react';
-import { Auth0Lock } from 'auth0-lock';
 import { withRouter } from 'react-router';
 import { CompanyName, CompanyImage, LoginLink, WrapLabelDropdown } from './style';
-import Const from '../../utils/const';
-function LoginButton({ receiveUser, type, user, history, checkUser }) {
+function LoginButton({ type, user, history, checkUser, LogOut, openLogin }) {
   const [openDropdown, setDropdown] = useState(0);
 
-  const clienteId = Const.clienteId;
-  const domain = Const.domainAuth;
-  const options = {
-    autoclose: true,
-    auth: {
-      audience: 'api.marketplace.pachama.com',
-      responseType: 'token id_token',
-      redirect: false,
-    },
-  };
-
-  const lock = new Auth0Lock(clienteId, domain, options);
-
-  if (!user) {
-    lock.on('authenticated', function(authResult) {
-      this.getUserInfo(authResult.accessToken, function(error, profile) {
-        if (!error) {
-          receiveUser(profile);
-          checkUser(profile.sub, history);
-          return;
-        }
-      });
-    });
+  if (user && user.sub) {
+    checkUser(user.sub, history);
   }
-
-  if (user && !user.accesstoken) {
-    lock.checkSession({}, function(err, authResult) {
-      if (user && authResult) {
-        user.accesstoken = authResult.accessToken;
-        user.idtoken = authResult.idToken;
-        receiveUser({ ...user });
-      }
-    });
-  }
-  const openLogin = () => {
-    lock.show();
-  };
-
-  const LogOut = () => {
-    lock.logout();
-  };
 
   return (
     <div>
