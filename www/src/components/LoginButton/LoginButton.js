@@ -1,15 +1,8 @@
-import React, { useEffect, useMemo } from 'react';
-import { withRouter } from 'react-router';
+import React from 'react';
 import { LoginLink } from './style';
 import LoggedUserDropdown from './LoggedUserDropdown';
 
-function LoginButton({ type, user, history, checkUser, logOut, openLogin }) {
-  const sub = useMemo(() => (user && user.sub) || null, [user]);
-
-  useEffect(() => {
-    if (sub) checkUser(sub, history);
-  }, [sub, history, checkUser]);
-
+function LoginButton({ type, user, logOut, openLogin }) {
   return (
     <div>
       {type === 'dropdown' ? (
@@ -29,4 +22,4 @@ function LoginButton({ type, user, history, checkUser, logOut, openLogin }) {
     </div>
   );
 }
-export default withRouter(LoginButton);
+export default LoginButton;
