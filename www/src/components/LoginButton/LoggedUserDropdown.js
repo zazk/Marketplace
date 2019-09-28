@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { CompanyName, CompanyImage, WrapLabelDropdown } from './style';
 
-export default ({ userPicture, logOut }) => {
+const LoggedUserDropdown = ({ picture, name, logOut }) => {
   const [openDropdown, setDropdown] = useState(false);
   return (
     <div className="wrap-company-user">
       <CompanyName className={`wrap-drodown ${openDropdown && 'active'}`}>
         <WrapLabelDropdown>
-          <CompanyImage style={{ backgroundImage: `url(${userPicture})` }} />
+          <CompanyImage style={{ backgroundImage: `url(${picture})` }} />
           <div className="dropdown-btn ">
             <div
               className="dropdown-open dropdown-controls"
@@ -17,7 +17,7 @@ export default ({ userPicture, logOut }) => {
               className="dropdown-close dropdown-controls"
               onClick={() => setDropdown(false)}
             />
-            <span className="dropdown-label company-name">{userPicture}</span>
+            <span className="dropdown-label company-name">{name}</span>
             <img
               className="drop-down-icon"
               src="/static/iconos/arrow-down.svg"
@@ -39,3 +39,5 @@ export default ({ userPicture, logOut }) => {
     </div>
   );
 };
+
+export default LoggedUserDropdown;

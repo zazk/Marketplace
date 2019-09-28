@@ -7,7 +7,7 @@ function LoginButton({ type, user, logOut, openLogin }) {
     <div>
       {type === 'dropdown' ? (
         user ? (
-          <LoggedUserDropdown userPicture={user.picture} logOut={logOut} />
+          <LoggedUserDropdown picture={user.picture} name={user.name}  logOut={logOut} />
         ) : (
           <LoginLink onClick={() => openLogin()}>Log In</LoginLink>
         )
