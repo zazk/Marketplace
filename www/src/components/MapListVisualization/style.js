@@ -9,7 +9,7 @@ export const TooltipInner = styled.div`
   z-index: 10;
   transform: translateX(-50%) translateY(-25px);
   background-color: #fff;
-  border-radius: 7px;
+  border-radius: 10px;
   z-index: 10;
   box-shadow: 0 15px 45px 0 rgba(109, 100, 206, 0.21);
   &:after {
