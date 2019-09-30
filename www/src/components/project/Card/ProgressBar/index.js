@@ -5,7 +5,7 @@ function ProjectProgressBar({ data, type }) {
   return (
     <ProjectProgress className={type && type}>
       <ProgressBar>
-        <ProgressbarItem style={{ width: `80%` }} />
+        <ProgressbarItem style={{ width: `${data.progress}` }} />
       </ProgressBar>
       <ProgresNumbers>
         <p>

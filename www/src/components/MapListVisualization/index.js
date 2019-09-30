@@ -5,8 +5,11 @@ import { StaticMap } from 'react-map-gl';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { TileLayer, BitmapLayer, GeoJsonLayer, MapView, View } from 'deck.gl';
 import DeckGL from '@deck.gl/react';
-import ProjectItem from './ProjectItem';
+// import ProjectItem from './ProjectItem';
+import ProjectCard from '../project/Card';
 import dataProjects from '../../projects-data/projects';
+import { TooltipMap, TooltipInner, DetailMap } from './style';
+
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA'; // eslint-disable-line
 const tileServer = 'https://storage.googleapis.com/projects-biomass';
 //const geojson = testGeoJson;
@@ -187,32 +190,32 @@ export class MapListVisualization extends Component {
     if (selectedObject) {
       const projectInMap = {
         title: selectedObject.properties.name,
+        main_picture: selectedObject.properties.picture,
         progress: selectedObject.properties.progress,
-        url: selectedObject.properties.url,
-        picture: selectedObject.properties.picture,
-        location: selectedObject.properties.location,
-        credits: selectedObject.properties.credits,
-        area: selectedObject.properties.area,
+        credits_avail: {
+          quatinty: `${selectedObject.properties.credits}`,
+        },
+        location: {
+          name: selectedObject.properties.location,
+        },
+        total_land: {
+          area: selectedObject.properties.area,
+        },
       };
-      console.log('projectInMap', selectedObject);
+      console.log('projectInMap', projectInMap);
       return (
         selectedObject && (
           <>
-            <div className="tooltip-map" style={{ top: y, left: x }}>
-              <div className="tooltip-inner">
-                <ProjectItem
+            <TooltipMap style={{ top: y, left: x }}>
+              <TooltipInner>
+                <ProjectCard
                   project={projectInMap}
-                  name={selectedObject.properties.name}
-                  progress={selectedObject.properties.progress}
                   url={selectedObject.properties.url}
-                  customclass="small"
-                  picture={selectedObject.properties.picture}
-                  location={selectedObject.properties.location}
-                  credits={selectedObject.properties.credits}
+                  customClass="columns small"
                   area={selectedObject.properties.area}
                 />
-              </div>
-            </div>
+              </TooltipInner>
+            </TooltipMap>
           </>
         )
       );
@@ -270,7 +273,7 @@ export class MapListVisualization extends Component {
     const { viewState } = this.state;
 
     return (
-      <div className="detail-map">
+      <DetailMap>
         <DeckGL
           layers={this._renderLayers()}
           effects={[lightingEffect]}
@@ -311,75 +314,7 @@ export class MapListVisualization extends Component {
             />
           </View>
         </DeckGL>
-        <style jsx global>
-          {`
-            #view-child-main-1 {
-              pointer-events: inherit !important;
-            }
-            .tooltip-map {
-              position: absolute;
-            }
-            .tooltip-list {
-              li {
-                position: relative;
-                padding-left: 10px;
-                &:after {
-                  content: '';
-                  width: 6px;
-                  height: 6px;
-                  position: absolute;
-                  left: 0;
-                  border-radius: 100%;
-                  top: 8px;
-                  background-color: #04b189;
-                }
-              }
-            }
-            .tooltip-title {
-              margin-top: 0;
-              margin-bottom: 5px;
-              color: #04b189;
-            }
-            .tooltip-item {
-              margin-bottom: 10px;
-              font-size: 14px;
-            }
-            .tooltip-inner {
-              position: absolute;
-              bottom: 0;
-              z-index: 10;
-              transform: translateX(-50%) translateY(-25px);
-              background-color: #fff;
-              border-radius: 7px;
-              z-index: 10;
-              box-shadow: 0 15px 45px 0 rgba(109, 100, 206, 0.21);
-              &:after {
-                content: '';
-                display: inline-block;
-                position: absolute;
-                top: 100%;
-                left: 0px;
-                right: 0;
-                margin: 0 auto;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 10px 10px 0 10px;
-                border-color: #ffffff transparent transparent transparent;
-              }
-            }
-            .detail-map {
-              position: relative;
-              width: 100vw;
-              height: calc(100vh - 70px);
-              figure img {
-                width: 100%;
-                height: calc(100vh - 70px);
-              }
-            }
-          `}
-        </style>
-      </div>
+      </DetailMap>
     );
   }
 }
