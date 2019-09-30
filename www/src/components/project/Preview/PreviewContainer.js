@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   receiveUser: user => dispatch(receiveUser(user)),
-  fetchProjects: () => dispatch(fetchProjects()),
+  fetchProjects: () => fetchProjects()(dispatch),
 });
 
 export default connect(

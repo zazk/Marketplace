@@ -2,7 +2,7 @@ import { requestProjects, receiveProjects, receiveForm, requestForm } from './ac
 import Const from '../../../utils/const';
 export const fetchProjects = () => {
   return dispatch => {
-    dispatch(requestProjects);
+    dispatch(requestProjects());
     return fetch(`https://jsonplaceholder.typicode.com/users`)
       .then(response => response.json())
       .then(json => {
