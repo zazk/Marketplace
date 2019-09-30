@@ -4,6 +4,7 @@ import Projects from './pages/list';
 import Admin from './pages/admin';
 import CallBack from './pages/callback';
 import CreateAccount from './pages/createacount';
+import MapList from './pages/maplist';
 
 import Dashboard from './pages/dashboard';
 
@@ -50,6 +51,12 @@ const publicRoutes = [
     path: '/dashboard',
     exact: true,
     customClass: 'dashboard-page',
+  },
+  {
+    name: 'MapList',
+    component: MapList,
+    path: '/maplist',
+    exact: true,
   },
 ];
 
