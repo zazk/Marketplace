@@ -11,7 +11,7 @@ export const ProjectPicture = styled.div`
   background-position: center center;
   background-size: cover;
   overflow: hidden;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 10px 0px 0px;
   &:after,
   &:before {
     content: '';
@@ -161,7 +161,7 @@ export const Project = styled(Link)`
       ${ProjectPicture} {
         width: 100px;
         height: 100px;
-        border-radius: 5px;
+        border-radius: 25px;
         top: 10px;
         left: 10px;
         overflow: hidden;
