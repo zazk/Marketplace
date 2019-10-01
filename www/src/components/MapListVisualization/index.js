@@ -1,18 +1,14 @@
-/* global window */
-
 import React, { Component } from 'react';
 import { StaticMap } from 'react-map-gl';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { TileLayer, BitmapLayer, GeoJsonLayer, MapView, View } from 'deck.gl';
 import DeckGL from '@deck.gl/react';
-// import ProjectItem from './ProjectItem';
 import ProjectCard from '../project/Card';
 import dataProjects from '../../projects-data/projects';
 import { TooltipMap, TooltipInner, DetailMap } from './style';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoicGFjaGFtYSIsImEiOiJjam5xbWY4ZW8wOHhpM3FwaHN6azYzMXZzIn0.bGR3tnhiYFvPwVyU0WHjcA'; // eslint-disable-line
 const tileServer = 'https://storage.googleapis.com/projects-biomass';
-//const geojson = testGeoJson;
 
 const index = 2;
 const project = dataProjects[index]['pdp'];
