@@ -1,5 +1,5 @@
 import { Button } from '@material-ui/core';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const LandingProyect = styled.div`
   color: #fff;
@@ -82,7 +82,13 @@ export const Item = styled.div`
       font-size: 14px;
     }
   }
-`;
+
+  @media screen and (max-width: 480px) {
+    &:nth-child(3), &:nth-child(4) {
+      margin-bottom: 0
+    }
+  }
+    `;
 export const ViewProjects = styled(Button)`
   width: 196px;
   height: 50px;
