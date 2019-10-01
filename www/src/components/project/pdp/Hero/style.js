@@ -47,6 +47,7 @@ export const Bgbanner = styled.div`
 `;
 export const Banner = styled.div`
   position: relative;
+  z-index: 100;
 `;
 export const BannerMain = styled.div`
   height: 440px;

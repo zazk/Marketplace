@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginButton from '../../LoginButton';
-import { Logo, HeaderMain, HeaderInner, Nav, MenuItem, MenuLink, MenuUser } from './style';
+import {
+  Logo,
+  HeaderMain,
+  HeaderInner,
+  Nav,
+  MenuItem,
+  MenuLink,
+  MenuUser,
+} from './style';
 import MenuResponsive from '../../MenuResponsive';
 
 function Header() {
@@ -9,7 +17,12 @@ function Header() {
     <HeaderMain>
       <HeaderInner>
         <Logo>
-          <img src="/static/assets/images/logo-pachama.svg" width="92" height="23" alt="" />
+          <img
+            src="/static/assets/images/logo-pachama.svg"
+            width="92"
+            height="23"
+            alt=""
+          />
         </Logo>
         <Nav>
           <ul className="flex nav-list">
@@ -31,7 +44,9 @@ function Header() {
           </ul>
         </Nav>
         <MenuResponsive></MenuResponsive>
-        <MenuUser></MenuUser>
+        <MenuUser>
+          <LoginButton type="dropdown" />
+        </MenuUser>
       </HeaderInner>
     </HeaderMain>
   );

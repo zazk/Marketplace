@@ -16,7 +16,7 @@ export const FeaturesList = styled.div`
   padding-top: 18px;
   padding-bottom: 12px;
   display: flex;
-  flex-flow: row wrao;
+  flex-flow: row wrap;
   justify-content: center;
   @media screen and (max-width: 640px) {
     margin-top: 30px;

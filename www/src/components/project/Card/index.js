@@ -52,17 +52,21 @@ function ProjectCard({ project, customClass, url }) {
               <DescriptionItem>
                 <img src="/static/iconos/icon-sumary-1.svg" width="24" alt="" />
                 <div className="description-text">
-                  <span>{project.total_land.area + ' ' + project.total_land.unit}</span>
+                  <span>
+                    {project.total_land.area} <br /> {project.total_land.unit}
+                  </span>
                   <p>Total Area</p>
                 </div>
               </DescriptionItem>
-              <DescriptionItem>
-                <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
-                <div className="description-text">
-                  <span>{project.project_type} </span>
-                  <p>Project Type</p>
-                </div>
-              </DescriptionItem>
+              {project.project_type && (
+                <DescriptionItem>
+                  <img src="/static/iconos/icon-sumary-3.svg" width="24" alt="" />
+                  <div className="description-text">
+                    <span>{project.project_type} </span>
+                    <p>Project Type</p>
+                  </div>
+                </DescriptionItem>
+              )}
             </>
           )}
         </ProjectDescription>

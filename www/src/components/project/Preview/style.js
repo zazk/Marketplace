@@ -1,5 +1,5 @@
 import { Button } from '@material-ui/core';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const LandingProyect = styled.div`
   color: #fff;
@@ -11,7 +11,9 @@ export const LandingMain = styled.div`
   max-width: 1024px;
   margin: auto;
   justify-content: space-between;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
+  padding: 20px 0;
+  box-sizing: border-box;
   align-items: center;
   position: relative;
   z-index: 10;
@@ -80,6 +82,13 @@ export const Item = styled.div`
     }
     p {
       font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    &:nth-child(3),
+    &:nth-child(4) {
+      margin-bottom: 0;
     }
   }
 `;

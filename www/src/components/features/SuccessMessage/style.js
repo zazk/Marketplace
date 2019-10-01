@@ -32,10 +32,15 @@ export const FormularySuccess = styled.div`
     width: 1024px;
     opacity: 1;
     visibility: visible;
-    height: 590px;
     overflow: visible;
     ${SuccessBtn} {
       display: none;
+    }
+    @media screen and (max-width: 1024px) {
+      width: 96vw;
+    }
+    @media screen and (max-width: 480px) {
+      width: 100vw;
     }
   }
   &.active {
@@ -45,6 +50,12 @@ export const FormularySuccess = styled.div`
     overflow: visible;
     &.isPopup {
       height: 590px;
+      @media screen and (max-width: 1024px) {
+        height: 96vh;
+      }
+      @media screen and (max-width: 480px) {
+        height: 100vh;
+      }
     }
   }
   @media screen and (max-width: 745px) {

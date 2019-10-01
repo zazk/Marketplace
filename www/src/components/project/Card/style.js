@@ -11,7 +11,7 @@ export const ProjectPicture = styled.div`
   background-position: center center;
   background-size: cover;
   overflow: hidden;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 10px 0px 0px;
   &:after,
   &:before {
     content: '';
@@ -148,6 +148,7 @@ export const Project = styled(Link)`
       opacity: 0.5;
     }
   }
+
   &.list-default {
     @media screen and (max-width: 600px) {
       padding: 15px;
@@ -161,7 +162,7 @@ export const Project = styled(Link)`
       ${ProjectPicture} {
         width: 100px;
         height: 100px;
-        border-radius: 5px;
+        border-radius: 25px;
         top: 10px;
         left: 10px;
         overflow: hidden;
@@ -410,6 +411,36 @@ export const Project = styled(Link)`
           position: absolute;
           top: 5px;
           left: 0;
+        }
+      }
+    }
+    &.small{
+      width: 280px !important;
+      border: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      ${ProjectDetail}{
+        padding: 10px;
+      }
+      ${ProjectName}{
+        font-size: 16px;
+        font-family: ${theme.fonts.primary};
+      }
+      ${ProjectPicture}{
+        height: 100px;
+      }
+      ${ProjectDescription}{
+        margin-top: 5px;
+      }
+      ${DescriptionItem}{
+        width: 50%;
+        padding: 0;
+        padding-left: 30px;
+        span{
+          font-family: ${theme.fonts.primary};
+        }
+        img {
+          position: absolute;
         }
       }
     }

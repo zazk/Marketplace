@@ -101,6 +101,10 @@ export const GlobalStyle = createGlobalStyle`
     content: "\\e900";
   }
 
+  #view-child-main-1 {
+    pointer-events: inherit !important;
+  }
+
   .item-card-tooltip {
       width: 24%;
     }
