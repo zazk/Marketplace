@@ -55,6 +55,7 @@ export const AuthLogin = createGlobalStyle`
   right: 10px !important ;
   background:none !important;
   border:none !important;
+  margin: 16px;
 }
 
 .auth0-lock.auth0-lock .auth0-lock-submit{
@@ -95,6 +96,10 @@ export const AuthLogin = createGlobalStyle`
     z-index: 2;
     opacity: 0;
 
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 16px
   }
 
 }
