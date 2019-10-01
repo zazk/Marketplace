@@ -1,6 +1,4 @@
 import styled from 'styled-components/macro';
-import device from '../../../utils/responsive'
-
 export const SuccessBtn = styled.div`
   justify-content: center;
   margin-top: 65px;
@@ -31,11 +29,18 @@ export const FormularySuccess = styled.div`
   transition: opacity 0.5s;
   &.isPopup {
     position: static;
+    width: 1024px;
     opacity: 1;
     visibility: visible;
     overflow: visible;
     ${SuccessBtn} {
-      // display: none;
+      display: none;
+    }
+    @media screen and (max-width: 1024px) {
+      width: 96vw;
+    }
+    @media screen and (max-width: 480px) {
+      width: 100vw;
     }
   }
   &.active {
@@ -43,6 +48,15 @@ export const FormularySuccess = styled.div`
     visibility: visible;
     height: 100%;
     overflow: visible;
+    &.isPopup {
+      height: 590px;
+      @media screen and (max-width: 1024px) {
+        height: 96vh;
+      }
+      @media screen and (max-width: 480px) {
+        height: 100vh;
+      }
+    }
   }
   @media screen and (max-width: 745px) {
     position: fixed;

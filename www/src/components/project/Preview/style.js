@@ -11,7 +11,9 @@ export const LandingMain = styled.div`
   max-width: 1024px;
   margin: auto;
   justify-content: space-between;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
+  padding: 20px 0;
+  box-sizing: border-box;
   align-items: center;
   position: relative;
   z-index: 10;
@@ -84,11 +86,12 @@ export const Item = styled.div`
   }
 
   @media screen and (max-width: 480px) {
-    &:nth-child(3), &:nth-child(4) {
-      margin-bottom: 0
+    &:nth-child(3),
+    &:nth-child(4) {
+      margin-bottom: 0;
     }
   }
-    `;
+`;
 export const ViewProjects = styled(Button)`
   width: 196px;
   height: 50px;

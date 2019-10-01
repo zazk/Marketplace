@@ -17,20 +17,6 @@ export const Formulary = styled.div`
   }
 `;
 
-export const FormularyMain = styled.div`
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-flow: row wrap;
-  @media screen and (max-width: 745px) {
-    .form-title-section,
-    .form-list-inputs {
-      width: 100%;
-      box-sizing: border-box;
-    }
-  }
-`;
-
 export const FormListInputs = styled.div`
   width: 64.5%;
   box-sizing: border-box;
@@ -134,4 +120,17 @@ export const FormBtn = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 21px;
+`;
+
+export const FormularyMain = styled.div`
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-flow: row wrap;
+  @media screen and (max-width: 745px) {
+    ${FormTitleSection}, ${FormListInputs} {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
 `;

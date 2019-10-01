@@ -1,18 +1,15 @@
 import styled from 'styled-components/macro';
-import device from '../../../utils/responsive';
 
 export const ModalBoxWrap = styled.div`
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex: 1;
-  width: 100%;
-  height: 100vh
+  justify-content: center;
   visibility: hidden;
   opacity: 0;
   height: 0;
@@ -38,7 +35,6 @@ export const ModalboxClose = styled.div`
   font-size: 16px;
   color: #fff;
   cursor: pointer;
-  margin-top: 32px;
   span {
     position: relative;
     z-index: 2;
@@ -57,39 +53,4 @@ export const ModalboxContent = styled.div`
   position: relative;
   z-index: 2;
   display: inline-block;
-
-
-
-  @media ${device.mobileS} {
-    width: 280px;
-    height: 460px;
-    padding-top: 32px;
-  }
-
-  @media ${device.mobileM} {
-    width: 320px;
-    height: 600px;
-    padding-top: 32px;
-  }
-
-
-  @media ${device.tablet} {
-    width: 740px;
-    height: 600px;
-    padding-top: 32px;
-  }
-
-  @media ${device.laptop} {
-    padding-top: 32px;
-    width: 1000px;
-    height: 620px;
-  }
-
-  @media ${device.laptopL} {
-    width: 1200px;
-    padding-top: 32px;
-    height: 640px;
-  }
-
-
 `;

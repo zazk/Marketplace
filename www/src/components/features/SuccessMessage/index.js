@@ -32,9 +32,9 @@ function SuccessMessage({ isOpen, toggle, type, error }) {
             <p>Meanwhile you can make a reservation to have a call.</p>
           </SuccessDescription>
           <SuccessBtn>
-            <a className="btn white" href="/list">
+            <button className="btn white" onClick={toggle}>
               <span>Book call</span>
-            </a>
+            </button>
           </SuccessBtn>
         </SuccessContent>
       )}
