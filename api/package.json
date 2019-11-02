@@ -21,7 +21,7 @@
     "nodemailer": "^6.3.0",
     "passport": "^0.4.0",
     "passport-auth0": "^1.1.0",
-    "sequelize": "^5.13.0",
+    "sequelize": "^5.15.1",
     "uid-safe": "^2.1.5"
   },
   "devDependencies": {
