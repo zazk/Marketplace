@@ -8,7 +8,7 @@
     "start": "node src/server.js"
   },
   "dependencies": {
-    "auth0": "^2.18.0",
+    "auth0": "^2.27.1",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "dotenv": "^8.0.0",
